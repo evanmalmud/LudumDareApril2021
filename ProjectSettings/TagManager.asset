@@ -11,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - OWPlatform
+  - Ladder
+  - Character
+  - Box
+  - Interactable
   - 
   - 
   - 
