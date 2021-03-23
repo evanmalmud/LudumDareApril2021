@@ -7,6 +7,11 @@ Properties {
 	[HDR]_FaceColor		("Face Color", Color) = (1,1,1,1)
 	_FaceDilate			("Face Dilate", Range(-1,1)) = 0
 
+	_Gradient_ColorA	("Gradient Color A", Color) = (1,1,1,1)
+	_Gradient_ColorB	("Gradient Color B", Color) = (1,1,1,1)
+	_Gradient_ColorC	("Gradient Color C", Color) = (1,1,1,1)
+	_Gradient_ColorD	("Gradient Color D", Color) = (1,1,1,1)
+
 	[HDR]_OutlineColor	("Outline Color", Color) = (0,0,0,1)
 	_OutlineTex			("Outline Texture", 2D) = "white" {}
 	_OutlineUVSpeedX	("Outline UV Speed X", Range(-5, 5)) = 0.0
