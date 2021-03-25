@@ -36,11 +36,11 @@ MonoBehaviour:
   Path: FMod Project/LudumDareApril2021/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637522970014238270
+  lastModified: 637522980748834519
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 700
+    Value: 800
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -57,14 +57,39 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -117634142836602110}
   - {fileID: 5823406606219456926}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: 1489878357079667249}
+  - {fileID: 8362648175345319340}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5823406606219456926}
   StringsBanks:
   - {fileID: -117634142836602110}
-  stringsBankWriteTime: 637522970014238270
+  stringsBankWriteTime: 637522980748834519
   cacheVersion: 6
+--- !u!114 &1489878357079667249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Siren TEST
+  m_EditorClassIdentifier: 
+  Path: event:/Siren TEST
+  guid: 4ef3a6f7f45af841a5c05ef64c725d97
+  Banks:
+  - {fileID: 5823406606219456926}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7384
 --- !u!114 &5016518227558690621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +124,30 @@ MonoBehaviour:
   Path: FMod Project/LudumDareApril2021/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637522970014188218
+  lastModified: 637522980748774466
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &8362648175345319340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Loop Music
+  m_EditorClassIdentifier: 
+  Path: event:/Loop Music
+  guid: 9bb20b95857c6f4b96d7b3b07ef099b9
+  Banks:
+  - {fileID: 5823406606219456926}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 34909
