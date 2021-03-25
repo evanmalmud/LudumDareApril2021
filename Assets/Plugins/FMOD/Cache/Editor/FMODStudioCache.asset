@@ -21,6 +21,27 @@ MonoBehaviour:
   - Name: Desktop
     Value: 700
   Exists: 1
+--- !u!114 &-117634142836602110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMod Project/LudumDareApril2021/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637522970014238270
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,15 +55,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -3590561843341465896}
-  - {fileID: 5016518227558690621}
+  - {fileID: -117634142836602110}
+  - {fileID: 5823406606219456926}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 5016518227558690621}
+  - {fileID: 5823406606219456926}
   StringsBanks:
-  - {fileID: -3590561843341465896}
-  stringsBankWriteTime: 637519523674882815
+  - {fileID: -117634142836602110}
+  stringsBankWriteTime: 637522970014238270
   cacheVersion: 6
 --- !u!114 &5016518227558690621
 MonoBehaviour:
@@ -60,6 +81,25 @@ MonoBehaviour:
   Name: Master
   StudioPath: bank:/Master
   lastModified: 637519523674822776
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5823406606219456926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMod Project/LudumDareApril2021/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637522970014188218
   LoadResult: 0
   FileSizes: []
   Exists: 1
