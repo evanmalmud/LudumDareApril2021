@@ -3986,6 +3986,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 661806509}
     m_Modifications:
+    - target: {fileID: -7677925521071024644, guid: bf025d17afe282e45a9b9a4933eba920,
+        type: 3}
+      propertyPath: PlayEvent
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5223635012118364812, guid: bf025d17afe282e45a9b9a4933eba920,
         type: 3}
       propertyPath: m_LocalScale.y
