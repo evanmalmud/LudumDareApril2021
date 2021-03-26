@@ -1,5 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6433892904482957604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMod Project/LudumDareApril2021/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637523551160000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
+--- !u!114 &-6044609188675769480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMod Project/LudumDareApril2021/Build/Desktop/Master.bank
+  Name: Build/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 637523551160000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3590561843341465896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,15 +74,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -3590561843341465896}
-  - {fileID: 5016518227558690621}
+  - {fileID: -6433892904482957604}
+  - {fileID: -6044609188675769480}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 5016518227558690621}
+  - {fileID: -6044609188675769480}
   StringsBanks:
-  - {fileID: -3590561843341465896}
-  stringsBankWriteTime: 637519523674882815
+  - {fileID: -6433892904482957604}
+  stringsBankWriteTime: 637523551160000000
   cacheVersion: 6
 --- !u!114 &5016518227558690621
 MonoBehaviour:

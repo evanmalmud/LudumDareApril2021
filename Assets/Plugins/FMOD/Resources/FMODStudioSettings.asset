@@ -162,7 +162,7 @@ MonoBehaviour:
       Value: Desktop
       HasValue: 1
     SpeakerMode:
-      Value: 3
+      Value: 6
       HasValue: 1
     VirtualChannelCount:
       Value: 128
@@ -328,10 +328,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
+  HasSourceProject: 1
   HasPlatforms: 1
   sourceProjectPath: FMod Project/LudumDareApril2021/LudumDareApril2021.fspro
-  sourceBankPath: FMod Project\LudumDareApril2021\Build
+  sourceBankPath: FMod Project/LudumDareApril2021/Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Master
+  - Build/Desktop/Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -457,7 +457,7 @@ MonoBehaviour:
       Value: 48000
       HasValue: 1
     BuildDirectory:
-      Value: 
+      Value: Desktop
       HasValue: 0
     SpeakerMode:
       Value: 0
