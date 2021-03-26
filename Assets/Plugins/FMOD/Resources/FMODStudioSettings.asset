@@ -162,7 +162,7 @@ MonoBehaviour:
       Value: Desktop
       HasValue: 1
     SpeakerMode:
-      Value: 3
+      Value: 6
       HasValue: 1
     VirtualChannelCount:
       Value: 128
@@ -351,7 +351,7 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Master
+  - Build/Desktop/Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -457,7 +457,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     BuildDirectory:
-      Value: 
+      Value: Desktop
       HasValue: 0
     SpeakerMode:
       Value: 0
