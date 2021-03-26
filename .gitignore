@@ -36,9 +36,16 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
 *.log
-Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Logs/shadercompiler-UnityShaderCompiler.exe2.log
-Logs/shadercompiler-UnityShaderCompiler.exe3.log
-Logs/shadercompiler-UnityShaderCompiler.exe4.log
-*.log
+Logs/*
+
+
+# FMOD
+/[Aa]ssets/**/FMODStudioCache.asset
+/[Aa]ssets/**/FMODStudioCache.asset.meta
+/[Aa]ssets/Plugins/FMOD/Cache.meta
+/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
+fmod.log
+fmod_editor.log
+.*
