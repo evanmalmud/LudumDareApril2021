@@ -685,6 +685,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7018911988841287167, guid: 4fb49a1922deb8249bfdbba50d98dbf1,
+        type: 3}
+      propertyPath: jumpSFX
+      value: event:/jump
+      objectReference: {fileID: 0}
     - target: {fileID: 7737047858355556696, guid: 4fb49a1922deb8249bfdbba50d98dbf1,
         type: 3}
       propertyPath: canDash
