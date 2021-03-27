@@ -38,6 +38,9 @@ public class CharacterController2D : ObjectController2D {
     private float invulnerableTime = 0;
     private float ladderX = 0;
 
+    [FMODUnity.EventRef]
+    public string jumpSFX = "";
+
     // Public propoerties
     public bool OnLadder { get; set; }
     public bool Stunned => stunTime > 0;
@@ -389,9 +392,10 @@ public class CharacterController2D : ObjectController2D {
                     speed.x = cData.maxSpeed * collisions.groundDirection;
                 }
                 ignorePlatformsTime = 0;
-                //if (soundManager) {
-                //    soundManager.PlayJumpSound();
-                //}
+
+
+                Debug.Log("JumpSFX Called");
+                FMODUnity.RuntimeManager.PlayOneShot(jumpSFX, transform.position);
             }
         }
     }
