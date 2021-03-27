@@ -37,15 +37,36 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+# Mac stuff
+.DS_Store
+.bak
+.BAK
+
+# Log Files
 *.log
 Logs/*
+.*
 
+### FMOD Unity Integration ###
+# Never ignore DLLs in the FMOD subfolder, so make sure that the FMOD-folder is in the correct path.
+!/[Aa]ssets/Plugins/FMOD/**/*.dll
 
-# FMOD
+# Don't ignore images and gizmos used by FMOD in the Unity Editor
+!/[Aa}ssets/Gizmos/FMOD/*
+!/[Aa}ssets/Editor Default Resources/FMOD/*
+
+# Ignore the Cache-file since it is updated locally either way
 /[Aa]ssets/**/FMODStudioCache.asset
 /[Aa]ssets/**/FMODStudioCache.asset.meta
 /[Aa]ssets/Plugins/FMOD/Cache.meta
 /[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
+
+# Log-files
 fmod.log
 fmod_editor.log
-.*
+
+# FMOD Project
+/LudumDareApril2021/.cache
+/LudumDareApril2021/.unsaved
+/LudumDareApril2021/.user
+/LudumDareApril2021/Build
