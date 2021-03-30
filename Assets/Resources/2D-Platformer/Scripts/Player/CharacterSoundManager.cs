@@ -19,5 +19,9 @@ public class CharacterSoundManager : MonoBehaviour {
 
     public void PlayJumpSound(float volume = 1f) {
         source.PlayOneShot(jumpSound);
+        
+
+
+
     }
 }
