@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="Bank" id="{29eb18ee-3cc3-468a-af90-bab7b390edb8}">
+		<property name="name">
+			<value>Loop Music Bank</value>
+		</property>
+		<relationship name="folder">
+			<destination>{dde4a1ed-5540-4e06-b596-44fd1902c348}</destination>
+		</relationship>
+	</object>
+</objects>
