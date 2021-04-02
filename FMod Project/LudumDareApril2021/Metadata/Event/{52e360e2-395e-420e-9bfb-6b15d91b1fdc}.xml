@@ -140,11 +140,8 @@
 		<property name="commandType">
 			<value>3</value>
 		</property>
-		<property name="targetValue">
-			<value>100</value>
-		</property>
 		<relationship name="commandTarget">
-			<destination>{e7ea205f-93d8-4e04-a72c-cf6e15834bd7}</destination>
+			<destination>{92394692-6558-4b2e-aab4-6c7a2487d182}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{068079bf-cd25-4d54-a8b2-5fd9b09a9334}" />
