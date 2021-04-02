@@ -15,6 +15,7 @@ public class HazardController : MonoBehaviour {
     public bool playerOnly;
     public bool softRespawn;
     public bool instantKill;
+    public bool causesVertigo;
 
     private PhysicsConfig pConfig;
 
@@ -53,8 +54,13 @@ public class HazardController : MonoBehaviour {
                 character.SetAirStagger(stunDuration);
             }
             PlayerController player = other.GetComponent<PlayerController>();
-            if (softRespawn && player) {
-                player.SoftRespawn();
+
+            if (player) {
+                player.removeHealth(damage);
+
+                if(causesVertigo) {
+                    player.setVertigo(true);
+                }
             }
         }
     }

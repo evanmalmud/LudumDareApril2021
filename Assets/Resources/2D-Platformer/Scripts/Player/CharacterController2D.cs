@@ -25,6 +25,10 @@ public class CharacterController2D : ObjectController2D {
     private Animator animator;
     [SerializeField]
     private SpriteRenderer visual;
+    [SerializeField]
+    private Color defaultColor;
+    [SerializeField]
+    private Color vertigoColor;
 
     // Physics properties
     private float ignoreLaddersTime = 0;
@@ -71,6 +75,18 @@ public class CharacterController2D : ObjectController2D {
         Move((TotalSpeed) * Time.fixedDeltaTime);
         PostMove();
         SetAnimations();
+    }
+
+    public void setVertigo(bool vertigo) {
+        if(vertigo) {
+            visual.color = vertigoColor;
+            cData.maxSpeed = cData.veritgoMaxSpeed;
+            cData.canUseSlopes = false;
+        } else {
+            visual.color = defaultColor;
+            cData.maxSpeed = cData.defaultMaxSpeed;
+            cData.canUseSlopes = true;
+        }
     }
 
     /*-------------------------*/

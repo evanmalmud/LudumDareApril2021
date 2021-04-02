@@ -213,6 +213,7 @@ MonoBehaviour:
   visual: {fileID: 5317202781068630853}
   extraJumps: 0
   airDashes: 0
+  jumpSFX: event:/JSO_TEST_SFX/LD48TEST_JSO_FX_OBJ_jumppad_5
 --- !u!114 &7737047858355556696
 MonoBehaviour:
   m_ObjectHideFlags: 0
