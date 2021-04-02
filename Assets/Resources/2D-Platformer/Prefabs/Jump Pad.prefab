@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: Player
-  Event: event:/Siren TEST
+  Event: event:/JSO_TEST_SFX/LD48TEST_JSO_FX_OBJ_jumppad_1
   PlayEvent: 5
   StopEvent: 0
   AllowFadeout: 1

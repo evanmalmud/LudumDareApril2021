@@ -9,6 +9,19 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerController : MonoBehaviour {
 
+    public float maxHealth;
+    public float health;
+
+    public float intensity = 0f;
+    public float intensityDecayPerSecond = 1f;
+    public float intensityTimer = 0f;
+
+    public float vertigoTimeLength = 5f;
+    public float vertigoTimeLeft = 0f;
+    public bool vertigo = false;
+
+    public bool dead = false;
+
     public float softRespawnDelay = 0.5f;
     public float softRespawnDuration = 0.5f;
     public InputMaster controls;
@@ -19,6 +32,8 @@ public class PlayerController : MonoBehaviour {
     private CheckpointSystem checkpoint;
     private InteractSystem interact;
     private Vector2 axis;
+
+    public MusicLoopHandler musicLoopHandler;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -49,11 +64,32 @@ public class PlayerController : MonoBehaviour {
         character.ClimbLadder(axis.y);
     }
 
+    private void Update()
+    {
+        if (vertigo && vertigoTimeLeft > 0) {
+            vertigoTimeLeft -= Time.deltaTime;
+            character.setVertigo(true);
+        } else if(vertigo) {
+            vertigo = false;
+            vertigoTimeLeft = 0f;
+            character.setVertigo(false);
+        }
+
+        if(intensity > intensityDecayPerSecond) {
+            if (intensityTimer >= 1f) {
+                intensity -= intensityDecayPerSecond;
+                intensityTimer -= 1f;
+            }
+            intensityTimer += Time.deltaTime;
+        }
+    }
+
     private void Move(Vector2 _axis) {
         axis = _axis;
     }
 
     private void Jump(InputAction.CallbackContext context) {
+        addIntenstiy(20f);
         if (axis.y < 0) {
             character.JumpDown();
         } else {
@@ -70,6 +106,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Interact(InputAction.CallbackContext context) {
+        addIntenstiy(20f);
         if (interact) {
             interact.Interact();
         }
@@ -103,6 +140,9 @@ public class PlayerController : MonoBehaviour {
     private void EndSoftRespawn() {
         checkpoint.ReturnToSoftCheckpoint();
         cameraController.FadeIn();
+        dead = false;
+        health = maxHealth;
+        musicLoopHandler.restartMusic();
         character.Immobile = false;
     }
 
@@ -118,5 +158,61 @@ public class PlayerController : MonoBehaviour {
     /// </summary>
     void OnDisable() {
         controls.Player.Disable();
+    }
+
+    public float getHealth() {
+        return health;
+    }
+
+    public void setHealth() {
+
+    }
+
+    public void addHealth(float addedHealth) {
+        health += addedHealth;
+    }
+
+    public void removeHealth(float removedHealth)
+    {
+        addIntenstiy(removedHealth);
+        health -= removedHealth;
+        if(health <= 0) {
+            health = 0; //Clamp
+            dead = true;
+            SoftRespawn();
+        }
+    }
+
+    public bool getDead() {
+        return dead;
+    }
+
+    public float getHealthPercentage() {
+        return health / maxHealth;
+    }
+
+    public bool getVertigo() {
+        return vertigo;
+    }
+
+    public void setVertigo(bool vertigoSet)
+    {
+        if(vertigoSet) {
+            vertigoTimeLeft = vertigoTimeLength;
+            vertigo = true;
+            character.setVertigo(true);
+        } else {
+            vertigo = false;
+            vertigoTimeLeft = 0;
+            character.setVertigo(false);
+        }
+    }
+
+    public float getIntensity() {
+        return intensity;
+    }
+
+    public void addIntenstiy(float intensityToAdd) {
+        intensity += intensityToAdd;
     }
 }

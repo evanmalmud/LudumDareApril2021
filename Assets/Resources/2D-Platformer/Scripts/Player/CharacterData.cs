@@ -11,6 +11,8 @@ public class CharacterData : MonoBehaviour {
 
     // Character's attibrutes
     [Header("Movement")]
+    public float defaultMaxSpeed;
+    public float veritgoMaxSpeed;
     public float maxSpeed;
     public float accelerationTime;
     public float decelerationTime;
