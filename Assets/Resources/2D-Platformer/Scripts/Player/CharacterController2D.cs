@@ -409,8 +409,6 @@ public class CharacterController2D : ObjectController2D {
                 }
                 ignorePlatformsTime = 0;
 
-
-                Debug.Log("JumpSFX Called");
                 FMODUnity.RuntimeManager.PlayOneShot(jumpSFX, transform.position);
             }
         }

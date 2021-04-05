@@ -24,8 +24,12 @@ public class CheckFMODLoaded : MonoBehaviour {
 
     void updateTexts()
     {
-        foreach (TMPro.TextMeshProUGUI text in texts) {
-            text.text = "Click Here!";
+        if (texts != null) {
+            foreach (TMPro.TextMeshProUGUI text in texts) {
+                if (text != null) {
+                    text.text = "Click Here!";
+                }
+            }
         }
     }
 
@@ -45,9 +49,7 @@ public class CheckFMODLoaded : MonoBehaviour {
     {
         if (!audioResumed) {
             var result = FMODUnity.RuntimeManager.CoreSystem.mixerSuspend();
-            Debug.Log(result);
             result = FMODUnity.RuntimeManager.CoreSystem.mixerResume();
-            Debug.Log(result);
             audioResumed = true;
         }
     }
