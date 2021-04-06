@@ -3168,6 +3168,7 @@ MonoBehaviour:
   texts: []
   loadReady: 0
   musicLoopHandler: {fileID: 0}
+  SceneName: 
 --- !u!4 &1193504056
 Transform:
   m_ObjectHideFlags: 0
@@ -4444,6 +4445,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1394577220, guid: 447cf090ff24a554ca3c78e143cbf0ba, type: 3}
+      propertyPath: SceneName
+      value: DemoScene
+      objectReference: {fileID: 0}
     - target: {fileID: 1394577220, guid: 447cf090ff24a554ca3c78e143cbf0ba, type: 3}
       propertyPath: texts.Array.data[0]
       value: 

@@ -81,9 +81,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb37de9639afff3428bcc41424f05ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fmodEvent: event:/JSO_TEST_MX/JSO_MX_TestMusic_DRY
+  pixelCircles: []
+  fmodEvent: event:/Callback Testing
   levelTimer: {fileID: 7092281384767603438}
   playerController: {fileID: 0}
+  loopListening: 0
+  playerListening: 0
 --- !u!114 &1394577220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +116,7 @@ MonoBehaviour:
   - {fileID: 0}
   loadReady: 0
   musicLoopHandler: {fileID: 7092281384767603439}
+  SceneName: MainMenu
 --- !u!114 &1394577221
 MonoBehaviour:
   m_ObjectHideFlags: 0
