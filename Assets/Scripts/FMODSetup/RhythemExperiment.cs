@@ -129,7 +129,7 @@ public class RhythemExperiment : MonoBehaviour {
 
             foreach (PixelCircleCloser pixelCircle in pixelCircles) {
                 if (pixelCircle.name.Equals(currentLoop.currentMarker.markerName)) {
-                    pixelCircle.startTween();
+                    //pixelCircle.startTween();
                 }
             }
 

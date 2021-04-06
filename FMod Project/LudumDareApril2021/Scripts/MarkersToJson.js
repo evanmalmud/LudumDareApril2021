@@ -34,7 +34,8 @@ studio.menu.addMenuItem({
 
         var file = studio.system.getFile(path+"/"+event.name+".json")
         console.log(file.open(studio.system.openMode.ReadWrite))
-        file.writeText(JSON.stringify(song_markers));
+		var fullString = "{\"markers\":" + JSON.stringify(song_markers) + "}"
+        file.writeText(fullString);
         file.close()
     },
 });
