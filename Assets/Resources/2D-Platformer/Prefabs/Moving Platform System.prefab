@@ -232,10 +232,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa6e08aa00fa3c4cbb43083e207ed3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalRayCount: 0
+  verticalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  boxCollider: {fileID: 0}
   currentWaypoint: {fileID: 4255622972858589680}
-  maxSpeed: 5
-  accelerationDistance: 1
-  decelerationDistance: 1
+  maxSpeed: 1
+  accelerationDistance: 2
+  decelerationDistance: 2
   waitTime: 0.5
   crumbleTime: 0
   restoreTime: 0

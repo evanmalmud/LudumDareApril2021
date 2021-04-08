@@ -21,7 +21,7 @@ public class StandOnObjectController2D : ObjectController2D {
     /// <summary>
     /// Tries to move according to current speed and checking for collisions
     /// </summary>
-    public override Vector2 Move(Vector2 deltaMove) {
+    public override Vector2 Move(Vector2 deltaMove, bool standingOnPlatform = false) {
         int layer = gameObject.layer;
         gameObject.layer = Physics2D.IgnoreRaycastLayer;
         PreMove(ref deltaMove);
@@ -70,6 +70,9 @@ public class StandOnObjectController2D : ObjectController2D {
                     externalForce.y = 0;
                 }
             }
+        }
+        if (standingOnPlatform) {
+            collisions.below = true;
         }
         gameObject.layer = layer;
         return deltaMove;

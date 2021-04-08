@@ -208,6 +208,7 @@ MonoBehaviour:
   ladderDelay: 0.3
   maxSlopeAngle: 60
   minWallAngle: 80
+  yOffset: 0
   speed: {x: 0, y: 0}
   externalForce: {x: 0, y: 0}
   visual: {fileID: 5317202781068630853}
@@ -226,10 +227,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f729d1dfa72248641971dc54f0eca573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 8
+  maxHealth: 0
+  currentHealth: 0
+  isDead: 0
+  vertigoTimeLength: 5
+  vertigoTimeLeft: 0
+  vertigoSpeedreductionPercent: -50
+  vertigo: 0
+  intensity: 0
+  intensityDecayPerSecond: 1
+  intensityTimer: 0
+  maxSpeedDefault: 0
+  maxSpeed: {fileID: 0}
   accelerationTime: 0.3
   decelerationTime: 0.3
-  canUseSlopes: 1
+  canUseSlopesDefault: 0
+  canUseSlopes: {fileID: 0}
   maxExtraJumps: 1
   maxJumpHeight: 3.5
   minJumpHeight: 0.2
@@ -255,6 +268,9 @@ MonoBehaviour:
   ladderDecelerationTime: 0.1
   ladderJumpHeight: 1
   ladderJumpSpeed: 10
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  currentColor: {r: 1, g: 1, b: 1, a: 1}
+  vertigoColor: {r: 0.60812366, g: 0.32894266, b: 0.9056604, a: 1}
 --- !u!114 &1882247456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   softRespawnDelay: 0.5
   softRespawnDuration: 0.5
+  musicLoopHandler: {fileID: 0}
 --- !u!114 &7873687843582337556
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class PhysicsConfig : MonoBehaviour {
     public LayerMask groundMask;
     [Tooltip("Which layers are considered one way platforms")]
     public LayerMask owPlatformMask;
+    [Tooltip("Which layers are considered passengers for platforms")]
+    public LayerMask passengerMask;
     [Tooltip("Which layers are considered ladders")]
     public LayerMask ladderMask;
     [Tooltip("Which layers are considered characters")]
