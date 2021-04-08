@@ -25,10 +25,6 @@ public class CharacterController2D : ObjectController2D {
     private Animator animator;
     [SerializeField]
     private SpriteRenderer visual;
-    [SerializeField]
-    private Color defaultColor;
-    [SerializeField]
-    private Color vertigoColor;
 
     // Physics properties
     private float ignoreLaddersTime = 0;
@@ -75,18 +71,8 @@ public class CharacterController2D : ObjectController2D {
         Move((TotalSpeed) * Time.fixedDeltaTime);
         PostMove();
         SetAnimations();
-    }
 
-    public void setVertigo(bool vertigo) {
-        if(vertigo) {
-            visual.color = vertigoColor;
-            cData.maxSpeed = cData.veritgoMaxSpeed;
-            cData.canUseSlopes = false;
-        } else {
-            visual.color = defaultColor;
-            cData.maxSpeed = cData.defaultMaxSpeed;
-            cData.canUseSlopes = true;
-        }
+        visual.color = cData.currentColor;
     }
 
     /*-------------------------*/
@@ -103,7 +89,7 @@ public class CharacterController2D : ObjectController2D {
         float xDir = Mathf.Sign(deltaMove.x);
         if (deltaMove.x != 0) {
             // Slope checks and processing
-            if (deltaMove.y <= 0 && cData.canUseSlopes) {
+            if (deltaMove.y <= 0 && cData.canUseSlopes.finalValue) {
                 if (collisions.onSlope) {
                     if (collisions.groundDirection == xDir) {
                         if ((!Dashing && airStaggerTime <= 0) || cData.dashDownSlopes) {
@@ -338,21 +324,21 @@ public class CharacterController2D : ObjectController2D {
             }
             if (acc > 0) {
                 if(externalForce.x != 0 && Mathf.Sign(externalForce.x) != Mathf.Sign(direction)) {
-                    externalForce.x += direction * (1 / acc) * cData.maxSpeed * Time.fixedDeltaTime;
-                } else {
-                    if (Mathf.Abs(speed.x) < cData.maxSpeed) {
-                        speed.x += direction * (1 / acc) * cData.maxSpeed * Time.fixedDeltaTime;
-                        speed.x = Mathf.Min(Mathf.Abs(speed.x), cData.maxSpeed * Mathf.Abs(direction)) *
+                    externalForce.x += direction * (1 / acc) * cData.maxSpeed.finalValue * Time.fixedDeltaTime;
+                } else if (direction != 0 && (speed.x == 0 || Mathf.Sign(direction) == Mathf.Sign(speed.x))) {
+                    if (Mathf.Abs(speed.x) < cData.maxSpeed.finalValue) {
+                        speed.x += direction * (1 / acc) * cData.maxSpeed.finalValue * Time.fixedDeltaTime;
+                        speed.x = Mathf.Min(Mathf.Abs(speed.x), cData.maxSpeed.finalValue * Mathf.Abs(direction)) *
                             Mathf.Sign(speed.x);
                     }
                 }
                 
             } else {
-                speed.x = cData.maxSpeed * direction;
+                speed.x = cData.maxSpeed.finalValue * direction;
             }
             if (direction == 0 || Mathf.Sign(direction) != Mathf.Sign(speed.x)) {
                 if (dec > 0) {
-                    speed.x = Mathf.MoveTowards(speed.x, 0, (1 / dec) * cData.maxSpeed * Time.fixedDeltaTime);
+                    speed.x = Mathf.MoveTowards(speed.x, 0, (1 / dec) * cData.maxSpeed.finalValue * Time.fixedDeltaTime);
                 } else {
                     speed.x = 0;
                 }
@@ -405,7 +391,7 @@ public class CharacterController2D : ObjectController2D {
                 // slope sliding jump
                 if (collisions.onSlope && collisions.groundAngle > maxSlopeAngle &&
                     collisions.groundAngle < minWallAngle) {
-                    speed.x = cData.maxSpeed * collisions.groundDirection;
+                    speed.x = cData.maxSpeed.finalValue * collisions.groundDirection;
                 }
                 ignorePlatformsTime = 0;
 

@@ -15,6 +15,10 @@ public class SetTimeLeftText : MonoBehaviour
     }
     void Update()
     {
-        text.text = levelTimer.getLevelTimeLeft().ToString("0.00");
+        if (levelTimer == null) {
+            levelTimer = FindObjectOfType<LevelTimer>();
+        } else {
+            text.text = levelTimer.getLevelTimeLeft().ToString("0.00");
+        }
     }
 }

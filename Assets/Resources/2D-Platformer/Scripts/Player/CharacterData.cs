@@ -10,13 +10,26 @@ using UnityEngine;
 public class CharacterData : MonoBehaviour {
 
     // Character's attibrutes
+    [Header("Health")]
+    public float maxHealth;
+    public float currentHealth;
+    public bool isDead;
+    [Header("Vertigo")]
+    public float vertigoTimeLength = 5f;
+    public float vertigoTimeLeft = 0f;
+    public float vertigoSpeedreductionPercent = -50f;
+    public bool vertigo = false;
+    [Header("Intensity")]
+    public float intensity = 0f;
+    public float intensityDecayPerSecond = 1f;
+    public float intensityTimer = 0f;
     [Header("Movement")]
-    public float defaultMaxSpeed;
-    public float veritgoMaxSpeed;
-    public float maxSpeed;
+    public float maxSpeedDefault;
+    public CharacterFloatStat maxSpeed;
     public float accelerationTime;
     public float decelerationTime;
-    public bool canUseSlopes;
+    public bool canUseSlopesDefault;
+    public CharacterBoolStat canUseSlopes;
     [Header("Jumping")]
     public int maxExtraJumps;
     public float maxJumpHeight;
@@ -46,4 +59,49 @@ public class CharacterData : MonoBehaviour {
     public float ladderDecelerationTime;
     public float ladderJumpHeight;
     public float ladderJumpSpeed;
+    [Header("Color")]
+    public Color defaultColor;
+    public Color currentColor;
+    public Color vertigoColor;
+
+
+    //Managers
+    List<CharacterFloatStat> floats = new List<CharacterFloatStat>();
+    List<CharacterBoolStat> bools = new List<CharacterBoolStat>();
+    public void Awake()
+    {
+        maxSpeed = new CharacterFloatStat(maxSpeedDefault);
+        floats.Add(maxSpeed);
+        canUseSlopes = new CharacterBoolStat(canUseSlopesDefault);
+        bools.Add(canUseSlopes);
+    }
+
+    public void Update()
+    {
+       if(vertigo && vertigoTimeLeft > 0) {
+            vertigoTimeLeft -= Time.deltaTime;
+        } else if(vertigo && vertigoTimeLeft <= 0) {
+            vertigo = false;
+            disableVertigo();
+        }
+    }
+
+    public void enableVertigo() {
+        CharacterFloatModifier mod = new CharacterFloatModifier("Vertigo",
+                CharacterFloatModifier.FloatModifierType.Percent,
+                vertigoSpeedreductionPercent, vertigoTimeLength);
+        maxSpeed.addModifier(mod);
+        currentColor = vertigoColor;
+        canUseSlopes.modValue(false);
+        vertigoTimeLeft = vertigoTimeLength;
+        vertigo = true;
+    }
+
+    public void disableVertigo()
+    {
+        maxSpeed.removeByName("Vertigo");
+        currentColor = defaultColor;
+        canUseSlopes.modValue(true);
+        vertigo = false;
+    }
 }

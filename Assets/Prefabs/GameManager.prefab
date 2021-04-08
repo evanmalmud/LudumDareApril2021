@@ -81,8 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb37de9639afff3428bcc41424f05ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixelCircles: []
-  fmodEvent: event:/Callback Testing
+  fmodEvent: event:/Loop Music AKT TAKE2
   levelTimer: {fileID: 7092281384767603438}
   playerController: {fileID: 0}
   loopListening: 0
