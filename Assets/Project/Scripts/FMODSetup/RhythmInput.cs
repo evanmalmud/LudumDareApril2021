@@ -22,9 +22,10 @@ public class RhythmInput : MonoBehaviour
         controls = new InputMaster();
         controls.Rhythm.Aim.performed += ctx => mouse(ctx.ReadValue<Vector2>());
         controls.Rhythm.Mousebutton.started += mousebutton;
-        InputAction myAction = new InputAction(binding: "/<Keyboard>/<button>");
-        myAction.performed += keyboardPress;
-        myAction.Enable();
+        controls.Rhythm.Enable();
+        //InputAction myAction = new InputAction(binding: "/<Keyboard>/<button>");
+        //myAction.performed += keyboardPress;
+        //myAction.Enable();
 
         spotLight2d = spotLight.GetComponent<Light2D>();
     }
@@ -32,7 +33,9 @@ public class RhythmInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("test");
+        if(Keyboard.current.anyKey.wasPressedThisFrame) {
+            checkForKeyPressesThisFrame();
+        }
     }
 
     private void mouse(Vector2 aim)
@@ -41,31 +44,30 @@ public class RhythmInput : MonoBehaviour
         spotLight.transform.position = newPos;
     }
 
-    private void keyboardPress(InputAction.CallbackContext context)
-    {
-        //Debug.Log("Keyboard " + context.control.name);
-        if(expectedButtons.Contains(context.control.name.ToUpper())) {
-            Debug.Log("WE MATCHED A NOTE!");
-            expectedButtons.Remove(context.control.name.ToUpper());
-        }
-    }
-
     private void mousebutton(InputAction.CallbackContext context)
     {
         spotlightEnabled = !spotlightEnabled;
         spotLight2d.enabled = spotlightEnabled;
     }
 
-    void OnEnable()
-    {
-        controls.Rhythm.Enable();
-    }
-
-    /// <summary>
-    /// This function is called when the behaviour becomes disabled or inactive.
-    /// </summary>
     void OnDisable()
     {
         controls.Rhythm.Disable();
+    }
+
+    void checkForKeyPressesThisFrame() {
+        checkKey(Key.A);
+        checkKey(Key.B);
+        checkKey(Key.C);
+    }
+
+    void checkKey(Key key) {
+        if (Keyboard.current[key].wasPressedThisFrame) {
+            Debug.Log("Pressed " + key.ToString().ToUpper() + " " + Time.time);
+            if (expectedButtons.Contains(key.ToString().ToUpper())) {
+                Debug.Log("WE MATCHED A NOTE!");
+                expectedButtons.Remove(key.ToString().ToUpper());
+            }
+        }
     }
 }

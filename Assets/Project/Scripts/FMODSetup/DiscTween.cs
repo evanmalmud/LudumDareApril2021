@@ -53,7 +53,7 @@ public class DiscTween : MonoBehaviour
 
     public void startTween(float startValue, float countDownTime, RhythmInput rhythmInput, float preInputTime, float postInputTime, string keyName)
     {
-        //Debug.Log("startTween " + keyName + " " + Time.time);
+        Debug.Log("startTween " + keyName + " " + Time.time);
         this.startValue = startValue;
         this.preInputTime = preInputTime;
         this.postInputTime = postInputTime;
@@ -67,7 +67,7 @@ public class DiscTween : MonoBehaviour
 
     public void tweenCompleted() {
         rhythmInput.expectedButtons.Remove(keyName);
-        //Debug.Log("Removing " + keyName + " " + Time.time);
+        Debug.Log("Removing " + keyName + " " + Time.time);
         Destroy(this.gameObject);
     }
 }
