@@ -55,9 +55,10 @@ public class JsonRhythm : MonoBehaviour
 
     public bool logTime = false;
 
-
+    private RhythmInput rhythmInput;
     private void Awake()
     {
+        rhythmInput = GetComponent<RhythmInput>();
         coreSystem = FMODUnity.RuntimeManager.CoreSystem;
         coreSystem.getMasterChannelGroup(out channelGroup);
         coreSystem.getSoftwareFormat(out sampleRate, out speakerMode, out numRawSpeakers);
@@ -110,21 +111,21 @@ public class JsonRhythm : MonoBehaviour
             }
             currentUnityTime += Time.deltaTime;
             if (IsApproximatelyEqualTo(dspClockTime,currentUnityTime)) {
-               Debug.Log("Clocks are approximately the same");
+               //Debug.Log("Clocks are approximately the same");
             } else {
-                Debug.Log("Clocks are offset");
+                //Debug.Log("Clocks are offset");
                 //Debug.Log("Clocks are offset DSP: " + dspClockTime + " Unity: " + currentUnityTime);
                 currentUnityTime = dspClockTime;
             }
             //Debug.Log(currentUnityTime);
             if (queueMarkers.Count > 0) {
-                Debug.Log("Peek: " + queueMarkers.Peek().name + " " + queueMarkers.Peek().position);
+                //Debug.Log("Peek: " + queueMarkers.Peek().name + " " + queueMarkers.Peek().position);
                 if((currentUnityTime - dspaudioOffset) > (queueMarkers.Peek().position - pixelcirlceOffsetTime) ||
                     IsApproximatelyEqualTo(currentUnityTime - dspaudioOffset, queueMarkers.Peek().position - pixelcirlceOffsetTime)) {
                     {
                         PixelCircleCloser pcc;
                         if(pixelCircles.TryGetValue(queueMarkers.Peek().name, out pcc)) {
-                            pcc.startTween(this);
+                            pcc.startTween(rhythmInput);
                         }
                         queueMarkers.Dequeue();
                     }

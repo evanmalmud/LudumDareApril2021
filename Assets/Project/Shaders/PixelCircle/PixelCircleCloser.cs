@@ -8,38 +8,28 @@ public class PixelCircleCloser : MonoBehaviour
 
     public string markerName;
 
-    Shapes.Disc disc;
+    public string keyName;
+
+    public GameObject shapePrefab;
 
     public float startValue = 4f;
 
     public float countDownTime = .5f;
 
-    public float currentValue = 0f;
+    public float preInputTime = .1f;
 
-    public bool ran = false;
+    public float postInputTime = .1f;
 
-    private JsonRhythm jsonRhythm;
+    public float videoaudiobuffer = .1f;
 
-    private void Awake()
+    public void startTween(RhythmInput rhythmInput)
     {
-        disc = GetComponent<Shapes.Disc>();
-        disc.Radius = 0f;
-    }
-    public void startTween(JsonRhythm jsonRhythm)
-    {
-        Debug.Log(markerName + " StartTime " + jsonRhythm.currentUnityTime);
-        DOTween.To(x => currentValue = x, startValue, 0, countDownTime).OnComplete(OnComplete).Play();
-        ran = true;
-        this.jsonRhythm = jsonRhythm;
+        GameObject go = Instantiate(shapePrefab, transform);
+        go.GetComponent<DiscTween>().startTween(startValue, countDownTime + videoaudiobuffer, rhythmInput, preInputTime, postInputTime, keyName);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDrawGizmos()
     {
-        disc.Radius = currentValue;
-    }
-
-    void OnComplete() {
-        Debug.Log(markerName + " EndTime " + jsonRhythm.currentUnityTime);
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.back, startValue);
     }
 }

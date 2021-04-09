@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Resources/2D-Platformer/Input/InputMaster.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Input/InputMaster.inputactions'
 
 using System;
 using System.Collections;
@@ -369,6 +369,63 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Rhythm"",
+            ""id"": ""8ec9b4bd-96e9-4f23-addf-f20aee5e6800"",
+            ""actions"": [
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""a7f5e0c3-759e-4811-a5dd-c3f5ffbcc187"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Mousebutton"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c2f5437-6663-4d6b-bf9c-44bfc4c3b9b3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""a94aea73-a3a1-4122-8f51-4c1e1ef0b6f8"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4edd25b-c0c7-48bf-8caa-7fec1951b5c6"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2383831-7334-406f-bc50-82f6470427ed"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Mousebutton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -403,6 +460,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_AttackA = m_Player.FindAction("Attack A", throwIfNotFound: true);
+        // Rhythm
+        m_Rhythm = asset.FindActionMap("Rhythm", throwIfNotFound: true);
+        m_Rhythm_Aim = m_Rhythm.FindAction("Aim", throwIfNotFound: true);
+        m_Rhythm_Mousebutton = m_Rhythm.FindAction("Mousebutton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -513,6 +574,47 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Rhythm
+    private readonly InputActionMap m_Rhythm;
+    private IRhythmActions m_RhythmActionsCallbackInterface;
+    private readonly InputAction m_Rhythm_Aim;
+    private readonly InputAction m_Rhythm_Mousebutton;
+    public struct RhythmActions
+    {
+        private @InputMaster m_Wrapper;
+        public RhythmActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Aim => m_Wrapper.m_Rhythm_Aim;
+        public InputAction @Mousebutton => m_Wrapper.m_Rhythm_Mousebutton;
+        public InputActionMap Get() { return m_Wrapper.m_Rhythm; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RhythmActions set) { return set.Get(); }
+        public void SetCallbacks(IRhythmActions instance)
+        {
+            if (m_Wrapper.m_RhythmActionsCallbackInterface != null)
+            {
+                @Aim.started -= m_Wrapper.m_RhythmActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_RhythmActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_RhythmActionsCallbackInterface.OnAim;
+                @Mousebutton.started -= m_Wrapper.m_RhythmActionsCallbackInterface.OnMousebutton;
+                @Mousebutton.performed -= m_Wrapper.m_RhythmActionsCallbackInterface.OnMousebutton;
+                @Mousebutton.canceled -= m_Wrapper.m_RhythmActionsCallbackInterface.OnMousebutton;
+            }
+            m_Wrapper.m_RhythmActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
+                @Mousebutton.started += instance.OnMousebutton;
+                @Mousebutton.performed += instance.OnMousebutton;
+                @Mousebutton.canceled += instance.OnMousebutton;
+            }
+        }
+    }
+    public RhythmActions @Rhythm => new RhythmActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -538,5 +640,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnAttackA(InputAction.CallbackContext context);
+    }
+    public interface IRhythmActions
+    {
+        void OnAim(InputAction.CallbackContext context);
+        void OnMousebutton(InputAction.CallbackContext context);
     }
 }

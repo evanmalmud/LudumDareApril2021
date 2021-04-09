@@ -205,7 +205,7 @@ MonoBehaviour:
   HasSourceProject: 1
   HasPlatforms: 1
   sourceProjectPath: FMod Project/LudumDareApril2021/LudumDareApril2021.fspro
-  sourceBankPath: FMod Project/LudumDareApril2021/Build
+  sourceBankPath: FMod Project\LudumDareApril2021\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -320,10 +320,10 @@ MonoBehaviour:
       Value: 1
       HasValue: 1
     LiveUpdatePort:
-      Value: 0
-      HasValue: 0
+      Value: 9264
+      HasValue: 1
     Overlay:
-      Value: 1
+      Value: 0
       HasValue: 1
     Logging:
       Value: 0
