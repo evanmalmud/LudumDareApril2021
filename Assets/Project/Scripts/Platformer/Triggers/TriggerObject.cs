@@ -31,7 +31,9 @@ public class TriggerObject : MonoBehaviour {
     /// </summary>
     void Start() {
         animator = GetComponent<Animator>();
-        instance = FMODUnity.RuntimeManager.CreateInstance(eventref);
+        if(!eventref.Equals("")) {
+            instance = FMODUnity.RuntimeManager.CreateInstance(eventref);
+        }
     }
 
     /// <summary>
