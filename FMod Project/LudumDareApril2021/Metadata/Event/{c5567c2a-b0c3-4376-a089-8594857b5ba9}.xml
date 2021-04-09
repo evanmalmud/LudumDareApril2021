@@ -59,6 +59,7 @@
 		<relationship name="automationTracks">
 			<destination>{d499090c-0b05-42bb-a8de-53610acf4e87}</destination>
 			<destination>{7f9331ab-57dd-441e-831e-b579c3fbe083}</destination>
+			<destination>{2f44b681-16b0-4cb8-b127-a4e9af2a4c63}</destination>
 		</relationship>
 		<relationship name="modules">
 			<destination>{6390d71c-0a85-4dc0-a56e-deb2ce89aea9}</destination>
@@ -252,6 +253,11 @@
 	<object class="AutomationTrack" id="{7f9331ab-57dd-441e-831e-b579c3fbe083}">
 		<relationship name="automator">
 			<destination>{1989a095-1ac2-4d30-98f5-08f5fc9643d6}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationTrack" id="{2f44b681-16b0-4cb8-b127-a4e9af2a4c63}">
+		<relationship name="automator">
+			<destination>{21a4f030-774e-4656-8827-17b681a4c854}</destination>
 		</relationship>
 	</object>
 	<object class="TransitionSourceSound" id="{6390d71c-0a85-4dc0-a56e-deb2ce89aea9}">
@@ -922,6 +928,7 @@
 			<destination>{36459e63-8f15-4cbe-a3c3-7a5e9cd28cb5}</destination>
 			<destination>{07ce9b56-9f38-4b62-a791-bb6fc9dfac02}</destination>
 			<destination>{9f71e4fa-f24b-4bab-bd37-a343ffb321c6}</destination>
+			<destination>{ad56dfe9-ba7c-461b-b82b-f9f4fbaba528}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a9fbc65a-a4de-4108-a542-24f92f6f78bd}" />
@@ -1121,6 +1128,11 @@
 			<destination>{e5993ceb-3033-46d4-b232-0a4b74d471e5}</destination>
 		</relationship>
 	</object>
+	<object class="LowpassEffect" id="{ad56dfe9-ba7c-461b-b82b-f9f4fbaba528}">
+		<relationship name="automators">
+			<destination>{21a4f030-774e-4656-8827-17b681a4c854}</destination>
+		</relationship>
+	</object>
 	<object class="AutomationPoint" id="{79299e47-641e-4ff3-968a-f1516b518478}">
 		<property name="position">
 			<value>0</value>
@@ -1283,6 +1295,14 @@
 			<destination>{15887094-3590-4bf5-aed5-3d8c371f8ea9}</destination>
 		</relationship>
 	</object>
+	<object class="Automator" id="{21a4f030-774e-4656-8827-17b681a4c854}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cutoff</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{3d49332c-96a0-4e97-81cb-e87405c6f249}</destination>
+		</relationship>
+	</object>
 	<object class="Automator" id="{1989a095-1ac2-4d30-98f5-08f5fc9643d6}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>depth</value>
@@ -1297,6 +1317,16 @@
 		</property>
 		<relationship name="automationCurves">
 			<destination>{f0c80491-8c81-446d-a903-74bfcb787441}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{3d49332c-96a0-4e97-81cb-e87405c6f249}">
+		<relationship name="parameter">
+			<destination>{e7ea205f-93d8-4e04-a72c-cf6e15834bd7}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{45f05e71-a323-447f-9fd4-2dc8a0edfcd8}</destination>
+			<destination>{9ad09f1b-f395-4438-9d80-7c67e92c4c7b}</destination>
+			<destination>{e57b3b9e-18b8-4412-b431-e4959b9bad59}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationCurve" id="{292138a5-3ab6-4275-8d90-71034b107bf0}">
@@ -1316,6 +1346,30 @@
 			<destination>{8d23d6bc-8ef0-4bf5-8e72-294dd2bd26b4}</destination>
 			<destination>{4f927c50-cc98-4fd3-bb5b-3c12f92bb285}</destination>
 		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{45f05e71-a323-447f-9fd4-2dc8a0edfcd8}">
+		<property name="position">
+			<value>15</value>
+		</property>
+		<property name="value">
+			<value>22000</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{9ad09f1b-f395-4438-9d80-7c67e92c4c7b}">
+		<property name="position">
+			<value>10</value>
+		</property>
+		<property name="value">
+			<value>2800</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{e57b3b9e-18b8-4412-b431-e4959b9bad59}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>600</value>
+		</property>
 	</object>
 	<object class="AutomationPoint" id="{0ed0261e-0faf-4d6e-b398-8921ac314c09}">
 		<property name="position">
