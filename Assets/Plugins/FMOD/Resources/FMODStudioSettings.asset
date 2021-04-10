@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1942179555914374601
+--- !u!114 &-3714223905990187449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19,37 +19,37 @@ MonoBehaviour:
   Properties:
     LiveUpdate:
       Value: 0
-      HasValue: 1
+      HasValue: 0
     LiveUpdatePort:
       Value: 9264
       HasValue: 1
     Overlay:
       Value: 0
-      HasValue: 1
+      HasValue: 0
     Logging:
       Value: 0
       HasValue: 0
     SampleRate:
       Value: 0
-      HasValue: 1
+      HasValue: 0
     BuildDirectory:
-      Value: Desktop
-      HasValue: 1
+      Value: 
+      HasValue: 0
     SpeakerMode:
-      Value: 6
-      HasValue: 1
+      Value: 0
+      HasValue: 0
     VirtualChannelCount:
-      Value: 128
-      HasValue: 1
+      Value: 0
+      HasValue: 0
     RealChannelCount:
-      Value: 32
-      HasValue: 1
+      Value: 0
+      HasValue: 0
     DSPBufferLength:
       Value: 0
-      HasValue: 1
+      HasValue: 0
     DSPBufferCount:
       Value: 0
-      HasValue: 1
+      HasValue: 0
     Plugins:
       Value: []
       HasValue: 1
@@ -58,7 +58,7 @@ MonoBehaviour:
       HasValue: 1
     CallbackHandler:
       Value: {fileID: 0}
-      HasValue: 1
+      HasValue: 0
   outputType: 
   threadAffinities:
     Value: []
@@ -224,8 +224,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Loop Music Bank
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

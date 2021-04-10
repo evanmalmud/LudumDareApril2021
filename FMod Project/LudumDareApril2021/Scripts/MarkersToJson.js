@@ -16,8 +16,8 @@ studio.menu.addMenuItem({
             track.markers.forEach(function(marker) {
                 if(marker.entity === "NamedMarker") {
                     song_markers.push({
-                        position: marker.position,
-                        name: marker.name
+                        startPosition: marker.position,
+                        markerName: marker.name
                     })
                 }
             })

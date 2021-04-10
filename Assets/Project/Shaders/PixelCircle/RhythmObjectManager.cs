@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PixelCircleCloser : MonoBehaviour
+public class RhythmObjectManager : MonoBehaviour
 {
 
     public string markerName;
+
+    public string endName;
 
     public string keyName;
 
@@ -22,7 +24,7 @@ public class PixelCircleCloser : MonoBehaviour
 
     public float videoaudiobuffer = .1f;
 
-    public void startTween(RhythmInput rhythmInput)
+    public void startRhythm(RhythmInput rhythmInput)
     {
         GameObject go = Instantiate(shapePrefab, transform);
         go.GetComponent<DiscTween>().startTween(startValue, countDownTime + videoaudiobuffer, rhythmInput, preInputTime, postInputTime, keyName);
@@ -31,5 +33,9 @@ public class PixelCircleCloser : MonoBehaviour
     public void OnDrawGizmos()
     {
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.back, startValue);
+    }
+
+    public void endRhythm() {
+        
     }
 }

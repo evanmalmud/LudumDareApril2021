@@ -20,7 +20,7 @@ public class RhythemExp2 : MonoBehaviour {
         public float silentStartTime = 0f;
     }
 
-    public List<PixelCircleCloser> pixelCircles;
+    public List<RhythmObjectManager> pixelCircles;
 
     RythemTimeline timeline;
     GCHandle timelineHandle;
@@ -51,7 +51,7 @@ public class RhythemExp2 : MonoBehaviour {
     }
     public void startMusic()
     {
-        pixelCircles = new List<PixelCircleCloser>(FindObjectsOfType<PixelCircleCloser>());
+        pixelCircles = new List<RhythmObjectManager>(FindObjectsOfType<RhythmObjectManager>());
         loopPlaying = true;
         StartCoroutine("PlayFmodWithOffset");
     }

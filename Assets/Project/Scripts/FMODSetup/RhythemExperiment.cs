@@ -32,7 +32,7 @@ public class RhythemExperiment : MonoBehaviour {
         public String markerName;
     }
 
-    public List<PixelCircleCloser> pixelCircles;
+    public List<RhythmObjectManager> pixelCircles;
 
     public int positionBuffer = 50;
 
@@ -82,7 +82,7 @@ public class RhythemExperiment : MonoBehaviour {
 
         loopPlaying = true;
 
-        pixelCircles = new List<PixelCircleCloser>(FindObjectsOfType<PixelCircleCloser>());
+        pixelCircles = new List<RhythmObjectManager>(FindObjectsOfType<RhythmObjectManager>());
     }
 
     // Update is called once per frame
@@ -127,7 +127,7 @@ public class RhythemExperiment : MonoBehaviour {
             Debug.Log("Current Position - " + position);
             Debug.Log("StartPixelCircle for " + currentLoop.currentMarker.markerName + "  position " + position);
 
-            foreach (PixelCircleCloser pixelCircle in pixelCircles) {
+            foreach (RhythmObjectManager pixelCircle in pixelCircles) {
                 if (pixelCircle.name.Equals(currentLoop.currentMarker.markerName)) {
                     //pixelCircle.startTween();
                 }
