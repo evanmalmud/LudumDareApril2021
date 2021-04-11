@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class RhythmObjectManager : MonoBehaviour
 {
-
-    public string markerName;
-
-    public string endName;
-
     public string keyName;
 
     public GameObject shapePrefab;
@@ -24,7 +19,14 @@ public class RhythmObjectManager : MonoBehaviour
 
     public float videoaudiobuffer = .1f;
 
-    public void startRhythm(RhythmInput rhythmInput)
+    RhythmInput rhythmInput;
+
+    private void Start()
+    {
+        rhythmInput = FindObjectOfType<RhythmInput>();
+    }
+
+    public void markerRhythm(RhythmInput rhythmInput)
     {
         GameObject go = Instantiate(shapePrefab, transform);
         go.GetComponent<DiscTween>().startTween(startValue, countDownTime + videoaudiobuffer, rhythmInput, preInputTime, postInputTime, keyName);
@@ -35,7 +37,11 @@ public class RhythmObjectManager : MonoBehaviour
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.back, startValue);
     }
 
-    public void endRhythm() {
+    public void startRhythm() {
         
+    }
+
+    public void endRhythm() {
+            
     }
 }

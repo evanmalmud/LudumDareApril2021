@@ -2722,6 +2722,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1151338961, guid: dd4d1f3231a36b6429414f66e02d8080, type: 3}
+      propertyPath: spotLight
+      value: 
+      objectReference: {fileID: 1200767232}
+    - target: {fileID: 1151338961, guid: dd4d1f3231a36b6429414f66e02d8080, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1135730448}
     - target: {fileID: 1434656669348980232, guid: dd4d1f3231a36b6429414f66e02d8080,
         type: 3}
       propertyPath: m_Name
@@ -2782,8 +2790,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1755922711839425445, guid: dd4d1f3231a36b6429414f66e02d8080, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4d1f3231a36b6429414f66e02d8080, type: 3}
 --- !u!1 &769631136
 GameObject:
@@ -4680,51 +4687,6 @@ Transform:
   m_Father: {fileID: 7696487168625175977}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1151338954 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1434656669348980232, guid: dd4d1f3231a36b6429414f66e02d8080,
-    type: 3}
-  m_PrefabInstance: {fileID: 725523712}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1151338955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151338954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0b2aa454352b24aa25768d78665034, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  callbackJson: Assets/Project/Rhythm Experiments/RhythmTesting.json
-  callbackMarkers:
-    markers: []
-  toBeQueued: []
-  fmodEvent: event:/RhythmTesting
-  currentUnityTime: 0
-  dspaudioOffset: 0
-  loopPlaying: 0
-  startMusicbool: 0
-  pixelcirlceOffsetTime: 0.5
-  logTime: 0
---- !u!114 &1151338961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151338954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab873b8e698c74b4cae2fc984fcc4be7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1135730448}
-  spotLight: {fileID: 1200767232}
-  spotlightEnabled: 0
-  expectedButtons: []
 --- !u!1 &1182421312
 GameObject:
   m_ObjectHideFlags: 0

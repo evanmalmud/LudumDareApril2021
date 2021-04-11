@@ -183,7 +183,7 @@ public class JsonRhythm : MonoBehaviour
                     {
                         RhythmObjectManager pcc;
                         if(pixelCircles.TryGetValue(queueMarkers.Peek().getKeyName(), out pcc)) {
-                            pcc.startRhythm(rhythmInput);
+                            pcc.markerRhythm(rhythmInput);
                         }
                         queueMarkers.Dequeue();
                     }
