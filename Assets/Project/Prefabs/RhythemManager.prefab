@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1434656669348980235}
   - component: {fileID: 8179721046427904929}
   - component: {fileID: 8179721046427904928}
-  - component: {fileID: 1755922711839425445}
+  - component: {fileID: 1151338955}
+  - component: {fileID: 1151338961}
   m_Layer: 0
-  m_Name: GameManager 1
+  m_Name: RhythemManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22b2fc239b987a4286f6c870b8ca95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1755922711839425445
+--- !u!114 &1151338955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,12 +121,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1434656669348980232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf412b06be2cb1439cb529608d13276, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e0b2aa454352b24aa25768d78665034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixelCircles: []
-  positionBuffer: 50
-  fmodEvent: event:/Callback Testing
-  levelTimer: {fileID: 1434656669348980235}
-  loopListening: 0
-  playerListening: 0
+  callbackJson: Assets/Project/Rhythm Experiments/RhythmTesting.json
+  callbackMarkers:
+    markers: []
+  toBeQueued: []
+  fmodEvent: event:/RhythmTesting
+  currentUnityTime: 0
+  dspaudioOffset: 0
+  loopPlaying: 0
+  startMusicbool: 0
+  rhythmSettings:
+    animationCountdownTime: 0.5
+    preInputTime: 0.1
+    postInputTime: 0.1
+    videoaudiobuffer: 0.175
+  logTime: 0
+--- !u!114 &1151338961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434656669348980232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab873b8e698c74b4cae2fc984fcc4be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  spotLight: {fileID: 0}
+  spotlightEnabled: 0
+  expectedButtons: []

@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,23 +17,41 @@ public class JsonRhythm : MonoBehaviour
     [System.Serializable]
     public class Marker {
 
-        public string name;
-        public double position;
+        public string markerName;
+        public double startPosition;
+        public double endPosition;
+
+        public string getKeyName() {
+            return markerName.Replace(MARKER_PREFIX, "").Replace(END_PREFIX, "").Replace(START_PREFIX, "").Trim();
+        }
+
+        public static int SortByStartPosition(Marker p1, Marker p2)
+        {
+            return p1.startPosition.CompareTo(p2.startPosition);
+        }
     }
 
-    [SerializeField]
+    [FilePath]
     public string callbackJson;
 
     public CallbackMarkers callbackMarkers;
 
+    [SerializeField]
     public Queue<Marker> queueMarkers = new Queue<Marker>();
+    [SerializeField]
+    List<Marker> toBeQueued = new List<Marker>();
 
     // AUDIO VARS
     static FMOD.System coreSystem;
+
     FMOD.ChannelGroup channelGroup;
+
     int sampleRate, numRawSpeakers;
+
     FMOD.SPEAKERMODE speakerMode;
+
     double sampleRateDouble;
+
     private FMOD.Studio.EventInstance instance;
 
     [FMODUnity.EventRef]
@@ -45,13 +64,31 @@ public class JsonRhythm : MonoBehaviour
     public bool loopPlaying = false;
     public bool startMusicbool = false;
 
-    private const String MARKER_PREFIX = "Mark";
+    //Used for instant button presses. One shots
+    private const String MARKER_PREFIX = "Marker";
 
-    public double pixelcirlceOffsetTime = 0.5d;
+    // Used for Starts and ends of held beats.
+    private const String START_PREFIX = "Start";
+    private const String END_PREFIX = "End";
 
-    // Graphics 
+    [System.Serializable]
+    public class RhythmSettings {
+        [SerializeField]
+        public double animationCountdownTime = .5d;
+        [SerializeField]
+        public double preInputTime = .1d;
+        [SerializeField]
+        public double postInputTime = .1d;
+        [SerializeField]
+        public double videoaudiobuffer = .175d;
+    }
 
-    public Dictionary<String, PixelCircleCloser> pixelCircles = new Dictionary<string, PixelCircleCloser>();
+    [SerializeField]
+    public RhythmSettings rhythmSettings = new RhythmSettings();
+
+        // Graphics 
+
+    public Dictionary<String, RhythmObjectManager> pixelCircles = new Dictionary<string, RhythmObjectManager>();
 
     public bool logTime = false;
 
@@ -64,20 +101,41 @@ public class JsonRhythm : MonoBehaviour
         coreSystem.getSoftwareFormat(out sampleRate, out speakerMode, out numRawSpeakers);
         sampleRateDouble = Convert.ToDouble(sampleRate);
 
-        foreach(PixelCircleCloser pcc in FindObjectsOfType<PixelCircleCloser>()) {
-            pixelCircles.Add(pcc.markerName, pcc);
+        foreach(RhythmObjectManager pcc in FindObjectsOfType<RhythmObjectManager>()) {
+            pixelCircles.Add(pcc.keyName, pcc);
         }
 
         using (StreamReader stream = new StreamReader(callbackJson)) {
             string json = stream.ReadToEnd();
             callbackMarkers = JsonUtility.FromJson<CallbackMarkers>(json);
-            foreach(Marker marker in callbackMarkers.markers) {
-               // Debug.Log(marker.name + "  " + marker.position.ToString());
-                if(marker.name.StartsWith(MARKER_PREFIX)) {
-                    //Debug.Log("Before" + queueMarkers.Count);
-                    queueMarkers.Enqueue(marker);
-                    //Debug.Log("After" + queueMarkers.Count);
+            Dictionary<String, int> currentStartMarkersInQueue = new Dictionary<string, int>();
+            List<Marker> sortedListOfOrigionalMarkers = new List<Marker>();
+            sortedListOfOrigionalMarkers.AddRange(callbackMarkers.markers);
+            sortedListOfOrigionalMarkers.Sort(Marker.SortByStartPosition);
+            foreach (Marker marker in sortedListOfOrigionalMarkers) {
+                if(marker.markerName.StartsWith(MARKER_PREFIX)) {
+                    toBeQueued.Add(marker);
+                } else if (marker.markerName.StartsWith(START_PREFIX)) {
+                    //Add to queue and currentStartMarkersInQueue
+                    toBeQueued.Add(marker);
+                    if(currentStartMarkersInQueue.ContainsKey(marker.getKeyName())) {
+                        //If it already contains a startKey. Treat the first as a one shot marker
+                        currentStartMarkersInQueue.Remove(marker.getKeyName());
+                    }
+                    currentStartMarkersInQueue.Add(marker.getKeyName(), toBeQueued.IndexOf(marker));
+                } else if (marker.markerName.StartsWith(END_PREFIX)) {
+                    //Find in currentStartMarkersInQueue and update queue
+                    int index = -1;
+                    currentStartMarkersInQueue.TryGetValue(marker.getKeyName(), out index);
+                    if(index >= 0) {
+                        toBeQueued[index].endPosition = marker.startPosition;
+                        currentStartMarkersInQueue.Remove(marker.getKeyName());
+                    }
                 }
+            }
+            toBeQueued.Sort(Marker.SortByStartPosition);
+            foreach(Marker marker in toBeQueued) {
+                queueMarkers.Enqueue(marker);
             }
             //Debug.Log(queueMarkers.Count);
         }
@@ -120,12 +178,12 @@ public class JsonRhythm : MonoBehaviour
             //Debug.Log(currentUnityTime);
             if (queueMarkers.Count > 0) {
                 //Debug.Log("Peek: " + queueMarkers.Peek().name + " " + queueMarkers.Peek().position);
-                if((currentUnityTime - dspaudioOffset) > (queueMarkers.Peek().position - pixelcirlceOffsetTime) ||
-                    IsApproximatelyEqualTo(currentUnityTime - dspaudioOffset, queueMarkers.Peek().position - pixelcirlceOffsetTime)) {
+                if((currentUnityTime - dspaudioOffset) > (queueMarkers.Peek().startPosition - rhythmSettings.animationCountdownTime) ||
+                    IsApproximatelyEqualTo(currentUnityTime - dspaudioOffset, queueMarkers.Peek().startPosition - rhythmSettings.animationCountdownTime)) {
                     {
-                        PixelCircleCloser pcc;
-                        if(pixelCircles.TryGetValue(queueMarkers.Peek().name, out pcc)) {
-                            pcc.startTween(rhythmInput);
+                        RhythmObjectManager pcc;
+                        if(pixelCircles.TryGetValue(queueMarkers.Peek().getKeyName(), out pcc)) {
+                            pcc.markerRhythm(rhythmInput);
                         }
                         queueMarkers.Dequeue();
                     }
