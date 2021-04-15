@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{07750a54-503c-4f9e-ad75-f60fa8aff3ee}">
+	<object class="AudioFile" id="{4e2182f2-f7b4-4ad9-89bf-303c0e70fd8a}">
 		<property name="assetPath">
-			<value>damage.wav</value>
+			<value>jump_2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.33344671201814058</value>
+			<value>0.12412698412698413</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{d4a4b0c6-1026-41fe-90f4-ec0ca13cb779}</destination>
