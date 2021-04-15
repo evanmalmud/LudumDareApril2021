@@ -125,6 +125,9 @@
 		<property name="name">
 			<value>Crumble</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{46da2cea-71e8-472b-88e1-01266123c1b6}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{2708a702-1b44-454a-94d0-894913fff7f5}</destination>
 		</relationship>
@@ -137,5 +140,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{d8e9c5bf-d43a-4b58-aa0e-3e4d58e26c50}" />
 	<object class="MixerBusFader" id="{1b334590-c852-47ec-ab49-b1306ce1789e}" />
+	<object class="RandomizerModulator" id="{46da2cea-71e8-472b-88e1-01266123c1b6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{dc298d0c-43e6-4590-bef7-6800de86c339}" />
 </objects>
