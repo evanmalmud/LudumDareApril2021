@@ -221,6 +221,8 @@ MonoBehaviour:
   extraJumps: 0
   airDashes: 0
   jumpSFX: event:/LD48TEST_FX_OBJ_greenbumper
+  playerDamageSFX: event:/JSO_TEST_SFX/LD48TEST_JSO_sfx_plyr_damage
+  vertigoSFX: event:/JSO_TEST_SFX/LD48TEST_JSO_sfx_state_vertigo
 --- !u!114 &7737047858355556696
 MonoBehaviour:
   m_ObjectHideFlags: 0

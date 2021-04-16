@@ -132,3 +132,4 @@ MonoBehaviour:
   softRespawn: 1
   instantKill: 0
   causesVertigo: 0
+  playerCollisionSFX: event:/ZL_TEST_SFX/LD48TEST_ZLSFX_spike

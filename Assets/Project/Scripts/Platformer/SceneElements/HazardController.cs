@@ -19,6 +19,10 @@ public class HazardController : MonoBehaviour {
 
     private PhysicsConfig pConfig;
 
+    [FMODUnity.EventRef]
+    public string playerCollisionSFX = "";
+    FMOD.Studio.EventInstance instance;
+
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
@@ -29,6 +33,9 @@ public class HazardController : MonoBehaviour {
             pConfig = (PhysicsConfig) new GameObject().AddComponent(typeof(PhysicsConfig));
             pConfig.gameObject.name = "Physics Config";
             Debug.LogWarning("PhysicsConfig not found on the scene! Using default config.");
+        }
+        if (!playerCollisionSFX.Equals(null) && !playerCollisionSFX.Equals("")) {
+            instance = FMODUnity.RuntimeManager.CreateInstance(playerCollisionSFX);
         }
     }
 
@@ -57,6 +64,7 @@ public class HazardController : MonoBehaviour {
 
             if (player) {
                 player.removeHealth(damage);
+                instance.start();
 
                 if(causesVertigo) {
                     player.setVertigo(true);

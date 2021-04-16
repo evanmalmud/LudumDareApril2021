@@ -164,3 +164,4 @@ MonoBehaviour:
   softRespawn: 0
   instantKill: 0
   causesVertigo: 1
+  playerCollisionSFX: event:/JSO_TEST_SFX/LD48TEST_JSO_sfx_plyr_damage

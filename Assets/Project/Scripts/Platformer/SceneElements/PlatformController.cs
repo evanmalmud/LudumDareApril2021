@@ -25,6 +25,9 @@ public class PlatformController : RaycastController {
     public float currentRestoreTime = 0;
     public bool crumbled = false;
     public bool crumbling = false;
+    [FMODUnity.EventRef]
+    public string crumblingSFX = "";
+    FMOD.Studio.EventInstance instance;
 
     public List<PassengerMovement> passengerMovement;
     public Dictionary<Transform, ObjectController2D> passengerDictionary = new Dictionary<Transform, ObjectController2D>();
@@ -50,6 +53,9 @@ public class PlatformController : RaycastController {
             pConfig = (PhysicsConfig)new GameObject().AddComponent(typeof(PhysicsConfig));
             pConfig.gameObject.name = "Physics Config";
             Debug.LogWarning("PhysicsConfig not found on the scene! Using default config.");
+        }
+        if (!crumblingSFX.Equals(null) && !crumblingSFX.Equals("")) {
+            instance = FMODUnity.RuntimeManager.CreateInstance(crumblingSFX);
         }
     }
 
@@ -81,6 +87,7 @@ public class PlatformController : RaycastController {
                     currentCrumbleTime -= Time.deltaTime;
                 } else if (currentCrumbleTime <= 0) {
                     crumbled = true;
+                    instance.start();
                     crumbling = false;
                     animator.SetTrigger(ANIMATION_CRUMBLE);
                     myCollider.enabled = false;

@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bef86a920596124d96eafaa6a514a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventref: event:/Jump
+  switchInteraction: event:/JSO_TEST_SFX/LD48TEST_JSO_sfx_obj_switch
   oneShot: 0
 --- !u!114 &8399813149739019645
 MonoBehaviour:

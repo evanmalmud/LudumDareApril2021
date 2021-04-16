@@ -46,15 +46,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa6e08aa00fa3c4cbb43083e207ed3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalRayCount: 0
+  verticalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  boxCollider: {fileID: 0}
   currentWaypoint: {fileID: 0}
   maxSpeed: 0
   accelerationDistance: 0
   decelerationDistance: 0
   waitTime: 0
+  speed: {x: 0, y: 0}
   crumbleTime: 1
   restoreTime: 3
   onlyPlayerCrumble: 0
-  speed: {x: 0, y: 0}
+  currentWaitTime: 0
+  currentCrumbleTime: 0
+  currentRestoreTime: 0
+  crumbled: 0
+  crumbling: 0
+  crumblingSFX: event:/ZL_TEST_SFX/LD48TEST_ZLSFX_crumble
 --- !u!61 &2386069649446541414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,9 +156,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -156,6 +173,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

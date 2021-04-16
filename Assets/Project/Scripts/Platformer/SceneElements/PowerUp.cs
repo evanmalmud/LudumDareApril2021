@@ -4,7 +4,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(AudioSource))]
 public class PowerUp : MonoBehaviour {
 
     public static readonly string ANIMATION_PICKUP = "pickup";
@@ -19,6 +18,10 @@ public class PowerUp : MonoBehaviour {
 
     private Animator animator;
 
+    [FMODUnity.EventRef]
+    public string powerUpSFX = "";
+    FMOD.Studio.EventInstance instance;
+
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
@@ -28,6 +31,9 @@ public class PowerUp : MonoBehaviour {
         foreach (var p in GetComponentsInChildren<ParticleSystem>()) {
             ParticleSystem.MainModule main = p.main;
             main.startColor = color;
+        }
+        if (!powerUpSFX.Equals(null) && !powerUpSFX.Equals("")) {
+            instance = FMODUnity.RuntimeManager.CreateInstance(powerUpSFX);
         }
     }
 
@@ -69,7 +75,7 @@ public class PowerUp : MonoBehaviour {
         main.startColor = color;
         powerUpParticles.Play();
         other.GetComponentInChildren<SpriteRenderer>().material.SetColor("_GlowColor", color);
-        GetComponent<AudioSource>().Play();
+        instance.start();
         Destroy(powerUpParticles.gameObject, destroyDelay);
         Destroy(gameObject, destroyDelay);
     }
