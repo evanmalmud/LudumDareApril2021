@@ -201,8 +201,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143e290df8864e94d94e55b4ab599a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raySpacing: 0.125
-  skinWidth: 0.015
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalRayCount: 0
+  verticalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  boxCollider: {fileID: 0}
   owPlatformDelay: 0.1
   ladderClimbThreshold: 0.3
   ladderDelay: 0.3
@@ -214,7 +220,7 @@ MonoBehaviour:
   visual: {fileID: 5317202781068630853}
   extraJumps: 0
   airDashes: 0
-  jumpSFX: event:/JSO_TEST_SFX/LD48TEST_JSO_FX_OBJ_jumppad_5
+  jumpSFX: event:/JSO_TEST_SFX/LD48TEST_JSO_sfx_plyr_multijump
 --- !u!114 &7737047858355556696
 MonoBehaviour:
   m_ObjectHideFlags: 0
