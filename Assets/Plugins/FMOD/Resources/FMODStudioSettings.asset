@@ -205,7 +205,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 1
   sourceProjectPath: FMod Project/LudumDareApril2021/LudumDareApril2021.fspro
-  sourceBankPath: FMod Project\LudumDareApril2021\Build
+  sourceBankPath: FMod Project/LudumDareApril2021/Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
