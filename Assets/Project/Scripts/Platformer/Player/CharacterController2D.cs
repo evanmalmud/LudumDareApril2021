@@ -41,6 +41,12 @@ public class CharacterController2D : ObjectController2D {
     [FMODUnity.EventRef]
     public string jumpSFX = "";
 
+    [FMODUnity.EventRef]
+    public string playerDamageSFX = "";
+
+    [FMODUnity.EventRef]
+    public string vertigoSFX = "";
+
     // Public propoerties
     public bool OnLadder { get; set; }
     public bool Stunned => stunTime > 0;

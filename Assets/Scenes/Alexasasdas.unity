@@ -734,7 +734,7 @@ PrefabInstance:
     - target: {fileID: 7018911988841287167, guid: 4fb49a1922deb8249bfdbba50d98dbf1,
         type: 3}
       propertyPath: jumpSFX
-      value: event:/JSO_TEST_SFX/LD48TEST_JSO_FX_OBJ_jumppad_3
+      value: event:/JSO_TEST_SFX/LD48TEST_JSO_FX_OBJ_jumppad_2
       objectReference: {fileID: 0}
     - target: {fileID: 7018911988841287167, guid: 4fb49a1922deb8249bfdbba50d98dbf1,
         type: 3}
@@ -819,7 +819,7 @@ PrefabInstance:
     - target: {fileID: 7737047858355556696, guid: 4fb49a1922deb8249bfdbba50d98dbf1,
         type: 3}
       propertyPath: currentHealth
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7737047858355556696, guid: 4fb49a1922deb8249bfdbba50d98dbf1,
         type: 3}

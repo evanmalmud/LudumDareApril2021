@@ -12,11 +12,20 @@ public class PickUpObject : InteractableObject {
 
     private Transform oldParent;
 
+    [FMODUnity.EventRef]
+    public string pickupSFX = "";
+
+    [FMODUnity.EventRef]
+    public string throwSFX = "";
+
     /// <summary>
     /// When interacted with, the object will attach itself to the character and disable its collisions
     /// </summary>
     /// <param name="_system">The character that interacted with this object</param>
     public override void Interact(InteractSystem _system) {
+        if(!pickupSFX.Equals(null) && !pickupSFX.Equals("")) {
+            FMODUnity.RuntimeManager.PlayOneShot(pickupSFX, transform.position);
+        }
         system = _system;
         system.PickedUpObject = this;
         transform.position = system.transform.position + (Vector3) system.pickupPositionOffset;
@@ -31,6 +40,9 @@ public class PickUpObject : InteractableObject {
     /// </summary>
     /// <param name="force">Force to be applied</param>
     public void Throw(Vector2 force) {
+        if (!throwSFX.Equals(null) && !throwSFX.Equals("")) {
+            FMODUnity.RuntimeManager.PlayOneShot(throwSFX, transform.position);
+        }
         Controller.enabled = true;
         GetComponent<Collider2D>().enabled = true;
         CharacterController2D character = system.GetComponent<CharacterController2D>();

@@ -154,6 +154,9 @@ public class PlayerController : MonoBehaviour {
 
     public void removeHealth(float removedHealth)
     {
+        if (!character.playerDamageSFX.Equals(null) && !character.playerDamageSFX.Equals("")) {
+            FMODUnity.RuntimeManager.PlayOneShot(character.playerDamageSFX, transform.position);
+        }
         addIntenstiy(removedHealth);
         cData.currentHealth -= removedHealth;
         if(cData.currentHealth <= 0) {
@@ -177,7 +180,12 @@ public class PlayerController : MonoBehaviour {
 
     public void setVertigo(bool vertigoSet)
     {
-        if(vertigoSet) {
+        if (vertigoSet) {
+            if (!cData.vertigo) {
+                if (!character.vertigoSFX.Equals(null) && !character.vertigoSFX.Equals("")) {
+                    FMODUnity.RuntimeManager.PlayOneShot(character.vertigoSFX, transform.position);
+                }
+            }
             cData.enableVertigo();
         } else {
             cData.disableVertigo();

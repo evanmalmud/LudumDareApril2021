@@ -10,7 +10,7 @@ public class TriggerObject : MonoBehaviour {
     public static readonly string ANIMATION_ACTIVE = "active";
 
     [FMODUnity.EventRef]
-    public string eventref = "";
+    public string switchInteraction = "";
 
     [Tooltip("If enabled, the trigger will stay active after triggered")]
     public bool oneShot;
@@ -31,8 +31,8 @@ public class TriggerObject : MonoBehaviour {
     /// </summary>
     void Start() {
         animator = GetComponent<Animator>();
-        if(!eventref.Equals("")) {
-            instance = FMODUnity.RuntimeManager.CreateInstance(eventref);
+        if(!switchInteraction.Equals(null) && !switchInteraction.Equals("")) {
+            instance = FMODUnity.RuntimeManager.CreateInstance(switchInteraction);
         }
     }
 
