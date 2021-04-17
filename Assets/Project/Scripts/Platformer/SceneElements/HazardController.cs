@@ -64,6 +64,8 @@ public class HazardController : MonoBehaviour {
 
             if (player) {
                 player.removeHealth(damage);
+                instance.release();
+                instance = FMODUnity.RuntimeManager.CreateInstance(playerCollisionSFX);
                 instance.start();
 
                 if(causesVertigo) {

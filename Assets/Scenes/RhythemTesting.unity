@@ -2730,6 +2730,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1135730448}
+    - target: {fileID: 1151338961, guid: dd4d1f3231a36b6429414f66e02d8080, type: 3}
+      propertyPath: absPositionChange
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1434656669348980232, guid: dd4d1f3231a36b6429414f66e02d8080,
         type: 3}
       propertyPath: m_Name

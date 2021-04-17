@@ -125,7 +125,8 @@ public class PlayerController : MonoBehaviour {
         cameraController.FadeIn();
         cData.isDead = false;
         cData.currentHealth = cData.maxHealth;
-        musicLoopHandler.restartMusic();
+        if(musicLoopHandler != null)
+            musicLoopHandler.restartMusic();
         character.Immobile = false;
     }
 

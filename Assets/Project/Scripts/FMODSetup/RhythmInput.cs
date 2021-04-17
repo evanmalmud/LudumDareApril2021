@@ -17,6 +17,15 @@ public class RhythmInput : MonoBehaviour
 
     public List<string> expectedButtons = new List<string>();
 
+    [FMODUnity.EventRef]
+    public string spotlightSFX = "";
+    FMOD.Studio.EventInstance instance;
+
+    public float absPositionChange = 5f;
+    //public float posChangeOverSeconds = .5f;
+    public float squakTimerDefault = 3f;
+    public float squakTimerCurrent = 0f;
+
     void Awake()
     {
         controls = new InputMaster();
@@ -30,9 +39,19 @@ public class RhythmInput : MonoBehaviour
         spotLight2d = spotLight.GetComponent<Light2D>();
     }
 
+    private void Start()
+    {
+        if (!spotlightSFX.Equals(null) && !spotlightSFX.Equals("")) {
+            instance = FMODUnity.RuntimeManager.CreateInstance(spotlightSFX);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(squakTimerCurrent > 0f) {
+            squakTimerCurrent -= Time.deltaTime;
+        }
         if(Keyboard.current.anyKey.wasPressedThisFrame) {
             checkForKeyPressesThisFrame();
         }
@@ -41,7 +60,14 @@ public class RhythmInput : MonoBehaviour
     private void mouse(Vector2 aim)
     {
         Vector2 newPos = mainCamera.ScreenToWorldPoint(aim);
+        Vector2 diff = (Vector2)spotLight.transform.position - newPos;
+        Debug.Log("MAG - " + diff.magnitude + " Vec2 " + diff);
+        if (diff.magnitude >= absPositionChange) {
+            instance.start();
+            Debug.Log("CHANGE OVER MAG");
+        }
         spotLight.transform.position = newPos;
+
     }
 
     private void mousebutton(InputAction.CallbackContext context)
