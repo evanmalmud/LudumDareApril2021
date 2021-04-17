@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour {
             }
             cData.intensityTimer += Time.deltaTime;
         }
+        if(cData.intensity > cData.maxIntensity) {
+            cData.intensity = cData.maxIntensity;
+        }
     }
 
     private void Move(Vector2 _axis) {

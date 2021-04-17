@@ -21,6 +21,7 @@ public class CharacterData : MonoBehaviour {
     public bool vertigo = false;
     [Header("Intensity")]
     public float intensity = 0f;
+    public float maxIntensity = 200f;
     public float intensityDecayPerSecond = 1f;
     public float intensityTimer = 0f;
     [Header("Movement")]

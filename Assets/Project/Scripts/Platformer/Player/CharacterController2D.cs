@@ -40,6 +40,9 @@ public class CharacterController2D : ObjectController2D {
 
     [FMODUnity.EventRef]
     public string jumpSFX = "";
+    FMOD.Studio.EventInstance instance;
+    public bool isJumping = false;
+    public float jumpLength = 0f;
 
     [FMODUnity.EventRef]
     public string playerDamageSFX = "";
@@ -65,6 +68,9 @@ public class CharacterController2D : ObjectController2D {
         OnLadder = false;
         Dashing = false;
         base.Start();
+        if (!jumpSFX.Equals(null) && !jumpSFX.Equals("")) {
+            instance = FMODUnity.RuntimeManager.CreateInstance(jumpSFX);
+        }
     }
 
     /// <summary>
@@ -81,6 +87,11 @@ public class CharacterController2D : ObjectController2D {
         SetAnimations();
 
         visual.color = cData.currentColor;
+
+        if(isJumping) {
+            jumpLength += Time.deltaTime;
+            instance.setParameterByName("JumpLength", jumpLength * 2);
+        }
     }
 
     /*-------------------------*/
@@ -418,7 +429,9 @@ public class CharacterController2D : ObjectController2D {
                 }
                 ignorePlatformsTime = 0;
 
-                FMODUnity.RuntimeManager.PlayOneShot(jumpSFX, transform.position);
+                instance.start();
+                isJumping = true;
+                jumpLength = 0f;
             }
         }
     }
@@ -428,6 +441,10 @@ public class CharacterController2D : ObjectController2D {
     /// </summary>
     public void EndJump()
     {
+        if(isJumping) {
+            isJumping = false;
+            jumpLength = 0f;
+        }
         float yMove = Mathf.Sqrt(-2 * pConfig.gravity * cData.minJumpHeight);
         if (speed.y > yMove) {
             speed.y = yMove;

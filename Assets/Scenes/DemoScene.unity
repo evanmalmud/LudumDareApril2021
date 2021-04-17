@@ -734,7 +734,7 @@ PrefabInstance:
     - target: {fileID: 7018911988841287167, guid: 4fb49a1922deb8249bfdbba50d98dbf1,
         type: 3}
       propertyPath: jumpSFX
-      value: event:/JSO_TEST_SFX/LD48TEST_JSO_FX_OBJ_jumppad_3
+      value: event:/ZL_TEST_SFX/LD48TEST_ZLSFX_jumps
       objectReference: {fileID: 0}
     - target: {fileID: 7018911988841287167, guid: 4fb49a1922deb8249bfdbba50d98dbf1,
         type: 3}
@@ -75636,6 +75636,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2162932614545936412, guid: 0f80654bac63a234387cfaae25031e53,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2162932614545936413, guid: 0f80654bac63a234387cfaae25031e53,
         type: 3}
       propertyPath: m_Name

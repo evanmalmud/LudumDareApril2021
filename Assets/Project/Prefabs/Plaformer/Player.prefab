@@ -243,7 +243,7 @@ MonoBehaviour:
   vertigoSpeedreductionPercent: -50
   vertigo: 0
   intensity: 0
-  intensityDecayPerSecond: 1
+  intensityDecayPerSecond: 15
   intensityTimer: 0
   maxSpeedDefault: 0
   maxSpeed: {fileID: 0}
