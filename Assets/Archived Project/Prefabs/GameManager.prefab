@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultLevelTimeLength: 100
   levelTimeLeft: 0
+  counting: 0
 --- !u!114 &7092281384767603439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ MonoBehaviour:
   - {fileID: 0}
   loadReady: 0
   musicLoopHandler: {fileID: 7092281384767603439}
-  SceneName: MainMenu
+  SceneName: MainScene
 --- !u!114 &1394577221
 MonoBehaviour:
   m_ObjectHideFlags: 0
