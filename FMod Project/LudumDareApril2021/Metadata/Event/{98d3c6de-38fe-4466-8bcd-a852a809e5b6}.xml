@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{98d3c6de-38fe-4466-8bcd-a852a809e5b6}">
 		<property name="name">
-			<value>LD48_SFX_ZL_PLYR_Footsteps_Shallow</value>
+			<value>LD48_SFX_ZL_PLYR_Footsteps_Shallow_L</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{7076d69f-f29f-48a5-9e82-f1b41da287cb}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{0f84981d-2329-4a06-ac6b-d916722fefeb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{f8428083-22ce-4307-8ae3-ad3820f53fca}">
@@ -94,9 +97,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{4a51e6fc-dd27-4807-ac56-e7fe12939172}">
-		<property name="volume">
-			<value>7</value>
-		</property>
 		<property name="name">
 			<value>Shallow</value>
 		</property>

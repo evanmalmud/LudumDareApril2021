@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{e949147f-5b9f-4b58-a4df-f358169e305f}">
+	<object class="AudioFile" id="{1669c0ee-0a00-4b2f-bbec-17d54f90cdbc}">
 		<property name="assetPath">
-			<value>damage.wav</value>
+			<value>Footstep_Medium_R.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.8553741496598639</value>
+			<value>0.20900226757369614</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>

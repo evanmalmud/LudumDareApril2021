@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="EventFolder" id="{184f2ca1-19bd-41b5-9d24-57b91ea823f2}">
 		<property name="name">
-			<value>SFX_ZL</value>
+			<value>TEMP_SFX_ZL_</value>
 		</property>
 		<relationship name="folder">
 			<destination>{826ca6ed-28be-44a4-93f1-c68600ffbb77}</destination>

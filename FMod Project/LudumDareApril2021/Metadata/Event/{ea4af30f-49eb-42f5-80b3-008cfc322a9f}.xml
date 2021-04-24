@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{ea4af30f-49eb-42f5-80b3-008cfc322a9f}">
 		<property name="name">
-			<value>LD48_SFX_ZL_PLYR_Footsteps_Medium</value>
+			<value>LD48_SFX_ZL_PLYR_Footsteps_Medium_L</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{98b00f6c-7d47-4d90-834a-924e12d3b295}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{0f84981d-2329-4a06-ac6b-d916722fefeb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{a0ad7efa-0328-497a-97b7-c58ba8e02931}">
@@ -94,9 +97,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{53a057f8-db8a-4f7a-b442-369a425fb90f}">
-		<property name="volume">
-			<value>6</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
