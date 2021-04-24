@@ -8,6 +8,8 @@ public class LevelTimer : MonoBehaviour
     public float defaultLevelTimeLength;
 
     public float levelTimeLeft;
+
+    public bool counting = false;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,7 @@ public class LevelTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(levelTimeLeft > 0) {
+        if(levelTimeLeft > 0 && counting) {
             levelTimeLeft -= Time.deltaTime;
         }
     }

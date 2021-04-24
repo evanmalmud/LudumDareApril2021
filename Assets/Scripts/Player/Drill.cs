@@ -12,6 +12,8 @@ public class Drill : MonoBehaviour
 
     public bool drillEnabled = false;
 
+    public bool canDrill = false;
+
     private void Start()
     {
         mainCam = Camera.main;
@@ -21,7 +23,7 @@ public class Drill : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (canDrill && Input.GetKeyDown(KeyCode.Mouse0)) {
             drillEnabled = true;
             drill.SetActive(drillEnabled);
         } else if (Input.GetKeyUp(KeyCode.Mouse0)) {

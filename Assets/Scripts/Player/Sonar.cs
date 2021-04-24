@@ -16,7 +16,9 @@ public class Sonar : MonoBehaviour
     public Color currentColor;
     public bool sonarEnabled = false;
 
-    public bool sonarFinished = false;
+    public bool sonarStarted = false;
+
+    public bool canSonar = false;
 
 
     public CircleCollider2D circleCollider2D;
@@ -30,19 +32,24 @@ public class Sonar : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !sonarEnabled) {
+        if (Input.GetKeyDown(KeyCode.E) && !sonarEnabled && canSonar) {
+            radius = 0f;
+            disc.enabled = true;
+            disc.Radius = radius;
+            circleCollider2D.radius = radius;
+            currentColor = startColor;
+            disc.Color = currentColor;
             sonarEnabled = true;
         }
 
-        if(sonarEnabled && !sonarFinished) {
+        if(sonarEnabled && !sonarStarted) {
             //Kick of doTween
-            sonarFinished = true;
+            sonarStarted = true;
             DOTween.To(() => radius, x => radius = x, maxRadius, sonarTime);
-            currentColor = startColor;
             DOTween.To(() => currentColor, x => currentColor = x, endColor, sonarTime).OnComplete(setComplete);
         }
 
-        if(sonarEnabled && sonarFinished) {
+        if(sonarEnabled && sonarStarted) {
             disc.Radius = radius;
             circleCollider2D.radius = radius;
             disc.Color = currentColor;
@@ -51,6 +58,7 @@ public class Sonar : MonoBehaviour
 
     private void setComplete() {
         sonarEnabled = false;
-        sonarFinished = false;
+        sonarStarted = false;
+        disc.enabled = false;
     }
 }

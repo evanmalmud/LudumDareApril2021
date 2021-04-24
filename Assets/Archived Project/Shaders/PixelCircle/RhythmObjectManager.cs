@@ -34,7 +34,7 @@ public class RhythmObjectManager : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.back, startValue);
+        //UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.back, startValue);
     }
 
     public void startRhythm() {
