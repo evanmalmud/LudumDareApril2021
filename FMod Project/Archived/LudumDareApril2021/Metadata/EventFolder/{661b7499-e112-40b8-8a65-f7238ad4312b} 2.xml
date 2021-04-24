@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{661b7499-e112-40b8-8a65-f7238ad4312b}">
+		<property name="name">
+			<value>JSO_TEST_MX</value>
+		</property>
+		<relationship name="folder">
+			<destination>{056cab24-7a52-45c3-a298-761eef6ffa1d}</destination>
+		</relationship>
+	</object>
+</objects>

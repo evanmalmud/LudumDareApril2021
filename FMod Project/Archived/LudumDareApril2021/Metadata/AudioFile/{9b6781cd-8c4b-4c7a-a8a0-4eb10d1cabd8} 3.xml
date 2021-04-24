@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{9b6781cd-8c4b-4c7a-a8a0-4eb10d1cabd8}">
+		<property name="assetPath">
+			<value>LD48TEST_MainLoop_210330_bassC_DRY_L2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0909166666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d4a4b0c6-1026-41fe-90f4-ec0ca13cb779}</destination>
+		</relationship>
+	</object>
+</objects>

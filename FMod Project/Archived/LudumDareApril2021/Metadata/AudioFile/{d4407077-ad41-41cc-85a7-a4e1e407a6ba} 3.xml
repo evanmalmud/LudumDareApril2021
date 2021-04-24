@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{d4407077-ad41-41cc-85a7-a4e1e407a6ba}">
+		<property name="assetPath">
+			<value>LD48TEST_MainLoop_210330_DRONE.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>35.386354166666663</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d4a4b0c6-1026-41fe-90f4-ec0ca13cb779}</destination>
+		</relationship>
+	</object>
+</objects>
