@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{0bb2b546-3db9-40c6-8075-7a38142f6ba7}">
 		<property name="assetPath">
-			<value>Footsteps_Shallow_R.wav</value>
+			<value>LD48_SFX_ZL_PLYR_Footstep_Shallow_R_1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
