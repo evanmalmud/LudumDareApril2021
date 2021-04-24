@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{26968511-256b-4fa6-a73d-6cea490f1c65}">
 		<property name="name">
-			<value>LD48_SFX_ZL_PLYR_Footsteps_Medium_R</value>
+			<value>LD48_SFX_ZL_PLYR_Footstep_Medium_R</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>

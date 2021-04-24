@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{c9cd850c-7492-4524-80cd-3ce9ebd57bb1}">
 		<property name="name">
-			<value>LD48_SFX_ZL_PLYR_Telerport</value>
+			<value>LD48_SFX_ZL_PLYR_Teleport</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -33,6 +33,9 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{bb736cdb-70a3-4f8c-8374-b7d31d5d1467}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{0f84981d-2329-4a06-ac6b-d916722fefeb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{cc9485e1-97e2-459c-933c-c41f01983342}">
