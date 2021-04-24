@@ -83,6 +83,138 @@ TextureImporter:
   - first:
       213: 5458585216257606261
     second: Asterisk_tilemap_26
+  - first:
+      213: -7094113293852258452
+    second: Asterisk_tilemap_27
+  - first:
+      213: 8015287775373382222
+    second: Asterisk_tilemap_28
+  - first:
+      213: -7236502088841362352
+    second: Asterisk_tilemap_29
+  - first:
+      213: 6527667062134236274
+    second: Asterisk_tilemap_30
+  - first:
+      213: -3902141111642401928
+    second: Asterisk_tilemap_31
+  - first:
+      213: 5151754651766254038
+    second: Asterisk_tilemap_32
+  - first:
+      213: 1880454469320161856
+    second: Asterisk_tilemap_33
+  - first:
+      213: -5466389459926786935
+    second: Asterisk_tilemap_34
+  - first:
+      213: -5807025377444767664
+    second: Asterisk_tilemap_35
+  - first:
+      213: -6912603725784986464
+    second: Asterisk_tilemap_36
+  - first:
+      213: -8585888799235007421
+    second: Asterisk_tilemap_37
+  - first:
+      213: -6671958369633002001
+    second: Asterisk_tilemap_38
+  - first:
+      213: 7023292876466654145
+    second: Asterisk_tilemap_39
+  - first:
+      213: -2279372374119457947
+    second: Asterisk_tilemap_40
+  - first:
+      213: -4856620572367318932
+    second: Asterisk_tilemap_41
+  - first:
+      213: -4032387503907401240
+    second: Asterisk_tilemap_42
+  - first:
+      213: 3584520375901834893
+    second: Asterisk_tilemap_43
+  - first:
+      213: 8599656747816172976
+    second: Asterisk_tilemap_44
+  - first:
+      213: 2581965263792801993
+    second: Asterisk_tilemap_45
+  - first:
+      213: -6709667841057860531
+    second: Asterisk_tilemap_46
+  - first:
+      213: 1485231406839502490
+    second: Asterisk_tilemap_47
+  - first:
+      213: 2921376680088806922
+    second: Asterisk_tilemap_48
+  - first:
+      213: 6220350166582117140
+    second: Asterisk_tilemap_49
+  - first:
+      213: -8020761108123060315
+    second: Asterisk_tilemap_50
+  - first:
+      213: 8340804191880840262
+    second: Asterisk_tilemap_51
+  - first:
+      213: -4901541312404749572
+    second: Asterisk_tilemap_52
+  - first:
+      213: 1378580155994148401
+    second: Asterisk_tilemap_53
+  - first:
+      213: 3552524544643894142
+    second: Asterisk_tilemap_54
+  - first:
+      213: -7117876232906885091
+    second: Asterisk_tilemap_55
+  - first:
+      213: -1489122016156611054
+    second: Asterisk_tilemap_56
+  - first:
+      213: -3973363266169291691
+    second: Asterisk_tilemap_57
+  - first:
+      213: 9186840100801325506
+    second: Asterisk_tilemap_58
+  - first:
+      213: 2277308851712584568
+    second: Asterisk_tilemap_59
+  - first:
+      213: 2996613737433270865
+    second: Asterisk_tilemap_60
+  - first:
+      213: 2991098113095749522
+    second: Asterisk_tilemap_61
+  - first:
+      213: -7030434859156590906
+    second: Asterisk_tilemap_62
+  - first:
+      213: -1815713338246100010
+    second: Asterisk_tilemap_63
+  - first:
+      213: 1157951113592692261
+    second: Asterisk_tilemap_64
+  - first:
+      213: 3204032373833897876
+    second: Asterisk_tilemap_65
+  - first:
+      213: 430098939759639183
+    second: Asterisk_tilemap_66
+  - first:
+      213: -5054893959879475979
+    second: Asterisk_tilemap_67
+  - first:
+      213: 1326730924677979502
+    second: Asterisk_tilemap_68
+  - first:
+      213: 3408184583564669092
+    second: Asterisk_tilemap_69
+  - first:
+      213: 6531990921756995998
+    second: Asterisk_tilemap_70
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -328,8 +460,8 @@ TextureImporter:
       name: Asterisk_tilemap_5
       rect:
         serializedVersion: 2
-        x: 40
-        y: 220
+        x: 120
+        y: 240
         width: 20
         height: 20
       alignment: 0
@@ -349,8 +481,8 @@ TextureImporter:
       name: Asterisk_tilemap_6
       rect:
         serializedVersion: 2
-        x: 60
-        y: 220
+        x: 140
+        y: 240
         width: 20
         height: 20
       alignment: 0
@@ -370,8 +502,8 @@ TextureImporter:
       name: Asterisk_tilemap_7
       rect:
         serializedVersion: 2
-        x: 80
-        y: 220
+        x: 160
+        y: 240
         width: 20
         height: 20
       alignment: 0
@@ -391,8 +523,8 @@ TextureImporter:
       name: Asterisk_tilemap_8
       rect:
         serializedVersion: 2
-        x: 20
-        y: 200
+        x: 180
+        y: 240
         width: 20
         height: 20
       alignment: 0
@@ -412,8 +544,8 @@ TextureImporter:
       name: Asterisk_tilemap_9
       rect:
         serializedVersion: 2
-        x: 40
-        y: 200
+        x: 200
+        y: 240
         width: 20
         height: 20
       alignment: 0
@@ -433,8 +565,8 @@ TextureImporter:
       name: Asterisk_tilemap_10
       rect:
         serializedVersion: 2
-        x: 60
-        y: 200
+        x: 220
+        y: 240
         width: 20
         height: 20
       alignment: 0
@@ -455,7 +587,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 180
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -476,7 +608,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 20
-        y: 180
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -497,7 +629,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 180
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -518,7 +650,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 180
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -538,8 +670,8 @@ TextureImporter:
       name: Asterisk_tilemap_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 160
+        x: 80
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -559,8 +691,8 @@ TextureImporter:
       name: Asterisk_tilemap_16
       rect:
         serializedVersion: 2
-        x: 20
-        y: 160
+        x: 100
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -580,8 +712,8 @@ TextureImporter:
       name: Asterisk_tilemap_17
       rect:
         serializedVersion: 2
-        x: 40
-        y: 160
+        x: 120
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -601,8 +733,8 @@ TextureImporter:
       name: Asterisk_tilemap_18
       rect:
         serializedVersion: 2
-        x: 60
-        y: 160
+        x: 140
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -622,8 +754,8 @@ TextureImporter:
       name: Asterisk_tilemap_19
       rect:
         serializedVersion: 2
-        x: 0
-        y: 140
+        x: 160
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -643,8 +775,8 @@ TextureImporter:
       name: Asterisk_tilemap_20
       rect:
         serializedVersion: 2
-        x: 20
-        y: 140
+        x: 180
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -664,8 +796,8 @@ TextureImporter:
       name: Asterisk_tilemap_21
       rect:
         serializedVersion: 2
-        x: 40
-        y: 140
+        x: 200
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -685,8 +817,8 @@ TextureImporter:
       name: Asterisk_tilemap_22
       rect:
         serializedVersion: 2
-        x: 60
-        y: 140
+        x: 220
+        y: 220
         width: 20
         height: 20
       alignment: 0
@@ -707,7 +839,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 120
+        y: 200
         width: 20
         height: 20
       alignment: 0
@@ -728,7 +860,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 20
-        y: 120
+        y: 200
         width: 20
         height: 20
       alignment: 0
@@ -749,7 +881,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 120
+        y: 200
         width: 20
         height: 20
       alignment: 0
@@ -770,7 +902,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 120
+        y: 200
         width: 20
         height: 20
       alignment: 0
@@ -782,6 +914,930 @@ TextureImporter:
       bones: []
       spriteID: 572cb37555ac0cb40800000000000000
       internalID: 5458585216257606261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_27
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f4f83ab85ac8d90800000000000000
+      internalID: -7094113293852258452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_28
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4259afc3c50c3f60800000000000000
+      internalID: 8015287775373382222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_29
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0540d3ad0b7c29b90800000000000000
+      internalID: -7236502088841362352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_30
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2746782ab9ee69a50800000000000000
+      internalID: 6527667062134236274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_31
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8735b19555fc8d9c0800000000000000
+      internalID: -3902141111642401928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_32
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d96e748f85be7740800000000000000
+      internalID: 5151754651766254038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04abf147067b81a10800000000000000
+      internalID: 1880454469320161856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_34
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98cdf159fbb7324b0800000000000000
+      internalID: -5466389459926786935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_35
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058d9b7af2d496fa0800000000000000
+      internalID: -5807025377444767664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_36
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac4b83398f7110a0800000000000000
+      internalID: -6912603725784986464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_37
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c979880abc8d880800000000000000
+      internalID: -8585888799235007421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_38
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed94dd56317863a0800000000000000
+      internalID: -6671958369633002001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_39
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb835ff8afb77160800000000000000
+      internalID: 7023292876466654145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_40
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b55c107ea0e50e0800000000000000
+      internalID: -2279372374119457947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6011372251d99cb0800000000000000
+      internalID: -4856620572367318932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_42
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 180
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e110e00ee41a08c0800000000000000
+      internalID: -4032387503907401240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e47cf4a46ceb130800000000000000
+      internalID: 3584520375901834893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_44
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdbfdbcf3e185770800000000000000
+      internalID: 8599656747816172976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_45
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c884c24abbf4d320800000000000000
+      internalID: 2581965263792801993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_46
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4452ecd5a872e2a0800000000000000
+      internalID: -6709667841057860531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_47
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a961ced681a9c9410800000000000000
+      internalID: 1485231406839502490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_48
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06adc7cc90da8820800000000000000
+      internalID: 2921376680088806922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_49
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4134ba9058f135650800000000000000
+      internalID: 6220350166582117140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_50
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a77e0a944880b090800000000000000
+      internalID: -8020761108123060315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_51
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6448526983d70c370800000000000000
+      internalID: 8340804191880840262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_52
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 160
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf28636552a3afbb0800000000000000
+      internalID: -4901541312404749572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e0f6c0953b12310800000000000000
+      internalID: 1378580155994148401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_54
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b0b53504a1d4130800000000000000
+      internalID: 3552524544643894142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_55
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d18b36e3749383d90800000000000000
+      internalID: -7117876232906885091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_56
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e85cf7a63955be0800000000000000
+      internalID: -1489122016156611054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_57
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cb4644927cbd8c0800000000000000
+      internalID: -3973363266169291691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_58
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 140
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9a390d5663e7f70800000000000000
+      internalID: 9186840100801325506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b6e2eb550aa9f10800000000000000
+      internalID: 2277308851712584568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_60
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a04c4415c169920800000000000000
+      internalID: 2996613737433270865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_61
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29fc967e2e3828920800000000000000
+      internalID: 2991098113095749522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_62
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cea2739eb0ee6e90800000000000000
+      internalID: -7030434859156590906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_63
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db07e3c65a4dc6e0800000000000000
+      internalID: -1815713338246100010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_64
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 120
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ed5f8176ed11010800000000000000
+      internalID: 1157951113592692261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4979833e772077c20800000000000000
+      internalID: 3204032373833897876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_66
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a35aaf4b408f500800000000000000
+      internalID: 430098939759639183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_67
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fcbd18b9b869d9b0800000000000000
+      internalID: -5054893959879475979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_68
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 100
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6dd4f52fbe796210800000000000000
+      internalID: 1326730924677979502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_69
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0b55842dd4c4f20800000000000000
+      internalID: 3408184583564669092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_70
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 80
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91f667a22b46aa50800000000000000
+      internalID: 6531990921756995998
       vertices: []
       indices: 
       edges: []

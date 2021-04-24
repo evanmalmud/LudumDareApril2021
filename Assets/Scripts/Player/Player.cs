@@ -20,6 +20,10 @@ public class Player : MonoBehaviour {
 	public AnimationClip m_idle = null;
 	public AnimationClip m_walk = null;
 	public AnimationClip m_action = null;
+	public AnimationClip m_scan = null;
+	public AnimationClip m_death = null;
+
+	public bool scanningAnim = false;
 
 	void Start()
 	{
@@ -34,7 +38,6 @@ public class Player : MonoBehaviour {
 			Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
 			if(input.magnitude <= 0) {
-				Debug.Log("idl3e");
 				if (m_anim.Clip != m_idle) {// (check we're not already in the animation first though)
 					m_anim.Play(m_idle);
 				}
@@ -42,7 +45,6 @@ public class Player : MonoBehaviour {
 				if (m_anim.Clip != m_walk) { // (check we're not already in the animation first though)
 					m_anim.Play(m_walk);
 				}
-				Debug.Log("w4lk");
 			}
 
 			velocity.x = input.x * moveSpeed;
@@ -54,7 +56,21 @@ public class Player : MonoBehaviour {
 				//Looking left moving right OR THE OPPOSITE
 				spriteRend.flipX = !spriteRend.flipX;
 			}
-
 		}
 	}
+
+	public void scanning(bool isScanning) {
+		canMove = false;
+		if (m_anim.Clip != m_scan) { // (check we're not already in the animation first though)
+			m_anim.Play(m_scan);
+		}
+	}
+
+	public void endScan() {
+		canMove = true;
+	}
+
+	public void takeDamage() {
+		
+    }
 }

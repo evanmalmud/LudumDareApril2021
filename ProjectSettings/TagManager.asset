@@ -20,7 +20,7 @@ TagManager:
   - Box
   - Interactable
   - Drill
-  - 
+  - Scan
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FX
+    uniqueID: 2408984381
     locked: 0
   - name: UI
     uniqueID: 298292013

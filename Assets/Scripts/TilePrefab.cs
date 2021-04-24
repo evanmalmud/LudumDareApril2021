@@ -7,11 +7,13 @@ public class TilePrefab : MonoBehaviour
 
     public float damageUntilDestroyed = 100f;
 
-
+    public List<Sprite> possibleSprites;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(possibleSprites != null  && possibleSprites.Count > 0) {
+            GetComponent<SpriteRenderer>().sprite = possibleSprites[Random.Range(0, possibleSprites.Count)];
+        }
     }
 
     // Update is called once per frame

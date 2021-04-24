@@ -74,6 +74,6 @@ public class TilemapPrefabLoader : MonoBehaviour
     }
 
     public GameObject pickRandomTilemap() {
-        return tilemaps[Random.Range(1, tilemaps.Count - 1)];
+        return tilemaps[Random.Range(0, tilemaps.Count)];
     }
 }

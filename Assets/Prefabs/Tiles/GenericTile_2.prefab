@@ -7,11 +7,81 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: damageUntilDestroyed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -7290687838845406404, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -8050599201465596564, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -6917305022754809516, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -6466765067950045166, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 6256102711017435012, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 5458585216257606261, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[6]
+      value: 
+      objectReference: {fileID: -6912603725784986464, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[7]
+      value: 
+      objectReference: {fileID: -6912603725784986464, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[8]
+      value: 
+      objectReference: {fileID: -6912603725784986464, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: possibleSprites.Array.data[9]
+      value: 
+      objectReference: {fileID: -6912603725784986464, guid: d5cf8d9116a167d4688153effc385f26,
+        type: 3}
     - target: {fileID: 2119953949506286389, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -258607093255151933, guid: d5cf8d9116a167d4688153effc385f26,
+      objectReference: {fileID: -5807025377444767664, guid: d5cf8d9116a167d4688153effc385f26,
         type: 3}
     - target: {fileID: 2494162048006845473, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}
