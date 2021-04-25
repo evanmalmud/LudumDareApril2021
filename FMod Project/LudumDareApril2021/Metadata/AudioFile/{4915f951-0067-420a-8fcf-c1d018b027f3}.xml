@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{4915f951-0067-420a-8fcf-c1d018b027f3}">
+		<property name="assetPath">
+			<value>MX/LD48_MX_MenuMusic_drumsBossa_2_L8_132bpm.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>14.545442176870749</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>
+		</relationship>
+	</object>
+</objects>
