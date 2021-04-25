@@ -270,7 +270,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{e499a165-f8a5-4410-9fa5-6a216e201c70}">
@@ -278,7 +278,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>5.5</value>
+			<value>6</value>
 		</property>
 	</object>
 	<object class="Automator" id="{21e817b0-16ee-4c44-b506-17055c15bd15}">
@@ -300,7 +300,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{5e6c4037-7eaa-4b64-8e97-2a14e97a77c3}">
@@ -308,7 +308,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>4.5</value>
+			<value>6</value>
 		</property>
 	</object>
 	<object class="Automator" id="{402ca717-5214-47ea-a89b-310a9380a31b}">
@@ -330,7 +330,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{9c2e5704-88ab-481e-9748-b57466904c19}">
@@ -338,7 +338,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>4.5</value>
+			<value>6</value>
 		</property>
 	</object>
 	<object class="Automator" id="{3caa37dd-e69e-41dd-aea5-388b19df7419}">
