@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{79298cce-04c0-47c8-a5a3-68727c0838d3}">
+		<property name="assetPath">
+			<value>MX/LD48_MX_LVL3_drumsElec_fillA_1_L1beat_148bpm.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.40541950113378683</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>
+		</relationship>
+	</object>
+</objects>
