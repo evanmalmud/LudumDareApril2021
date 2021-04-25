@@ -4,6 +4,27 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
+    
+    public enum DepthType {
+        SHALLOW=0,
+        MEDIUM=20,
+        DEEP=50
+    };
+
+
+    public static DepthType depthCheck(float depth)
+    {
+        if (Mathf.Abs(depth) > (int)DepthType.DEEP) {
+            return DepthType.DEEP;
+        }
+        else if (Mathf.Abs(depth) > (int)DepthType.MEDIUM) {
+            return DepthType.MEDIUM;
+        } else {
+            return DepthType.SHALLOW;
+        }
+        
+    }
+
     public Player player;
 
     public CameraFollow cameraFollow;
@@ -25,7 +46,8 @@ public class GameState : MonoBehaviour
         MAIN_MENU,
         GAME,
         REALL,
-        GAMEOVER
+        GAMEOVER,
+        LOAD_REPLAY,
     }
     public GAMESTATE lastState = GAMESTATE.LOADING;
     public GAMESTATE currentState = GAMESTATE.LOADING;
