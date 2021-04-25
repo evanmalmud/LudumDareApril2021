@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{5af5dd71-9f75-4b2b-ba2b-a0c5f2ff541a}">
+		<property name="name">
+			<value>DX HELMET CLEAN</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{f8518eee-1449-48b7-bc43-9eb8663796c6}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{55196ba9-6962-4696-8b27-acb234ee18bb}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6b721575-a27b-45d9-9c2f-6d666ec5c041}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{f8518eee-1449-48b7-bc43-9eb8663796c6}">
+		<relationship name="effects">
+			<destination>{2382a7cd-23cf-4bb3-9ce3-15631d5d7853}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{55196ba9-6962-4696-8b27-acb234ee18bb}" />
+	<object class="MixerBusFader" id="{2382a7cd-23cf-4bb3-9ce3-15631d5d7853}" />
+</objects>
