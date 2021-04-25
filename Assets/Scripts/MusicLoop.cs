@@ -14,9 +14,15 @@ public class MusicLoop : MonoBehaviour
 
     bool loopPlaying = false;
 
+
+    LevelTimer leveltimer;
+    GameState gameState;
+    Player player;
     void Awake()
     {
-
+        leveltimer = GetComponent<LevelTimer>();
+        gameState = GetComponent<GameState>();
+        player = FindObjectOfType<Player>();
     }
     public void startMusic()
     {
@@ -36,7 +42,9 @@ public class MusicLoop : MonoBehaviour
             //instance.setParameterByName("Health", playerController.getHealthPercentage());
             //instance.setParameterByName("Time", levelTimer.getLevelTimeLeft());
             //Global Vars
-            //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("HasLost", playerController.getDead() ? 1 : 0);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Depth", player.depthAsPercent());
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MenuMusic", gameState.checkIfLoadingOrMainMenu() ? 0 : 1);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("remainingTime", leveltimer.getLevelTimeLeftPercent());
             //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Intensity", playerController.getIntensity() / 100f);
         }
     }
