@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class LevelTimer : MonoBehaviour
@@ -12,6 +13,8 @@ public class LevelTimer : MonoBehaviour
     public bool counting = false;
 
     public GameState gameState;
+
+    public TextMeshProUGUI text;
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,7 @@ public class LevelTimer : MonoBehaviour
             counting = false;
             gameState.timesUp();
         }
+        text.text = "T-" + (int)levelTimeLeft;
     }
 
     public float getLevelTimeLeft() {
