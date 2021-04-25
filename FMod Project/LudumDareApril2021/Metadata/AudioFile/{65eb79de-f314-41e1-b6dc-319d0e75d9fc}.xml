@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{f98ea7d0-1de0-4cf8-9c0f-5249cf20e12d}">
+	<object class="AudioFile" id="{65eb79de-f314-41e1-b6dc-319d0e75d9fc}">
 		<property name="assetPath">
-			<value>MX/LD48_MX_LVL2_drumsElec_1_L8_148bpm.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>DX/LD48_DX_JSO_SidechainGlitchMed_2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>12.972970521541949</value>
+			<value>2.0019999999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>

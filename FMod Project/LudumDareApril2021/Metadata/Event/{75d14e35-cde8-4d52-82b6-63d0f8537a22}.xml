@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{75d14e35-cde8-4d52-82b6-63d0f8537a22}">
 		<property name="name">
-			<value>LD48_DX_JSO_HelmetNotif_O2</value>
+			<value>LD48_DX_JSO_HelmetNotif</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

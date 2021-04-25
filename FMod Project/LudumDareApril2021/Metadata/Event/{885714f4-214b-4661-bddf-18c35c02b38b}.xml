@@ -91,12 +91,10 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{8798d515-ca58-4772-8b27-002f8cacfa5d}">
-		<property name="playbackMode">
-			<value>1</value>
-		</property>
 		<relationship name="sounds">
+			<destination>{aa2c8e52-2d3c-4ab3-9030-94093b42bba3}</destination>
 			<destination>{e29409af-9a08-4500-b2ba-3506ea167ab9}</destination>
-			<destination>{14ef8e05-7d51-467f-99d5-f44dc7364e08}</destination>
+			<destination>{2d17c641-2702-496d-ad2f-1ebd4f778c47}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{2fec0862-b964-442f-bb88-11003805eadf}">
@@ -125,6 +123,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2bbd2d66-7ce1-4f97-954d-31ea4f878529}" />
+	<object class="CommandSound" id="{aa2c8e52-2d3c-4ab3-9030-94093b42bba3}">
+		<relationship name="commandTarget">
+			<destination>{39dc1e42-b488-4507-aa21-11eed88d3f9f}</destination>
+		</relationship>
+	</object>
 	<object class="MultiSound" id="{e29409af-9a08-4500-b2ba-3506ea167ab9}">
 		<property name="looping">
 			<value>true</value>
@@ -134,9 +137,12 @@
 			<destination>{cf1d54b2-59bf-4e2c-8fc5-81e8c8faf659}</destination>
 		</relationship>
 	</object>
-	<object class="CommandSound" id="{14ef8e05-7d51-467f-99d5-f44dc7364e08}">
+	<object class="CommandSound" id="{2d17c641-2702-496d-ad2f-1ebd4f778c47}">
+		<property name="commandType">
+			<value>1</value>
+		</property>
 		<relationship name="commandTarget">
-			<destination>{10cf9477-03cf-43c1-b97b-5c1f4b877d58}</destination>
+			<destination>{39dc1e42-b488-4507-aa21-11eed88d3f9f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{b5d9c14c-75e7-4d0f-8f88-ceba8996b146}" />
