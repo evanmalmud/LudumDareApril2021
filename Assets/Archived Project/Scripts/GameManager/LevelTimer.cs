@@ -10,10 +10,13 @@ public class LevelTimer : MonoBehaviour
     public float levelTimeLeft;
 
     public bool counting = false;
+
+    public GameState gameState;
     
     // Start is called before the first frame update
     void Start()
     {
+        gameState = GetComponent<GameState>();
         levelTimeLeft = defaultLevelTimeLength;
     }
 
@@ -23,9 +26,23 @@ public class LevelTimer : MonoBehaviour
         if(levelTimeLeft > 0 && counting) {
             levelTimeLeft -= Time.deltaTime;
         }
+        if(levelTimeLeft < 0 && counting) {
+            counting = false;
+            gameState.timesUp();
+        }
     }
 
     public float getLevelTimeLeft() {
         return levelTimeLeft;
+    }
+
+    public float getLevelTimeLeftPercent()
+    {
+        return levelTimeLeft/defaultLevelTimeLength;
+    }
+
+    public void startCount(){
+        levelTimeLeft = defaultLevelTimeLength;
+        counting = true;
     }
 }

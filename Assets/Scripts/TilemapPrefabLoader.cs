@@ -36,6 +36,24 @@ public class TilemapPrefabLoader : MonoBehaviour
         }
 
     }
+    public void deleteOldLevel() {
+        foreach(GameObject go in layers) {
+            Destroy(go);
+        }
+        layers.Clear();
+    }
+
+    public void reloadLevel() {
+        nextPos = Vector3.zero;
+        nextY = 0f;
+        GameObject obj = Instantiate(toplevelTilemap);
+        obj.transform.position = nextPos;
+        layers.Enqueue(obj);
+        updateTransform();
+        for (int i = 0; i < amountToLoadAtStart; i++) {
+            loadNext();
+        }
+    }
 
     public void logLayerPassed() {
         layersPassed++;
@@ -55,6 +73,20 @@ public class TilemapPrefabLoader : MonoBehaviour
     }
 
     IEnumerator SpawnGO(Vector3 pos)
+    {
+        GameObject obj = Instantiate(pickRandomTilemap());
+        obj.transform.position = pos;
+        obj.GetComponentInChildren<LayerPassed>().loader = this;
+        layers.Enqueue(obj);
+
+        /*if (layers.Count > 102) {
+            obj = layers.Dequeue();
+            Destroy(obj);
+        }*/
+        yield return null;
+    }
+
+    IEnumerator Reload(Vector3 pos)
     {
         GameObject obj = Instantiate(pickRandomTilemap());
         obj.transform.position = pos;

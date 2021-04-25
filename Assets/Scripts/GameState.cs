@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    public Transform player;
+    public Player player;
 
     public CameraFollow cameraFollow;
 
@@ -15,17 +15,24 @@ public class GameState : MonoBehaviour
     public GameObject readyText;
     public GameObject loadingCanvas;
     public GameObject mainMenuCanvas;
+    public GameObject gameOverCanvas;
+
+    public GameObject gameOverText;
 
     public LevelTimer leveltimer;
     public enum GAMESTATE {
         LOADING,
         MAIN_MENU,
-        INTRO,
         GAME,
+        REALL,
         GAMEOVER
     }
     public GAMESTATE lastState = GAMESTATE.LOADING;
     public GAMESTATE currentState = GAMESTATE.LOADING;
+
+    public TilemapPrefabLoader loader;
+
+    private IEnumerator coroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +51,32 @@ public class GameState : MonoBehaviour
         }
     }
 
+    public void timesUp() {
+        //leveltimer.counting = true;
+        currentState = GAMESTATE.REALL;
+        player.playRecall();
+    }
+
+    public void playerRecalled()
+    {
+        Debug.Log("playerRecalled");
+        currentState = GAMESTATE.GAMEOVER;
+        disableAll();
+        cameraFollow.target = gameOverCanvas.transform;
+        gameOverText.SetActive(false);
+        coroutine = LoadNewLevel();
+        StartCoroutine(coroutine);
+    }
+
+    public void playerDied() {
+        currentState = GAMESTATE.GAMEOVER;
+        disableAll();
+        cameraFollow.target = gameOverCanvas.transform;
+        gameOverText.SetActive(false);
+        coroutine = LoadNewLevel();
+        StartCoroutine(coroutine);
+    }
+
     void updateText()
     {
         readyText.GetComponent<TMPro.TextMeshProUGUI>().text = "Ready?...";
@@ -58,9 +91,10 @@ public class GameState : MonoBehaviour
 
 
     void disableAll() {
-        loadingCanvas.SetActive(false);
-        mainMenuCanvas.SetActive(false);
-        readyText.SetActive(false);
+       // loadingCanvas.SetActive(false);
+       // mainMenuCanvas.SetActive(false);
+       // readyText.SetActive(false);
+        //gameOverCanvas.SetActive(false);
     }
 
     public void loadReadyClicked() {
@@ -74,12 +108,35 @@ public class GameState : MonoBehaviour
     public void mainMenuClicked()
     {
         disableAll();
-        cameraFollow.target = player;
-        player.gameObject.GetComponent<Player>().canMove = true;
-        player.gameObject.GetComponentInChildren<Drill>().canDrill = true;
-        player.gameObject.GetComponentInChildren<Sonar>().canSonar = true;
+        cameraFollow.target = player.transform;
+        player.ResetPlayer();
         currentState = GAMESTATE.GAME;
-        leveltimer.counting = true;
+        leveltimer.startCount();
+    }
+
+    public void replayClicked()
+    {
+        disableAll();
+        cameraFollow.target = player.transform;
+        player.ResetPlayer();
+        currentState = GAMESTATE.GAME;
+        leveltimer.startCount();
+    }
+
+
+    public bool checkIfLoadingOrMainMenu() {
+        if(currentState.Equals(GAMESTATE.LOADING) || currentState.Equals(GAMESTATE.MAIN_MENU)) {
+            return true;
+        }
+        return false;
+    }
+
+    IEnumerator LoadNewLevel() {
+        Debug.Log("load new level");
+        yield return new WaitForSeconds(1f);
+        loader.deleteOldLevel();
+        loader.reloadLevel();
+        gameOverText.SetActive(true);
     }
 
 
