@@ -102,9 +102,6 @@
 			<destination>{9da51eb8-70ae-4117-9c88-a07150451a79}</destination>
 			<destination>{24eb477a-c59d-4405-9a53-0a4de1aa1e14}</destination>
 		</relationship>
-		<relationship name="markers">
-			<destination>{72cf022c-cd6c-4559-adc0-c6564e32b261}</destination>
-		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{d19be6de-cc0e-4e1f-bd59-29086eed1652}">
 		<relationship name="preset">
@@ -231,20 +228,6 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{cd872ee0-643e-4823-b96a-6b6d1a801c0a}</destination>
-		</relationship>
-	</object>
-	<object class="LoopRegion" id="{72cf022c-cd6c-4559-adc0-c6564e32b261}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="length">
-			<value>0.5</value>
-		</property>
-		<relationship name="timeline">
-			<destination>{24f47275-814b-4cb4-a031-2a5c3adc7220}</destination>
-		</relationship>
-		<relationship name="markerTrack">
-			<destination>{c0bf1db9-fa16-4031-9e77-18dd3374ba89}</destination>
 		</relationship>
 	</object>
 	<object class="RandomizerModulator" id="{2ff364a7-a6c9-42e5-9c2a-63c573e17875}">
