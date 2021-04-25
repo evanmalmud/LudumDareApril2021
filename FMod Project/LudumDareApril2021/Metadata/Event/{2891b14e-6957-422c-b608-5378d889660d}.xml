@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{826ca6ed-28be-44a4-93f1-c68600ffbb77}</destination>
+			<destination>{662bb7eb-2bb5-4f26-85c6-9a33c5720347}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{a73d991b-564e-44fa-a570-1433bbd87145}</destination>
@@ -66,7 +66,7 @@
 			<destination>{6c1b4457-3e32-4f58-96c2-a627e1f41f30}</destination>
 		</relationship>
 		<relationship name="modules">
-			<destination>{ebf41fa8-9ef0-4368-95af-1acc14f99665}</destination>
+			<destination>{d6b5630c-585b-4660-82bd-8ef98009fade}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{814d02d0-b54b-4a7c-95b9-9db2c9d40a35}</destination>
@@ -74,7 +74,7 @@
 	</object>
 	<object class="Timeline" id="{b0051858-a900-4771-9cb8-dac4797e394b}">
 		<relationship name="modules">
-			<destination>{ebf41fa8-9ef0-4368-95af-1acc14f99665}</destination>
+			<destination>{d6b5630c-585b-4660-82bd-8ef98009fade}</destination>
 		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{c02fea22-32f9-49dc-8699-bc9afb1a7806}">
@@ -83,6 +83,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{92d7623b-8f82-4ae4-a472-a3674099ed21}">
+		<property name="overridingInputFormat">
+			<value>1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{dba39e79-562b-4058-ae18-77a0d3a90abe}</destination>
 		</relationship>
@@ -104,15 +107,15 @@
 			<destination>{edda2659-4db6-450c-860f-15e170274a1c}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{ebf41fa8-9ef0-4368-95af-1acc14f99665}">
+	<object class="SingleSound" id="{d6b5630c-585b-4660-82bd-8ef98009fade}">
 		<property name="length">
-			<value>31.142666666666667</value>
+			<value>49</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{feb69c10-8f43-4282-897a-fd1bc01bd088}</destination>
+			<destination>{6ede9dec-2bb8-4dd4-8c75-a2a9991933d1}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{814d02d0-b54b-4a7c-95b9-9db2c9d40a35}">
@@ -169,18 +172,21 @@
 	</object>
 	<object class="AutomationPoint" id="{d7f2afd2-26ca-46c1-a81f-52e36b4171b9}">
 		<property name="position">
-			<value>0.018062397372742289</value>
+			<value>0</value>
 		</property>
 		<property name="value">
-			<value>10</value>
+			<value>22000</value>
+		</property>
+		<property name="curveShape">
+			<value>-1</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{4de704a0-5cbc-479d-bc6a-108ba987ba8e}">
 		<property name="position">
-			<value>1</value>
+			<value>0.75</value>
 		</property>
 		<property name="value">
-			<value>22000</value>
+			<value>650</value>
 		</property>
 	</object>
 </objects>
