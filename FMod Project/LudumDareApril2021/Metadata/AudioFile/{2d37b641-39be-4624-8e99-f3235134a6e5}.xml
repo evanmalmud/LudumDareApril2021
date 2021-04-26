@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{2d37b641-39be-4624-8e99-f3235134a6e5}">
+		<property name="assetPath">
+			<value>LD48_DX_JSO_HelmetNotif_401.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2.9913333333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>
+		</relationship>
+	</object>
+</objects>
