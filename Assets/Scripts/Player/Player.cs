@@ -60,6 +60,10 @@ public class Player : MonoBehaviour {
 	FMOD.Studio.EventInstance drillSfxInstance;
 
 	[FMODUnity.EventRef]
+	public string drillEndSfx = "";
+	FMOD.Studio.EventInstance drillEndSfxInstance;
+
+	[FMODUnity.EventRef]
 	public string teleportSfx = "";
 	FMOD.Studio.EventInstance teleportSfxInstance;
 
@@ -71,6 +75,7 @@ public class Player : MonoBehaviour {
 	public bool canDrill = false;
 	public bool drillEnabled = false;
 	public bool drillEnabledThisFrame = false;
+	public bool drillDisabledThisFrame = false;
 
 	public GameObject drillL;
 	public SpriteAnim drillLSpriteAnim;
@@ -111,6 +116,9 @@ public class Player : MonoBehaviour {
 		if (!drillSfx.Equals(null) && !drillSfx.Equals("")) {
 			drillSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillSfx);
 		}
+		if (!drillEndSfx.Equals(null) && !drillEndSfx.Equals("")) {
+			drillEndSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillEndSfx);
+		}
 	}
 
 	public void OnDestroy()
@@ -120,6 +128,7 @@ public class Player : MonoBehaviour {
 		deathSfxInstance.release();
 		scanSfxInstance.release();
 		drillSfxInstance.release();
+		drillEndSfxInstance.release();
 		teleportSfxInstance.release();
 	}
 
@@ -155,9 +164,14 @@ public class Player : MonoBehaviour {
 		if(canDrill) {
 			drillEnabledThisFrame = false;
 			if (Input.GetKeyDown(KeyCode.Mouse0)) {
+				DrillSfx();
 				drillEnabled = true;
 				drillEnabledThisFrame = true;
 			} else if (!Input.GetKey(KeyCode.Mouse0)) {
+				if(drillEnabled) {
+					drillSfxInstance.setPaused(true);
+					DrillEndSfx();
+				}
 				drillEnabled = false;
 				drillL.SetActive(drillEnabled);
 				drillR.SetActive(drillEnabled);
@@ -301,8 +315,15 @@ public class Player : MonoBehaviour {
 
 	public void DrillSfx()
 	{
+		drillSfxInstance.setPaused(false);
 		drillSfxInstance.start();
 	}
+
+	public void DrillEndSfx()
+	{
+		drillEndSfxInstance.start();
+	}
+
 
 	public void TeleportSfx()
 	{

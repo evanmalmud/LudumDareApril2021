@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class MusicLoop : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance instance;
 
     [FMODUnity.EventRef]
-    public string fmodEvent;
-
-    //public LevelTimer levelTimer;
-
+    public string musicLoop;
+    private FMOD.Studio.EventInstance musicLoopinstance;
+    [FMODUnity.EventRef]
+    public string ambienceLoop;
+    private FMOD.Studio.EventInstance ambienceLoopinstance;
     bool loopPlaying = false;
 
 
@@ -26,10 +26,14 @@ public class MusicLoop : MonoBehaviour
     }
     public void startMusic()
     {
-        if (fmodEvent != null && !fmodEvent.Equals("")) {
-            instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-            instance.start();
+        if (musicLoop != null && !musicLoop.Equals("")) {
+            musicLoopinstance = FMODUnity.RuntimeManager.CreateInstance(musicLoop);
+            musicLoopinstance.start();
             loopPlaying = true;
+        }
+        if (ambienceLoop != null && !ambienceLoop.Equals("")) {
+            ambienceLoopinstance = FMODUnity.RuntimeManager.CreateInstance(ambienceLoop);
+            ambienceLoopinstance.start();
         }
     }
 
@@ -53,13 +57,15 @@ public class MusicLoop : MonoBehaviour
 
     public void restartMusic()
     {
-        instance.start();
+        musicLoopinstance.start();
+        ambienceLoopinstance.start();
     }
 
     void OnDestroy()
     {
-        instance.setUserData(IntPtr.Zero);
-        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        instance.release();
+        musicLoopinstance.setUserData(IntPtr.Zero);
+        musicLoopinstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        musicLoopinstance.release();
+        ambienceLoopinstance.release();
     }
 }

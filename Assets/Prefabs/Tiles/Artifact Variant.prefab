@@ -145,7 +145,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: deb86d663f0dce4439711bc9e5c77057, type: 2}
   - {fileID: 11400000, guid: 180bb2fff5f8b6c439906a51f8962c62, type: 2}
   chosenArtifact: {fileID: 0}
-  collectSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Collect
+  commoncollectSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_CollectCommon
+  rarecollectSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_CollectRare
+  legendarycollectSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_CollectLegendary
 --- !u!1001 &505009823773339821
 PrefabInstance:
   m_ObjectHideFlags: 0

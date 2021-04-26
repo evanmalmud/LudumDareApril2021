@@ -697,9 +697,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadEvent: 1
-  UnloadEvent: 0
+  UnloadEvent: 2
   Banks:
   - Master
+  - DIALOGUE
+  - Music
+  - SFX
+  - Master.strings
   CollisionTag: 
   PreloadSamples: 0
 --- !u!114 &118346250
@@ -714,7 +718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa93b40a0f85ee5479a8c8c92d7e1e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fmodEvent: event:/AKT_SE_LOOP MUSIC
+  musicLoop: event:/AKT_SE_LOOP MUSIC
+  ambienceLoop: event:/SFX_DD/LD48_SFX_DD_AMB_MED
 --- !u!114 &118346251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,17 +732,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ccaab9e13a4c4381e7fde537e306e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultLevelTimeLength: 60
+  defaultLevelTimeLength: 120
   levelTimeLeft: 0
   counting: 0
   gameState: {fileID: 118346248}
   text: {fileID: 1952851784}
-  timeWarning1: 50
-  timeWarning2: 25
-  timeWarning3: 10
-  timeWarning1Sfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Warning_O2at50
-  timeWarning2Sfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Warning_O2at25
-  timeWarning3Sfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Warning_O2at10
+  timeWarning1: 10
+  timeWarning2: 30
+  timeWarning3: 60
+  timeWarning1Sfx: event:/DX_JSO/T-minus Warnings/LD48_DX_JSO_HelmetNotif_Tminus10
+  timeWarning2Sfx: event:/DX_JSO/T-minus Warnings/LD48_DX_JSO_HelmetNotif_Tminus30
+  timeWarning3Sfx: event:/DX_JSO/T-minus Warnings/LD48_DX_JSO_HelmetNotif_Tminus60
 --- !u!1 &134608039
 GameObject:
   m_ObjectHideFlags: 0
@@ -10663,7 +10668,8 @@ MonoBehaviour:
   footstepR: event:/TEMP_SFX_ZL_/LD48_SFX_ZL_PLYR_Footstep_R
   deathSfx: event:/TEMP_SFX_ZL_/LD48_SFX_ZL_PYLR_Damage
   scanSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_PULSE
-  drillSfx: 
+  drillSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER
+  drillEndSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER_STOP
   teleportSfx: event:/TEMP_SFX_ZL_/LD48_SFX_ZL_PLYR_Teleport
   scanningAnim: 0
   maxDepth: 300
@@ -10671,6 +10677,7 @@ MonoBehaviour:
   canDrill: 0
   drillEnabled: 0
   drillEnabledThisFrame: 0
+  drillDisabledThisFrame: 0
   drillL: {fileID: 2075347697}
   drillLSpriteAnim: {fileID: 2025510670}
   drillLSpriteRend: {fileID: 2025510669}

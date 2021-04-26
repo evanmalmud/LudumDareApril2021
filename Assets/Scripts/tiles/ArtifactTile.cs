@@ -18,12 +18,22 @@ public class ArtifactTile : TilePrefab
 
 
     [FMODUnity.EventRef]
-    public string collectSfx = "";
-    FMOD.Studio.EventInstance collectSfxInstance;
+    public string commoncollectSfx = "";
+    FMOD.Studio.EventInstance commoncollectSfxInstance;
+
+    [FMODUnity.EventRef]
+    public string rarecollectSfx = "";
+    FMOD.Studio.EventInstance rarecollectSfxInstance;
+
+    [FMODUnity.EventRef]
+    public string legendarycollectSfx = "";
+    FMOD.Studio.EventInstance legendarycollectSfxInstance;
+
+    GameState.DepthType depthType;
 
     public override void Start()
     {
-        GameState.DepthType depthType = GameState.depthCheck(this.transform.position.y + Random.Range(-5f, 5f));
+        depthType = GameState.depthCheck(this.transform.position.y + Random.Range(-5f, 5f));
         //Debug.Log(this.transform.position.y + " " + depthType);
 
         if (depthType == GameState.DepthType.DEEP && deepArtifacts != null && deepArtifacts.Count > 0) {
@@ -38,28 +48,60 @@ public class ArtifactTile : TilePrefab
 
         GetComponent<SpriteRenderer>().sprite = chosenArtifact.dirtySprite;
     }
+    
+    public void CollectSfx(ArtifactScriptableObject.ArtifactType type) {
+        if (type == ArtifactScriptableObject.ArtifactType.COMMON) {
+            CommonCollectSfx();
+        } else if (type == ArtifactScriptableObject.ArtifactType.RARE) {
+            RareCollectSfx();
+        } else {
+            LegendaryCollectSfx();
+        }
+    }
 
-    public void CollectSfx()
+    public void CommonCollectSfx()
     {
-        if (!collectSfx.Equals(null) && !collectSfx.Equals("") && !collectSfxInstance.isValid()) {
-            collectSfxInstance = FMODUnity.RuntimeManager.CreateInstance(collectSfx);
-            collectSfxInstance.start();
-        } else if (collectSfxInstance.isValid()) {
-            collectSfxInstance.start();
+        if (!commoncollectSfx.Equals(null) && !commoncollectSfx.Equals("") && !commoncollectSfxInstance.isValid()) {
+            commoncollectSfxInstance = FMODUnity.RuntimeManager.CreateInstance(commoncollectSfx);
+            commoncollectSfxInstance.start();
+        } else if (commoncollectSfxInstance.isValid()) {
+            commoncollectSfxInstance.start();
+        }
+    }
+
+    public void RareCollectSfx()
+    {
+        if (!rarecollectSfx.Equals(null) && !rarecollectSfx.Equals("") && !rarecollectSfxInstance.isValid()) {
+            rarecollectSfxInstance = FMODUnity.RuntimeManager.CreateInstance(rarecollectSfx);
+            rarecollectSfxInstance.start();
+        } else if (rarecollectSfxInstance.isValid()) {
+            rarecollectSfxInstance.start();
+        }
+    }
+
+    public void LegendaryCollectSfx()
+    {
+        if (!legendarycollectSfx.Equals(null) && !legendarycollectSfx.Equals("") && !legendarycollectSfxInstance.isValid()) {
+            legendarycollectSfxInstance = FMODUnity.RuntimeManager.CreateInstance(legendarycollectSfx);
+            legendarycollectSfxInstance.start();
+        } else if (legendarycollectSfxInstance.isValid()) {
+            legendarycollectSfxInstance.start();
         }
     }
 
     public override void OnDestroy()
     {
         base.OnDestroy();
-        collectSfxInstance.release();
+        commoncollectSfxInstance.release();
+        rarecollectSfxInstance.release();
+        legendarycollectSfxInstance.release();
     }
 
     public override void takeDamage(float damage)
     {
         damageUntilDestroyed -= damage;
         if (damageUntilDestroyed <= 0) {
-            CollectSfx();
+            CollectSfx(chosenArtifact.artifactType);
             FindObjectOfType<Player>().collectedArtifacts.Add(chosenArtifact);
             Destroy(this.gameObject);
         }
