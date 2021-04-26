@@ -50,7 +50,7 @@
 	<object class="Timeline" id="{ba91f3de-02f2-4699-9f12-11fd642062bd}" />
 	<object class="SandboxParameter" id="{d9e688e0-514a-4a1a-a31c-18c85d830ff2}">
 		<property name="parameterValue">
-			<value>0</value>
+			<value>0.810000002</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{49be300e-bbba-4e4d-8fd0-583bde13a7a2}</destination>
