@@ -43,7 +43,7 @@ public class ArtifactTile : TilePrefab
             chosenArtifact = shallowArtifacts[Random.Range(0, shallowArtifacts.Count)];
         }
 
-        Debug.Log(this.transform.position.y + " " + depthType + " " + chosenArtifact.name);
+        //Debug.Log(this.transform.position.y + " " + depthType + " " + chosenArtifact.name);
         GetComponent<SpriteRenderer>().sprite = chosenArtifact.dirtySprite;
     }
     

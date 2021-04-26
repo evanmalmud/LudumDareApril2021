@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="ParameterPreset" id="{1a3422b4-7606-47be-b97e-fcfa2d972919}">
+	<object class="ParameterPreset" id="{bf194088-0ae0-4371-8025-9231b1eb85cc}">
 		<property name="name">
-			<value>menuMusic</value>
+			<value>isRecalled</value>
 		</property>
 		<relationship name="folder">
 			<destination>{a9086ffe-2196-46f3-bf75-eadee7714db7}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{da85aa7e-958e-4cb9-8608-22c527a7a4bf}</destination>
+			<destination>{bef2d707-1614-45bf-8044-64d207bda08b}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{da85aa7e-958e-4cb9-8608-22c527a7a4bf}">
+	<object class="GameParameter" id="{bef2d707-1614-45bf-8044-64d207bda08b}">
 		<property name="parameterType">
 			<value>1</value>
 		</property>
@@ -24,19 +24,8 @@
 		<property name="initialValue">
 			<value>0</value>
 		</property>
-		<property name="seekSpeedDescending">
-			<value>0.2800000011920929</value>
-		</property>
 		<property name="isExposedRecursively">
 			<value>false</value>
-		</property>
-		<relationship name="automators">
-			<destination>{68c3e898-efeb-4fd9-b425-2ff6ad7fd0a1}</destination>
-		</relationship>
-	</object>
-	<object class="Automator" id="{68c3e898-efeb-4fd9-b425-2ff6ad7fd0a1}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>cursorPosition</value>
 		</property>
 	</object>
 </objects>

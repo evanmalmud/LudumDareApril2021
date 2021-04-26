@@ -8,7 +8,7 @@ public class GameState : MonoBehaviour
     public enum DepthType {
         SHALLOW=0,
         MEDIUM=75,
-        DEEP=120
+        DEEP=150
     };
 
 
@@ -39,6 +39,9 @@ public class GameState : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameOverController gameOverController;
 
+    public GameObject midGameDialogue;
+    public DialogueController midGameDialogueCont;
+
     public GameObject gameOverText;
     public GameObject playerCanvas;
     public GameObject howToCanvas;
@@ -53,14 +56,14 @@ public class GameState : MonoBehaviour
 
     public enum GAMESTATE {
         LOADING,
-        MAIN_MENU,
+        TITLE,
         DIALOGUE,
         HOWTO,
         MISSION,
         GAME,
         REALL,
         GAMEOVER,
-        LOAD_REPLAY,
+        MIDGAMELOAD,
     }
     public GAMESTATE lastState = GAMESTATE.LOADING;
     public GAMESTATE currentState = GAMESTATE.LOADING;
@@ -115,6 +118,7 @@ public class GameState : MonoBehaviour
             timesheetOutInstance = FMODUnity.RuntimeManager.CreateInstance(timesheetOut);
         }
         dialogueCont = dialogeCanvas.GetComponent<DialogueController>();
+        midGameDialogueCont = midGameDialogue.GetComponent<DialogueController>();
         lastState = GAMESTATE.LOADING;
         currentState = GAMESTATE.LOADING;
         cameraFollow.target = loadingCanvas.transform;
@@ -134,6 +138,7 @@ public class GameState : MonoBehaviour
     }
 
     public void timesUp() {
+        musicLoop.stopHelmet();
         leveltimer.counting = false;
         playerCanvas.SetActive(false);
         player.playRecall();
@@ -152,6 +157,7 @@ public class GameState : MonoBehaviour
     }
 
     public void playerDied() {
+        musicLoop.stopHelmet();
         leveltimer.counting = false;
         playerCanvas.SetActive(false);
         player.canMove = false;
@@ -176,6 +182,7 @@ public class GameState : MonoBehaviour
         loadingCanvas.SetActive(false);
         mainMenuCanvas.SetActive(isEnabled);
         titleAnimPlayer.playAnim();
+        currentState = GAMESTATE.LOADING;
         musicLoop.startMusic();
         //cameraFollow.target = mainMenuCanvas.transform;
 
@@ -194,7 +201,7 @@ public class GameState : MonoBehaviour
         if (loadReady) {
             disableAll();
             updateMainMenuObj(true);
-            currentState = GAMESTATE.MAIN_MENU;
+            currentState = GAMESTATE.TITLE;
         }
     }
 
@@ -233,24 +240,42 @@ public class GameState : MonoBehaviour
         cameraFollow.target = player.transform;
         player.ResetPlayer();
         currentState = GAMESTATE.GAME;
+        musicLoop.startHelmet();
         playerCanvas.SetActive(true);
         leveltimer.startCount();
     }
+
 
     public void replayClicked()
     {
         disableAll();
-        cameraFollow.target = player.transform;
+        cameraFollow.target = midGameDialogue.transform;
         player.ResetPlayer();
+        currentState = GAMESTATE.MIDGAMELOAD;
+        musicLoop.startMusic();
+        midGameDialogueCont.playIntroDialogue();
+    }
+
+    public void midGameDialogueSkipp() {
+        cameraFollow.target = player.transform;
         currentState = GAMESTATE.GAME;
+        musicLoop.startHelmet();
+        player.ResetPlayer();
         playerCanvas.SetActive(true);
         leveltimer.startCount();
     }
 
+    public bool checkIfTitle() {
+        if (currentState.Equals(GAMESTATE.TITLE) || currentState.Equals(GAMESTATE.LOADING)) {
+            return true;
+        }
+        return false;
+    }
 
-    public bool checkIfNotGame() {
-        if(currentState.Equals(GAMESTATE.LOADING) || currentState.Equals(GAMESTATE.MAIN_MENU) || currentState.Equals(GAMESTATE.DIALOGUE)
-            || currentState.Equals(GAMESTATE.HOWTO) || currentState.Equals(GAMESTATE.MISSION)) {
+    public bool checkIfNotGameorTitle() {
+        if(currentState.Equals(GAMESTATE.LOADING) || currentState.Equals(GAMESTATE.DIALOGUE)
+            || currentState.Equals(GAMESTATE.HOWTO) || currentState.Equals(GAMESTATE.MISSION)
+            || currentState.Equals(GAMESTATE.MIDGAMELOAD)) {
             return true;
         }
         return false;
@@ -271,7 +296,7 @@ public class GameState : MonoBehaviour
         cameraFollow.target = gameOverCanvas.transform;
         gameOverText.SetActive(false);
         gameOverController.onDisplay(player.isDead);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         IEnumerator coroutine2 = LoadNewLevel();
         StartCoroutine(coroutine2);
     }
