@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{92d17de1-41cb-42f0-8382-99c4b35ff4ba}">
+		<property name="volume">
+			<value>7</value>
+		</property>
+		<property name="name">
+			<value>SFX BOMBS</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{68b8e678-f17c-402e-b562-c9245d1251a1}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{0f9ec444-bab8-4463-8911-d4c35829225f}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6499bacf-2bb1-4b51-9240-383b272d680f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{68b8e678-f17c-402e-b562-c9245d1251a1}">
+		<relationship name="effects">
+			<destination>{618f0db3-8d86-4cc9-b3d9-7a232bd193a0}</destination>
+			<destination>{4923a804-d148-4912-881f-df5f8d10378f}</destination>
+			<destination>{ec890846-acd5-4077-a0c6-a007dc764c65}</destination>
+			<destination>{9b9a54e7-a739-4b37-81bb-4bd0e0dcf38f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{0f9ec444-bab8-4463-8911-d4c35829225f}" />
+	<object class="CompressorEffect" id="{618f0db3-8d86-4cc9-b3d9-7a232bd193a0}">
+		<property name="threshold">
+			<value>-24</value>
+		</property>
+		<property name="ratio">
+			<value>4</value>
+		</property>
+		<property name="attackTime">
+			<value>34</value>
+		</property>
+		<property name="releaseTime">
+			<value>180</value>
+		</property>
+	</object>
+	<object class="LimiterEffect" id="{4923a804-d148-4912-881f-df5f8d10378f}">
+		<property name="ceiling">
+			<value>-6</value>
+		</property>
+		<property name="release">
+			<value>9</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{ec890846-acd5-4077-a0c6-a007dc764c65}" />
+	<object class="Sidechain" id="{9b9a54e7-a739-4b37-81bb-4bd0e0dcf38f}" />
+</objects>

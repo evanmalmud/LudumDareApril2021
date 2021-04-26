@@ -34,7 +34,7 @@
 			<value>10</value>
 		</property>
 		<property name="minimumThreshold">
-			<value>-80</value>
+			<value>-60</value>
 		</property>
 		<property name="maximumThreshold">
 			<value>0</value>

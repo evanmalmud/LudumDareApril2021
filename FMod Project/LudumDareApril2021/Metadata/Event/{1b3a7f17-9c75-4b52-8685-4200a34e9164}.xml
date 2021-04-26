@@ -92,7 +92,9 @@
 	</object>
 	<object class="MultiSound" id="{0e8f4a61-c819-4b8f-820f-53ddd5bdaceb}">
 		<relationship name="sounds">
+			<destination>{c1ceac29-60a8-428d-9f26-9ce3eac5bc9b}</destination>
 			<destination>{2765d349-08a0-45ad-81c0-5276e3c29617}</destination>
+			<destination>{8f5e2875-f58c-443a-aa70-6108e0529c4d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{86a83569-d769-49a0-9954-ecc17e151f4e}">
@@ -121,6 +123,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e9714945-70cc-4571-86b8-3eda3bdeff39}" />
+	<object class="CommandSound" id="{c1ceac29-60a8-428d-9f26-9ce3eac5bc9b}">
+		<relationship name="commandTarget">
+			<destination>{2029bcd0-6055-4d09-b0d4-15d75f183f98}</destination>
+		</relationship>
+	</object>
 	<object class="MultiSound" id="{2765d349-08a0-45ad-81c0-5276e3c29617}">
 		<relationship name="sounds">
 			<destination>{70f9a238-9a97-43bc-bf00-11f02233c683}</destination>
@@ -134,6 +141,14 @@
 		</relationship>
 		<relationship name="playPercentages">
 			<destination>{67fea477-53b4-44fd-bef1-f24797e2f635}</destination>
+		</relationship>
+	</object>
+	<object class="CommandSound" id="{8f5e2875-f58c-443a-aa70-6108e0529c4d}">
+		<property name="commandType">
+			<value>2</value>
+		</property>
+		<relationship name="commandTarget">
+			<destination>{2029bcd0-6055-4d09-b0d4-15d75f183f98}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{b8bfea36-c4af-4049-9a1e-2bb401608343}" />

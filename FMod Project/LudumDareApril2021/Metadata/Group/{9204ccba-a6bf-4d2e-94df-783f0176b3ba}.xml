@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{9204ccba-a6bf-4d2e-94df-783f0176b3ba}">
+		<property name="volume">
+			<value>9</value>
+		</property>
+		<property name="name">
+			<value>SFX FEET</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{650c8563-ec37-478d-8ba4-2fd9fd15431f}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{0136ef5e-5133-4a41-96a7-d77c54bea55e}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6499bacf-2bb1-4b51-9240-383b272d680f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{650c8563-ec37-478d-8ba4-2fd9fd15431f}">
+		<relationship name="effects">
+			<destination>{ed5e909d-9e7b-4fe4-83e0-95e5131895f0}</destination>
+			<destination>{69723396-fb18-467b-a476-742918373989}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{0136ef5e-5133-4a41-96a7-d77c54bea55e}" />
+	<object class="ThreeEQEffect" id="{ed5e909d-9e7b-4fe4-83e0-95e5131895f0}">
+		<property name="midGain">
+			<value>10</value>
+		</property>
+		<property name="lowCrossover">
+			<value>1250</value>
+		</property>
+		<property name="highCrossover">
+			<value>9000</value>
+		</property>
+		<property name="crossoverSlope">
+			<value>0</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{69723396-fb18-467b-a476-742918373989}" />
+</objects>
