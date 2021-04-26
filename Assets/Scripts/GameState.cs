@@ -7,8 +7,8 @@ public class GameState : MonoBehaviour
 
     public enum DepthType {
         SHALLOW=0,
-        MEDIUM=75,
-        DEEP=150
+        MEDIUM=50,
+        DEEP=100
     };
 
 
