@@ -21,6 +21,12 @@ public class TilePrefab : MonoBehaviour
     public GameObject shatterAnim;
     public SpriteAnim spriteAnim;
     public SpriteRenderer spriteRend;
+
+    public GameObject shatterAnim2;
+    public SpriteAnim spriteAnim2;
+    public SpriteRenderer spriteRend2;
+
+
     public AnimationClip m_shatterShallow = null;
     public AnimationClip m_breakShallow = null;
     public AnimationClip m_shatterMedium = null;
@@ -72,6 +78,22 @@ public class TilePrefab : MonoBehaviour
                 }
             }
         }
+        if (shatterAnim2 != null) {
+            if (depthType == GameState.DepthType.DEEP) {
+                if (spriteAnim2.Clip != m_shatterDeep) {
+                    spriteAnim2.Play(m_shatterDeep);
+                }
+            } else if (depthType == GameState.DepthType.MEDIUM) {
+                if (spriteAnim2.Clip != m_shatterMedium) {
+                    spriteAnim2.Play(m_shatterMedium);
+                }
+            } else {
+                if (spriteAnim2.Clip != m_shatterShallow) {
+                    spriteAnim2.Play(m_shatterShallow);
+                }
+            }
+        }
+
         damageUntilDestroyed -= damage;
         if(damageUntilDestroyed <= 0) {
 
@@ -105,6 +127,22 @@ public class TilePrefab : MonoBehaviour
             } else {
                 if (spriteAnim.Clip != m_breakShallow) {
                     spriteAnim.Play(m_breakShallow);
+                }
+            }
+        }
+        if (shatterAnim2 != null) {
+            GetComponent<SpriteRenderer>().sprite = null;
+            if (depthType == GameState.DepthType.DEEP) {
+                if (spriteAnim2.Clip != m_breakDeep) {
+                    spriteAnim2.Play(m_breakDeep);
+                }
+            } else if (depthType == GameState.DepthType.MEDIUM) {
+                if (spriteAnim2.Clip != m_breakMedium) {
+                    spriteAnim2.Play(m_breakMedium);
+                }
+            } else {
+                if (spriteAnim2.Clip != m_breakShallow) {
+                    spriteAnim2.Play(m_breakShallow);
                 }
             }
         }

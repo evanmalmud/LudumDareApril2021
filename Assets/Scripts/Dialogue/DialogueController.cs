@@ -20,20 +20,14 @@ public class DialogueController : MonoBehaviour
     FMOD.Studio.EventInstance initialDialogueInstance;
     FMOD.Studio.EventInstance rocketAmbienceInstance;
 
-    Transform startingtransform;
+    public Vector3 startingtransform;
     public void Start()
     {
-        startingtransform = ship.transform;
+        startingtransform = ship.transform.position;
         skipButton.SetActive(false);
         ship.transform.localScale = new Vector3(.5f, .5f, 1);
         textBox.text = "";
-        if (!initialDialogue.sfxName.Equals(null) && !initialDialogue.sfxName.Equals("")) {
-            initialDialogueInstance = FMODUnity.RuntimeManager.CreateInstance(initialDialogue.sfxName);
-        }
 
-        if (!rocketAmbience.Equals(null) && !rocketAmbience.Equals("")) {
-            rocketAmbienceInstance = FMODUnity.RuntimeManager.CreateInstance(rocketAmbience);
-        }
     }
 
     public void cancelDialogue() {
@@ -41,7 +35,7 @@ public class DialogueController : MonoBehaviour
         playShipOffScreen();
         skipButton.SetActive(false);
         textBox.enabled = false;
-        ship.transform.position = startingtransform.position;
+        ship.transform.position = startingtransform;
         rocketAmbienceInstance.setPaused(true);
         initialDialogueInstance.setPaused(true);
         rocketAmbienceInstance.release();
@@ -49,7 +43,14 @@ public class DialogueController : MonoBehaviour
     }
 
     public void playIntroDialogue() {
-        ship.transform.position = startingtransform.position;
+        if (!initialDialogue.sfxName.Equals(null) && !initialDialogue.sfxName.Equals("")) {
+            initialDialogueInstance = FMODUnity.RuntimeManager.CreateInstance(initialDialogue.sfxName);
+        }
+
+        if (!rocketAmbience.Equals(null) && !rocketAmbience.Equals("")) {
+            rocketAmbienceInstance = FMODUnity.RuntimeManager.CreateInstance(rocketAmbience);
+        }
+        ship.transform.position = startingtransform;
         skipButton.SetActive(true);
         textBox.enabled = true;
         rocketAmbienceInstance.start();
@@ -64,7 +65,11 @@ public class DialogueController : MonoBehaviour
         ship.transform.DOMoveX(ship.transform.position.x - 2, 0.6f).OnComplete(playShipOffScreen2);
     }
     public void playShipOffScreen2() {
-        ship.transform.DOMoveX(ship.transform.position.x + 25, 2f);
+        ship.transform.DOMoveX(ship.transform.position.x + 25, 2f).OnComplete(moveShip);
+    }
+
+    public void moveShip() {
+        ship.transform.position = startingtransform;
     }
 
     IEnumerator playDialogue() {
@@ -85,7 +90,7 @@ public class DialogueController : MonoBehaviour
             FindObjectOfType<GameState>().midGameDialogueSkipp();
             skipButton.SetActive(false);
             textBox.enabled = false;
-            ship.transform.position = startingtransform.position;
+            ship.transform.position = startingtransform;
         }
         rocketAmbienceInstance.setPaused(true);
         rocketAmbienceInstance.release();

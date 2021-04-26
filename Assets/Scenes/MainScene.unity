@@ -815,7 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicLoop: event:/AKT_SE_LOOP MUSIC
   ambienceLoop: event:/SFX_DD/LD48_SFX_DD_AMB_MED
-  helmetLoop: event:/DX_JSO/Helmet Blurbs/LD48_DX_JSO_HelmetBlurb
+  helmetLoop: event:/DX_JSO/Helmet Blurbs/LD48_DX_JSO_HelmetBlurbSystem
 --- !u!114 &118346251
 MonoBehaviour:
   m_ObjectHideFlags: 0
