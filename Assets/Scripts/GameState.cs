@@ -39,6 +39,11 @@ public class GameState : MonoBehaviour
     public GameObject gameOverCanvas;
 
     public GameObject gameOverText;
+    public GameObject playerCanvas;
+
+
+    public GameObject dialogeCanvas;
+    public DialogueController dialogueCont;
 
     public float timeToStayOnPlayerBeforeGameover = 5f;
 
@@ -48,6 +53,7 @@ public class GameState : MonoBehaviour
     public enum GAMESTATE {
         LOADING,
         MAIN_MENU,
+        DIALOGUE,
         GAME,
         REALL,
         GAMEOVER,
@@ -65,9 +71,11 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogueCont = dialogeCanvas.GetComponent<DialogueController>();
         lastState = GAMESTATE.LOADING;
         currentState = GAMESTATE.LOADING;
         cameraFollow.target = loadingCanvas.transform;
+        playerCanvas.SetActive(false);
     }
 
     void Update()
@@ -140,9 +148,18 @@ public class GameState : MonoBehaviour
     public void mainMenuClicked()
     {
         disableAll();
+        cameraFollow.target = dialogeCanvas.transform;
+        currentState = GAMESTATE.DIALOGUE;
+        dialogueCont.playIntroDialogue();
+    }
+
+    public void dialogueComplete() 
+    {
+        disableAll();
         cameraFollow.target = player.transform;
         player.ResetPlayer();
         currentState = GAMESTATE.GAME;
+        playerCanvas.SetActive(true);
         leveltimer.startCount();
     }
 
@@ -152,12 +169,13 @@ public class GameState : MonoBehaviour
         cameraFollow.target = player.transform;
         player.ResetPlayer();
         currentState = GAMESTATE.GAME;
+        playerCanvas.SetActive(true);
         leveltimer.startCount();
     }
 
 
-    public bool checkIfLoadingOrMainMenu() {
-        if(currentState.Equals(GAMESTATE.LOADING) || currentState.Equals(GAMESTATE.MAIN_MENU)) {
+    public bool checkIfNotGame() {
+        if(currentState.Equals(GAMESTATE.LOADING) || currentState.Equals(GAMESTATE.MAIN_MENU) || currentState.Equals(GAMESTATE.DIALOGUE)) {
             return true;
         }
         return false;

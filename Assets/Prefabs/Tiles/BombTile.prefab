@@ -31,6 +31,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1428645931838674046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989624699554911026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc33c523e8042d4419283c82114dd1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageUntilDestroyed: 999
+  possibleSprites: []
+  shallowSprites: []
+  mediumSprites: []
+  deepSprites: []
+  shatterAnim: {fileID: 0}
+  spriteAnim: {fileID: 0}
+  spriteRend: {fileID: 0}
+  m_shatterShallow: {fileID: 0}
+  m_breakShallow: {fileID: 0}
+  m_shatterMedium: {fileID: 0}
+  m_breakMedium: {fileID: 0}
+  m_shatterDeep: {fileID: 0}
+  m_breakDeep: {fileID: 0}
+  depthType: 0
+  tileDestroySfx: 
 --- !u!1001 &8563901398762904006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39,8 +67,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 4898613328178491147}
     m_Modifications:
     - target: {fileID: 239316367, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
+      propertyPath: m_explosion
+      value: 
+      objectReference: {fileID: 7400000, guid: 2cdcc549553ca6d438a86dc890d1b26e, type: 2}
+    - target: {fileID: 239316367, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
       propertyPath: bombExpRadius
-      value: 1.2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 239316367, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
       propertyPath: timeUntilExplosion
@@ -136,8 +168,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3812084764266839335, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
+--- !u!1 &8989624699554911026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 727479756135041780, guid: b63480347db18ee4e95dc5be68b672bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8563901398762904006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1350668410398625795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7234926361471420869, guid: b63480347db18ee4e95dc5be68b672bb,
