@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ecb6267a-7375-44cb-9a0d-cc397e178ec5}">
+		<property name="assetPath">
+			<value>LD48_SFX_DD_SFX_LASER_DRILL-005.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.5166666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>
+		</relationship>
+	</object>
+</objects>
