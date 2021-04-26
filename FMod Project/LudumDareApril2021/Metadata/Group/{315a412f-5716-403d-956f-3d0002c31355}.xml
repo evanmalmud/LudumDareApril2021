@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{315a412f-5716-403d-956f-3d0002c31355}">
+		<property name="volume">
+			<value>6</value>
+		</property>
 		<property name="name">
 			<value>DX HELMET GLITCH</value>
 		</property>
@@ -46,6 +49,7 @@
 			<destination>{3b172d6b-9552-45ac-8f5e-aceebcca66ed}</destination>
 			<destination>{0ae0b025-7f39-4257-9ade-792192e620a2}</destination>
 			<destination>{18c15577-e7fd-42f8-831f-3ba1412238af}</destination>
+			<destination>{d17dd19d-a3a2-4b3e-9cc1-29cb5f29000b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4711e19a-5aba-4572-b6f2-7266817fdde5}" />
@@ -89,6 +93,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{18c15577-e7fd-42f8-831f-3ba1412238af}" />
+	<object class="Sidechain" id="{d17dd19d-a3a2-4b3e-9cc1-29cb5f29000b}" />
 	<object class="Automator" id="{275beda1-0d41-44cc-a8d8-10a6c6faf190}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>level</value>
