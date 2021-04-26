@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{e9927595-279e-43e4-8e0a-fa621e21da9a}">
+		<property name="name">
+			<value>T-minus Warnings</value>
+		</property>
+		<relationship name="folder">
+			<destination>{25e3732b-aae4-4d90-9240-56e37adc4e89}</destination>
+		</relationship>
+	</object>
+</objects>

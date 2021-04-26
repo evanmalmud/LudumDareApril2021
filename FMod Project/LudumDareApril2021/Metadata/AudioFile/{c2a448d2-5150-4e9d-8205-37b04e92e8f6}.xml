@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{c2a448d2-5150-4e9d-8205-37b04e92e8f6}">
 		<property name="assetPath">
-			<value>LD48_DX_JSO_InterjLetter_656.wav</value>
+			<value>LD48_DX_JSO_InterjNumber_656.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
