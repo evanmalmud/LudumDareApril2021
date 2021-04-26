@@ -42,6 +42,14 @@ public class BombInteractable : Interactable
         StartCoroutine(coroutine);
     }
 
+    public void OnDestroy()
+    {
+        bombBlinkingInstance.setPaused(true);
+        bombBlinkingInstance.release();
+        bombExplosionSfxInstance.setPaused(true);
+        bombExplosionSfxInstance.release();
+    }
+
     private IEnumerator WaitAndExplode(float waitTime)
     {
         BombBlinkingSfx();
@@ -72,16 +80,20 @@ public class BombInteractable : Interactable
 
     public void BombBlinkingSfx()
     {
-        if (!bombBlinkingSfx.Equals(null) && !bombBlinkingSfx.Equals("")) {
+        if (!bombBlinkingSfx.Equals(null) && !bombBlinkingSfx.Equals("") && !bombBlinkingInstance.isValid()) {
             bombBlinkingInstance = FMODUnity.RuntimeManager.CreateInstance(bombBlinkingSfx);
+            bombBlinkingInstance.start();
+        } else if (bombBlinkingInstance.isValid()) {
             bombBlinkingInstance.start();
         }
     }
 
     public void BombExplosionSfx()
     {
-        if (!bombExplosionSfx.Equals(null) && !bombExplosionSfx.Equals("")) {
+        if (!bombExplosionSfx.Equals(null) && !bombExplosionSfx.Equals("") && !bombExplosionSfxInstance.isValid()) {
             bombExplosionSfxInstance = FMODUnity.RuntimeManager.CreateInstance(bombExplosionSfx);
+            bombExplosionSfxInstance.start();
+        } else if (bombExplosionSfxInstance.isValid()) {
             bombExplosionSfxInstance.start();
         }
     }

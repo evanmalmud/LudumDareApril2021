@@ -51,6 +51,10 @@ public class TilePrefab : MonoBehaviour
         }
     }
 
+    public virtual void OnDestroy()
+    {
+        tileDestroySfxInstance.release();
+    }
 
     public virtual void takeDamage(float damage) {
         if (shatterAnim != null) {
@@ -81,8 +85,10 @@ public class TilePrefab : MonoBehaviour
     }
 
     IEnumerator playBreakAndDestroy() {
-        if (!tileDestroySfx.Equals(null) && !tileDestroySfx.Equals("")) {
+        if (!tileDestroySfx.Equals(null) && !tileDestroySfx.Equals("") && !tileDestroySfxInstance.isValid()) {
             tileDestroySfxInstance = FMODUnity.RuntimeManager.CreateInstance(tileDestroySfx);
+            tileDestroySfxInstance.start();
+        } else if (tileDestroySfxInstance.isValid()) {
             tileDestroySfxInstance.start();
         }
         GetComponent<BoxCollider2D>().enabled = false;

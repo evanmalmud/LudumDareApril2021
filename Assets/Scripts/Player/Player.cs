@@ -68,7 +68,7 @@ public class Player : MonoBehaviour {
 	public float maxDepth = 300f;
 	public GameState gameState;
 
-	bool canDrill = false;
+	public bool canDrill = false;
 	public bool drillEnabled = false;
 	public bool drillEnabledThisFrame = false;
 
@@ -92,9 +92,38 @@ public class Player : MonoBehaviour {
 		controller = GetComponent<ControllerPlayer>();
 		m_anim = GetComponent<SpriteAnim>();
 		spriteRend = GetComponent<SpriteRenderer>();
+
+		if (!teleportSfx.Equals(null) && !teleportSfx.Equals("")) {
+			teleportSfxInstance = FMODUnity.RuntimeManager.CreateInstance(teleportSfx);
+		}
+		if (!footstepL.Equals(null) && !footstepL.Equals("")) {
+			footstepLInstance = FMODUnity.RuntimeManager.CreateInstance(footstepL);
+		}
+		if (!footstepR.Equals(null) && !footstepR.Equals("")) {
+			footstepRInstance = FMODUnity.RuntimeManager.CreateInstance(footstepR);
+		}
+		if (!deathSfx.Equals(null) && !deathSfx.Equals("")) {
+			deathSfxInstance = FMODUnity.RuntimeManager.CreateInstance(deathSfx);
+		}
+		if (!scanSfx.Equals(null) && !scanSfx.Equals("")) {
+			scanSfxInstance = FMODUnity.RuntimeManager.CreateInstance(scanSfx);
+		}
+		if (!drillSfx.Equals(null) && !drillSfx.Equals("")) {
+			drillSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillSfx);
+		}
 	}
 
-    public void ResetPlayer()
+	public void OnDestroy()
+	{
+		footstepLInstance.release();
+		footstepRInstance.release();
+		deathSfxInstance.release();
+		scanSfxInstance.release();
+		drillSfxInstance.release();
+		teleportSfxInstance.release();
+	}
+
+	public void ResetPlayer()
     {
 		collectedArtifacts.Clear();
 		transform.position = startPos;
@@ -104,6 +133,8 @@ public class Player : MonoBehaviour {
 		sonar.canSonar = true;
 		isDead = false;
 		isRecalled = false;
+		drillL.SetActive(drillEnabled);
+		drillR.SetActive(!drillEnabled);
 	}
 
     void Update()
@@ -232,10 +263,6 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	public void recallOver() {
-		gameState.playerRecalled();	
-	}
-
 	public void endScan() {
 		canMove = true;
 	}
@@ -254,50 +281,32 @@ public class Player : MonoBehaviour {
 	}
 
 	public void footStepL() {
-		if (!footstepL.Equals(null) && !footstepL.Equals("")) {
-			footstepLInstance = FMODUnity.RuntimeManager.CreateInstance(footstepL);
-			footstepLInstance.start();
-		}
+		footstepLInstance.start();
 	}
 
 	public void footStepR()
 	{
-		if (!footstepR.Equals(null) && !footstepR.Equals("")) {
-			footstepRInstance = FMODUnity.RuntimeManager.CreateInstance(footstepR);
-			footstepRInstance.start();
-		}
+		footstepRInstance.start();
 	}
 
 	public void DeathSfx()
 	{
-		if (!deathSfx.Equals(null) && !deathSfx.Equals("")) {
-			deathSfxInstance = FMODUnity.RuntimeManager.CreateInstance(deathSfx);
-			deathSfxInstance.start();
-		}
+		deathSfxInstance.start();
 	}
 
 	public void ScanSfx()
 	{
-		if (!scanSfx.Equals(null) && !scanSfx.Equals("")) {
-			scanSfxInstance = FMODUnity.RuntimeManager.CreateInstance(scanSfx);
-			scanSfxInstance.start();
-		}
+		scanSfxInstance.start();
 	}
 
 	public void DrillSfx()
 	{
-		if (!drillSfx.Equals(null) && !drillSfx.Equals("")) {
-			drillSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillSfx);
-			drillSfxInstance.start();
-		}
+		drillSfxInstance.start();
 	}
 
 	public void TeleportSfx()
 	{
-		if (!teleportSfx.Equals(null) && !teleportSfx.Equals("")) {
-			teleportSfxInstance = FMODUnity.RuntimeManager.CreateInstance(teleportSfx);
-			teleportSfxInstance.start();
-		}
+		teleportSfxInstance.start();
 	}
 
 

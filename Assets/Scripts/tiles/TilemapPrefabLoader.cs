@@ -18,7 +18,11 @@ public class TilemapPrefabLoader : MonoBehaviour
 
     public int amountToLoadAtStart = 100;
 
+    public int amountToLoadMidGame = 2;
+
     public int layersPassed = 0;
+
+    public int layersUntilDelete = 2;
 
     private IEnumerator coroutine;
 
@@ -48,10 +52,17 @@ public class TilemapPrefabLoader : MonoBehaviour
     }
 
     public void logLayerPassed() {
+        if(layersUntilDelete < 0) {
+            GameObject obj = layers.Dequeue();
+            Destroy(obj);
+        } else {
+            layersUntilDelete--;
+        }
+        
         layersPassed++;
         if(layersPassed/amountToLoadAtStart >= .9f) {
             //Make player idle or something
-            for (int i = 0; i < amountToLoadAtStart; i++) {
+            for (int i = 0; i < amountToLoadMidGame; i++) {
                 loadNext();
             }
         }

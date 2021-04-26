@@ -15,6 +15,12 @@ public class ArtifactTile : TilePrefab
     public List<ArtifactScriptableObject> deepArtifacts;
 
     public ArtifactScriptableObject chosenArtifact;
+
+
+    [FMODUnity.EventRef]
+    public string collectSfx = "";
+    FMOD.Studio.EventInstance collectSfxInstance;
+
     public override void Start()
     {
         GameState.DepthType depthType = GameState.depthCheck(this.transform.position.y + Random.Range(-5f, 5f));
@@ -33,10 +39,27 @@ public class ArtifactTile : TilePrefab
         GetComponent<SpriteRenderer>().sprite = chosenArtifact.dirtySprite;
     }
 
+    public void CollectSfx()
+    {
+        if (!collectSfx.Equals(null) && !collectSfx.Equals("") && !collectSfxInstance.isValid()) {
+            collectSfxInstance = FMODUnity.RuntimeManager.CreateInstance(collectSfx);
+            collectSfxInstance.start();
+        } else if (collectSfxInstance.isValid()) {
+            collectSfxInstance.start();
+        }
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        collectSfxInstance.release();
+    }
+
     public override void takeDamage(float damage)
     {
         damageUntilDestroyed -= damage;
         if (damageUntilDestroyed <= 0) {
+            CollectSfx();
             FindObjectOfType<Player>().collectedArtifacts.Add(chosenArtifact);
             Destroy(this.gameObject);
         }

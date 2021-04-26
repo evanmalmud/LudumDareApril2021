@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf61dcfce84d4334c8edd666c2dd6ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRend: {fileID: 0}
   light2d: {fileID: 175242177}
 --- !u!114 &1917244310794026932
 MonoBehaviour:
@@ -108,6 +109,17 @@ MonoBehaviour:
   shallowSprites: []
   mediumSprites: []
   deepSprites: []
+  shatterAnim: {fileID: 0}
+  spriteAnim: {fileID: 0}
+  spriteRend: {fileID: 0}
+  m_shatterShallow: {fileID: 0}
+  m_breakShallow: {fileID: 0}
+  m_shatterMedium: {fileID: 0}
+  m_breakMedium: {fileID: 0}
+  m_shatterDeep: {fileID: 0}
+  m_breakDeep: {fileID: 0}
+  depthType: 0
+  tileDestroySfx: 
   possibleArtifacts:
   - {fileID: 11400000, guid: a6389fb84055c5f4da30cc30502b913c, type: 2}
   - {fileID: 11400000, guid: 13af9ac53606afd4cb2fc30b80e232ae, type: 2}
@@ -133,6 +145,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: deb86d663f0dce4439711bc9e5c77057, type: 2}
   - {fileID: 11400000, guid: 180bb2fff5f8b6c439906a51f8962c62, type: 2}
   chosenArtifact: {fileID: 0}
+  collectSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Collect
 --- !u!1001 &505009823773339821
 PrefabInstance:
   m_ObjectHideFlags: 0

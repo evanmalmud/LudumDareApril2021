@@ -15,10 +15,35 @@ public class LevelTimer : MonoBehaviour
     public GameState gameState;
 
     public TextMeshProUGUI text;
-    
+
+    public int timeWarning1;
+    public int timeWarning2;
+    public int timeWarning3;
+
+    [FMODUnity.EventRef]
+    public string timeWarning1Sfx = "";
+    [FMODUnity.EventRef]
+    public string timeWarning2Sfx = "";
+    [FMODUnity.EventRef]
+    public string timeWarning3Sfx = "";
+
+    FMOD.Studio.EventInstance timeWarning1SfxInstance;
+    FMOD.Studio.EventInstance timeWarning2SfxInstance;
+    FMOD.Studio.EventInstance timeWarning3SfxInstance;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        if (!timeWarning1Sfx.Equals(null) && !timeWarning1Sfx.Equals("")) {
+            timeWarning1SfxInstance = FMODUnity.RuntimeManager.CreateInstance(timeWarning1Sfx);
+        }
+        if (!timeWarning2Sfx.Equals(null) && !timeWarning2Sfx.Equals("")) {
+            timeWarning2SfxInstance = FMODUnity.RuntimeManager.CreateInstance(timeWarning2Sfx);
+        }
+        if (!timeWarning3Sfx.Equals(null) && !timeWarning3Sfx.Equals("")) {
+            timeWarning3SfxInstance = FMODUnity.RuntimeManager.CreateInstance(timeWarning3Sfx);
+        }
         gameState = GetComponent<GameState>();
         levelTimeLeft = defaultLevelTimeLength;
     }
@@ -34,6 +59,15 @@ public class LevelTimer : MonoBehaviour
             gameState.timesUp();
         }
         text.text = "T-" + (int)levelTimeLeft;
+        if((int)levelTimeLeft == timeWarning1) {
+            timeWarning1SfxInstance.start();
+        }
+        if ((int)levelTimeLeft == timeWarning2) {
+            timeWarning2SfxInstance.start();
+        }
+        if ((int)levelTimeLeft == timeWarning3) {
+            timeWarning3SfxInstance.start();
+        }
     }
 
     public float getLevelTimeLeft() {

@@ -9,16 +9,25 @@ public class DialogueController : MonoBehaviour
 
     public TMPro.TextMeshProUGUI textBox;
 
+    [FMODUnity.EventRef]
+    public string rocketAmbience;
+
     FMOD.Studio.EventInstance initialDialogueInstance;
+    FMOD.Studio.EventInstance rocketAmbienceInstance;
     public void Start()
     {
         textBox.text = "";
         if (!initialDialogue.sfxName.Equals(null) && !initialDialogue.sfxName.Equals("")) {
             initialDialogueInstance = FMODUnity.RuntimeManager.CreateInstance(initialDialogue.sfxName);
         }
+
+        if (!rocketAmbience.Equals(null) && !rocketAmbience.Equals("")) {
+            rocketAmbienceInstance = FMODUnity.RuntimeManager.CreateInstance(rocketAmbience);
+        }
     }
 
     public void playIntroDialogue() {
+        rocketAmbienceInstance.start();
         StartCoroutine("playDialogue");
     }
 
@@ -30,6 +39,9 @@ public class DialogueController : MonoBehaviour
             yield return new WaitForSeconds(initialDialogue.sentenceWaitTimes[i]);
         }
         FindObjectOfType<GameState>().dialogueComplete();
+        rocketAmbienceInstance.setPaused(true);
+        rocketAmbienceInstance.release();
+        initialDialogueInstance.release();
         yield return null;
     }
 }

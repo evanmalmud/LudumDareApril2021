@@ -7,8 +7,8 @@ public class GameState : MonoBehaviour
     
     public enum DepthType {
         SHALLOW=0,
-        MEDIUM=20,
-        DEEP=50
+        MEDIUM=75,
+        DEEP=120
     };
 
 
@@ -37,11 +37,12 @@ public class GameState : MonoBehaviour
     public GameObject loadingCanvas;
     public GameObject mainMenuCanvas;
     public GameObject gameOverCanvas;
+    public GameOverController gameOverController;
 
     public GameObject gameOverText;
     public GameObject playerCanvas;
-
-
+    public GameObject howToCanvas;
+    public GameObject missionCanvas;
     public GameObject dialogeCanvas;
     public DialogueController dialogueCont;
 
@@ -54,6 +55,8 @@ public class GameState : MonoBehaviour
         LOADING,
         MAIN_MENU,
         DIALOGUE,
+        HOWTO,
+        MISSION,
         GAME,
         REALL,
         GAMEOVER,
@@ -89,23 +92,25 @@ public class GameState : MonoBehaviour
 
     public void timesUp() {
         //leveltimer.counting = true;
-        currentState = GAMESTATE.REALL;
         player.playRecall();
-    }
-
-    public void playerRecalled()
-    {
+        player.canMove = false;
+        player.canDrill = false;
+        player.sonar.canSonar = false;
+        player.drillEnabled = false;
+        player.drillL.SetActive(false);
+        player.drillR.SetActive(false);
         Debug.Log("playerRecalled");
         currentState = GAMESTATE.GAMEOVER;
         disableAll();
         coroutine = LoadGameOver();
         StartCoroutine(coroutine);
-
-        //coroutine = LoadNewLevel();
-        //StartCoroutine(coroutine);
     }
 
     public void playerDied() {
+        player.canMove = false;
+        player.canDrill = false;
+        player.sonar.canSonar = false;
+        player.drillEnabled = false;
         currentState = GAMESTATE.GAMEOVER;
         disableAll();
         coroutine = LoadGameOver();
@@ -155,6 +160,17 @@ public class GameState : MonoBehaviour
 
     public void dialogueComplete() 
     {
+        cameraFollow.target = howToCanvas.transform;
+        currentState = GAMESTATE.HOWTO;
+    }
+
+    public void howToClicked() {
+        cameraFollow.target = missionCanvas.transform;
+        currentState = GAMESTATE.MISSION;
+    }
+
+    public void missionClicked()
+    {
         disableAll();
         cameraFollow.target = player.transform;
         player.ResetPlayer();
@@ -175,7 +191,8 @@ public class GameState : MonoBehaviour
 
 
     public bool checkIfNotGame() {
-        if(currentState.Equals(GAMESTATE.LOADING) || currentState.Equals(GAMESTATE.MAIN_MENU) || currentState.Equals(GAMESTATE.DIALOGUE)) {
+        if(currentState.Equals(GAMESTATE.LOADING) || currentState.Equals(GAMESTATE.MAIN_MENU) || currentState.Equals(GAMESTATE.DIALOGUE)
+            || currentState.Equals(GAMESTATE.HOWTO) || currentState.Equals(GAMESTATE.MISSION)) {
             return true;
         }
         return false;
@@ -195,9 +212,10 @@ public class GameState : MonoBehaviour
         yield return new WaitForSeconds(timeToStayOnPlayerBeforeGameover);
         cameraFollow.target = gameOverCanvas.transform;
         gameOverText.SetActive(false);
-        yield return new WaitForSeconds(1f);
+        gameOverController.onDisplay(player.isDead);
+        yield return new WaitForSeconds(3f);
         IEnumerator coroutine2 = LoadNewLevel();
-        StartCoroutine(coroutine);
+        StartCoroutine(coroutine2);
     }
 
 
