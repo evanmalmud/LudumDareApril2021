@@ -161,6 +161,11 @@ PrefabInstance:
       objectReference: {fileID: 7400000, guid: 9ba42f03e4c2f994090f15d9e999083a, type: 2}
     - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}
+      propertyPath: tileDestroySfx
+      value: event:/SFX_DD/LD48_SFX_DD_OBJ_DEBRIS
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
       propertyPath: m_shatterMedium
       value: 
       objectReference: {fileID: 7400000, guid: c151004fd9bf260488c5c84c9ebfb485, type: 2}

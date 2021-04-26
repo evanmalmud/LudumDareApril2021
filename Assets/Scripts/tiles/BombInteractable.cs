@@ -26,7 +26,7 @@ public class BombInteractable : Interactable
     public string bombExplosionSfx = "";
     FMOD.Studio.EventInstance bombExplosionSfxInstance;
 
-    public void Start()
+    public override void Start()
     {
         base.Start();
         m_anim = m_anim = GetComponent<SpriteAnim>();
@@ -37,7 +37,6 @@ public class BombInteractable : Interactable
     }
     public override void ScanHit()
     {
-        Debug.Log("bomb scan hit");
         base.ScanHit();
         coroutine = WaitAndExplode(timeUntilExplosion);
         StartCoroutine(coroutine);
@@ -51,7 +50,7 @@ public class BombInteractable : Interactable
         foreach (Collider2D hit in hitCollider) {
             TilePrefab tile;
             if (hit.TryGetComponent<TilePrefab>(out tile)) {
-                Destroy(tile.gameObject);
+                tile.destroy();
             }
             Interactable interact;
             if (hit.TryGetComponent<Interactable>(out interact)) {
@@ -66,7 +65,7 @@ public class BombInteractable : Interactable
         if (m_anim.Clip != m_explosion) { // (check we're not already in the animation first though)
             m_anim.Play(m_explosion);
         }
-        BombExplosionSfx();
+        yield return new WaitForSeconds(1.5f);
         Destroy(this.gameObject);
         print("Coroutine ended: " + Time.time + " seconds");
     }

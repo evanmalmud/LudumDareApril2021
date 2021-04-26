@@ -30,6 +30,10 @@ public class TilePrefab : MonoBehaviour
 
     public GameState.DepthType depthType;
 
+    [FMODUnity.EventRef]
+    public string tileDestroySfx = "";
+    FMOD.Studio.EventInstance tileDestroySfxInstance;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -67,11 +71,20 @@ public class TilePrefab : MonoBehaviour
         damageUntilDestroyed -= damage;
         if(damageUntilDestroyed <= 0) {
 
-            StartCoroutine("playBreakAndDestroy");
+            destroy();
         }
     }
 
+    public void destroy()
+    {
+        StartCoroutine("playBreakAndDestroy");
+    }
+
     IEnumerator playBreakAndDestroy() {
+        if (!tileDestroySfx.Equals(null) && !tileDestroySfx.Equals("")) {
+            tileDestroySfxInstance = FMODUnity.RuntimeManager.CreateInstance(tileDestroySfx);
+            tileDestroySfxInstance.start();
+        }
         GetComponent<BoxCollider2D>().enabled = false;
         if (shatterAnim != null) {
             GetComponent<SpriteRenderer>().sprite = null;

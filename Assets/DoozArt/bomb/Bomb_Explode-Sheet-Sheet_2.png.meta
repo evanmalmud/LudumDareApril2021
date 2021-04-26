@@ -1,49 +1,70 @@
 fileFormatVersion: 2
-guid: 67c762dbc1985d541ab98cc617195da7
+guid: 58ca0938ef52ed4488a08b00fe681f2c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4622910773000853490
-    second: Intro_screen-Sheet_0
+      213: -8524938396871629205
+    second: Bomb_Explode-Sheet-Sheet_2_0
   - first:
-      213: 4681605725692200471
-    second: Intro_screen-Sheet_1
+      213: -328568672492605964
+    second: Bomb_Explode-Sheet-Sheet_2_1
   - first:
-      213: 366146949226234511
-    second: Intro_screen-Sheet_2
+      213: -8558391540272927267
+    second: Bomb_Explode-Sheet-Sheet_2_2
   - first:
-      213: 4244694092196660948
-    second: Intro_screen-Sheet_3
+      213: -692707433913686725
+    second: Bomb_Explode-Sheet-Sheet_2_3
   - first:
-      213: -2452809524318319210
-    second: Intro_screen-Sheet_4
+      213: -2535648491734744402
+    second: Bomb_Explode-Sheet-Sheet_2_4
   - first:
-      213: 782787034029809133
-    second: Intro_screen-Sheet_5
+      213: -3269300662887660501
+    second: Bomb_Explode-Sheet-Sheet_2_5
   - first:
-      213: -302671261129417656
-    second: Intro_screen-Sheet_6
+      213: 8085121321974627269
+    second: Bomb_Explode-Sheet-Sheet_2_6
   - first:
-      213: 1945693537867679385
-    second: Intro_screen-Sheet_7
+      213: 6054690280484284505
+    second: Bomb_Explode-Sheet-Sheet_2_7
   - first:
-      213: 1959621917734536685
-    second: Intro_screen-Sheet_8
+      213: 7175838368348136232
+    second: Bomb_Explode-Sheet-Sheet_2_8
   - first:
-      213: 4465624825686083572
-    second: Intro_screen-Sheet_9
+      213: 4265566585595176399
+    second: Bomb_Explode-Sheet-Sheet_2_9
   - first:
-      213: -5397167451103485326
-    second: Intro_screen-Sheet_10
+      213: 4026256593621135944
+    second: Bomb_Explode-Sheet-Sheet_2_10
   - first:
-      213: -7800926944321703760
-    second: Intro_screen-Sheet_11
+      213: -7114787324211222458
+    second: Bomb_Explode-Sheet-Sheet_2_11
   - first:
-      213: 2021090234610591496
-    second: Intro_screen-Sheet_12
+      213: -3935203091267090116
+    second: Bomb_Explode-Sheet-Sheet_2_12
   - first:
-      213: -758638906856406762
-    second: Intro_screen-Sheet_13
+      213: 909493548748478222
+    second: Bomb_Explode-Sheet-Sheet_2_13
+  - first:
+      213: -7139850746481953467
+    second: Bomb_Explode-Sheet-Sheet_2_14
+  - first:
+      213: 3199094213717590205
+    second: Bomb_Explode-Sheet-Sheet_2_15
+  - first:
+      213: -1808779125389445699
+    second: Bomb_Explode-Sheet-Sheet_2_16
+  - first:
+      213: -1937769327679960035
+    second: Bomb_Explode-Sheet-Sheet_2_17
+  - first:
+      213: 4629141742784643344
+    second: Bomb_Explode-Sheet-Sheet_2_18
+  - first:
+      213: 2104141902999713767
+    second: Bomb_Explode-Sheet-Sheet_2_19
+  - first:
+      213: 6202381619755812271
+    second: Bomb_Explode-Sheet-Sheet_2_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -107,7 +128,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -119,7 +140,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -131,7 +152,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -143,7 +164,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -155,7 +176,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -167,7 +188,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -181,13 +202,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Intro_screen-Sheet_0
+      name: Bomb_Explode-Sheet-Sheet_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0825fa252f18dfb0800000000000000
-      internalID: -4622910773000853490
+      spriteID: b66e062f1b551b980800000000000000
+      internalID: -8524938396871629205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_1
+      name: Bomb_Explode-Sheet-Sheet_2_1
       rect:
         serializedVersion: 2
-        x: 960
+        x: 37
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71681527a9768f040800000000000000
-      internalID: 4681605725692200471
+      spriteID: 4fda1cf7880b07bf0800000000000000
+      internalID: -328568672492605964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_2
+      name: Bomb_Explode-Sheet-Sheet_2_2
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 74
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f82093cd5b0d41500800000000000000
-      internalID: 366146949226234511
+      spriteID: ddde2590d3c7a3980800000000000000
+      internalID: -8558391540272927267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_3
+      name: Bomb_Explode-Sheet-Sheet_2_3
       rect:
         serializedVersion: 2
-        x: 2880
+        x: 111
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d6c49999ce28ea30800000000000000
-      internalID: 4244694092196660948
+      spriteID: b356d4c42420366f0800000000000000
+      internalID: -692707433913686725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_4
+      name: Bomb_Explode-Sheet-Sheet_2_4
       rect:
         serializedVersion: 2
-        x: 3840
+        x: 148
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69dcf41bbbed5fdd0800000000000000
-      internalID: -2452809524318319210
+      spriteID: ea245e691219fccd0800000000000000
+      internalID: -2535648491734744402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_5
+      name: Bomb_Explode-Sheet-Sheet_2_5
       rect:
         serializedVersion: 2
-        x: 4800
+        x: 185
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dedd02af8a40dda00800000000000000
-      internalID: 782787034029809133
+      spriteID: b24c1ac5e5c11a2d0800000000000000
+      internalID: -3269300662887660501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_6
+      name: Bomb_Explode-Sheet-Sheet_2_6
       rect:
         serializedVersion: 2
-        x: 5760
+        x: 222
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,20 +342,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84c59a47712bccbf0800000000000000
-      internalID: -302671261129417656
+      spriteID: 5cbfb3a610f143070800000000000000
+      internalID: 8085121321974627269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_7
+      name: Bomb_Explode-Sheet-Sheet_2_7
       rect:
         serializedVersion: 2
-        x: 6720
+        x: 259
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,20 +363,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9964066c6fd700b10800000000000000
-      internalID: 1945693537867679385
+      spriteID: 958a6412bb4960450800000000000000
+      internalID: 6054690280484284505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_8
+      name: Bomb_Explode-Sheet-Sheet_2_8
       rect:
         serializedVersion: 2
-        x: 7680
+        x: 296
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,20 +384,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de503ac60c9f13b10800000000000000
-      internalID: 1959621917734536685
+      spriteID: 823620f0af2b59360800000000000000
+      internalID: 7175838368348136232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_9
+      name: Bomb_Explode-Sheet-Sheet_2_9
       rect:
         serializedVersion: 2
-        x: 8640
+        x: 333
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,20 +405,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f74f2b7e1619fd30800000000000000
-      internalID: 4465624825686083572
+      spriteID: fc52d2ca536523b30800000000000000
+      internalID: 4265566585595176399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_10
+      name: Bomb_Explode-Sheet-Sheet_2_10
       rect:
         serializedVersion: 2
-        x: 9600
+        x: 370
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,20 +426,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2722da37cc86915b0800000000000000
-      internalID: -5397167451103485326
+      spriteID: 842bc553a0320e730800000000000000
+      internalID: 4026256593621135944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_11
+      name: Bomb_Explode-Sheet-Sheet_2_11
       rect:
         serializedVersion: 2
-        x: 10560
+        x: 407
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,20 +447,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b07ee4764a8db390800000000000000
-      internalID: -7800926944321703760
+      spriteID: 64820f7df92334d90800000000000000
+      internalID: -7114787324211222458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_12
+      name: Bomb_Explode-Sheet-Sheet_2_12
       rect:
         serializedVersion: 2
-        x: 11520
+        x: 444
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,20 +468,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 807a9f43cda5c0c10800000000000000
-      internalID: 2021090234610591496
+      spriteID: c39810a53a95369c0800000000000000
+      internalID: -3935203091267090116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Intro_screen-Sheet_13
+      name: Bomb_Explode-Sheet-Sheet_2_13
       rect:
         serializedVersion: 2
-        x: 12480
+        x: 481
         y: 0
-        width: 960
-        height: 640
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,8 +489,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61188040fe5c875f0800000000000000
-      internalID: -758638906856406762
+      spriteID: e0799aa509b2f9c00800000000000000
+      internalID: 909493548748478222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_Explode-Sheet-Sheet_2_14
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 0
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545b2aa13972aec90800000000000000
+      internalID: -7139850746481953467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_Explode-Sheet-Sheet_2_15
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db005a3ec37756c20800000000000000
+      internalID: 3199094213717590205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_Explode-Sheet-Sheet_2_16
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5350208fce5e6e0800000000000000
+      internalID: -1808779125389445699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_Explode-Sheet-Sheet_2_17
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 0
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c0dfe2019ab15e0800000000000000
+      internalID: -1937769327679960035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_Explode-Sheet-Sheet_2_18
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 0
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0118c9983e30e3040800000000000000
+      internalID: 4629141742784643344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_Explode-Sheet-Sheet_2_19
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 0
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7ff4d99e9633d10800000000000000
+      internalID: 2104141902999713767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb_Explode-Sheet-Sheet_2_20
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 0
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa505f6b839431650800000000000000
+      internalID: 6202381619755812271
       vertices: []
       indices: 
       edges: []

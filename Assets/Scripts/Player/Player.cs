@@ -83,6 +83,8 @@ public class Player : MonoBehaviour {
 
 	public List<ArtifactScriptableObject> collectedArtifacts = new List<ArtifactScriptableObject>();
 
+
+	public bool isRecalled = false;
 	void Start()
 	{
 		sonar = GetComponentInChildren<Sonar>();
@@ -101,7 +103,7 @@ public class Player : MonoBehaviour {
 		canDrill = true;
 		sonar.canSonar = true;
 		isDead = false;
-
+		isRecalled = false;
 	}
 
     void Update()
@@ -223,6 +225,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void playRecall() {
+		isRecalled = true;
 		canMove = false;
 		if (m_anim.Clip != m_teleport) { // (check we're not already in the animation first though)
 			m_anim.Play(m_teleport);

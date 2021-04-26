@@ -67,6 +67,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoubleTile Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5415992131735241589, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415992131735241589, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7772234575048884182, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
         type: 3}
       propertyPath: m_Size.x
@@ -107,6 +117,56 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8140359805404641241, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140359805404641241, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140359805404641241, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140359805404641241, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537006806817037087, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_breakDeep
+      value: 
+      objectReference: {fileID: 7400000, guid: fceea823b3485fb42bf494c2b85ac70c, type: 2}
+    - target: {fileID: 8537006806817037087, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_breakMedium
+      value: 
+      objectReference: {fileID: 7400000, guid: 7a7f283a91481844299fdb8ad2da7999, type: 2}
+    - target: {fileID: 8537006806817037087, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_shatterDeep
+      value: 
+      objectReference: {fileID: 7400000, guid: 118dac5d81edb8a49bd31f66d4365a37, type: 2}
+    - target: {fileID: 8537006806817037087, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_breakShallow
+      value: 
+      objectReference: {fileID: 7400000, guid: a40f7f5a02d8ab140bf0d82ec06bbd8e, type: 2}
+    - target: {fileID: 8537006806817037087, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_shatterMedium
+      value: 
+      objectReference: {fileID: 7400000, guid: 89d248ca4bd6e9d4aad9c76a3f2b52a6, type: 2}
+    - target: {fileID: 8537006806817037087, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+        type: 3}
+      propertyPath: m_shatterShallow
+      value: 
+      objectReference: {fileID: 7400000, guid: 6043e64a982a1a14e97c63f623a87c37, type: 2}
     - target: {fileID: 8537006806817037087, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
         type: 3}
       propertyPath: damageUntilDestroyed

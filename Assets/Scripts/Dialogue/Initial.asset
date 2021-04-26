@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e6221f70904b74c8f57eff16ae684a, type: 3}
+  m_Name: Initial
+  m_EditorClassIdentifier: 
+  sfxName: event:/DX_JSO/LD48_DX_JSO_GameIntro
+  dialogueSentences:
+  - Welcome to another great day of digging for Dig Deep, Inc!
+  - Remember to dig deep for Dig Deep.
+  - Be advised that you are in a demilitarized zone.
+  - 'And remember: Dig Deep, Inc. is not responsible for injury, illness, or death
+    on contact with bombs or the nearby black hole.'
+  - Have a great shift!
+  sentenceWaitTimes:
+  - 3.5
+  - 2.6
+  - 3.1
+  - 7
+  - 3

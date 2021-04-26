@@ -43,8 +43,10 @@ public class MusicLoop : MonoBehaviour
             //instance.setParameterByName("Time", levelTimer.getLevelTimeLeft());
             //Global Vars
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Depth", player.depthAsPercent());
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MenuMusic", gameState.checkIfLoadingOrMainMenu() ? 0 : 1);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MenuMusic", gameState.checkIfNotGame() ? 0 : 1);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("remainingTime", leveltimer.getLevelTimeLeftPercent());
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isDead", player.isDead ? 1 : 0);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isRecalled", player.isRecalled ? 1 : 0);
             //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Intensity", playerController.getIntensity() / 100f);
         }
     }

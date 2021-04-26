@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892b0d325899f5f4884ceb3c3d3f229e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRend: {fileID: 0}
   light2d: {fileID: 239316364}
   timeUntilExplosion: 3
   bombExpRadius: 3
