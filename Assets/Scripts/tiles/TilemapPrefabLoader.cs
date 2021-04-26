@@ -22,6 +22,7 @@ public class TilemapPrefabLoader : MonoBehaviour
 
     public int layersPassed = 0;
 
+    public int layersUntilDeleteDefault = 2;
     public int layersUntilDelete = 2;
 
     private IEnumerator coroutine;
@@ -40,6 +41,7 @@ public class TilemapPrefabLoader : MonoBehaviour
     }
 
     public void reloadLevel() {
+        layersUntilDelete = layersUntilDeleteDefault;
         nextPos = Vector3.zero;
         nextY = 0f;
         GameObject obj = Instantiate(toplevelTilemap);
