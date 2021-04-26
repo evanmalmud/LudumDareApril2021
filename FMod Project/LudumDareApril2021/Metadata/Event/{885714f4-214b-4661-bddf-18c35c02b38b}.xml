@@ -154,7 +154,7 @@
 	</object>
 	<object class="CommandSound" id="{2d17c641-2702-496d-ad2f-1ebd4f778c47}">
 		<property name="commandType">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="commandTarget">
 			<destination>{39dc1e42-b488-4507-aa21-11eed88d3f9f}</destination>

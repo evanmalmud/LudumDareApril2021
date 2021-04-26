@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{a1bd357d-28a2-4de6-81b2-e60afad1e50d}">
 		<property name="volume">
-			<value>-7</value>
+			<value>-7.5</value>
 		</property>
 		<property name="name">
 			<value>MUSIC</value>
@@ -20,6 +20,7 @@
 	<object class="MixerBusEffectChain" id="{d58a9597-c539-4d91-bb20-11aac772e988}">
 		<relationship name="effects">
 			<destination>{5fb2df9d-863b-4ceb-989c-390957cdd812}</destination>
+			<destination>{b280d2ab-e2c7-43c0-8d19-acd951e903a4}</destination>
 			<destination>{dcd373ff-0fd1-4f5d-80f3-75e7af80fe8b}</destination>
 			<destination>{08b40f57-d3c2-4a21-87c1-c23bdd12c83a}</destination>
 		</relationship>
@@ -30,27 +31,44 @@
 			<value>-10</value>
 		</property>
 		<property name="ratio">
-			<value>1.95000005</value>
+			<value>1.60000002</value>
 		</property>
 		<property name="attackTime">
-			<value>68</value>
+			<value>50</value>
 		</property>
 		<property name="releaseTime">
-			<value>280</value>
+			<value>340</value>
 		</property>
+	</object>
+	<object class="CompressorEffect" id="{b280d2ab-e2c7-43c0-8d19-acd951e903a4}">
+		<property name="threshold">
+			<value>-26</value>
+		</property>
+		<property name="ratio">
+			<value>1.20000005</value>
+		</property>
+		<property name="attackTime">
+			<value>32</value>
+		</property>
+		<property name="releaseTime">
+			<value>160</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{9b9a54e7-a739-4b37-81bb-4bd0e0dcf38f}</destination>
+		</relationship>
 	</object>
 	<object class="CompressorEffect" id="{dcd373ff-0fd1-4f5d-80f3-75e7af80fe8b}">
 		<property name="threshold">
-			<value>-33</value>
+			<value>-37</value>
 		</property>
 		<property name="ratio">
-			<value>1.25</value>
+			<value>1.85000002</value>
 		</property>
 		<property name="attackTime">
-			<value>86</value>
+			<value>92</value>
 		</property>
 		<property name="releaseTime">
-			<value>320</value>
+			<value>360</value>
 		</property>
 		<relationship name="sidechains">
 			<destination>{abad4933-28fe-4485-97f2-63f150e25e52}</destination>

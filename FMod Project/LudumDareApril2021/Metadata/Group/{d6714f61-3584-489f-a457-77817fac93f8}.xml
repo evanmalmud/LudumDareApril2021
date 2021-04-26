@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{d6714f61-3584-489f-a457-77817fac93f8}">
+		<property name="volume">
+			<value>6</value>
+		</property>
+		<property name="name">
+			<value>SFX AMB</value>
+		</property>
+		<relationship name="automators">
+			<destination>{a9c37bfd-6cb5-46eb-b7ed-2aa739620d31}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{34820f47-c803-41d7-a894-2e6faaaa4edc}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{86f42797-8867-427e-829b-62f91d409135}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6499bacf-2bb1-4b51-9240-383b272d680f}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{a9c37bfd-6cb5-46eb-b7ed-2aa739620d31}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>volume</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{e192e382-ff76-4195-a4b7-7b4c805f070c}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{34820f47-c803-41d7-a894-2e6faaaa4edc}">
+		<relationship name="effects">
+			<destination>{90d0ab7e-313e-40ed-bc69-bb13408612ac}</destination>
+			<destination>{0c7d129a-66ed-4f97-8991-f3f835860bc0}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{86f42797-8867-427e-829b-62f91d409135}" />
+	<object class="AutomationCurve" id="{e192e382-ff76-4195-a4b7-7b4c805f070c}">
+		<relationship name="parameter">
+			<destination>{49be300e-bbba-4e4d-8fd0-583bde13a7a2}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{644d69fa-75b2-4b13-88ba-aae030a9db83}</destination>
+			<destination>{29882cbe-195f-4342-bca2-e2c1045005d2}</destination>
+		</relationship>
+	</object>
+	<object class="ThreeEQEffect" id="{90d0ab7e-313e-40ed-bc69-bb13408612ac}">
+		<property name="lowGain">
+			<value>-80</value>
+		</property>
+		<property name="lowCrossover">
+			<value>21</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{0c7d129a-66ed-4f97-8991-f3f835860bc0}" />
+	<object class="AutomationPoint" id="{644d69fa-75b2-4b13-88ba-aae030a9db83}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-10</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{29882cbe-195f-4342-bca2-e2c1045005d2}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

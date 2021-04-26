@@ -5,7 +5,7 @@
 			<value>-80</value>
 		</property>
 		<property name="name">
-			<value>DX HELMET SIDECHAIN</value>
+			<value>DX HELMET GLITCH SIDECHAIN</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{4347b9e1-cf35-4f30-ab22-a6df9c03bb14}</destination>
