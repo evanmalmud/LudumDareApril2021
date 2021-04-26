@@ -19,8 +19,12 @@ public class DialogueController : MonoBehaviour
 
     FMOD.Studio.EventInstance initialDialogueInstance;
     FMOD.Studio.EventInstance rocketAmbienceInstance;
+
+    Transform startingtransform;
     public void Start()
     {
+        startingtransform = ship.transform;
+        ship.SetActive(false);
         skipButton.SetActive(false);
         ship.transform.localScale = new Vector3(.5f, .5f, 1);
         textBox.text = "";
@@ -43,6 +47,8 @@ public class DialogueController : MonoBehaviour
     }
 
     public void playIntroDialogue() {
+        ship.SetActive(true);
+        ship.transform.position = startingtransform.position;
         skipButton.SetActive(true);
         rocketAmbienceInstance.start();
         StartCoroutine("playDialogue");
