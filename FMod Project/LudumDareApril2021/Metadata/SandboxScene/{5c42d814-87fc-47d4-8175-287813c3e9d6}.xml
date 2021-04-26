@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="SandboxScene" id="{5c42d814-87fc-47d4-8175-287813c3e9d6}">
 		<property name="name">
-			<value>mix 1</value>
+			<value>mix 1 overall</value>
 		</property>
 		<relationship name="folder">
 			<destination>{a572078f-0aba-4262-9cca-c978e9bac9e5}</destination>
@@ -17,6 +17,8 @@
 			<destination>{c3738789-1a03-4e90-b2f1-8536baef6922}</destination>
 			<destination>{88317c83-1b1c-41df-98c6-67a69704a2be}</destination>
 			<destination>{93b6f20a-24a4-49e6-a082-3bc8ec16d7d8}</destination>
+			<destination>{b21e5711-f131-489c-91a2-ab134cf24650}</destination>
+			<destination>{8e0d32df-9da7-4884-9140-0447aa3e35f1}</destination>
 		</relationship>
 		<relationship name="emitters">
 			<destination>{4ca6fb81-3392-447f-95c2-a02e06a07ea2}</destination>
@@ -50,6 +52,22 @@
 		</property>
 		<relationship name="parameter">
 			<destination>{e7a9fc6d-5752-4296-a86e-2d2ce7076f17}</destination>
+		</relationship>
+	</object>
+	<object class="SandboxParameter" id="{b21e5711-f131-489c-91a2-ab134cf24650}">
+		<property name="parameterValue">
+			<value>0</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{49be300e-bbba-4e4d-8fd0-583bde13a7a2}</destination>
+		</relationship>
+	</object>
+	<object class="SandboxParameter" id="{8e0d32df-9da7-4884-9140-0447aa3e35f1}">
+		<property name="parameterValue">
+			<value>0</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{9c843549-cb19-401d-8f2d-b257c738fb7a}</destination>
 		</relationship>
 	</object>
 	<object class="SandboxEmitter" id="{4ca6fb81-3392-447f-95c2-a02e06a07ea2}">

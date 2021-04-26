@@ -29,17 +29,13 @@
 			<value>1.5</value>
 		</property>
 		<property name="attackTime">
-			<value>46</value>
+			<value>28</value>
 		</property>
 		<property name="releaseTime">
 			<value>140</value>
 		</property>
 		<relationship name="sidechains">
 			<destination>{abad4933-28fe-4485-97f2-63f150e25e52}</destination>
-			<destination>{3564c7ef-bfbc-422e-89a3-514d93ecc62f}</destination>
-			<destination>{cd55d8d9-d4f2-4510-9ded-168c12d22a19}</destination>
-			<destination>{960400ed-cfd1-45c4-8daa-b89835a72665}</destination>
-			<destination>{d17dd19d-a3a2-4b3e-9cc1-29cb5f29000b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{1bf8f56c-14e9-46c2-8291-b849a16de81c}" />
