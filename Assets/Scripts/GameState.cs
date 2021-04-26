@@ -194,7 +194,7 @@ public class GameState : MonoBehaviour
 
     void disableAll() {
         loadingCanvas.SetActive(false);
-        mainMenuCanvas.SetActive(false);
+        //mainMenuCanvas.SetActive(false);
        // readyText.SetActive(false);
         //gameOverCanvas.SetActive(false);
     }
@@ -255,7 +255,9 @@ public class GameState : MonoBehaviour
         cameraFollow.target = midGameDialogue.transform;
         player.isDead = false;
         player.isRecalled = false;
+        player.transform.position = new Vector3(0f, 0f, 0f);
         currentState = GAMESTATE.MIDGAMELOAD;
+
         musicLoop.startMusic();
         midGameDialogueCont.playIntroDialogue();
     }

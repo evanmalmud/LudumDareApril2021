@@ -69,6 +69,12 @@ public class DialogueController : MonoBehaviour
     }
 
     public void moveShip() {
+        StartCoroutine("moveShipCour");
+    }
+
+    IEnumerator moveShipCour()
+    {
+        yield return new WaitForSeconds(2f);
         ship.transform.position = startingtransform;
     }
 

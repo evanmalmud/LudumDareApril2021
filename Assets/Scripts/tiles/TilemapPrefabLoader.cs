@@ -15,7 +15,9 @@ public class TilemapPrefabLoader : MonoBehaviour
     public Vector3 nextPos;
 
     public Queue<GameObject> layers = new Queue<GameObject>();
+    public Queue<GameObject> disabledlayers = new Queue<GameObject>();
 
+    public int amountToLoadEnabledAtStart = 6;
     public int amountToLoadAtStart = 100;
 
     public int amountToLoadMidGame = 2;
@@ -24,6 +26,8 @@ public class TilemapPrefabLoader : MonoBehaviour
 
     public int layersUntilDeleteDefault = 2;
     public int layersUntilDelete = 2;
+
+    public GameObject lastTilemapPicked = null;
 
     private IEnumerator coroutine;
 
@@ -37,7 +41,11 @@ public class TilemapPrefabLoader : MonoBehaviour
         foreach(GameObject go in layers) {
             Destroy(go);
         }
+        foreach (GameObject go in disabledlayers) {
+            Destroy(go);
+        }
         layers.Clear();
+        disabledlayers.Clear();
     }
 
     public void reloadLevel() {
@@ -62,6 +70,11 @@ public class TilemapPrefabLoader : MonoBehaviour
         }
         
         layersPassed++;
+        GameObject obj2 = disabledlayers.Dequeue();
+        obj2.SetActive(true);
+        layers.Enqueue(obj2);
+
+
         if(layersPassed/amountToLoadAtStart >= .9f) {
             //Make player idle or something
             for (int i = 0; i < amountToLoadMidGame; i++) {
@@ -71,7 +84,7 @@ public class TilemapPrefabLoader : MonoBehaviour
     }
 
     public void loadNext()
-    {
+    {   
         coroutine = SpawnGO(nextPos);
         StartCoroutine(coroutine);
         updateTransform(layerHeight);
@@ -79,10 +92,23 @@ public class TilemapPrefabLoader : MonoBehaviour
 
     IEnumerator SpawnGO(Vector3 pos)
     {
-        GameObject obj = Instantiate(pickRandomTilemap());
+        GameObject tileMap = pickRandomTilemap();
+        if (lastTilemapPicked == tileMap) {
+            tileMap = pickRandomTilemap();
+        }
+
+        lastTilemapPicked = tileMap;
+        GameObject obj = Instantiate(tileMap);
         obj.transform.position = pos;
         obj.GetComponentInChildren<LayerPassed>().loader = this;
-        layers.Enqueue(obj);
+        if(layers.Count >= amountToLoadEnabledAtStart) {
+            obj.SetActive(false);
+            disabledlayers.Enqueue(obj);
+
+        } else {
+            layers.Enqueue(obj);
+        }
+        //layers.Enqueue(obj);
 
         /*if (layers.Count > 102) {
             obj = layers.Dequeue();
