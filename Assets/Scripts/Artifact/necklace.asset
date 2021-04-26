@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa2b71a2cd10ffe4f9c1c5665a539861, type: 3}
-  m_Name: idcard
+  m_Name: necklace
   m_EditorClassIdentifier: 
-  depthType: 2
-  artifactType: 2
-  dirtySprite: {fileID: -3439770135274731223, guid: d5cf8d9116a167d4688153effc385f26,
+  depthType: 0
+  artifactType: 0
+  dirtySprite: {fileID: -6912603725784986464, guid: d5cf8d9116a167d4688153effc385f26,
     type: 3}
-  cleanSprite: {fileID: 1458026075639339940, guid: d5cf8d9116a167d4688153effc385f26,
+  cleanSprite: {fileID: -5807025377444767664, guid: d5cf8d9116a167d4688153effc385f26,
     type: 3}

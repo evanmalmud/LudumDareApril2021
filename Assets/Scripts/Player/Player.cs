@@ -69,7 +69,7 @@ public class Player : MonoBehaviour {
 
 	public bool scanningAnim = false;
 
-	public float maxDepth = 300f;
+	public float maxDepth = 200f;
 	public GameState gameState;
 
 	public bool canDrill = false;

@@ -20,9 +20,9 @@ public class RandomPlacement : MonoBehaviour
         if (bombspawnrate >= randomFloat) {
             Instantiate(bombPrefab, this.transform.position, this.transform.rotation, this.transform);
         }
-        Debug.Log(rateOf + " " + artifactspawnrate + " " + randomFloat);
+        //Debug.Log(rateOf + " " + artifactspawnrate + " " + randomFloat + gameObject.name);
         if (artifactspawnrate >= rateOf - randomFloat) {
-            Debug.Log("SUC" + rateOf + " " + artifactspawnrate + " " + randomFloat);
+            //Debug.Log("SUC" + rateOf + " " + artifactspawnrate + " " + randomFloat);
             Instantiate(artifactPrefab, this.transform.position, this.transform.rotation, this.transform);
         }
 

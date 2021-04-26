@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   depthType: 2
   artifactType: 2
-  dirtySprite: {fileID: -3439770135274731223, guid: d5cf8d9116a167d4688153effc385f26,
+  dirtySprite: {fileID: -3902141111642401928, guid: d5cf8d9116a167d4688153effc385f26,
     type: 3}
-  cleanSprite: {fileID: -3439770135274731223, guid: d5cf8d9116a167d4688153effc385f26,
+  cleanSprite: {fileID: -9144313803294245508, guid: d5cf8d9116a167d4688153effc385f26,
     type: 3}
