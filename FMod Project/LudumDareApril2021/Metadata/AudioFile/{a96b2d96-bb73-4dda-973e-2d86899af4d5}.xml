@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{62e123ea-afad-4109-bd66-d4288bb4c593}">
+	<object class="AudioFile" id="{a96b2d96-bb73-4dda-973e-2d86899af4d5}">
 		<property name="assetPath">
-			<value>LD48_SFX_JSO_OBJ_Bomb_countdown.wav</value>
+			<value>LD48_SFX_JSO_OBJ_warning_hi.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>3.0219791666666667</value>
+			<value>1.565375</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>
