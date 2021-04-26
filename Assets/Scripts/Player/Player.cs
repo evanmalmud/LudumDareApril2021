@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using PowerTools;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(ControllerPlayer))]
 public class Player : MonoBehaviour {
@@ -22,10 +23,22 @@ public class Player : MonoBehaviour {
 	SpriteAnim m_anim = null;
 	public AnimationClip m_idle = null;
 	public AnimationClip m_walk = null;
-	public AnimationClip m_action = null;
 	public AnimationClip m_scan = null;
 	public AnimationClip m_death = null;
 	public AnimationClip m_teleport = null;
+
+	public AnimationClip m_fall = null;
+	public AnimationClip m_land = null;
+
+
+
+	public AnimationClip m_playerdrillstartidle = null;
+
+	public AnimationClip m_playerdrillidle = null;
+	public AnimationClip m_playerdrillwalk = null;
+
+	public AnimationClip m_drillstarting = null;
+	public AnimationClip m_drillloop = null;
 
 	[FMODUnity.EventRef]
 	public string footstepL = "";
@@ -46,19 +59,32 @@ public class Player : MonoBehaviour {
 	public string drillSfx = "";
 	FMOD.Studio.EventInstance drillSfxInstance;
 
+	[FMODUnity.EventRef]
+	public string teleportSfx = "";
+	FMOD.Studio.EventInstance teleportSfxInstance;
+
 	public bool scanningAnim = false;
 
 	public float maxDepth = 300f;
 	public GameState gameState;
 
+	bool canDrill = false;
+	public bool drillEnabled = false;
+	public bool drillEnabledThisFrame = false;
 
-	public Drill drill;
+	public GameObject drillL;
+	public SpriteAnim drillLSpriteAnim;
+	public SpriteRenderer drillLSpriteRend;
+	public GameObject drillR;
+	public SpriteAnim drillRSpriteAnim;
+	public SpriteRenderer drillRSpriteRend;
 	public Sonar sonar;
 	public Vector3 startPos;
 
+	public List<ArtifactScriptableObject> collectedArtifacts = new List<ArtifactScriptableObject>();
+
 	void Start()
 	{
-		drill = GetComponentInChildren<Drill>();
 		sonar = GetComponentInChildren<Sonar>();
 		gameState = FindObjectOfType<GameState>();
 		controller = GetComponent<ControllerPlayer>();
@@ -68,29 +94,20 @@ public class Player : MonoBehaviour {
 
     public void ResetPlayer()
     {
+		collectedArtifacts.Clear();
 		transform.position = startPos;
 		gravity = defaultGravity;
 		canMove = true;
-		drill.canDrill = true;
+		canDrill = true;
 		sonar.canSonar = true;
+		isDead = false;
 
 	}
 
     void Update()
 	{
+		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		if (canMove) {
-			Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-			if(input.magnitude <= 0) {
-				if (m_anim.Clip != m_idle) {// (check we're not already in the animation first though)
-					m_anim.Play(m_idle);
-				}
-			} else {
-				if (m_anim.Clip != m_walk) { // (check we're not already in the animation first though)
-					m_anim.Play(m_walk);
-				}
-			}
-
 			velocity.x = input.x * moveSpeed;
 			velocity.y = gravity * Time.deltaTime;
 			controller.Move(velocity * Time.deltaTime);
@@ -99,6 +116,101 @@ public class Player : MonoBehaviour {
 			if ((spriteRend.flipX && velocity.x > 0) || (!spriteRend.flipX && velocity.x < 0)) {
 				//Looking left moving right OR THE OPPOSITE
 				spriteRend.flipX = !spriteRend.flipX;
+			}
+		}
+
+		if(canDrill) {
+			drillEnabledThisFrame = false;
+			if (Input.GetKeyDown(KeyCode.Mouse0)) {
+				drillEnabled = true;
+				drillEnabledThisFrame = true;
+			} else if (!Input.GetKey(KeyCode.Mouse0)) {
+				drillEnabled = false;
+				drillL.SetActive(drillEnabled);
+				drillR.SetActive(drillEnabled);
+			}
+			if (drillEnabled) {
+
+				//rotation
+				Vector3 mousePos = Input.mousePosition;
+				mousePos.z = 0f;
+
+				Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+				mousePos.x = mousePos.x - objectPos.x;
+				mousePos.y = mousePos.y - objectPos.y;
+
+				float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+
+				if (spriteRend.flipX) {
+					//Facing Left
+					drillL.SetActive(drillEnabled);
+					drillR.SetActive(!drillEnabled);
+					if (angle < 90 && angle >= 0) {
+						angle = 90f;
+					} else if (angle > -90 && angle <= 0) {
+						angle = -90f;
+					}
+
+					drillL.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+				} else {
+					drillL.SetActive(!drillEnabled);
+					drillR.SetActive(drillEnabled);
+					if (angle > 90) {
+						angle = 90f;
+					} else if (angle < -90) {
+						angle = -90f;
+					}
+					drillR.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+				}
+			}
+		}
+
+		// Animations
+		if (drillEnabled) {
+			if(drillEnabledThisFrame) {
+				
+				if (drillRSpriteAnim.Clip != m_drillstarting && drillR.activeSelf) {
+					drillRSpriteAnim.Play(m_drillstarting);
+				}
+				if (drillLSpriteAnim.Clip != m_drillstarting && drillL.activeSelf) {
+					drillLSpriteAnim.Play(m_drillstarting);
+				}
+			} else {
+				if (drillRSpriteAnim.Clip != m_drillloop && drillR.activeSelf) {
+					drillRSpriteAnim.Play(m_drillloop);
+				}
+				if (drillLSpriteAnim.Clip != m_drillloop && drillL.activeSelf) {
+					drillLSpriteAnim.Play(m_drillloop);
+				}
+			}
+			if (canMove && input.magnitude > 0) {
+				//Moving and Drilling
+				if (m_anim.Clip != m_playerdrillwalk) {// (check we're not already in the animation first though)
+					m_anim.Play(m_playerdrillwalk);
+				}
+			} else if (canMove) {
+				//Not moving
+				if (drillEnabledThisFrame) {
+					if (m_anim.Clip != m_playerdrillstartidle) {// (check we're not already in the animation first though)
+						m_anim.Play(m_playerdrillstartidle);
+					}
+				} else {
+					if (m_anim.Clip != m_playerdrillidle) {// (check we're not already in the animation first though)
+						m_anim.Play(m_playerdrillidle);
+					}
+				}
+			}
+
+		} else if (canMove) {
+			if (input.magnitude > 0) {
+				//Moving
+				if (m_anim.Clip != m_walk) {// (check we're not already in the animation first though)
+					m_anim.Play(m_walk);
+				}
+			} else {
+				if (m_anim.Clip != m_idle) {// (check we're not already in the animation first though)
+					m_anim.Play(m_idle);
+				}
 			}
 		}
 	}
@@ -174,6 +286,14 @@ public class Player : MonoBehaviour {
 		if (!drillSfx.Equals(null) && !drillSfx.Equals("")) {
 			drillSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillSfx);
 			drillSfxInstance.start();
+		}
+	}
+
+	public void TeleportSfx()
+	{
+		if (!teleportSfx.Equals(null) && !teleportSfx.Equals("")) {
+			teleportSfxInstance = FMODUnity.RuntimeManager.CreateInstance(teleportSfx);
+			teleportSfxInstance.start();
 		}
 	}
 

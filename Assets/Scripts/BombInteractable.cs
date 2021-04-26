@@ -18,12 +18,21 @@ public class BombInteractable : Interactable
     private IEnumerator coroutine;
     SpriteAnim m_anim = null;
 
+    [FMODUnity.EventRef]
+    public string bombBlinkingSfx = "";
+    FMOD.Studio.EventInstance bombBlinkingInstance;
+
+    [FMODUnity.EventRef]
+    public string bombExplosionSfx = "";
+    FMOD.Studio.EventInstance bombExplosionSfxInstance;
+
     public void Start()
     {
         base.Start();
         m_anim = m_anim = GetComponent<SpriteAnim>();
         if (m_anim.Clip != m_blinking) { // (check we're not already in the animation first though)
             m_anim.Play(m_blinking);
+
         }
     }
     public override void ScanHit()
@@ -36,6 +45,7 @@ public class BombInteractable : Interactable
 
     private IEnumerator WaitAndExplode(float waitTime)
     {
+        BombBlinkingSfx();
         yield return new WaitForSeconds(waitTime);
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(this.transform.position, bombExpRadius, collisionMask);
         foreach (Collider2D hit in hitCollider) {
@@ -56,8 +66,25 @@ public class BombInteractable : Interactable
         if (m_anim.Clip != m_explosion) { // (check we're not already in the animation first though)
             m_anim.Play(m_explosion);
         }
+        BombExplosionSfx();
         Destroy(this.gameObject);
         print("Coroutine ended: " + Time.time + " seconds");
+    }
+
+    public void BombBlinkingSfx()
+    {
+        if (!bombBlinkingSfx.Equals(null) && !bombBlinkingSfx.Equals("")) {
+            bombBlinkingInstance = FMODUnity.RuntimeManager.CreateInstance(bombBlinkingSfx);
+            bombBlinkingInstance.start();
+        }
+    }
+
+    public void BombExplosionSfx()
+    {
+        if (!bombExplosionSfx.Equals(null) && !bombExplosionSfx.Equals("")) {
+            bombExplosionSfxInstance = FMODUnity.RuntimeManager.CreateInstance(bombExplosionSfx);
+            bombExplosionSfxInstance.start();
+        }
     }
 
 }

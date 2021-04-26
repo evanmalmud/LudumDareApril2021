@@ -38,6 +38,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4898613328178491147}
     m_Modifications:
+    - target: {fileID: 239316367, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
+      propertyPath: bombExpRadius
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 239316367, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
+      propertyPath: timeUntilExplosion
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 727479756135041780, guid: b63480347db18ee4e95dc5be68b672bb,
         type: 3}
       propertyPath: m_Name

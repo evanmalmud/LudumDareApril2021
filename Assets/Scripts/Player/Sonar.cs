@@ -53,7 +53,8 @@ public class Sonar : MonoBehaviour
             disc.Color = currentColor;
             sonarEnabled = true;
             this.gameObject.transform.SetParent(null);
-            StartCoroutine("scanTime");
+            IEnumerator couroutine = ScanTime();
+            StartCoroutine(couroutine);
         }
 
         if(sonarEnabled && !sonarStarted) {
@@ -74,11 +75,12 @@ public class Sonar : MonoBehaviour
         sonarEnabled = false;
         sonarStarted = false;
         disc.enabled = false;
+        player.endScan();
         this.gameObject.transform.SetParent(parent);
         this.transform.localPosition = localPos;
     }
 
-    IEnumerable scanTime() {
+    IEnumerator ScanTime() {
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(this.transform.position, maxRadius, collisionMask);
         foreach(Collider2D hit in hitCollider) {
             Interactable interact;
@@ -91,6 +93,6 @@ public class Sonar : MonoBehaviour
             //}
         }
 
-        return null;
+        yield return null;
     }
 }

@@ -139,6 +139,8 @@ MonoBehaviour:
     m_Bits: 2304
   m_blinking: {fileID: 7400000, guid: 90a5b55eecbaef14eae2e02f82325d3b, type: 2}
   m_explosion: {fileID: 7400000, guid: 749981719357f9f4ebb6cb31353bff80, type: 2}
+  bombBlinkingSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Bomb_countdown
+  bombExplosionSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Bomb_Med_explo
 --- !u!1001 &2919895861637086933
 PrefabInstance:
   m_ObjectHideFlags: 0

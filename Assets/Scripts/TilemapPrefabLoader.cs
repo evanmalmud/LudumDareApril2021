@@ -5,7 +5,8 @@ using UnityEngine;
 public class TilemapPrefabLoader : MonoBehaviour
 {
     public GameObject toplevelTilemap;
-    //Expect them all to be 20 TALL
+    public int toplevelTilemaplayerHeight = -20;
+
     public List<GameObject> tilemaps;
 
     public int layerHeight = -20;
@@ -24,16 +25,7 @@ public class TilemapPrefabLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nextPos = Vector3.zero;
-
-        //Load first 6
-        GameObject obj = Instantiate(toplevelTilemap);
-        obj.transform.position = nextPos;
-        layers.Enqueue(obj);
-        updateTransform();
-        for(int i = 0; i < amountToLoadAtStart; i++) {
-            loadNext();
-        }
+        reloadLevel();
 
     }
     public void deleteOldLevel() {
@@ -49,7 +41,7 @@ public class TilemapPrefabLoader : MonoBehaviour
         GameObject obj = Instantiate(toplevelTilemap);
         obj.transform.position = nextPos;
         layers.Enqueue(obj);
-        updateTransform();
+        updateTransform(toplevelTilemaplayerHeight);
         for (int i = 0; i < amountToLoadAtStart; i++) {
             loadNext();
         }
@@ -69,7 +61,7 @@ public class TilemapPrefabLoader : MonoBehaviour
     {
         coroutine = SpawnGO(nextPos);
         StartCoroutine(coroutine);
-        updateTransform();
+        updateTransform(layerHeight);
     }
 
     IEnumerator SpawnGO(Vector3 pos)
@@ -100,8 +92,8 @@ public class TilemapPrefabLoader : MonoBehaviour
         yield return null;
     }
 
-    void updateTransform() {
-        nextY += layerHeight;
+    void updateTransform(float layerH) {
+        nextY += layerH;
         nextPos.y = nextY;
     }
 
