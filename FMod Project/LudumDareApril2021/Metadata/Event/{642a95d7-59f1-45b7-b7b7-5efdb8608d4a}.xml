@@ -375,7 +375,7 @@
 			<value>0.25205479452054796</value>
 		</property>
 		<property name="value">
-			<value>10</value>
+			<value>1.5</value>
 		</property>
 		<property name="curveShape">
 			<value>0.545760989</value>
@@ -413,7 +413,7 @@
 			<value>0.46000000000000002</value>
 		</property>
 		<property name="value">
-			<value>8</value>
+			<value>2.21788025</value>
 		</property>
 		<property name="curveShape">
 			<value>0.26281929</value>
@@ -424,7 +424,7 @@
 			<value>0.57000000000000006</value>
 		</property>
 		<property name="value">
-			<value>8</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{f142f5ba-5ecd-4435-b6ce-abf3dcbfce91}">

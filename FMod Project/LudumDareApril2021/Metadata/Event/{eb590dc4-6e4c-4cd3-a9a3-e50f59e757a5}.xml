@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{eb590dc4-6e4c-4cd3-a9a3-e50f59e757a5}">
 		<property name="name">
-			<value>LD48_SFX_ZL_PYLR_Damage</value>
+			<value>LD48_SFX_ZL_PYLR_Death</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{350e3cf3-1eac-4886-8b73-7f51bd6771bc}" />
 	<object class="GroupTrack" id="{de96069a-da80-4952-83b0-ed962ce2f30c}">
 		<relationship name="modules">
-			<destination>{59fa015a-9f32-423c-b004-82d01a63faa7}</destination>
+			<destination>{dbce48e2-e04c-443a-a3e5-3e2f2883a074}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{4792aca7-1456-44be-a06c-13eb18cacc8e}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{4534e5e1-9589-4152-998f-5659167d4334}">
 		<relationship name="modules">
-			<destination>{59fa015a-9f32-423c-b004-82d01a63faa7}</destination>
+			<destination>{dbce48e2-e04c-443a-a3e5-3e2f2883a074}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{d5934562-e36c-4065-a869-4b66b6e5c5a4}">
@@ -88,15 +88,15 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{318a7ea8-1d15-4a1f-8aaa-247af6ffd5f8}" />
-	<object class="SingleSound" id="{59fa015a-9f32-423c-b004-82d01a63faa7}">
-		<property name="length">
-			<value>0.58750566893424039</value>
-		</property>
+	<object class="SingleSound" id="{dbce48e2-e04c-443a-a3e5-3e2f2883a074}">
 		<relationship name="audioFile">
-			<destination>{4bce4d1d-0cd0-416c-8846-8164a55903d1}</destination>
+			<destination>{f8559e94-6470-4c98-9b9d-5fd3c136c4cb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{4792aca7-1456-44be-a06c-13eb18cacc8e}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
