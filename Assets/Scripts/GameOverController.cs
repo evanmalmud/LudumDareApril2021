@@ -9,6 +9,8 @@ public class GameOverController : MonoBehaviour
 
     public GameObject commonItems, rareItems, legendaryItems;
 
+    public GameObject accidentCard;
+
     public SpriteRenderer spriteRend;
 
     public Player player;
@@ -27,17 +29,19 @@ public class GameOverController : MonoBehaviour
 
     public void onDisplay(bool isGameOver) {
 
-        if(isGameOver) {
+        resetDisplay();
+        if (isGameOver) {
             spriteRend.sprite = gameOverSprite;
+            accidentCard.SetActive(true);
         } else {
             spriteRend.sprite = recalledSprite;
         }
         
         foreach(ArtifactScriptableObject obj in player.collectedArtifacts) {
-            Debug.Log(obj);
+            //Debug.Log(obj);
             if(obj.artifactType == ArtifactScriptableObject.ArtifactType.LEGENDARY ||
                 obj.artifactType == ArtifactScriptableObject.ArtifactType.PERSONAL) {
-                Debug.Log("legendary " + obj.cleanSprite.name);
+                //Debug.Log("legendary " + obj.cleanSprite.name);
                 score += 3000;
                 if (legendaryIndex > 9) {
                     Debug.Log("too many items to show...");
@@ -48,7 +52,7 @@ public class GameOverController : MonoBehaviour
 
                 }
             } else if (obj.artifactType == ArtifactScriptableObject.ArtifactType.RARE) {
-                Debug.Log("rare " + obj.cleanSprite.name);
+                //Debug.Log("rare " + obj.cleanSprite.name);
                 score += 1000;
                 if (rareIndex > 9) {
                     Debug.Log("too many items to show...");
@@ -59,7 +63,7 @@ public class GameOverController : MonoBehaviour
                 }
             } else {
                 score += 100;
-                Debug.Log("common " + obj.cleanSprite.name);
+                //Debug.Log("common " + obj.cleanSprite.name);
                 if (commonIndex > 9) {
                     Debug.Log("too many items to show...");
                 } else {
@@ -70,6 +74,20 @@ public class GameOverController : MonoBehaviour
             }
         }
         score += (int)(10 * Mathf.Abs(player.transform.position.y));
-        scoreText.text = score.ToString();
+        scoreText.text = "$" + score.ToString();
+    }
+
+    private void resetDisplay() {
+        accidentCard.SetActive(false);
+        score = 0;
+        foreach (GameObject go in commonItemPos) {
+            go.SetActive(false);
+        }
+        foreach (GameObject go in rareItemsPos) {
+            go.SetActive(false);
+        }
+        foreach (GameObject go in legendaryItemsPos) {
+            go.SetActive(false);
+        }
     }
 }

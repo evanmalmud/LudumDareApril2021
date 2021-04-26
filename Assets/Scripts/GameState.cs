@@ -123,6 +123,9 @@ public class GameState : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
         if (!loadReady && FMODUnity.RuntimeManager.HasBankLoaded("Master")) {
             loadReady = true;
             updateText();
@@ -131,7 +134,8 @@ public class GameState : MonoBehaviour
     }
 
     public void timesUp() {
-        //leveltimer.counting = true;
+        leveltimer.counting = false;
+        playerCanvas.SetActive(false);
         player.playRecall();
         player.canMove = false;
         player.canDrill = false;
@@ -139,6 +143,7 @@ public class GameState : MonoBehaviour
         player.drillEnabled = false;
         player.drillL.SetActive(false);
         player.drillR.SetActive(false);
+        
         Debug.Log("playerRecalled");
         currentState = GAMESTATE.GAMEOVER;
         disableAll();
@@ -147,6 +152,8 @@ public class GameState : MonoBehaviour
     }
 
     public void playerDied() {
+        leveltimer.counting = false;
+        playerCanvas.SetActive(false);
         player.canMove = false;
         player.canDrill = false;
         player.sonar.canSonar = false;

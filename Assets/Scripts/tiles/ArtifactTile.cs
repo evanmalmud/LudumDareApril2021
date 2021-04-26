@@ -34,18 +34,16 @@ public class ArtifactTile : TilePrefab
     public override void Start()
     {
         depthType = GameState.depthCheck(this.transform.position.y + Random.Range(-5f, 5f));
-        //Debug.Log(this.transform.position.y + " " + depthType);
 
         if (depthType == GameState.DepthType.DEEP && deepArtifacts != null && deepArtifacts.Count > 0) {
             chosenArtifact = deepArtifacts[Random.Range(0, deepArtifacts.Count)];
         } else if (depthType == GameState.DepthType.MEDIUM && mediumArtifacts != null && mediumArtifacts.Count > 0) {
             chosenArtifact = mediumArtifacts[Random.Range(0, mediumArtifacts.Count)];
-        } else if (depthType == GameState.DepthType.SHALLOW && shallowSprites != null && shallowSprites.Count > 0) {
+        } else {
             chosenArtifact = shallowArtifacts[Random.Range(0, shallowArtifacts.Count)];
-        } else if (possibleArtifacts != null && possibleArtifacts.Count > 0) {
-            chosenArtifact = possibleArtifacts[Random.Range(0, possibleArtifacts.Count)];
         }
 
+        Debug.Log(this.transform.position.y + " " + depthType + " " + chosenArtifact.name);
         GetComponent<SpriteRenderer>().sprite = chosenArtifact.dirtySprite;
     }
     
