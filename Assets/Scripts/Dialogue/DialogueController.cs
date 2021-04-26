@@ -26,6 +26,14 @@ public class DialogueController : MonoBehaviour
         }
     }
 
+    public void cancelDialogue() {
+        StopCoroutine("playDialogue");
+        rocketAmbienceInstance.setPaused(true);
+        initialDialogueInstance.setPaused(true);
+        rocketAmbienceInstance.release();
+        initialDialogueInstance.release();
+    }
+
     public void playIntroDialogue() {
         rocketAmbienceInstance.start();
         StartCoroutine("playDialogue");

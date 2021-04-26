@@ -23,7 +23,7 @@ public class Sonar : MonoBehaviour
     public LayerMask collisionMask;
 
 
-    //public CircleCollider2D circleCollider2D;
+    public CircleCollider2D circleCollider2D;
     public Shapes.Disc disc;
 
     public Player player;
@@ -35,6 +35,7 @@ public class Sonar : MonoBehaviour
 
     private void Start()
     {
+        circleCollider2D = GetComponent<CircleCollider2D>();
         player = GetComponentInParent<Player>();
         parent = this.gameObject.transform.parent;
         localPos = this.transform.localPosition;
@@ -47,14 +48,15 @@ public class Sonar : MonoBehaviour
             player.scanning(true);
             radius = 0f;
             disc.enabled = true;
+            circleCollider2D.enabled = true;
             disc.Radius = radius;
-            //circleCollider2D.radius = radius;
+            circleCollider2D.radius = radius;
             currentColor = startColor;
             disc.Color = currentColor;
             sonarEnabled = true;
             this.gameObject.transform.SetParent(null);
-            IEnumerator couroutine = ScanTime();
-            StartCoroutine(couroutine);
+           // IEnumerator couroutine = ScanTime();
+            //StartCoroutine(couroutine);
         }
 
         if(sonarEnabled && !sonarStarted) {
@@ -66,7 +68,7 @@ public class Sonar : MonoBehaviour
 
         if(sonarEnabled && sonarStarted) {
             disc.Radius = radius;
-            //circleCollider2D.radius = radius;
+            circleCollider2D.radius = radius;
             disc.Color = currentColor;
         }
     }
@@ -75,9 +77,18 @@ public class Sonar : MonoBehaviour
         sonarEnabled = false;
         sonarStarted = false;
         disc.enabled = false;
+        circleCollider2D.enabled = false;
         player.endScan();
         this.gameObject.transform.SetParent(parent);
         this.transform.localPosition = localPos;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Interactable interact;
+        if (collision.TryGetComponent<Interactable>(out interact)) {
+            interact.ScanHit();
+        }
     }
 
     IEnumerator ScanTime() {

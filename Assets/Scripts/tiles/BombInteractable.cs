@@ -59,14 +59,22 @@ public class BombInteractable : Interactable
             TilePrefab tile;
             if (hit.TryGetComponent<TilePrefab>(out tile)) {
                 tile.destroy();
+                continue;
+            }
+            ArtifactTile artifact;
+            if (hit.TryGetComponent<ArtifactTile>(out artifact)) {
+                artifact.destroy();
+                continue;
             }
             Interactable interact;
             if (hit.TryGetComponent<Interactable>(out interact)) {
                 Destroy(interact.gameObject);
+                continue;
             }
             Player player;
             if (hit.TryGetComponent<Player>(out player)) {
                 player.takeDamage();
+                continue;
             }
         }
         light2d.enabled = false;

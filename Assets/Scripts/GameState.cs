@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    
+
     public enum DepthType {
         SHALLOW=0,
         MEDIUM=75,
@@ -71,9 +71,49 @@ public class GameState : MonoBehaviour
 
     public TitleAnimPlayer titleAnimPlayer;
 
+    [FMODUnity.EventRef]
+    public string negative = "";
+    [FMODUnity.EventRef]
+    public string positive = "";
+    [FMODUnity.EventRef]
+    public string neutral = "";
+    [FMODUnity.EventRef]
+    public string timesheetIn = "";
+    [FMODUnity.EventRef]
+    public string timesheetOut = "";
+    FMOD.Studio.EventInstance negInstance;
+    FMOD.Studio.EventInstance posInstance;
+    FMOD.Studio.EventInstance neutralInstance;
+    FMOD.Studio.EventInstance timesheetInInstance;
+    FMOD.Studio.EventInstance timesheetOutInstance;
+
+    public void OnDestroy()
+    {
+        negInstance.release();
+        posInstance.release();
+        neutralInstance.release();
+        timesheetInInstance.release();
+        timesheetOutInstance.release();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        if (!negative.Equals(null) && !negative.Equals("")) {
+            negInstance = FMODUnity.RuntimeManager.CreateInstance(negative);
+        }
+        if (!positive.Equals(null) && !positive.Equals("")) {
+            posInstance = FMODUnity.RuntimeManager.CreateInstance(positive);
+        }
+        if (!neutral.Equals(null) && !neutral.Equals("")) {
+            neutralInstance = FMODUnity.RuntimeManager.CreateInstance(neutral);
+        }
+        if (!timesheetIn.Equals(null) && !timesheetIn.Equals("")) {
+            timesheetInInstance = FMODUnity.RuntimeManager.CreateInstance(timesheetIn);
+        }
+        if (!timesheetOut.Equals(null) && !timesheetOut.Equals("")) {
+            timesheetOutInstance = FMODUnity.RuntimeManager.CreateInstance(timesheetOut);
+        }
         dialogueCont = dialogeCanvas.GetComponent<DialogueController>();
         lastState = GAMESTATE.LOADING;
         currentState = GAMESTATE.LOADING;
@@ -111,17 +151,17 @@ public class GameState : MonoBehaviour
         player.canDrill = false;
         player.sonar.canSonar = false;
         player.drillEnabled = false;
+        player.drillL.SetActive(false);
+        player.drillR.SetActive(false);
         currentState = GAMESTATE.GAMEOVER;
         disableAll();
         coroutine = LoadGameOver();
         StartCoroutine(coroutine);
-
-        //coroutine = LoadNewLevel();
-        //StartCoroutine(coroutine);
     }
 
     void updateText()
     {
+        posInstance.start();
         readyText.GetComponent<TMPro.TextMeshProUGUI>().text = "Click to Start";
     }
 
@@ -143,7 +183,8 @@ public class GameState : MonoBehaviour
     }
 
     public void loadReadyClicked() {
-        if(loadReady) {
+        posInstance.start();
+        if (loadReady) {
             disableAll();
             updateMainMenuObj(true);
             currentState = GAMESTATE.MAIN_MENU;
@@ -158,19 +199,29 @@ public class GameState : MonoBehaviour
         dialogueCont.playIntroDialogue();
     }
 
+    public void dialogueSkipped()
+    {
+        cameraFollow.target = howToCanvas.transform;
+        currentState = GAMESTATE.HOWTO;
+        timesheetInInstance.start();
+    }
+
     public void dialogueComplete() 
     {
         cameraFollow.target = howToCanvas.transform;
         currentState = GAMESTATE.HOWTO;
+        timesheetInInstance.start();
     }
 
     public void howToClicked() {
+        timesheetInInstance.start();
         cameraFollow.target = missionCanvas.transform;
         currentState = GAMESTATE.MISSION;
     }
 
     public void missionClicked()
     {
+        timesheetOutInstance.start();
         disableAll();
         cameraFollow.target = player.transform;
         player.ResetPlayer();
