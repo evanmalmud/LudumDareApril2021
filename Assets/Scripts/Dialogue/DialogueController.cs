@@ -24,7 +24,6 @@ public class DialogueController : MonoBehaviour
     public void Start()
     {
         startingtransform = ship.transform;
-        ship.SetActive(false);
         skipButton.SetActive(false);
         ship.transform.localScale = new Vector3(.5f, .5f, 1);
         textBox.text = "";
@@ -40,6 +39,9 @@ public class DialogueController : MonoBehaviour
     public void cancelDialogue() {
         StopCoroutine("playDialogue");
         playShipOffScreen();
+        skipButton.SetActive(false);
+        textBox.enabled = false;
+        ship.transform.position = startingtransform.position;
         rocketAmbienceInstance.setPaused(true);
         initialDialogueInstance.setPaused(true);
         rocketAmbienceInstance.release();
@@ -47,9 +49,9 @@ public class DialogueController : MonoBehaviour
     }
 
     public void playIntroDialogue() {
-        ship.SetActive(true);
         ship.transform.position = startingtransform.position;
         skipButton.SetActive(true);
+        textBox.enabled = true;
         rocketAmbienceInstance.start();
         StartCoroutine("playDialogue");
     }
@@ -81,10 +83,15 @@ public class DialogueController : MonoBehaviour
             FindObjectOfType<GameState>().dialogueComplete();
         } else {
             FindObjectOfType<GameState>().midGameDialogueSkipp();
+            skipButton.SetActive(false);
+            textBox.enabled = false;
+            ship.transform.position = startingtransform.position;
         }
         rocketAmbienceInstance.setPaused(true);
         rocketAmbienceInstance.release();
+        initialDialogueInstance.setPaused(true);
         initialDialogueInstance.release();
+
         yield return null;
     }
 }

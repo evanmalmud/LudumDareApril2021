@@ -257,6 +257,9 @@ MonoBehaviour:
   - {fileID: 4040168678496984818, guid: d1cf59c79de7a78428abe6c8c516f51f, type: 3}
   - {fileID: 4040168678496984818, guid: 6c7391dc1e65dd04e8914ead51a195c2, type: 3}
   - {fileID: 4040168678496984818, guid: be804afa1999d344f9fd045f59936cca, type: 3}
+  - {fileID: 4040168678496984818, guid: 7d6aba234d0e05b48aa23068791c3689, type: 3}
+  - {fileID: 4040168678496984818, guid: 05e5d58a918bf1047a621dd4d0155030, type: 3}
+  - {fileID: 4040168678496984818, guid: 95cbbb6541030454c8d2d6eac0c8022e, type: 3}
   layerHeight: -8
   nextY: 0
   nextPos: {x: 0, y: 0, z: 0}
@@ -764,7 +767,8 @@ MonoBehaviour:
   missionCanvas: {fileID: 600077245}
   dialogeCanvas: {fileID: 545549259}
   dialogueCont: {fileID: 545549261}
-  timeToStayOnPlayerBeforeGameover: 5
+  timeToStayOnPlayerBeforeGameover: 4.7
+  timeToStayOnPlayerBeforeGameoverRecalled: 3
   leveltimer: {fileID: 118346251}
   lastState: 0
   currentState: 0
@@ -12112,6 +12116,7 @@ MonoBehaviour:
   defaultGravity: -20
   gravity: -20
   velocity: {x: 0, y: 0, z: 0}
+  playerLight: {fileID: 1588240864}
   health: 100
   isDead: 0
   canMove: 0
@@ -12695,6 +12700,7 @@ GameObject:
   - component: {fileID: 1962752109}
   - component: {fileID: 1962752110}
   - component: {fileID: 1962752111}
+  - component: {fileID: 1962752112}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12851,6 +12857,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &1962752112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962752104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93ac4c6d01d27f478c0c7bde8def3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.25
+  shakeAmount: 0.25
+  decreaseFactor: 4
+  testScreenShake: 0
 --- !u!1 &2001737792
 GameObject:
   m_ObjectHideFlags: 0

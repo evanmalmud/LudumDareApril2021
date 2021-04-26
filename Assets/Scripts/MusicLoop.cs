@@ -65,7 +65,7 @@ public class MusicLoop : MonoBehaviour
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("remainingTime", leveltimer.getLevelTimeLeftPercent());
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isDead", player.isDead ? 1 : 0);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isRecalled", player.isRecalled ? 1 : 0);
-            Debug.Log("isRecalled " + player.isRecalled);
+            //Debug.Log("isRecalled " + player.isRecalled);
             //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Intensity", playerController.getIntensity() / 100f);
         }
     }

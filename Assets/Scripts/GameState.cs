@@ -50,6 +50,7 @@ public class GameState : MonoBehaviour
     public DialogueController dialogueCont;
 
     public float timeToStayOnPlayerBeforeGameover = 5f;
+    public float timeToStayOnPlayerBeforeGameoverRecalled = 5f;
 
     public LevelTimer leveltimer;
 
@@ -144,6 +145,7 @@ public class GameState : MonoBehaviour
         player.playRecall();
         player.canMove = false;
         player.canDrill = false;
+        player.drillSfxInstance.setPaused(true);
         player.sonar.canSonar = false;
         player.drillEnabled = false;
         player.drillL.SetActive(false);
@@ -162,6 +164,7 @@ public class GameState : MonoBehaviour
         playerCanvas.SetActive(false);
         player.canMove = false;
         player.canDrill = false;
+        player.drillSfxInstance.setPaused(true);
         player.sonar.canSonar = false;
         player.drillEnabled = false;
         player.drillL.SetActive(false);
@@ -250,7 +253,8 @@ public class GameState : MonoBehaviour
     {
         disableAll();
         cameraFollow.target = midGameDialogue.transform;
-        player.ResetPlayer();
+        player.isDead = false;
+        player.isRecalled = false;
         currentState = GAMESTATE.MIDGAMELOAD;
         musicLoop.startMusic();
         midGameDialogueCont.playIntroDialogue();
@@ -292,7 +296,11 @@ public class GameState : MonoBehaviour
     IEnumerator LoadGameOver()
     {
         Debug.Log("load new level");
-        yield return new WaitForSeconds(timeToStayOnPlayerBeforeGameover);
+        if (player.isDead) {
+            yield return new WaitForSeconds(timeToStayOnPlayerBeforeGameover);
+        } else {
+            yield return new WaitForSeconds(timeToStayOnPlayerBeforeGameoverRecalled);
+        }
         cameraFollow.target = gameOverCanvas.transform;
         gameOverText.SetActive(false);
         gameOverController.onDisplay(player.isDead);

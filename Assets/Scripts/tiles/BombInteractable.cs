@@ -26,8 +26,11 @@ public class BombInteractable : Interactable
     public string bombExplosionSfx = "";
     FMOD.Studio.EventInstance bombExplosionSfxInstance;
 
+    public ScreenShake cameraShake;
+
     public override void Start()
     {
+        cameraShake = Camera.main.GetComponent<ScreenShake>();
         base.Start();
         m_anim = m_anim = GetComponent<SpriteAnim>();
         if (m_anim.Clip != m_blinking) { // (check we're not already in the animation first though)
@@ -98,6 +101,7 @@ public class BombInteractable : Interactable
 
     public void BombExplosionSfx()
     {
+        cameraShake.ShakeScreenDefault();
         if (!bombExplosionSfx.Equals(null) && !bombExplosionSfx.Equals("") && !bombExplosionSfxInstance.isValid()) {
             bombExplosionSfxInstance = FMODUnity.RuntimeManager.CreateInstance(bombExplosionSfx);
             bombExplosionSfxInstance.start();

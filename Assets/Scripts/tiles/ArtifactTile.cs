@@ -29,11 +29,10 @@ public class ArtifactTile : TilePrefab
     public string legendarycollectSfx = "";
     FMOD.Studio.EventInstance legendarycollectSfxInstance;
 
-    GameState.DepthType depthType;
 
     public override void Start()
     {
-        depthType = GameState.depthCheck(this.transform.position.y + Random.Range(-5f, 5f));
+        GameState.DepthType depthType = GameState.depthCheck(this.transform.position.y + Random.Range(-5f, 5f));
 
         if (depthType == GameState.DepthType.DEEP && deepArtifacts != null && deepArtifacts.Count > 0) {
             chosenArtifact = deepArtifacts[Random.Range(0, deepArtifacts.Count)];

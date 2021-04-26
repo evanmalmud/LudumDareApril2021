@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using PowerTools;
 using System.Collections.Generic;
+using UnityEngine.Experimental.Rendering.Universal;
 
 [RequireComponent(typeof(ControllerPlayer))]
 public class Player : MonoBehaviour {
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour {
 	public float defaultGravity = -20;
 	public float gravity = -20;
 	public Vector3 velocity;
+
+	public Light2D playerLight;
 
 	ControllerPlayer controller;
 
@@ -49,23 +52,23 @@ public class Player : MonoBehaviour {
 
 	[FMODUnity.EventRef]
 	public string deathSfx = "";
-	FMOD.Studio.EventInstance deathSfxInstance;
+	public FMOD.Studio.EventInstance deathSfxInstance;
 
 	[FMODUnity.EventRef]
 	public string scanSfx = "";
-	FMOD.Studio.EventInstance scanSfxInstance;
+	public FMOD.Studio.EventInstance scanSfxInstance;
 
 	[FMODUnity.EventRef]
 	public string drillSfx = "";
-	FMOD.Studio.EventInstance drillSfxInstance;
+	public FMOD.Studio.EventInstance drillSfxInstance;
 
 	[FMODUnity.EventRef]
 	public string drillEndSfx = "";
-	FMOD.Studio.EventInstance drillEndSfxInstance;
+	public FMOD.Studio.EventInstance drillEndSfxInstance;
 
 	[FMODUnity.EventRef]
 	public string teleportSfx = "";
-	FMOD.Studio.EventInstance teleportSfxInstance;
+	public FMOD.Studio.EventInstance teleportSfxInstance;
 
 	public bool scanningAnim = false;
 
@@ -134,6 +137,7 @@ public class Player : MonoBehaviour {
 
 	public void ResetPlayer()
     {
+		enableLight();
 		collectedArtifacts.Clear();
 		transform.position = startPos;
 		gravity = defaultGravity;
@@ -334,4 +338,13 @@ public class Player : MonoBehaviour {
 	public float depthAsPercent() {
 		return Mathf.Abs(this.transform.position.y) / maxDepth;
     }
+
+	public void disableLight() {
+		playerLight.enabled = false;
+	}
+
+	public void enableLight()
+	{
+		playerLight.enabled = true;
+	}
 }
