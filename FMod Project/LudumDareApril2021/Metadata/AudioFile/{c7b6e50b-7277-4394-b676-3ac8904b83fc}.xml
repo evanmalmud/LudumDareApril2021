@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{536e048f-824e-4baf-a5f7-a1c5f899c9e7}">
+	<object class="AudioFile" id="{c7b6e50b-7277-4394-b676-3ac8904b83fc}">
 		<property name="assetPath">
-			<value>MX/LD48_MX_LVL1B_drummerElec_fillA_2_L1beat_148bpm.wav</value>
+			<value>MX/LD48_MX_Death_track_1_L4_148bpm.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.40541950113378683</value>
+			<value>3.2432426303854873</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>
