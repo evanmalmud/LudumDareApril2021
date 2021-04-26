@@ -56,7 +56,7 @@ public class GameState : MonoBehaviour
 
     public enum GAMESTATE {
         LOADING,
-        MAIN_MENU,
+        TITLE,
         DIALOGUE,
         HOWTO,
         MISSION,
@@ -182,6 +182,7 @@ public class GameState : MonoBehaviour
         loadingCanvas.SetActive(false);
         mainMenuCanvas.SetActive(isEnabled);
         titleAnimPlayer.playAnim();
+        currentState = GAMESTATE.LOADING;
         musicLoop.startMusic();
         //cameraFollow.target = mainMenuCanvas.transform;
 
@@ -200,7 +201,7 @@ public class GameState : MonoBehaviour
         if (loadReady) {
             disableAll();
             updateMainMenuObj(true);
-            currentState = GAMESTATE.MAIN_MENU;
+            currentState = GAMESTATE.TITLE;
         }
     }
 
@@ -249,7 +250,9 @@ public class GameState : MonoBehaviour
     {
         disableAll();
         cameraFollow.target = midGameDialogue.transform;
+        player.ResetPlayer();
         currentState = GAMESTATE.MIDGAMELOAD;
+        musicLoop.startMusic();
         midGameDialogueCont.playIntroDialogue();
     }
 
@@ -263,15 +266,16 @@ public class GameState : MonoBehaviour
     }
 
     public bool checkIfTitle() {
-        if (currentState.Equals(GAMESTATE.LOADING)) {
+        if (currentState.Equals(GAMESTATE.TITLE) || currentState.Equals(GAMESTATE.LOADING)) {
             return true;
         }
         return false;
     }
 
     public bool checkIfNotGameorTitle() {
-        if(currentState.Equals(GAMESTATE.MAIN_MENU) || currentState.Equals(GAMESTATE.DIALOGUE)
-            || currentState.Equals(GAMESTATE.HOWTO) || currentState.Equals(GAMESTATE.MISSION)) {
+        if(currentState.Equals(GAMESTATE.LOADING) || currentState.Equals(GAMESTATE.DIALOGUE)
+            || currentState.Equals(GAMESTATE.HOWTO) || currentState.Equals(GAMESTATE.MISSION)
+            || currentState.Equals(GAMESTATE.MIDGAMELOAD)) {
             return true;
         }
         return false;

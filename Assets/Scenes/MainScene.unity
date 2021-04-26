@@ -8116,9 +8116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Remember to dig deep for Dig Deep. Be advised that you are in a demilitarized
-    zone. And remember: Dig Deep, Inc. is not responsible for injury, illness, or
-    death on contact with bombs or the nearby black hole. Have a great shift!'
+  m_text: Heading to Next Asteroid
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f0ab837fa76e794ab9a9ba915ee9661, type: 2}
   m_sharedMaterial: {fileID: 4652364754500471192, guid: 0f0ab837fa76e794ab9a9ba915ee9661,
@@ -8146,8 +8144,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.92
-  m_fontSizeBase: 28.92
+  m_fontSize: 50.02
+  m_fontSizeBase: 50.02
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

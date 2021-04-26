@@ -31,10 +31,13 @@ public class MusicLoop : MonoBehaviour
     }
     public void startMusic()
     {
-        if (musicLoop != null && !musicLoop.Equals("")) {
+        if (musicLoop != null && !musicLoop.Equals("") && !musicLoopinstance.isValid()) {
             musicLoopinstance = FMODUnity.RuntimeManager.CreateInstance(musicLoop);
-            musicLoopinstance.start();
             loopPlaying = true;
+            musicLoopinstance.start();
+        } else {
+            loopPlaying = true;
+            musicLoopinstance.start();
         }
         if (ambienceLoop != null && !ambienceLoop.Equals("")) {
             ambienceLoopinstance = FMODUnity.RuntimeManager.CreateInstance(ambienceLoop);
@@ -56,8 +59,9 @@ public class MusicLoop : MonoBehaviour
             //instance.setParameterByName("Time", levelTimer.getLevelTimeLeft());
             //Global Vars
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Depth", player.depthAsPercent());
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MenuMusic", gameState.checkIfNotGameorTitle() ? 0 : 1);
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("TitleMusic", gameState.checkIfTitle() ? 1 : 0);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("menuMusic", gameState.checkIfNotGameorTitle() ? 0 : 1);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("titleMusic", gameState.checkIfTitle() ? 1 : 0);
+            Debug.Log("titleMusic " + gameState.checkIfTitle());
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("remainingTime", leveltimer.getLevelTimeLeftPercent());
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isDead", player.isDead ? 1 : 0);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("isRecalled", player.isRecalled ? 1 : 0);
