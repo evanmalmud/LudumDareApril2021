@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{5af5dd71-9f75-4b2b-ba2b-a0c5f2ff541a}">
+		<property name="volume">
+			<value>1.20000005</value>
+		</property>
 		<property name="name">
 			<value>DX HELMET NORMAL</value>
 		</property>
@@ -28,10 +31,10 @@
 			<value>-80</value>
 		</property>
 		<property name="highGain">
-			<value>-29.5</value>
+			<value>-30</value>
 		</property>
 		<property name="lowCrossover">
-			<value>600</value>
+			<value>800</value>
 		</property>
 		<property name="highCrossover">
 			<value>3400</value>

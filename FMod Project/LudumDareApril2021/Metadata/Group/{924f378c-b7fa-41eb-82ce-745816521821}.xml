@@ -19,7 +19,6 @@
 			<destination>{3b8b8149-50aa-441b-b007-0e5320ba4275}</destination>
 			<destination>{aac83f30-9fd1-464b-ad24-b074e62f059b}</destination>
 			<destination>{9bd8c435-702a-4ab0-8f2f-2f8edf60686c}</destination>
-			<destination>{960400ed-cfd1-45c4-8daa-b89835a72665}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{864e25f9-c078-4067-b5b5-66f7c2768782}" />
@@ -55,5 +54,4 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{9bd8c435-702a-4ab0-8f2f-2f8edf60686c}" />
-	<object class="Sidechain" id="{960400ed-cfd1-45c4-8daa-b89835a72665}" />
 </objects>

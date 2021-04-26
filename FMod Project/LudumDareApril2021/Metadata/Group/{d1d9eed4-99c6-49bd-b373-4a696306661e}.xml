@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{d1d9eed4-99c6-49bd-b373-4a696306661e}">
+		<property name="volume">
+			<value>-80</value>
+		</property>
+		<property name="name">
+			<value>DX HELMET NORMAL SIDECHAIN</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{7ef562f6-4c11-4ecd-8bf3-06eb4000c53e}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{b76f044a-d1f2-406c-9673-30d070d4aca6}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6b721575-a27b-45d9-9c2f-6d666ec5c041}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{7ef562f6-4c11-4ecd-8bf3-06eb4000c53e}">
+		<relationship name="effects">
+			<destination>{60f7034d-6ec6-4679-ae77-3160fe116e4f}</destination>
+			<destination>{00f96ef5-821f-4695-978f-4f70be42b6e5}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{b76f044a-d1f2-406c-9673-30d070d4aca6}" />
+	<object class="Sidechain" id="{60f7034d-6ec6-4679-ae77-3160fe116e4f}" />
+	<object class="MixerBusFader" id="{00f96ef5-821f-4695-978f-4f70be42b6e5}" />
+</objects>

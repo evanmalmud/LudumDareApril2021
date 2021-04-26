@@ -30,13 +30,13 @@
 			<value>-10</value>
 		</property>
 		<property name="ratio">
-			<value>1.95000005</value>
+			<value>1.60000002</value>
 		</property>
 		<property name="attackTime">
-			<value>68</value>
+			<value>50</value>
 		</property>
 		<property name="releaseTime">
-			<value>280</value>
+			<value>340</value>
 		</property>
 	</object>
 	<object class="CompressorEffect" id="{dcd373ff-0fd1-4f5d-80f3-75e7af80fe8b}">
