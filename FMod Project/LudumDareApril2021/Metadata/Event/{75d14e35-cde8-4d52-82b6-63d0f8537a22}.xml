@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{75d14e35-cde8-4d52-82b6-63d0f8537a22}">
 		<property name="name">
-			<value>LD48_DX_JSO_HelmetNotif_O2</value>
+			<value>LD48_DX_JSO_HelmetNotif</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{07028eb5-f7c0-490f-b876-7fd66175f3ec}</destination>
+			<destination>{25e3732b-aae4-4d90-9240-56e37adc4e89}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{ae73fa34-6977-466c-a410-5b9f7ae547c8}</destination>
@@ -59,7 +59,7 @@
 			<destination>{bd45443b-cff1-4374-a82e-d4d112ebb65a}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{6b721575-a27b-45d9-9c2f-6d666ec5c041}</destination>
+			<destination>{5af5dd71-9f75-4b2b-ba2b-a0c5f2ff541a}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{fd0ae094-e4e4-49d3-8eee-cc1eb4bb084d}" />

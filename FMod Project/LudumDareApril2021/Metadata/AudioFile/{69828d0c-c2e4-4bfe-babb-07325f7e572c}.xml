@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{e371db9c-a810-4588-a6ab-edcd56995206}">
+	<object class="AudioFile" id="{69828d0c-c2e4-4bfe-babb-07325f7e572c}">
 		<property name="assetPath">
-			<value>MX/LD48_MX_LVL3_kick1_1_L8_148bpm.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>DX/LD48_DX_JSO_SidechainGlitchDeep_1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>12.972970521541949</value>
+			<value>2.0019999999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>

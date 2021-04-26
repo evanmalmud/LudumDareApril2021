@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{c472c42f-fd9a-4be7-8343-90c17a23d2d4}">
+	<object class="AudioFile" id="{837b9bc0-dce2-4f71-b5c4-bec070e980bf}">
 		<property name="assetPath">
-			<value>MX/LD48_MX_LVL2_synth2_1b_L1_148bpm.wav</value>
+			<value>DX/LD48_DX_JSO_SidechainGlitchMed_1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>1.6216099773242629</value>
+			<value>2.0019999999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>

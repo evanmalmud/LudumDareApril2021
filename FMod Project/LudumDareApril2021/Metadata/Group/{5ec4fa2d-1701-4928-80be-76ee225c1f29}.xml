@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{5ec4fa2d-1701-4928-80be-76ee225c1f29}">
+		<property name="name">
+			<value>DX INTRO GAME</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{01b96f5e-080b-4e74-88d9-469c74757487}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{dfb04b64-674b-46e4-ae18-073faa4da152}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6b721575-a27b-45d9-9c2f-6d666ec5c041}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{01b96f5e-080b-4e74-88d9-469c74757487}">
+		<relationship name="effects">
+			<destination>{224f8146-7170-4ee2-ac29-6240bb99c2b7}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{dfb04b64-674b-46e4-ae18-073faa4da152}" />
+	<object class="MixerBusFader" id="{224f8146-7170-4ee2-ac29-6240bb99c2b7}" />
+</objects>
