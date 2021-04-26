@@ -117,7 +117,10 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{be2acc58-975f-4edb-8bd4-850f444f1c6c}">
 		<relationship name="effects">
+			<destination>{06dd8ddd-fecf-4b1d-9317-8ded29a0770e}</destination>
+			<destination>{a74c07a3-7535-4f65-be01-ff28bcad44d0}</destination>
 			<destination>{1099d9f2-67a5-46c8-bccc-55f7861510a8}</destination>
+			<destination>{4e79be2e-7643-401e-941b-4338e5c2dad6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c015403b-8c63-44e8-84ed-0103a5d95ba1}" />
@@ -133,6 +136,60 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a0f03c1f-58c4-4cef-8bb8-70ca52242d9a}" />
+	<object class="CompressorEffect" id="{06dd8ddd-fecf-4b1d-9317-8ded29a0770e}">
+		<property name="threshold">
+			<value>-38.5</value>
+		</property>
+		<property name="ratio">
+			<value>4.9000001</value>
+		</property>
+		<property name="attackTime">
+			<value>0.100000001</value>
+		</property>
+		<property name="releaseTime">
+			<value>42</value>
+		</property>
+		<property name="gain">
+			<value>9.5</value>
+		</property>
+	</object>
+	<object class="ThreeEQEffect" id="{a74c07a3-7535-4f65-be01-ff28bcad44d0}">
+		<property name="highGain">
+			<value>10</value>
+		</property>
+		<property name="highCrossover">
+			<value>13500</value>
+		</property>
+		<property name="crossoverSlope">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{1099d9f2-67a5-46c8-bccc-55f7861510a8}" />
+	<object class="SFXReverbEffect" id="{4e79be2e-7643-401e-941b-4338e5c2dad6}">
+		<property name="decayTime">
+			<value>2300</value>
+		</property>
+		<property name="earlyDelay">
+			<value>24.5</value>
+		</property>
+		<property name="lateDelay">
+			<value>90</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>52</value>
+		</property>
+		<property name="lowShelfFrequency">
+			<value>430</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-11.5</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>60</value>
+		</property>
+		<property name="wetLevel">
+			<value>-4</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{ff8566e1-aa2a-41f4-b31e-30bfad1dec20}" />
 </objects>
