@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{5af5dd71-9f75-4b2b-ba2b-a0c5f2ff541a}">
 		<property name="name">
-			<value>DX HELMET CLEAN</value>
+			<value>DX HELMET NORMAL</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{f8518eee-1449-48b7-bc43-9eb8663796c6}</destination>
@@ -17,6 +17,7 @@
 	<object class="MixerBusEffectChain" id="{f8518eee-1449-48b7-bc43-9eb8663796c6}">
 		<relationship name="effects">
 			<destination>{9f20d217-e130-4063-bb34-fe36189059fe}</destination>
+			<destination>{ef8625ae-24ed-4a01-be52-2b8424939179}</destination>
 			<destination>{ccf86ad3-b8bc-4d8c-ad62-5a0d3e6da97d}</destination>
 			<destination>{2382a7cd-23cf-4bb3-9ce3-15631d5d7853}</destination>
 		</relationship>
@@ -34,6 +35,11 @@
 		</property>
 		<property name="highCrossover">
 			<value>3400</value>
+		</property>
+	</object>
+	<object class="DistortionEffect" id="{ef8625ae-24ed-4a01-be52-2b8424939179}">
+		<property name="level">
+			<value>0.159999996</value>
 		</property>
 	</object>
 	<object class="CompressorEffect" id="{ccf86ad3-b8bc-4d8c-ad62-5a0d3e6da97d}">
