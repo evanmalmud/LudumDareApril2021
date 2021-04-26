@@ -80,11 +80,11 @@ public class BombInteractable : Interactable
                 continue;
             }
         }
-        light2d.enabled = false;
         if (m_anim.Clip != m_explosion) { // (check we're not already in the animation first though)
             m_anim.Play(m_explosion);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.4f);
+        light2d.enabled = false;
         Destroy(this.gameObject);
         print("Coroutine ended: " + Time.time + " seconds");
     }

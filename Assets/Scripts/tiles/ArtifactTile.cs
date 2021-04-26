@@ -99,7 +99,9 @@ public class ArtifactTile : TilePrefab
         damageUntilDestroyed -= damage;
         if (damageUntilDestroyed <= 0) {
             CollectSfx(chosenArtifact.artifactType);
-            FindObjectOfType<Player>().collectedArtifacts.Add(chosenArtifact);
+            Player player = FindObjectOfType<Player>();
+            player.collectedArtifacts.Add(chosenArtifact);
+            player.collectAnim();
             Destroy(this.gameObject);
         }
     }
