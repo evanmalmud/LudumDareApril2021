@@ -39,8 +39,12 @@ public class BombInteractable : Interactable
         yield return new WaitForSeconds(waitTime);
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(this.transform.position, bombExpRadius, collisionMask);
         foreach (Collider2D hit in hitCollider) {
-            TilePrefab interact;
-            if (hit.TryGetComponent<TilePrefab>(out interact)) {
+            TilePrefab tile;
+            if (hit.TryGetComponent<TilePrefab>(out tile)) {
+                Destroy(tile.gameObject);
+            }
+            Interactable interact;
+            if (hit.TryGetComponent<Interactable>(out interact)) {
                 Destroy(interact.gameObject);
             }
             Player player;
@@ -52,6 +56,7 @@ public class BombInteractable : Interactable
         if (m_anim.Clip != m_explosion) { // (check we're not already in the animation first though)
             m_anim.Play(m_explosion);
         }
+        Destroy(this.gameObject);
         print("Coroutine ended: " + Time.time + " seconds");
     }
 

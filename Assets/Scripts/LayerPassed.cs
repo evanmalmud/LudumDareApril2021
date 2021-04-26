@@ -9,6 +9,10 @@ public class LayerPassed : MonoBehaviour
 
     public LayerMask collisionMask;
 
+    private void Start()
+    {
+        loader = FindObjectOfType<TilemapPrefabLoader>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

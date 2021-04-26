@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour {
 
     public Light2D light2d;
 
-    public void Start()
+    public virtual void Start()
     {
         light2d = GetComponent<Light2D>();
         light2d.enabled = false;

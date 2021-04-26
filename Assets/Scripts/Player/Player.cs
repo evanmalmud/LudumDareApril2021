@@ -6,12 +6,15 @@ using PowerTools;
 public class Player : MonoBehaviour {
 
 	public float moveSpeed = 6;
+	public float defaultGravity = -20;
 	public float gravity = -20;
 	public Vector3 velocity;
 
 	ControllerPlayer controller;
 
 	public float health = 100f;
+
+	public bool isDead = false;
 
 	public bool canMove = false;
 
@@ -22,17 +25,58 @@ public class Player : MonoBehaviour {
 	public AnimationClip m_action = null;
 	public AnimationClip m_scan = null;
 	public AnimationClip m_death = null;
+	public AnimationClip m_teleport = null;
+
+	[FMODUnity.EventRef]
+	public string footstepL = "";
+	[FMODUnity.EventRef]
+	public string footstepR = "";
+	FMOD.Studio.EventInstance footstepLInstance;
+	FMOD.Studio.EventInstance footstepRInstance;
+
+	[FMODUnity.EventRef]
+	public string deathSfx = "";
+	FMOD.Studio.EventInstance deathSfxInstance;
+
+	[FMODUnity.EventRef]
+	public string scanSfx = "";
+	FMOD.Studio.EventInstance scanSfxInstance;
+
+	[FMODUnity.EventRef]
+	public string drillSfx = "";
+	FMOD.Studio.EventInstance drillSfxInstance;
 
 	public bool scanningAnim = false;
 
+	public float maxDepth = 300f;
+	public GameState gameState;
+
+
+	public Drill drill;
+	public Sonar sonar;
+	public Vector3 startPos;
+
 	void Start()
 	{
+		drill = GetComponentInChildren<Drill>();
+		sonar = GetComponentInChildren<Sonar>();
+		gameState = FindObjectOfType<GameState>();
 		controller = GetComponent<ControllerPlayer>();
 		m_anim = GetComponent<SpriteAnim>();
 		spriteRend = GetComponent<SpriteRenderer>();
 	}
 
-	void Update()
+    public void ResetPlayer()
+    {
+		transform.position = startPos;
+		gravity = defaultGravity;
+		canMove = true;
+		drill.canDrill = true;
+		sonar.canSonar = true;
+
+	}
+
+    void Update()
 	{
 		if (canMove) {
 			Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -66,11 +110,75 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	public void playRecall() {
+		canMove = false;
+		if (m_anim.Clip != m_teleport) { // (check we're not already in the animation first though)
+			m_anim.Play(m_teleport);
+		}
+	}
+
+	public void recallOver() {
+		gameState.playerRecalled();	
+	}
+
 	public void endScan() {
 		canMove = true;
 	}
 
 	public void takeDamage() {
-		
+		if(!isDead) {
+			isDead = true;
+			canMove = false;
+			if (m_anim.Clip != m_death) { // (check we're not already in the animation first though)
+				m_anim.Play(m_death);
+			}
+			gravity = 0f;
+			gameState.playerDied();
+		}
+
+	}
+
+	public void footStepL() {
+		if (!footstepL.Equals(null) && !footstepL.Equals("")) {
+			footstepLInstance = FMODUnity.RuntimeManager.CreateInstance(footstepL);
+			footstepLInstance.start();
+		}
+	}
+
+	public void footStepR()
+	{
+		if (!footstepR.Equals(null) && !footstepR.Equals("")) {
+			footstepRInstance = FMODUnity.RuntimeManager.CreateInstance(footstepR);
+			footstepRInstance.start();
+		}
+	}
+
+	public void DeathSfx()
+	{
+		if (!deathSfx.Equals(null) && !deathSfx.Equals("")) {
+			deathSfxInstance = FMODUnity.RuntimeManager.CreateInstance(deathSfx);
+			deathSfxInstance.start();
+		}
+	}
+
+	public void ScanSfx()
+	{
+		if (!scanSfx.Equals(null) && !scanSfx.Equals("")) {
+			scanSfxInstance = FMODUnity.RuntimeManager.CreateInstance(scanSfx);
+			scanSfxInstance.start();
+		}
+	}
+
+	public void DrillSfx()
+	{
+		if (!drillSfx.Equals(null) && !drillSfx.Equals("")) {
+			drillSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillSfx);
+			drillSfxInstance.start();
+		}
+	}
+
+
+	public float depthAsPercent() {
+		return Mathf.Abs(this.transform.position.y) / maxDepth;
     }
 }

@@ -43,7 +43,7 @@ public class Sonar : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !sonarEnabled && canSonar) {
+        if ((Input.GetKeyDown(KeyCode.E) || (Input.GetKeyDown(KeyCode.Space))) && !sonarEnabled && canSonar) {
             player.scanning(true);
             radius = 0f;
             disc.enabled = true;
