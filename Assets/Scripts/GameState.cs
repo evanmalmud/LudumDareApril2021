@@ -289,10 +289,13 @@ public class GameState : MonoBehaviour
 
     IEnumerator LoadNewLevel() {
         Debug.Log("load new level");
+        musicLoop.pauseAll(true);
+        yield return new WaitForSeconds(1f);
         loader.deleteOldLevel();
         loader.reloadLevel();
         gameOverText.SetActive(true);
         yield return null;
+        musicLoop.pauseAll(false);
     }
 
     IEnumerator LoadGameOver()

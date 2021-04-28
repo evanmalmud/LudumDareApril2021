@@ -263,12 +263,12 @@ MonoBehaviour:
   layerHeight: -8
   nextY: 0
   nextPos: {x: 0, y: 0, z: 0}
-  amountToLoadEnabledAtStart: 4
+  amountToLoadEnabledAtStart: 2
   amountToLoadAtStart: 40
-  amountToLoadMidGame: 4
+  amountToLoadMidGame: 1
   layersPassed: 0
-  layersUntilDeleteDefault: 4
-  layersUntilDelete: 2
+  layersUntilDeleteDefault: 1
+  layersUntilDelete: 1
   lastTilemapPicked: {fileID: 0}
 --- !u!1 &20690223
 GameObject:
@@ -5998,7 +5998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  maxRadius: 10
+  maxRadius: 7
   sonarTime: 1
   startColor: {r: 0.1882353, g: 0.88235295, b: 0.7254902, a: 1}
   endColor: {r: 0.043137256, g: 0.5411765, b: 0.56078434, a: 1}

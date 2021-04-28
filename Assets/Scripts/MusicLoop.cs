@@ -96,4 +96,10 @@ public class MusicLoop : MonoBehaviour
         ambienceLoopinstance.release();
         helmetLoopinstance.release();
     }
+
+    public void pauseAll(bool pause) {
+        musicLoopinstance.setPaused(pause);
+        ambienceLoopinstance.setPaused(pause);
+        helmetLoopinstance.setPaused(pause);
+    }
 }
