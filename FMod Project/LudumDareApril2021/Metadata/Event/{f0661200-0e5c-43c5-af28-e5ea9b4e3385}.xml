@@ -62,7 +62,14 @@
 			<destination>{6735b3f2-71c7-4e4b-91eb-0e66d8d9c015}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{61faf1d5-078e-4772-810a-fb947269dbab}" />
+	<object class="EventAutomatableProperties" id="{61faf1d5-078e-4772-810a-fb947269dbab}">
+		<property name="maxVoices">
+			<value>4</value>
+		</property>
+		<property name="voiceStealing">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{8e00fc60-51e0-477e-b099-e6e8cec0ece3}" />
 	<object class="GroupTrack" id="{bae5880d-5972-45df-855c-b52945103f00}">
 		<relationship name="mixerGroup">
