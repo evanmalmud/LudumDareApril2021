@@ -12945,15 +12945,15 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.07753479
     y: 0
-    width: 1
+    width: 0.8439363
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.023025
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13046,14 +13046,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 40
+  m_AssetsPPU: 32
   m_RefResolutionX: 960
   m_RefResolutionY: 640
-  m_UpscaleRT: 0
+  m_UpscaleRT: 1
   m_PixelSnapping: 1
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
+  m_CropFrameX: 1
+  m_CropFrameY: 1
+  m_StretchFill: 1
 --- !u!114 &1962752111
 MonoBehaviour:
   m_ObjectHideFlags: 0
