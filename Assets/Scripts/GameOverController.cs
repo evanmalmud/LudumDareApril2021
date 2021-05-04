@@ -79,6 +79,9 @@ public class GameOverController : MonoBehaviour
 
     private void resetDisplay() {
         accidentCard.SetActive(false);
+        commonIndex = 0;
+        rareIndex = 0;
+        legendaryIndex = 0;
         score = 0;
         foreach (GameObject go in commonItemPos) {
             go.SetActive(false);

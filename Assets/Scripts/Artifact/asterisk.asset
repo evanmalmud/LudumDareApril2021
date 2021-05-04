@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2b71a2cd10ffe4f9c1c5665a539861, type: 3}
   m_Name: asterisk
   m_EditorClassIdentifier: 
-  depthType: 2
+  depthType: 100
   artifactType: 2
   dirtySprite: {fileID: 1157951113592692261, guid: d5cf8d9116a167d4688153effc385f26,
     type: 3}

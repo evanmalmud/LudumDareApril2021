@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2b71a2cd10ffe4f9c1c5665a539861, type: 3}
   m_Name: key
   m_EditorClassIdentifier: 
-  depthType: 2
-  artifactType: 2
+  depthType: 0
+  artifactType: 0
   dirtySprite: {fileID: 9186840100801325506, guid: d5cf8d9116a167d4688153effc385f26,
     type: 3}
   cleanSprite: {fileID: -3973363266169291691, guid: d5cf8d9116a167d4688153effc385f26,

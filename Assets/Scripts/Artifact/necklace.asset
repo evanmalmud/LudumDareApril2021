@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2b71a2cd10ffe4f9c1c5665a539861, type: 3}
   m_Name: necklace
   m_EditorClassIdentifier: 
-  depthType: 0
-  artifactType: 0
+  depthType: 50
+  artifactType: 1
   dirtySprite: {fileID: -6912603725784986464, guid: d5cf8d9116a167d4688153effc385f26,
     type: 3}
   cleanSprite: {fileID: -5807025377444767664, guid: d5cf8d9116a167d4688153effc385f26,
