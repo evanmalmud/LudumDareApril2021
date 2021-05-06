@@ -98,7 +98,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{767bc9b3-5fa7-44cb-906a-e2595e88d048}">
 		<property name="priority">
-			<value>3</value>
+			<value>4</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{d067d3b3-6948-44fe-93fd-f7743c9b6da6}" />

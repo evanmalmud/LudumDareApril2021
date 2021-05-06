@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerMaster" id="{f9fd6af3-3168-4948-ad2f-a2bf2f7aa25c}">
+		<property name="maxInstances">
+			<value>32</value>
+		</property>
+		<property name="instanceStealing">
+			<value>1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{17f8834b-088b-4249-bfce-b94129c1f0e7}</destination>
 		</relationship>
