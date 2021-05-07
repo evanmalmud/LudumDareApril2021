@@ -106,4 +106,9 @@ public class ArtifactTile : TilePrefab
         }
     }
 
+    public override void destroy()
+    {
+        Destroy(this.gameObject);
+    }
+
 }

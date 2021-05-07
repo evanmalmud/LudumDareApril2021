@@ -101,7 +101,7 @@ public class TilePrefab : MonoBehaviour
         }
     }
 
-    public void destroy()
+    public virtual void destroy()
     {
         StartCoroutine("playBreakAndDestroy");
     }

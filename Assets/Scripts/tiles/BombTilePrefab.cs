@@ -14,4 +14,9 @@ public class BombTilePrefab : TilePrefab {
             Destroy(this.gameObject);
         }
     }
+
+    public override void destroy()
+    {
+        //base.destroy();
+    }
 }

@@ -27,6 +27,16 @@ public class GameOverController : MonoBehaviour
     public TMPro.TextMeshProUGUI scoreText;
     public int score = 0;
 
+    public int topScore = 0;
+    public TMPro.TextMeshProUGUI topScoreText;
+    private string topScoreName = "topScore";
+
+    public void Start()
+    {
+        topScore = PlayerPrefs.GetInt(topScoreName, topScore);
+        setHighScoreText();
+    }
+
     public void onDisplay(bool isGameOver) {
 
         resetDisplay();
@@ -75,6 +85,20 @@ public class GameOverController : MonoBehaviour
         }
         score += (int)(10 * Mathf.Abs(player.transform.position.y));
         scoreText.text = "$" + score.ToString();
+        setHighScore();
+
+    }
+
+    private void setHighScore() {
+        if(score > topScore) {
+            topScore = score;
+            PlayerPrefs.SetInt(topScoreName, topScore);
+            setHighScoreText();
+        }
+    }
+
+    private void setHighScoreText() {
+        topScoreText.text = "Top Score:  $" + topScore;
     }
 
     private void resetDisplay() {

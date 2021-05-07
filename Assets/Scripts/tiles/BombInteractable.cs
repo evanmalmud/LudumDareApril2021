@@ -28,6 +28,8 @@ public class BombInteractable : Interactable
 
     public ScreenShake cameraShake;
 
+    public bool bombTriggered = false;
+
     public override void Start()
     {
         cameraShake = Camera.main.GetComponent<ScreenShake>();
@@ -40,6 +42,10 @@ public class BombInteractable : Interactable
     }
     public override void ScanHit()
     {
+        if(bombTriggered) {
+            return;
+        }
+        bombTriggered = true;
         base.ScanHit();
         coroutine = WaitAndExplode(timeUntilExplosion);
         StartCoroutine(coroutine);
@@ -47,6 +53,7 @@ public class BombInteractable : Interactable
 
     public void OnDestroy()
     {
+        Debug.Log("Bomb On Destroy");
         bombBlinkingInstance.setPaused(true);
         bombBlinkingInstance.release();
         bombExplosionSfxInstance.setPaused(true);
@@ -59,6 +66,10 @@ public class BombInteractable : Interactable
         yield return new WaitForSeconds(waitTime);
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(this.transform.position, bombExpRadius, collisionMask);
         foreach (Collider2D hit in hitCollider) {
+            BombTilePrefab bombTilePrefab;
+            if (hit.TryGetComponent<BombTilePrefab>(out bombTilePrefab)) {
+                continue;
+            }
             TilePrefab tile;
             if (hit.TryGetComponent<TilePrefab>(out tile)) {
                 tile.destroy();
@@ -67,11 +78,6 @@ public class BombInteractable : Interactable
             ArtifactTile artifact;
             if (hit.TryGetComponent<ArtifactTile>(out artifact)) {
                 artifact.destroy();
-                continue;
-            }
-            Interactable interact;
-            if (hit.TryGetComponent<Interactable>(out interact)) {
-                Destroy(interact.gameObject);
                 continue;
             }
             Player player;
@@ -85,27 +91,29 @@ public class BombInteractable : Interactable
         }
         yield return new WaitForSeconds(.4f);
         light2d.enabled = false;
+        bombBlinkingInstance.setPaused(true);
+        bombBlinkingInstance.release();
+        bombExplosionSfxInstance.setPaused(true);
+        bombExplosionSfxInstance.release();
         Destroy(this.gameObject);
-        print("Coroutine ended: " + Time.time + " seconds");
+        //print("Coroutine ended: " + Time.time + " seconds");
     }
 
     public void BombBlinkingSfx()
     {
-        if (!bombBlinkingSfx.Equals(null) && !bombBlinkingSfx.Equals("") && !bombBlinkingInstance.isValid()) {
+        if (!bombBlinkingSfx.Equals(null) && !bombBlinkingSfx.Equals("")) {
+            bombBlinkingInstance.release();
             bombBlinkingInstance = FMODUnity.RuntimeManager.CreateInstance(bombBlinkingSfx);
             bombBlinkingInstance.start();
-        } else if (bombBlinkingInstance.isValid()) {
-            bombBlinkingInstance.start();
-        }
+        } 
     }
 
     public void BombExplosionSfx()
-    {
+    {   //Called from animation
         cameraShake.ShakeScreenDefault();
-        if (!bombExplosionSfx.Equals(null) && !bombExplosionSfx.Equals("") && !bombExplosionSfxInstance.isValid()) {
+        if (!bombExplosionSfx.Equals(null) && !bombExplosionSfx.Equals("")) {
+            bombExplosionSfxInstance.release();
             bombExplosionSfxInstance = FMODUnity.RuntimeManager.CreateInstance(bombExplosionSfx);
-            bombExplosionSfxInstance.start();
-        } else if (bombExplosionSfxInstance.isValid()) {
             bombExplosionSfxInstance.start();
         }
     }
