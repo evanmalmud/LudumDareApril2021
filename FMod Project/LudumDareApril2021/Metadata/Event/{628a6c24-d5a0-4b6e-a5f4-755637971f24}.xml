@@ -62,7 +62,11 @@
 			<destination>{f9fd6af3-3168-4948-ad2f-a2bf2f7aa25c}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{64d1872c-fe6d-47f2-8737-967f36150a71}" />
+	<object class="EventAutomatableProperties" id="{64d1872c-fe6d-47f2-8737-967f36150a71}">
+		<property name="priority">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{679b7820-2fd5-41a3-8fc7-7d8ef3b56cfc}" />
 	<object class="GroupTrack" id="{77baa813-ef2e-4d79-92ed-cfecb132ff03}">
 		<relationship name="mixerGroup">
