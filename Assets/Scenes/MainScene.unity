@@ -1836,7 +1836,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 8448
-  damagePerTick: 200
+  damagePerTick: 25
 --- !u!114 &204770824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7241,7 +7241,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 118346248}
         m_TargetAssemblyTypeName: GameState, Assembly-CSharp
-        m_MethodName: mainMenuClicked
+        m_MethodName: titleClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13418,7 +13418,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 8448
-  damagePerTick: 200
+  damagePerTick: 25
 --- !u!50 &2025510667
 Rigidbody2D:
   serializedVersion: 4
