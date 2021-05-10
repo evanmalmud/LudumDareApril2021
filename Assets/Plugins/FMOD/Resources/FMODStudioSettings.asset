@@ -83,7 +83,7 @@ MonoBehaviour:
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 0
   BankLoadType: 0
-  AutomaticSampleLoading: 0
+  AutomaticSampleLoading: 1
   EncryptionKey: 
   ImportType: 0
   TargetAssetPath: FMODBanks
@@ -532,7 +532,7 @@ MonoBehaviour:
       Value: 128
       HasValue: 1
     RealChannelCount:
-      Value: 1
+      Value: 64
       HasValue: 1
     DSPBufferLength:
       Value: 0

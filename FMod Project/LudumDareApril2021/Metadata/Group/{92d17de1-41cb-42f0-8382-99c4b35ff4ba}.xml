@@ -7,6 +7,12 @@
 		<property name="name">
 			<value>SFX BOMBS</value>
 		</property>
+		<property name="maxInstances">
+			<value>10</value>
+		</property>
+		<property name="instanceStealing">
+			<value>4</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{68b8e678-f17c-402e-b562-c9245d1251a1}</destination>
 		</relationship>

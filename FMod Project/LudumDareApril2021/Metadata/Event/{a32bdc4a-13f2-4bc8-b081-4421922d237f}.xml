@@ -67,9 +67,6 @@
 			<value>3</value>
 		</property>
 		<property name="voiceStealing">
-			<value>2</value>
-		</property>
-		<property name="priority">
 			<value>3</value>
 		</property>
 	</object>

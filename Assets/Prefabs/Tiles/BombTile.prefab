@@ -414,6 +414,14 @@ PrefabInstance:
       value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 239316367, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
+      propertyPath: bombBlinkingSfx
+      value: event:/SFX_JSO/BombCount Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 239316367, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
+      propertyPath: bombExplosionSfx
+      value: event:/SFX_JSO/BombExp Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 239316367, guid: b63480347db18ee4e95dc5be68b672bb, type: 3}
       propertyPath: timeUntilExplosion
       value: 3
       objectReference: {fileID: 0}

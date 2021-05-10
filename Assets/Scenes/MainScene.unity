@@ -756,9 +756,9 @@ MonoBehaviour:
   cameraFollow: {fileID: 1962752109}
   loadReady: 0
   musicLoop: {fileID: 118346250}
-  readyText: {fileID: 564393353}
+  loadingReadyText: {fileID: 564393353}
   loadingCanvas: {fileID: 710254986}
-  mainMenuCanvas: {fileID: 1430787312}
+  logoCanvas: {fileID: 1430787312}
   gameOverCanvas: {fileID: 726319373}
   gameOverController: {fileID: 726319375}
   midGameDialogue: {fileID: 1853614423}
@@ -772,6 +772,13 @@ MonoBehaviour:
   timeToStayOnPlayerBeforeGameover: 4.7
   timeToStayOnPlayerBeforeGameoverRecalled: 3
   leveltimer: {fileID: 118346251}
+  loadingLockout: 1
+  titleLockout: 1
+  dialogueLockout: 1
+  howToLockout: 1
+  missionLockout: 1
+  gameoverLockout: 1
+  midgameLockout: 1
   lastState: 0
   currentState: 0
   loader: {fileID: 18536490}
@@ -794,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadEvent: 1
-  UnloadEvent: 2
+  UnloadEvent: 0
   Banks:
   - Master
   - DIALOGUE
@@ -802,7 +809,7 @@ MonoBehaviour:
   - SFX
   - Master.strings
   CollisionTag: 
-  PreloadSamples: 0
+  PreloadSamples: 1
 --- !u!114 &118346250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,7 +1836,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 8448
-  damagePerTick: 20
+  damagePerTick: 200
 --- !u!114 &204770824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13411,7 +13418,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 8448
-  damagePerTick: 20
+  damagePerTick: 200
 --- !u!50 &2025510667
 Rigidbody2D:
   serializedVersion: 4

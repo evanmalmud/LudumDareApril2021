@@ -16,8 +16,8 @@ MonoBehaviour:
     type: 3}
   artifactPrefab: {fileID: 2710934881308951692, guid: 137f90871c2b2c94d88d292f5bc9e7f0,
     type: 3}
-  bombspawnrate: 15
-  artifactspawnrate: 15
+  bombspawnrate: 17
+  artifactspawnrate: 17
   rateOf: 1000
 --- !u!1 &5562503969820641059
 GameObject:

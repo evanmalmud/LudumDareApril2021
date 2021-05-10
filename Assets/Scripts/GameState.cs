@@ -33,9 +33,9 @@ public class GameState : MonoBehaviour
 
     public MusicLoop musicLoop;
 
-    public GameObject readyText;
+    public GameObject loadingReadyText;
     public GameObject loadingCanvas;
-    public GameObject mainMenuCanvas;
+    public GameObject logoCanvas;
     public GameObject gameOverCanvas;
     public GameOverController gameOverController;
 
@@ -54,6 +54,13 @@ public class GameState : MonoBehaviour
 
     public LevelTimer leveltimer;
 
+    public bool loadingLockout = true;
+    public bool titleLockout = true;
+    public bool dialogueLockout = true;
+    public bool howToLockout = true;
+    public bool missionLockout = true;
+    public bool gameoverLockout = true;
+    public bool midgameLockout = true;
 
     public enum GAMESTATE {
         LOADING,
@@ -124,6 +131,7 @@ public class GameState : MonoBehaviour
         currentState = GAMESTATE.LOADING;
         cameraFollow.target = loadingCanvas.transform;
         playerCanvas.SetActive(false);
+        loadingLockout = false;
     }
 
     void Update()
@@ -139,18 +147,9 @@ public class GameState : MonoBehaviour
     }
 
     public void timesUp() {
-        musicLoop.stopHelmet();
-        leveltimer.counting = false;
-        playerCanvas.SetActive(false);
-        player.playRecall();
-        player.canMove = false;
-        player.canDrill = false;
-        player.drillSfxInstance.setPaused(true);
-        player.sonar.canSonar = false;
-        player.drillEnabled = false;
-        player.drillL.SetActive(false);
-        player.drillR.SetActive(false);
-        
+        levelEndItems();
+
+
         Debug.Log("playerRecalled");
         currentState = GAMESTATE.GAMEOVER;
         disableAll();
@@ -158,9 +157,10 @@ public class GameState : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
-    public void playerDied() {
+    public void levelEndItems() {
         musicLoop.stopHelmet();
         leveltimer.counting = false;
+        leveltimer.levelTimeLeft = 0f;
         playerCanvas.SetActive(false);
         player.canMove = false;
         player.canDrill = false;
@@ -169,6 +169,10 @@ public class GameState : MonoBehaviour
         player.drillEnabled = false;
         player.drillL.SetActive(false);
         player.drillR.SetActive(false);
+    }
+
+    public void playerDied() {
+        levelEndItems();
         currentState = GAMESTATE.GAMEOVER;
         disableAll();
         coroutine = LoadGameOver();
@@ -178,12 +182,12 @@ public class GameState : MonoBehaviour
     void updateText()
     {
         posInstance.start();
-        readyText.GetComponent<TMPro.TextMeshProUGUI>().text = "Click to Start";
+        loadingReadyText.GetComponent<TMPro.TextMeshProUGUI>().text = "Click to Start";
     }
 
     void updateMainMenuObj(bool isEnabled) {
         loadingCanvas.SetActive(false);
-        mainMenuCanvas.SetActive(isEnabled);
+        logoCanvas.SetActive(isEnabled);
         titleAnimPlayer.playAnim();
         currentState = GAMESTATE.LOADING;
         musicLoop.startMusic();
@@ -200,27 +204,39 @@ public class GameState : MonoBehaviour
     }
 
     public void loadReadyClicked() {
-        posInstance.start();
-        if (loadReady) {
-            disableAll();
-            updateMainMenuObj(true);
-            currentState = GAMESTATE.TITLE;
+        if (!loadingLockout) {
+            posInstance.start();
+            if (loadReady) {
+                disableAll();
+                updateMainMenuObj(true);
+                currentState = GAMESTATE.TITLE;
+                titleLockout = false;
+                loadingLockout = true;
+            }
         }
     }
 
-    public void mainMenuClicked()
+    public void titleClicked()
     {
-        disableAll();
-        cameraFollow.target = dialogeCanvas.transform;
-        currentState = GAMESTATE.DIALOGUE;
-        dialogueCont.playIntroDialogue();
+        if (!titleLockout) {
+            disableAll();
+            cameraFollow.target = dialogeCanvas.transform;
+            currentState = GAMESTATE.DIALOGUE;
+            dialogueCont.playIntroDialogue();
+            titleLockout = true;
+            dialogueLockout = false;
+        }
     }
 
     public void dialogueSkipped()
     {
-        cameraFollow.target = howToCanvas.transform;
-        currentState = GAMESTATE.HOWTO;
-        timesheetInInstance.start();
+        if (!dialogueLockout) {
+            cameraFollow.target = howToCanvas.transform;
+            currentState = GAMESTATE.HOWTO;
+            timesheetInInstance.start();
+            dialogueLockout = true;
+            howToLockout = false;
+        }
     }
 
     public void dialogueComplete() 
@@ -228,24 +244,33 @@ public class GameState : MonoBehaviour
         cameraFollow.target = howToCanvas.transform;
         currentState = GAMESTATE.HOWTO;
         timesheetInInstance.start();
+        dialogueLockout = true;
+        howToLockout = false;
     }
 
     public void howToClicked() {
-        timesheetInInstance.start();
-        cameraFollow.target = missionCanvas.transform;
-        currentState = GAMESTATE.MISSION;
+        if (!howToLockout) {
+            timesheetInInstance.start();
+            cameraFollow.target = missionCanvas.transform;
+            currentState = GAMESTATE.MISSION;
+            howToLockout = true;
+            missionLockout = false;
+        }
     }
 
     public void missionClicked()
     {
-        timesheetOutInstance.start();
-        disableAll();
-        cameraFollow.target = player.transform;
-        player.ResetPlayer();
-        currentState = GAMESTATE.GAME;
-        musicLoop.startHelmet();
-        playerCanvas.SetActive(true);
-        leveltimer.startCount();
+        if (!missionLockout) {
+            timesheetOutInstance.start();
+            disableAll();
+            cameraFollow.target = player.transform;
+            player.ResetPlayer();
+            currentState = GAMESTATE.GAME;
+            musicLoop.startHelmet();
+            playerCanvas.SetActive(true);
+            leveltimer.startCount();
+            missionLockout = true;
+        }
     }
 
 
