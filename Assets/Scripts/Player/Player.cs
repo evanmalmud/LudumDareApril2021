@@ -279,10 +279,12 @@ public class Player : MonoBehaviour {
 	}
 
 	public void playRecall() {
-		isRecalled = true;
-		canMove = false;
-		if (m_anim.Clip != m_teleport) { // (check we're not already in the animation first though)
-			m_anim.Play(m_teleport);
+		if (!isDead && !isRecalled) {
+			isRecalled = true;
+			canMove = false;
+			if (m_anim.Clip != m_teleport) { // (check we're not already in the animation first though)
+				m_anim.Play(m_teleport);
+			}
 		}
 	}
 
@@ -291,7 +293,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void takeDamage() {
-		if(!isDead) {
+		if(!isDead && !isRecalled) {
 			isDead = true;
 			canMove = false;
 			if (m_anim.Clip != m_death) { // (check we're not already in the animation first though)
