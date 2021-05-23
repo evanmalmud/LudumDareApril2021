@@ -94,7 +94,7 @@ public class ArtifactTile : TilePrefab
         legendarycollectSfxInstance.release();
     }
 
-    public override void takeDamage(float damage)
+    public override void takeDamageVirtual(float damage)
     {
         damageUntilDestroyed -= damage;
         if (damageUntilDestroyed <= 0) {
@@ -106,7 +106,7 @@ public class ArtifactTile : TilePrefab
         }
     }
 
-    public override void destroy()
+    public override void destroyVirtual()
     {
         Destroy(this.gameObject);
     }

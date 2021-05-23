@@ -39,6 +39,9 @@ public class GameState : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameOverController gameOverController;
 
+    public GameObject pauseCanvas;
+    public bool isPaused = false;
+
     public GameObject midGameDialogue;
     public DialogueController midGameDialogueCont;
 
@@ -137,7 +140,8 @@ public class GameState : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            Application.Quit();
+            //Application.Quit();
+            togglePause();
         }
         if (!loadReady && FMODUnity.RuntimeManager.HasBankLoaded("Master")) {
             loadReady = true;
@@ -146,9 +150,29 @@ public class GameState : MonoBehaviour
         }
     }
 
-    public void timesUp() {
-        levelEndItems();
+    public void togglePause() {
+        if(isPaused || (!isPaused && currentState == GAMESTATE.GAME && !player.isDead && !player.isRecalled)) {
+            isPaused = !isPaused;
+            //Disable Player controls
+            if (!player.isDead && !player.isRecalled) {
+                leveltimer.counting = !isPaused;
+                player.canMove = !isPaused;
+                player.canDrill = !isPaused;
+                player.sonar.canSonar = !isPaused;
+                if (isPaused) {
+                    player.drillSfxInstance.setPaused(isPaused);
+                    player.drillEnabled = !isPaused;
+                }
+            }
 
+            pauseCanvas.SetActive(isPaused);
+        }
+    }
+
+    public void timesUp() {
+  
+        levelEndItems();
+        player.playRecall();
 
         Debug.Log("playerRecalled");
         currentState = GAMESTATE.GAMEOVER;

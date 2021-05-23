@@ -5,18 +5,20 @@ using UnityEngine;
 public class BombTilePrefab : TilePrefab {
 
 
-    public override void takeDamage(float damage)
+    public override void takeDamageVirtual(float damage)
     {
         GetComponent<BombInteractable>().ScanHit();
+        //Debug.Log("takeDamage - BombTilePrefab - " + damageUntilDestroyed);
         damageUntilDestroyed -= damage;
         if (damageUntilDestroyed <= 0) {
-            
             Destroy(this.gameObject);
         }
     }
 
-    public override void destroy()
+    public override void destroyVirtual()
     {
+        Debug.Log("destroyVirtual - BombTilePrefab");
+        return;
         //base.destroy();
     }
 }

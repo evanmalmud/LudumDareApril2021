@@ -62,7 +62,12 @@ public class TilePrefab : MonoBehaviour
         tileDestroySfxInstance.release();
     }
 
-    public virtual void takeDamage(float damage) {
+    public void takeDamage(float damage)
+    {
+        takeDamageVirtual(damage);
+    }
+
+    public virtual void takeDamageVirtual(float damage) {
         if (shatterAnim != null) {
             if (depthType == GameState.DepthType.DEEP) {
                 if (spriteAnim.Clip != m_shatterDeep) {
@@ -96,14 +101,17 @@ public class TilePrefab : MonoBehaviour
 
         damageUntilDestroyed -= damage;
         if(damageUntilDestroyed <= 0) {
-
             destroy();
         }
     }
 
-    public virtual void destroy()
+    public virtual void destroyVirtual()
     {
         StartCoroutine("playBreakAndDestroy");
+    }
+
+    public void destroy() {
+        destroyVirtual();
     }
 
     IEnumerator playBreakAndDestroy() {

@@ -19,7 +19,7 @@ public class LayerPassed : MonoBehaviour
         if (collisionMask == (collisionMask | (1 << collision.gameObject.layer))) {
             Debug.Log("load layer");
             loader.logLayerPassed();
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }

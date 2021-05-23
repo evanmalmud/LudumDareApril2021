@@ -53,7 +53,8 @@ public class BombInteractable : Interactable
 
     public void OnDestroy()
     {
-        Debug.Log("Bomb On Destroy");
+       // Debug.Log(UnityEngine.StackTraceUtility.ExtractStackTrace());
+       // Debug.Log("Bomb On Destroy");
         bombBlinkingInstance.setPaused(true);
         bombBlinkingInstance.release();
         bombExplosionSfxInstance.setPaused(true);
@@ -66,6 +67,10 @@ public class BombInteractable : Interactable
         yield return new WaitForSeconds(waitTime);
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(this.transform.position, bombExpRadius, collisionMask);
         foreach (Collider2D hit in hitCollider) {
+            if(hit.gameObject == this.gameObject) {
+                //dont explode self
+                continue;
+            }
             BombTilePrefab bombTilePrefab;
             if (hit.TryGetComponent<BombTilePrefab>(out bombTilePrefab)) {
                 continue;

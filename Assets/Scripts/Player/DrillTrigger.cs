@@ -27,7 +27,7 @@ public class DrillTrigger : MonoBehaviour
         if (collisionMask == (collisionMask | (1 << collision.gameObject.layer))) {
             //Delete Tile
             //Debug.Log("OnCollisionEnter2D delete " + collision.gameObject.name);
-            TilePrefab prefab = collision.GetComponent<TilePrefab>();
+            var prefab = collision.GetComponent<TilePrefab>();
             if (prefab != null) {
                 prefab.takeDamage(damagePerTick);
             }
@@ -40,7 +40,7 @@ public class DrillTrigger : MonoBehaviour
         if (collisionMask == (collisionMask | (1 << collision.gameObject.layer))) {
             //Delete Tile
             //Debug.Log("OnCollisionEnter2D delete " + collision.gameObject.name);
-            TilePrefab prefab = collision.GetComponent<TilePrefab>();
+            var prefab = collision.GetComponent<TilePrefab>();
             if (prefab != null) {
                 prefab.takeDamage(damagePerTick);
             }
