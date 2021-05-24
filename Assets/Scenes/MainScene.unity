@@ -264,7 +264,7 @@ MonoBehaviour:
   nextY: 0
   nextPos: {x: 0, y: 0, z: 0}
   amountToLoadEnabledAtStart: 4
-  amountToLoadAtStart: 5
+  amountToLoadAtStart: 10
   amountToLoadMidGame: 1
   layersPassed: 0
   layersUntilDeleteDefault: 4
