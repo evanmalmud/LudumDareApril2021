@@ -19,12 +19,13 @@ public class RandomPlacement : MonoBehaviour
     void Awake()
     {
         parent = this.transform.parent.gameObject;
-        float randomFloat = Random.Range(0, rateOf);
-        if (bombspawnrate >= randomFloat) {
+        float bombrandomFloat = Random.Range(0, rateOf);
+        float artifactrandomFloat = Random.Range(0, rateOf);
+        if (bombspawnrate >= bombrandomFloat) {
             Instantiate(bombPrefab, this.transform.position, this.transform.rotation, parent.transform);
         }
         //Debug.Log(rateOf + " " + artifactspawnrate + " " + randomFloat + gameObject.name);
-        else if (artifactspawnrate >= rateOf - randomFloat) {
+        else if (artifactspawnrate >= artifactrandomFloat) {
             //Debug.Log("SUC" + rateOf + " " + artifactspawnrate + " " + randomFloat);
             Instantiate(artifactPrefab, this.transform.position, this.transform.rotation, parent.transform);
         }

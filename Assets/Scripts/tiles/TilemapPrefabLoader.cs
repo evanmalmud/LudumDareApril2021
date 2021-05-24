@@ -70,15 +70,19 @@ public class TilemapPrefabLoader : MonoBehaviour
         }
         
         layersPassed++;
-        GameObject obj2 = disabledlayers.Dequeue();
-        obj2.SetActive(true);
-        layers.Enqueue(obj2);
+        if (disabledlayers.Count <= 0) {
+            loadNext();
+        } else {
+            GameObject obj2 = disabledlayers.Dequeue();
+            obj2.SetActive(true);
+            layers.Enqueue(obj2);
 
 
-        if(layersPassed/amountToLoadAtStart >= .9f) {
-            //Make player idle or something
-            for (int i = 0; i < amountToLoadMidGame; i++) {
-                loadNext();
+            if (layersPassed / amountToLoadAtStart >= .9f) {
+                //Make player idle or something
+                for (int i = 0; i < amountToLoadMidGame; i++) {
+                    loadNext();
+                }
             }
         }
     }
