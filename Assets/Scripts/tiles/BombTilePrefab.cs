@@ -17,8 +17,13 @@ public class BombTilePrefab : TilePrefab {
 
     public override void destroyVirtual()
     {
-        Debug.Log("destroyVirtual - BombTilePrefab");
+       // Debug.Log("destroyVirtual - BombTilePrefab");
+        BombInteractable bombInt = GetComponent<BombInteractable>();
+        if(bombInt != null) {
+            if(bombInt.bombTriggered) {
+                Destroy(this.gameObject);
+            }
+        }
         return;
-        //base.destroy();
     }
 }

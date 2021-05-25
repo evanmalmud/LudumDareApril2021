@@ -40,6 +40,17 @@ public class TilePrefab : MonoBehaviour
     public string tileDestroySfx = "";
     FMOD.Studio.EventInstance tileDestroySfxInstance;
 
+
+    public enum TileTypes {
+        SINGLE,
+        TWOXONE,
+        TWOXTWO,
+        BOMB,
+        ARTIFACT
+    }
+
+    public TileTypes tileType;
+
     // Start is called before the first frame update
     public virtual void Start()
     {

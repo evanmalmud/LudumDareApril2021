@@ -73,6 +73,7 @@ public class BombInteractable : Interactable
             }
             BombTilePrefab bombTilePrefab;
             if (hit.TryGetComponent<BombTilePrefab>(out bombTilePrefab)) {
+                bombTilePrefab.destroy();
                 continue;
             }
             TilePrefab tile;

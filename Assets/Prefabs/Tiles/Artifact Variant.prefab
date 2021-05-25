@@ -123,6 +123,7 @@ MonoBehaviour:
   m_breakDeep: {fileID: 0}
   depthType: 0
   tileDestroySfx: 
+  tileType: 4
   possibleArtifacts:
   - {fileID: 11400000, guid: a6389fb84055c5f4da30cc30502b913c, type: 2}
   shallowArtifacts:

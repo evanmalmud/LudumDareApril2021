@@ -335,3 +335,4 @@ MonoBehaviour:
   m_breakDeep: {fileID: 0}
   depthType: 0
   tileDestroySfx: 
+  tileType: 3

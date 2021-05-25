@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{ed3280eb-9777-4195-a6af-48748fe77f54}">
+		<property name="name">
+			<value>Random Helmet things</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{ef7bbf29-927f-4811-9dbc-594f8b5c7bc6}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{5ee94e45-09ee-45f6-9c41-8714fdaf6a47}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6b721575-a27b-45d9-9c2f-6d666ec5c041}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{ef7bbf29-927f-4811-9dbc-594f8b5c7bc6}">
+		<relationship name="effects">
+			<destination>{6d825218-34ae-4493-8231-85269fe2cb05}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{5ee94e45-09ee-45f6-9c41-8714fdaf6a47}" />
+	<object class="MixerBusFader" id="{6d825218-34ae-4493-8231-85269fe2cb05}" />
+</objects>

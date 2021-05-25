@@ -4453,6 +4453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4040168678496984812}
   - component: {fileID: 4040168678496984813}
+  - component: {fileID: 3664732617586890050}
   m_Layer: 8
   m_Name: 4-Tetris
   m_TagString: Untagged
@@ -4491,6 +4492,25 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &3664732617586890050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4040168678496984818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e8b05e7e5953e43ac89121f39a1d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toJson: 1
+  singleTile: {fileID: 5225919853743959244, guid: a4b76901288ef8e4dbed9a7e0d2c4d68,
+    type: 3}
+  doubleTile: {fileID: 2925440923601053412, guid: 0d146f4dfefbe574f8fda8929cf813ff,
+    type: 3}
+  twobyOneTile: {fileID: 5225919853743959244, guid: cbad6e506ea90274c9d2fad15f579dee,
+    type: 3}
 --- !u!1 &5263987323704136253
 GameObject:
   m_ObjectHideFlags: 0
