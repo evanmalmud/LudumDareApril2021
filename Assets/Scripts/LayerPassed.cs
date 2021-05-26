@@ -17,7 +17,7 @@ public class LayerPassed : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collisionMask == (collisionMask | (1 << collision.gameObject.layer))) {
-            Debug.Log("load layer");
+            //Debug.Log("load layer");
             loader.logLayerPassed();
             Destroy(this.gameObject);
         }
