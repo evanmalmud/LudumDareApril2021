@@ -16,7 +16,7 @@ public class BombInteractable : Interactable
     public AnimationClip m_explosion = null;
 
     private IEnumerator coroutine;
-    SpriteAnim m_anim = null;
+    public SpriteAnim m_anim = null;
 
     [FMODUnity.EventRef]
     public string bombBlinkingSfx = "";
@@ -34,7 +34,9 @@ public class BombInteractable : Interactable
     {
         cameraShake = Camera.main.GetComponent<ScreenShake>();
         base.Start();
-        m_anim = m_anim = GetComponent<SpriteAnim>();
+        if(m_anim == null) {
+            m_anim = GetComponent<SpriteAnim>();
+        }
         if (m_anim.Clip != m_blinking) { // (check we're not already in the animation first though)
             m_anim.Play(m_blinking);
 
@@ -61,10 +63,18 @@ public class BombInteractable : Interactable
         bombExplosionSfxInstance.release();
     }
 
+    /*void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, bombExpRadius);
+        Gizmos.DrawWireCube(transform.position, new Vector3(bombExpRadius*2, bombExpRadius * 2, bombExpRadius * 2));
+    }*/
+
     private IEnumerator WaitAndExplode(float waitTime)
     {
         BombBlinkingSfx();
         yield return new WaitForSeconds(waitTime);
+        //Collider2D[] hitCollider = Physics2D.OverlapBoxAll(this.transform.position, new Vector2(bombExpRadius * 2, bombExpRadius * 2), collisionMask);
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(this.transform.position, bombExpRadius, collisionMask);
         foreach (Collider2D hit in hitCollider) {
             if(hit.gameObject == this.gameObject) {
@@ -115,7 +125,10 @@ public class BombInteractable : Interactable
     }
 
     public void BombExplosionSfx()
-    {   //Called from animation
+
+    {
+        Debug.Log("BombExplosionSfx");
+        //Called from animation
         cameraShake.ShakeScreenDefault();
         if (!bombExplosionSfx.Equals(null) && !bombExplosionSfx.Equals("")) {
             bombExplosionSfxInstance.release();

@@ -20,7 +20,7 @@ public class BombTilePrefab : TilePrefab {
        // Debug.Log("destroyVirtual - BombTilePrefab");
         BombInteractable bombInt = GetComponent<BombInteractable>();
         if(bombInt != null) {
-            if(bombInt.bombTriggered) {
+            if(!bombInt.bombTriggered) {
                 Destroy(this.gameObject);
             }
         }

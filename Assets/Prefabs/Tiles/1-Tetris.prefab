@@ -3794,6 +3794,7 @@ MonoBehaviour:
   twobyOneTile: {fileID: 5225919853743959244, guid: cbad6e506ea90274c9d2fad15f579dee,
     type: 3}
   JsonFileName: 1-Tetris
+  jsonFile: {fileID: 4900000, guid: 167028b5441ae584db60ae64fea27243, type: 3}
 --- !u!1 &5263987323704136253
 GameObject:
   m_ObjectHideFlags: 0

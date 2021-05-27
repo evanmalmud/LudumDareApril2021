@@ -124,8 +124,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.083333336
-    functionName: BombExplosionSfx
-    data: 
+    functionName: _Anim
+    data: BombExplosionSfx
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

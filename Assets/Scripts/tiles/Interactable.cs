@@ -11,7 +11,9 @@ public class Interactable : MonoBehaviour {
 
     public virtual void Start()
     {
-        spriteRend = GetComponent<SpriteRenderer>();
+        if(spriteRend == null) {
+            spriteRend = GetComponent<SpriteRenderer>();
+        }
         spriteRend.sortingLayerName = "BG";
         light2d = GetComponent<Light2D>();
         light2d.enabled = false;

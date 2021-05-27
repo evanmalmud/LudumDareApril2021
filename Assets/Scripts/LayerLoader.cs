@@ -18,6 +18,7 @@ public class LayerLoader : MonoBehaviour
     int tilePerFrame = 20;
     TileLocations dataReco;
     string jsonPath;
+    public TextAsset jsonFile;
 
     bool finishedLoading = false;
 
@@ -82,7 +83,7 @@ public class LayerLoader : MonoBehaviour
     }
 
     void convertFromJson() {
-        string datareconstructed = System.IO.File.ReadAllText(jsonPath);
+        string datareconstructed = jsonFile.text;
         dataReco = JsonUtility.FromJson<TileLocations>(datareconstructed);
         Debug.Log("convertFromJson - ");
 

@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf61dcfce84d4334c8edd666c2dd6ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRend: {fileID: 0}
+  spriteRend: {fileID: 1903247071869502360}
   light2d: {fileID: 175242177}
 --- !u!114 &1917244310794026932
 MonoBehaviour:
@@ -258,6 +258,12 @@ PrefabInstance:
 --- !u!1 &2710934881308951692 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2494162048006845473, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 505009823773339821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1903247071869502360 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2119953949506286389, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
     type: 3}
   m_PrefabInstance: {fileID: 505009823773339821}
   m_PrefabAsset: {fileID: 0}
