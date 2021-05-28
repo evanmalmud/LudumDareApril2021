@@ -1588,7 +1588,7 @@ MonoBehaviour:
   logoCanvas: {fileID: 1430787312}
   gameOverCanvas: {fileID: 726319373}
   gameOverController: {fileID: 726319375}
-  pauseCanvas: {fileID: 1789594987}
+  pauseCanvas: {fileID: 1368658836}
   isPaused: 0
   midGameDialogue: {fileID: 1853614423}
   midGameDialogueCont: {fileID: 1853614424}
@@ -6428,32 +6428,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 523187106002418273, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260740902248881463, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2394937353907211145, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2739055829657100960, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
+    - target: {fileID: 2889635886342514502, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
-      propertyPath: m_AnchorMax.y
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3092886439312961109, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5263358663141668612, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6461,44 +6446,19 @@ PrefabInstance:
     - target: {fileID: 5596864362384309251, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5674336432157837714, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6240979697324092699, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6459134692092372973, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -231.49998
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865955328698786993, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -231.49998
-      objectReference: {fileID: 0}
-    - target: {fileID: 6921495431274214079, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7114897254408484371, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131224738786757036, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7424379089276510227, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6611,34 +6571,9 @@ PrefabInstance:
     - target: {fileID: 7671585836413652753, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_Name
-      value: Pause (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7671585836413652753, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7671585836413652757, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1962752106}
-    - target: {fileID: 8177327246384770548, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8544275236380554905, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -231.49998
+      value: Pause Menu
       objectReference: {fileID: 0}
     - target: {fileID: 8617999124522166608, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672055712763496127, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6646,17 +6581,7 @@ PrefabInstance:
     - target: {fileID: 8752278204205237218, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8806088196694398314, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9187063209892768236, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -231.49998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ae9c915e6efea4fb78f6ad6ad02d70, type: 3}
@@ -10186,6 +10111,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1368658836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2889635886342514502, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
+    type: 3}
+  m_PrefabInstance: {fileID: 692229733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1376355036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13154,12 +13085,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1789594987 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7671585836413652753, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
-    type: 3}
-  m_PrefabInstance: {fileID: 692229733}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1807648722
 GameObject:
   m_ObjectHideFlags: 0
