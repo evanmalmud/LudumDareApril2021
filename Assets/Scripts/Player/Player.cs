@@ -157,6 +157,11 @@ public class Player : MonoBehaviour {
 
     void Update()
 	{
+		if(isDead) {
+			canDrill = false;
+			canMove = false;
+			drillEnabled = false;
+		}
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		if (canMove) {
 			velocity.x = input.x * moveSpeed;

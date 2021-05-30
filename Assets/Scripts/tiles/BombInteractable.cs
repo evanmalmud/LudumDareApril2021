@@ -127,7 +127,7 @@ public class BombInteractable : Interactable
     public void BombExplosionSfx()
 
     {
-        Debug.Log("BombExplosionSfx");
+        //Debug.Log("BombExplosionSfx");
         //Called from animation
         cameraShake.ShakeScreenDefault();
         if (!bombExplosionSfx.Equals(null) && !bombExplosionSfx.Equals("")) {

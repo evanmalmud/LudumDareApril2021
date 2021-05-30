@@ -9,9 +9,17 @@ public class LayerPassed : MonoBehaviour
 
     public LayerMask collisionMask;
 
-    private void Start()
+    public BoxCollider2D collider;
+
+    private void Awake()
     {
         loader = FindObjectOfType<TilemapPrefabLoader>();
+        collider = GetComponent<BoxCollider2D>();
+    }
+
+    private void OnEnable()
+    {
+        collider.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,7 +27,7 @@ public class LayerPassed : MonoBehaviour
         if (collisionMask == (collisionMask | (1 << collision.gameObject.layer))) {
             //Debug.Log("load layer");
             loader.logLayerPassed();
-            Destroy(this.gameObject);
+            collider.enabled = false;
         }
     }
 }

@@ -7,8 +7,8 @@ using static GameState;
 public class TilePrefab : MonoBehaviour
 {
 
-    public float damageUntilDestroyed = 100f;
-
+    public float defaultDamageUntilDestroyed = 100f;
+    public float currentDamageUntilDestroyed;
     public List<Sprite> possibleSprites;
 
     public List<Sprite> shallowSprites;
@@ -40,6 +40,8 @@ public class TilePrefab : MonoBehaviour
     public string tileDestroySfx = "";
     FMOD.Studio.EventInstance tileDestroySfxInstance;
 
+    BoxCollider2D boxCollider;
+
 
     public enum TileTypes {
         SINGLE,
@@ -51,9 +53,16 @@ public class TilePrefab : MonoBehaviour
 
     public TileTypes tileType;
 
-    // Start is called before the first frame update
-    public virtual void Start()
+    public void Awake()
     {
+        boxCollider = GetComponent<BoxCollider2D>();
+    }
+
+    public virtual void OnEnable()
+    {
+        boxCollider.enabled = true;
+        currentDamageUntilDestroyed = defaultDamageUntilDestroyed;
+
         depthType = GameState.depthCheck(this.transform.position.y + Random.Range(-5f, 5f));
         //Debug.Log(this.transform.position.y + " " + depthType);
 
@@ -63,7 +72,7 @@ public class TilePrefab : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = mediumSprites[Random.Range(0, mediumSprites.Count)];
         } else if (depthType == GameState.DepthType.SHALLOW && shallowSprites != null && shallowSprites.Count > 0) {
             GetComponent<SpriteRenderer>().sprite = shallowSprites[Random.Range(0, shallowSprites.Count)];
-        } else if (possibleSprites != null && possibleSprites.Count > 0){
+        } else if (possibleSprites != null && possibleSprites.Count > 0) {
             GetComponent<SpriteRenderer>().sprite = possibleSprites[Random.Range(0, possibleSprites.Count)];
         }
     }
@@ -110,8 +119,8 @@ public class TilePrefab : MonoBehaviour
             }
         }
 
-        damageUntilDestroyed -= damage;
-        if(damageUntilDestroyed <= 0) {
+        currentDamageUntilDestroyed -= damage;
+        if(currentDamageUntilDestroyed <= 0) {
             destroy();
         }
     }
@@ -132,7 +141,7 @@ public class TilePrefab : MonoBehaviour
         } else if (tileDestroySfxInstance.isValid()) {
             tileDestroySfxInstance.start();
         }
-        GetComponent<BoxCollider2D>().enabled = false;
+        boxCollider.enabled = false;
         if (shatterAnim != null) {
             GetComponent<SpriteRenderer>().sprite = null;
             if (depthType == GameState.DepthType.DEEP) {
@@ -166,6 +175,6 @@ public class TilePrefab : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(1f);
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 }

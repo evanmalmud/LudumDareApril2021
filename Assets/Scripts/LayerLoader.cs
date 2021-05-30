@@ -20,17 +20,43 @@ public class LayerLoader : MonoBehaviour
     string jsonPath;
     public TextAsset jsonFile;
 
-    bool finishedLoading = false;
+    public bool finishedLoading = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public List<GameObject> allTileObjects = new List<GameObject>();
+
+    public List<GameObject> allCreatedBombsAndArtifacts = new List<GameObject>();
+
+    private void Awake()
     {
         jsonPath = Application.dataPath + "/JsonLevels/" + JsonFileName + ".json";
+        allTileObjects = new List<GameObject>();
+        allCreatedBombsAndArtifacts = new List<GameObject>();
         if (toJson) {
             convertToJson();
         } else {
             convertFromJson();
         }
+    }
+
+    // Start is called before the first frame update
+    void OnEnable()
+    {
+        if(finishedLoading) {
+            foreach (GameObject go in allTileObjects) {
+                go.SetActive(true);
+            }
+        }
+    }
+
+    void OnDisable()
+    {
+        foreach (GameObject go in allTileObjects) {
+            go.SetActive(false);
+        }
+        foreach (GameObject go in allCreatedBombsAndArtifacts) {
+            Destroy(go);
+        }
+        allCreatedBombsAndArtifacts.Clear();
     }
 
     private void Update()
@@ -41,7 +67,7 @@ public class LayerLoader : MonoBehaviour
                 maxVal = dataReco.positions.Count;
                 finishedLoading = true;
             }
-            Debug.Log("Update " + gameObject.name + "- currentIndex:" + currentIndex + " maxVal:" + maxVal);
+            //Debug.Log("Update " + gameObject.name + "- currentIndex:" + currentIndex + " maxVal:" + maxVal);
             for (int i = currentIndex; i < maxVal; i++) {
                 GameObject touse = singleTile;
                 if (dataReco.prefabNames[i] == TilePrefab.TileTypes.TWOXONE) {
@@ -51,6 +77,8 @@ public class LayerLoader : MonoBehaviour
                 }
                 GameObject obj = Instantiate(touse, this.transform, false);
                 obj.transform.localPosition = dataReco.positions[i];
+                obj.SetActive(true);
+                allTileObjects.Add(obj);
             }
             currentIndex += tilePerFrame;
         }
@@ -77,15 +105,15 @@ public class LayerLoader : MonoBehaviour
         dataTileLocations.prefabNames = indivTilePrefabNames;
         dataTileLocations.numOfTiles = count; //Removes bombs and artifacts
         string dataString = JsonUtility.ToJson(dataTileLocations);
-        Debug.Log("convertToJson - ");
-        Debug.Log(dataString);
+        //Debug.Log("convertToJson - ");
+        //Debug.Log(dataString);
         System.IO.File.WriteAllText(jsonPath, dataString);
     }
 
     void convertFromJson() {
         string datareconstructed = jsonFile.text;
         dataReco = JsonUtility.FromJson<TileLocations>(datareconstructed);
-        Debug.Log("convertFromJson - ");
+        //Debug.Log("convertFromJson - ");
 
     }
 

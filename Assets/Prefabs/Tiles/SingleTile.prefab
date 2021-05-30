@@ -20,6 +20,7 @@ MonoBehaviour:
   artifactspawnrate: 5
   rateOf: 100
   parent: {fileID: 0}
+  layerLoader: {fileID: 0}
 --- !u!1 &5562503969820641059
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +270,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}
+      propertyPath: currentDamageUntilDestroyed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: defaultDamageUntilDestroyed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
       propertyPath: mediumSprites.Array.data[0]
       value: 
       objectReference: {fileID: 8660381697632931698, guid: d5cf8d9116a167d4688153effc385f26,
@@ -431,6 +442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SingleTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 2494162048006845473, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5540011250699728656, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}

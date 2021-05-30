@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc33c523e8042d4419283c82114dd1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageUntilDestroyed: 3500
+  defaultDamageUntilDestroyed: 3200
+  currentDamageUntilDestroyed: 3200
   possibleSprites: []
   shallowSprites: []
   mediumSprites: []

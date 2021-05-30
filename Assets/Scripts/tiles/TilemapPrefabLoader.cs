@@ -5,134 +5,87 @@ using UnityEngine;
 public class TilemapPrefabLoader : MonoBehaviour
 {
     public GameObject toplevelTilemap;
-    public int toplevelTilemaplayerHeight = -20;
+    public int toplevelTilemaplayerHeight = -6;
 
     public List<GameObject> tilemaps;
 
-    public int layerHeight = -20;
+    public int layerHeight = -6;
 
     public float nextY = 0f;
     public Vector3 nextPos;
 
-    public Queue<GameObject> layers = new Queue<GameObject>();
-    public Queue<GameObject> disabledlayers = new Queue<GameObject>();
+    public GameObject startLayer;
+    public List<GameObject> pooledLayers = new List<GameObject>();
+    public List<GameObject> inUseLayers = new List<GameObject>();
 
-    public int amountToLoadEnabledAtStart = 6;
-    public int amountToLoadAtStart = 100;
+    public int amountToLoadAtStart;
 
-    public int amountToLoadMidGame = 2;
-
-    public int layersPassed = 0;
-
-    public int layersUntilDeleteDefault = 2;
-    public int layersUntilDelete = 2;
-
-    public GameObject lastTilemapPicked = null;
-
-    private IEnumerator coroutine;
-
-    // Start is called before the first frame update
+    public int layersUntilDeleteDefault = 3;
+    public int layersUntilDelete;
     void Start()
     {
-        reloadLevel();
-
-    }
-    public void deleteOldLevel() {
-        foreach(GameObject go in layers) {
-            Destroy(go);
+        foreach (GameObject go in tilemaps) {
+            GameObject obj = Instantiate(go);
+            pooledLayers.Add(obj);
         }
-        foreach (GameObject go in disabledlayers) {
-            Destroy(go);
+        foreach (GameObject go in tilemaps) {
+            GameObject obj = Instantiate(go);
+            pooledLayers.Add(obj);
         }
-        layers.Clear();
-        disabledlayers.Clear();
+        ResetLevel();
     }
 
-    public void reloadLevel() {
+    public void ResetLevel() {
         layersUntilDelete = layersUntilDeleteDefault;
         nextPos = Vector3.zero;
         nextY = 0f;
-        GameObject obj = Instantiate(toplevelTilemap);
-        obj.transform.position = nextPos;
-        layers.Enqueue(obj);
+        if (startLayer == null) {
+            startLayer = Instantiate(toplevelTilemap);
+        }
+        startLayer.SetActive(false);
+        startLayer.transform.position = nextPos;
         updateTransform(toplevelTilemaplayerHeight);
-        for (int i = 0; i < amountToLoadAtStart; i++) {
-            loadNext();
+        startLayer.SetActive(true);
+
+        //Move inUse to Pooled
+        foreach(GameObject go in inUseLayers) {
+            go.SetActive(false);
+            pooledLayers.Add(go);
+        }
+        inUseLayers.Clear();
+
+        for (int i = 0; i <= amountToLoadAtStart; i++) {
+            GameObject obj = pickRandomPooledTile();
+            obj.transform.position = nextPos;
+            obj.SetActive(true);
+            updateTransform(layerHeight);
         }
     }
-
+   
     public void logLayerPassed() {
-        if(layersUntilDelete < 0) {
-            GameObject obj = layers.Dequeue();
-            Destroy(obj);
+        Debug.Log("logLayerPassed");
+        if(layersUntilDelete <= 0) {
+            if(startLayer.activeSelf == true) {
+                startLayer.SetActive(false);
+            } else if (inUseLayers.Count >= 1) {
+                GameObject obj = inUseLayers[0];
+                inUseLayers.Remove(obj);
+                obj.SetActive(false);
+                pooledLayers.Add(obj);
+            }
         } else {
             layersUntilDelete--;
         }
-        
-        layersPassed++;
-        if (disabledlayers.Count <= 0) {
-            loadNext();
-        } else {
-            GameObject obj2 = disabledlayers.Dequeue();
-            obj2.SetActive(true);
-            layers.Enqueue(obj2);
-
-
-            if (layersPassed / amountToLoadAtStart >= .9f) {
-                //Make player idle or something
-                for (int i = 0; i < amountToLoadMidGame; i++) {
-                    loadNext();
-                }
-            }
-        }
+        loadNext();
     }
 
     public void loadNext()
-    {   
-        coroutine = SpawnGO(nextPos);
-        StartCoroutine(coroutine);
+    {
+        GameObject obj = pickRandomPooledTile();
+        obj.transform.position = nextPos;
+        obj.SetActive(true);
         updateTransform(layerHeight);
-    }
-
-    IEnumerator SpawnGO(Vector3 pos)
-    {
-        GameObject tileMap = pickRandomTilemap();
-        if (lastTilemapPicked == tileMap) {
-            tileMap = pickRandomTilemap();
-        }
-
-        lastTilemapPicked = tileMap;
-        GameObject obj = Instantiate(tileMap);
-        obj.transform.position = pos;
-        obj.GetComponentInChildren<LayerPassed>().loader = this;
-        if(layers.Count >= amountToLoadEnabledAtStart) {
-            obj.SetActive(false);
-            disabledlayers.Enqueue(obj);
-
-        } else {
-            layers.Enqueue(obj);
-        }
-        //layers.Enqueue(obj);
-
-        /*if (layers.Count > 102) {
-            obj = layers.Dequeue();
-            Destroy(obj);
-        }*/
-        yield return null;
-    }
-
-    IEnumerator Reload(Vector3 pos)
-    {
-        GameObject obj = Instantiate(pickRandomTilemap());
-        obj.transform.position = pos;
-        obj.GetComponentInChildren<LayerPassed>().loader = this;
-        layers.Enqueue(obj);
-
-        /*if (layers.Count > 102) {
-            obj = layers.Dequeue();
-            Destroy(obj);
-        }*/
-        yield return null;
+        Debug.Log("loadNext - " + obj.name);
     }
 
     void updateTransform(float layerH) {
@@ -140,7 +93,10 @@ public class TilemapPrefabLoader : MonoBehaviour
         nextPos.y = nextY;
     }
 
-    public GameObject pickRandomTilemap() {
-        return tilemaps[Random.Range(0, tilemaps.Count)];
+    public GameObject pickRandomPooledTile() {
+        GameObject result = pooledLayers[Random.Range(0, pooledLayers.Count)];
+        pooledLayers.Remove(result);
+        inUseLayers.Add(result);
+        return result;
     }
 }

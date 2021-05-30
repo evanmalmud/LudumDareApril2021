@@ -30,8 +30,10 @@ public class ArtifactTile : TilePrefab
     FMOD.Studio.EventInstance legendarycollectSfxInstance;
 
 
-    public override void Start()
+    public override void OnEnable()
     {
+        currentDamageUntilDestroyed = defaultDamageUntilDestroyed;
+
         GameState.DepthType depthType = GameState.depthCheck(this.transform.position.y + Random.Range(-5f, 5f));
 
         if (depthType == GameState.DepthType.DEEP && deepArtifacts != null && deepArtifacts.Count > 0) {
@@ -96,8 +98,8 @@ public class ArtifactTile : TilePrefab
 
     public override void takeDamageVirtual(float damage)
     {
-        damageUntilDestroyed -= damage;
-        if (damageUntilDestroyed <= 0) {
+        currentDamageUntilDestroyed -= damage;
+        if (currentDamageUntilDestroyed <= 0) {
             CollectSfx(chosenArtifact.artifactType);
             Player player = FindObjectOfType<Player>();
             player.collectedArtifacts.Add(chosenArtifact);

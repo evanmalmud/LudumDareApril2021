@@ -1,6 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameState : MonoBehaviour
 {
@@ -51,6 +53,13 @@ public class GameState : MonoBehaviour
     public GameObject missionCanvas;
     public GameObject dialogeCanvas;
     public DialogueController dialogueCont;
+
+    public GameObject sceneTransition;
+    public Image sceneTranstionImage;
+    public float cutoffClosed = -0.1f;
+    public float cutoffOpen = 1.1f;
+    public float currentCutoff = 1.1f;
+    public float sceneTransitionTime = 1f;
 
     public float timeToStayOnPlayerBeforeGameover = 5f;
     public float timeToStayOnPlayerBeforeGameoverRecalled = 5f;
@@ -113,6 +122,7 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         if (!negative.Equals(null) && !negative.Equals("")) {
             negInstance = FMODUnity.RuntimeManager.CreateInstance(negative);
         }
@@ -338,8 +348,7 @@ public class GameState : MonoBehaviour
 
     IEnumerator LoadNewLevel() {
         Debug.Log("load new level");
-        loader.deleteOldLevel();
-        loader.reloadLevel();
+        loader.ResetLevel();
         gameOverText.SetActive(true);
         yield return null;
     }
@@ -348,14 +357,26 @@ public class GameState : MonoBehaviour
     {
         Debug.Log("load new level");
         if (player.isDead) {
-            yield return new WaitForSeconds(timeToStayOnPlayerBeforeGameover);
+            yield return new WaitForSeconds(timeToStayOnPlayerBeforeGameover - sceneTransitionTime);
+
         } else {
-            yield return new WaitForSeconds(timeToStayOnPlayerBeforeGameoverRecalled);
+            yield return new WaitForSeconds(timeToStayOnPlayerBeforeGameoverRecalled - sceneTransitionTime);
         }
+        //Scene Transtion
+        DOTween.To(() => cutoffOpen, x => sceneTranstionImage.material.SetFloat("Cutoff", x), cutoffClosed, sceneTransitionTime);
+        //sceneTranstionImage.material.SetFloat("Cutoff", 
+            //Mathf.MoveTowards(sceneTranstionImage.material.GetFloat("Cutoff"), cutoffOpen, sceneTransitionTime));
+        yield return new WaitForSeconds(sceneTransitionTime);
+        float currentSmoothDamp = cameraFollow.smoothDampTime;
+        cameraFollow.smoothDampTime = 0f;
         cameraFollow.target = gameOverCanvas.transform;
         gameOverText.SetActive(false);
         gameOverController.onDisplay(player.isDead);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1f);
+        DOTween.To(() => cutoffClosed, x => sceneTranstionImage.material.SetFloat("Cutoff", x), cutoffOpen, sceneTransitionTime);
+        yield return new WaitForSeconds(sceneTransitionTime);
+        cameraFollow.smoothDampTime = currentSmoothDamp;
+        yield return new WaitForSeconds(1f);
         IEnumerator coroutine2 = LoadNewLevel();
         StartCoroutine(coroutine2);
     }

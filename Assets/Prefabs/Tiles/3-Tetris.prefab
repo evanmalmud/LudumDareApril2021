@@ -3775,7 +3775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4040168678496984812
 Transform:
   m_ObjectHideFlags: 0
@@ -3826,6 +3826,8 @@ MonoBehaviour:
     type: 3}
   JsonFileName: 3-Tetris
   jsonFile: {fileID: 4900000, guid: 274a451661e892642ba758c9f6c40534, type: 3}
+  allTileObjects: []
+  allCreatedBombsAndArtifacts: []
 --- !u!1 &5263987323704136253
 GameObject:
   m_ObjectHideFlags: 0

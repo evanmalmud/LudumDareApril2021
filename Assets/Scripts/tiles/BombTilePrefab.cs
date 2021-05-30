@@ -9,8 +9,8 @@ public class BombTilePrefab : TilePrefab {
     {
         GetComponent<BombInteractable>().ScanHit();
         //Debug.Log("takeDamage - BombTilePrefab - " + damageUntilDestroyed);
-        damageUntilDestroyed -= damage;
-        if (damageUntilDestroyed <= 0) {
+        currentDamageUntilDestroyed -= damage;
+        if (currentDamageUntilDestroyed <= 0) {
             Destroy(this.gameObject);
         }
     }
