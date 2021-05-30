@@ -33,11 +33,8 @@
 		<property name="releaseTime">
 			<value>10</value>
 		</property>
-		<property name="minimumThreshold">
-			<value>-60</value>
-		</property>
 		<property name="maximumThreshold">
-			<value>0</value>
+			<value>10</value>
 		</property>
 		<relationship name="sidechains">
 			<destination>{3564c7ef-bfbc-422e-89a3-514d93ecc62f}</destination>
@@ -135,7 +132,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>0.0199999996</value>
+			<value>0.0149999857</value>
 		</property>
 		<property name="curveShape">
 			<value>0.178519174</value>
@@ -146,7 +143,7 @@
 			<value>0.40254237288135591</value>
 		</property>
 		<property name="value">
-			<value>0.5</value>
+			<value>0.459999979</value>
 		</property>
 		<property name="curveShape">
 			<value>-0.378834516</value>
@@ -157,7 +154,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>1</value>
+			<value>0.954999983</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{b08bc03d-63ad-47b3-8e3c-bd46b2fa4756}">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{12cf6595-26bd-43b0-88fc-0e9f2c7cd0ad}">
+	<object class="AudioFile" id="{4aeabec4-21ab-4e23-9692-5655fbe5c440}">
 		<property name="assetPath">
-			<value>LD48_SFX_DD_OBJ_PULSE.wav</value>
+			<value> LD48_SFX_DD_OBJ_PULSE.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>2.8956666666666666</value>
+			<value>4.4121458333333337</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a4c5b415-7f61-41b6-8ba3-37d047fb09d6}</destination>
