@@ -14146,7 +14146,7 @@ MonoBehaviour:
     m_Bits: 256
   horizontalRayCount: 4
   verticalRayCount: 4
-  boxCollider: {fileID: 0}
+  boxCollider: {fileID: 1906411100}
 --- !u!50 &1906411099
 Rigidbody2D:
   serializedVersion: 4

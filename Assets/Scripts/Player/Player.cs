@@ -127,6 +127,13 @@ public class Player : MonoBehaviour {
 		if (!drillEndSfx.Equals(null) && !drillEndSfx.Equals("")) {
 			drillEndSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillEndSfx);
 		}
+		canMove = false;
+		canDrill = false;
+		sonar.canSonar = false;
+		drillEnabled = false;
+		drillL.SetActive(drillEnabled);
+		drillR.SetActive(drillEnabled);
+		this.gameObject.SetActive(false);
 	}
 
 	public void OnDestroy()
@@ -142,6 +149,7 @@ public class Player : MonoBehaviour {
 
 	public void ResetPlayer()
     {
+		this.gameObject.SetActive(true);
 		enableLight();
 		collectedArtifacts.Clear();
 		transform.position = startPos;
