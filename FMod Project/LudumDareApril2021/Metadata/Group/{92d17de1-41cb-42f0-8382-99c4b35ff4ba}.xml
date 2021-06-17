@@ -34,16 +34,13 @@
 	<object class="MixerBusPanner" id="{0f9ec444-bab8-4463-8911-d4c35829225f}" />
 	<object class="CompressorEffect" id="{618f0db3-8d86-4cc9-b3d9-7a232bd193a0}">
 		<property name="threshold">
-			<value>-24</value>
-		</property>
-		<property name="ratio">
-			<value>4</value>
+			<value>-30</value>
 		</property>
 		<property name="attackTime">
-			<value>34</value>
+			<value>52</value>
 		</property>
 		<property name="releaseTime">
-			<value>180</value>
+			<value>120</value>
 		</property>
 	</object>
 	<object class="LimiterEffect" id="{4923a804-d148-4912-881f-df5f8d10378f}">

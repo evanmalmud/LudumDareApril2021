@@ -28,13 +28,16 @@
 			<value>80</value>
 		</property>
 		<property name="attackTime">
-			<value>13</value>
+			<value>10</value>
 		</property>
 		<property name="releaseTime">
 			<value>10</value>
 		</property>
+		<property name="minimumThreshold">
+			<value>-35</value>
+		</property>
 		<property name="maximumThreshold">
-			<value>10</value>
+			<value>-27</value>
 		</property>
 		<relationship name="sidechains">
 			<destination>{3564c7ef-bfbc-422e-89a3-514d93ecc62f}</destination>

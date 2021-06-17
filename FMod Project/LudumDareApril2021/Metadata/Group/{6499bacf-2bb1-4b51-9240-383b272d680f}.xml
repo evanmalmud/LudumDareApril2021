@@ -29,10 +29,10 @@
 			<value>1.5</value>
 		</property>
 		<property name="attackTime">
-			<value>28</value>
+			<value>30</value>
 		</property>
 		<property name="releaseTime">
-			<value>140</value>
+			<value>160</value>
 		</property>
 		<relationship name="sidechains">
 			<destination>{abad4933-28fe-4485-97f2-63f150e25e52}</destination>

@@ -28,6 +28,9 @@
 		<property name="midGain">
 			<value>10</value>
 		</property>
+		<property name="highGain">
+			<value>1.5</value>
+		</property>
 		<property name="lowCrossover">
 			<value>1250</value>
 		</property>
