@@ -13234,7 +13234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748155102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.46, y: 5.65, z: 0}
+  m_LocalPosition: {x: 3.478, y: 5.638, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1292692336}
@@ -14063,6 +14063,8 @@ MonoBehaviour:
   defaultGravity: -20
   gravity: -20
   velocity: {x: 0, y: 0, z: 0}
+  jumpVelocity: 0
+  timeToJumpApex: 0.4
   playerLight: {fileID: 1588240864}
   health: 100
   isDead: 0
@@ -14147,6 +14149,7 @@ MonoBehaviour:
   horizontalRayCount: 4
   verticalRayCount: 4
   boxCollider: {fileID: 1906411100}
+  isGrounded: 0
 --- !u!50 &1906411099
 Rigidbody2D:
   serializedVersion: 4

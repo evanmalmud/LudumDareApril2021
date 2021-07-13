@@ -1,3 +1,4 @@
+using DG.Tweening;
 using PowerTools;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,6 +31,16 @@ public class BombInteractable : Interactable
 
     public bool bombTriggered = false;
 
+    public bool bombTriggerStarted = false;
+
+    //bomb vfx
+    public Shapes.Disc disc;
+    public float radius = 0f;
+    public Color startColor = new Color32(0x30, 0xE1, 0xB9, 0xFF);
+    public Color endColor = new Color32(0x0B, 0x8A, 0x8F, 0xFF);
+    public Color currentColor;
+    public float vfxTime = 1f;
+
     public override void Start()
     {
         cameraShake = Camera.main.GetComponent<ScreenShake>();
@@ -51,6 +62,26 @@ public class BombInteractable : Interactable
         base.ScanHit();
         coroutine = WaitAndExplode(timeUntilExplosion);
         StartCoroutine(coroutine);
+    }
+
+    public void Update()
+    {
+        if(bombTriggered && !bombTriggerStarted) {
+            bombTriggerStarted = true;
+            disc.enabled = true;
+            DOTween.To(() => radius, x => radius = x, bombExpRadius, vfxTime).OnComplete(setComplete);
+            DOTween.To(() => currentColor, x => currentColor = x, endColor, vfxTime);
+        }
+
+        if (bombTriggered && bombTriggerStarted) {
+            disc.Radius = radius;
+            disc.Color = currentColor;
+        }
+    }
+
+    private void setComplete()
+    {
+        disc.enabled = false;
     }
 
     public void OnDestroy()

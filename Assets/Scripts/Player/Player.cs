@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
 	public float defaultGravity = -20;
 	public float gravity = -20;
 	public Vector3 velocity;
+    public float jumpVelocity;
+	public float timeToJumpApex = .4f;
 
 	public Light2D playerLight;
 
@@ -100,6 +102,10 @@ public class Player : MonoBehaviour {
 	public bool isRecalled = false;
 	void Start()
 	{
+		//Jump
+		jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
+
+
 		sonar = GetComponentInChildren<Sonar>();
 		gameState = FindObjectOfType<GameState>();
 		controller = GetComponent<ControllerPlayer>();
@@ -163,7 +169,7 @@ public class Player : MonoBehaviour {
 		drillR.SetActive(!drillEnabled);
 	}
 
-    void Update()
+    void FixedUpdate()
 	{
 		if(isDead) {
 			canDrill = false;
@@ -171,9 +177,15 @@ public class Player : MonoBehaviour {
 			drillEnabled = false;
 		}
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+		bool jumpinput = false;//Input.GetKeyDown(KeyCode.Space);
 		if (canMove) {
+			if (jumpinput && controller.isGrounded) {
+				Debug.Log("Jump added");
+				velocity.y = jumpVelocity;
+			} else {
+				velocity.y = gravity * Time.deltaTime;
+			}
 			velocity.x = input.x * moveSpeed;
-			velocity.y = gravity * Time.deltaTime;
 			controller.Move(velocity * Time.deltaTime);
 
 			//Flip character if we need to

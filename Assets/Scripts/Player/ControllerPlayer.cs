@@ -6,7 +6,8 @@ public class ControllerPlayer : MonoBehaviour {
 
 	public LayerMask collisionMask;
 
-	const float skinWidth = .015f;
+	public const float skinWidth = .015f;
+	const float dstBetweenRays = .25f;
 	public int horizontalRayCount = 4;
 	public int verticalRayCount = 4;
 
@@ -15,6 +16,8 @@ public class ControllerPlayer : MonoBehaviour {
 
 	public BoxCollider2D boxCollider;
 	RaycastOrigins raycastOrigins;
+
+	public bool isGrounded = false;
 
 	void Start()
 	{
@@ -25,11 +28,16 @@ public class ControllerPlayer : MonoBehaviour {
 	public void Move(Vector3 velocity)
 	{
 		UpdateRaycastOrigins();
-		if (velocity.x != 0) {
+		isGrounded = false;
+		Debug.Log("hit here and isGrounded RESET: " + velocity.y.ToString());
+		if (velocity.x != 0f) {
 			HorizontalCollisions(ref velocity);
 		}
-		if (velocity.y != 0) {
+		if (velocity.y != 0f) {
+			Debug.Log("hit here Y not zero");
 			VerticalCollisions(ref velocity);
+		} else {
+			Debug.Log("hit here Y zero????");
 		}
 
 		transform.Translate(velocity);
@@ -62,13 +70,15 @@ public class ControllerPlayer : MonoBehaviour {
 		for (int i = 0; i < verticalRayCount; i++) {
 			Vector2 rayOrigin = (directionY == -1) ? raycastOrigins.bottomLeft : raycastOrigins.topLeft;
 			rayOrigin += Vector2.right * (verticalRaySpacing * i + velocity.x);
-			RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
+			RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength * directionY, collisionMask);
 
 			Debug.DrawRay(rayOrigin, Vector2.up * directionY * rayLength, Color.red);
 
 			if (hit) {
 				velocity.y = (hit.distance - skinWidth) * directionY;
 				rayLength = hit.distance;
+				isGrounded = directionY == -1;
+				Debug.Log("hit here and isGrounded: " + isGrounded + " velocityy: " + velocity.y);
 			}
 		}
 	}
@@ -77,7 +87,6 @@ public class ControllerPlayer : MonoBehaviour {
 	{
 		Bounds bounds = boxCollider.bounds;
 		bounds.Expand(skinWidth * -2);
-
 		raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
 		raycastOrigins.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
 		raycastOrigins.topLeft = new Vector2(bounds.min.x, bounds.max.y);
@@ -89,8 +98,11 @@ public class ControllerPlayer : MonoBehaviour {
 		Bounds bounds = boxCollider.bounds;
 		bounds.Expand(skinWidth * -2);
 
-		horizontalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);
-		verticalRayCount = Mathf.Clamp(verticalRayCount, 2, int.MaxValue);
+		float boundsWidth = bounds.size.x;
+		float boundsHeight = bounds.size.y;
+
+		horizontalRayCount = Mathf.RoundToInt(boundsHeight / dstBetweenRays);
+		verticalRayCount = Mathf.RoundToInt(boundsWidth / dstBetweenRays);
 
 		horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
 		verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
