@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5166712192542795671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5166712192542795670}
+  - component: {fileID: 5166712192542795669}
+  m_Layer: 0
+  m_Name: LayerLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5166712192542795670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166712192542795671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5166712192542795669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166712192542795671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c547ce32eddc5e4cb3ebff9d694d4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toplevelTilemap: {fileID: 4044831259480698120, guid: 1a75a507c980183489c93b4f666c862a,
+    type: 3}
+  toplevelTilemaplayerHeight: -6
+  tilemaps:
+  - {fileID: 4040168678496984818, guid: 513b358bce211224eb73150516e9a2eb, type: 3}
+  - {fileID: 4040168678496984818, guid: d1cf59c79de7a78428abe6c8c516f51f, type: 3}
+  - {fileID: 4040168678496984818, guid: 6c7391dc1e65dd04e8914ead51a195c2, type: 3}
+  - {fileID: 4040168678496984818, guid: be804afa1999d344f9fd045f59936cca, type: 3}
+  - {fileID: 4040168678496984818, guid: 7d6aba234d0e05b48aa23068791c3689, type: 3}
+  - {fileID: 4040168678496984818, guid: 05e5d58a918bf1047a621dd4d0155030, type: 3}
+  - {fileID: 4040168678496984818, guid: 95cbbb6541030454c8d2d6eac0c8022e, type: 3}
+  layerHeight: -8
+  nextY: 0
+  nextPos: {x: 0, y: 0, z: 0}
+  startLayer: {fileID: 0}
+  pooledLayers: []
+  inUseLayers: []
+  amountToLoadAtStart: 4
+  layersUntilDeleteDefault: 2
+  layersUntilDelete: 0

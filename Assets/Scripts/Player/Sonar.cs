@@ -26,17 +26,18 @@ public class Sonar : MonoBehaviour
     public CircleCollider2D circleCollider2D;
     public Shapes.Disc disc;
 
-    public Player player;
-
     public Transform parent;
     public Vector3 localPos;
 
     public List<GameObject> interactables = new List<GameObject>();
 
+    [FMODUnity.EventRef]
+    public string scanSfx = "";
+    public FMOD.Studio.EventInstance scanSfxInstance;
+
     private void Start()
     {
         circleCollider2D = GetComponent<CircleCollider2D>();
-        player = GetComponentInParent<Player>();
         parent = this.gameObject.transform.parent;
         localPos = this.transform.localPosition;
     }
@@ -45,7 +46,6 @@ public class Sonar : MonoBehaviour
     private void Update()
     {
         if ((Input.GetKeyDown(KeyCode.E) || (Input.GetKeyDown(KeyCode.Space))) && !sonarEnabled && canSonar) {
-            player.scanning(true);
             radius = 0f;
             disc.enabled = true;
             circleCollider2D.enabled = true;
@@ -78,7 +78,6 @@ public class Sonar : MonoBehaviour
         sonarStarted = false;
         disc.enabled = false;
         circleCollider2D.enabled = false;
-        player.endScan();
         this.gameObject.transform.SetParent(parent);
         this.transform.localPosition = localPos;
     }
