@@ -18,8 +18,6 @@ public class Sonar : MonoBehaviour
 
     public bool sonarStarted = false;
 
-    public bool canSonar = false;
-
     public LayerMask collisionMask;
 
 
@@ -42,10 +40,8 @@ public class Sonar : MonoBehaviour
         localPos = this.transform.localPosition;
     }
 
-
-    private void Update()
-    {
-        if ((Input.GetKeyDown(KeyCode.E) || (Input.GetKeyDown(KeyCode.Space))) && !sonarEnabled && canSonar) {
+    public void SonarUpdate(bool buttonPressed) {
+        if (buttonPressed && !sonarEnabled) {
             radius = 0f;
             disc.enabled = true;
             circleCollider2D.enabled = true;
@@ -55,10 +51,14 @@ public class Sonar : MonoBehaviour
             disc.Color = currentColor;
             sonarEnabled = true;
             this.gameObject.transform.SetParent(null);
-           // IEnumerator couroutine = ScanTime();
+            // IEnumerator couroutine = ScanTime();
             //StartCoroutine(couroutine);
         }
+    }
 
+
+    private void Update()
+    {
         if(sonarEnabled && !sonarStarted) {
             //Kick of doTween
             sonarStarted = true;

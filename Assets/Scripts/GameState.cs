@@ -168,7 +168,7 @@ public class GameState : MonoBehaviour
                 leveltimer.counting = !isPaused;
                 player.canMove = !isPaused;
                 player.canDrill = !isPaused;
-                player.sonar.canSonar = !isPaused;
+                //player.sonar.canSonar = !isPaused;
                 if (isPaused) {
                     player.drillSfxInstance.setPaused(isPaused);
                     player.drillEnabled = !isPaused;
@@ -199,7 +199,7 @@ public class GameState : MonoBehaviour
         player.canMove = false;
         player.canDrill = false;
         player.drillSfxInstance.setPaused(true);
-        player.sonar.canSonar = false;
+        //player.sonar.canSonar = false;
         player.drillEnabled = false;
         player.drillL.SetActive(false);
         player.drillR.SetActive(false);

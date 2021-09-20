@@ -79,17 +79,10 @@ public class LevelConfig : MonoBehaviour
 			Debug.Log("Escape Pressed");
 			shipInteriorManager.ZoomCameraToPlayer();
 		}
-
-		if (Input.GetKey(KeyCode.E)) {
-			Debug.Log("E Pressed");
-			if (currentInteractable != null) {
-				Debug.Log("Interactable Not Null");
-				currentInteractable.Interact();
-			}
+		if (Input.GetKeyDown(KeyCode.E)) {
+			CheckSonar();
 		}
-
 		CheckMovement();
-		CheckSonar();
 		CheckDrill();
 	}
 
@@ -101,18 +94,17 @@ public class LevelConfig : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
             normalizedHorizontalSpeed = 1;
-            //if (transform.localScale.x < 0f)
-            //   transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+			_playerAnimAndSFX.flipSprite(true);
 
-            if (_controller.isGrounded) {
+
+			if (_controller.isGrounded) {
                 _playerAnimAndSFX.playAnimation(_playerAnimAndSFX.player_walk);
             }
         } else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
             normalizedHorizontalSpeed = -1;
-            //if (transform.localScale.x > 0f)
-            //    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+			_playerAnimAndSFX.flipSprite(false);
 
-            if (_controller.isGrounded) {
+			if (_controller.isGrounded) {
                 _playerAnimAndSFX.playAnimation(_playerAnimAndSFX.player_walk);
             }
         } else {
@@ -151,18 +143,27 @@ public class LevelConfig : MonoBehaviour
 
         // grab our current _velocity to use as a base for all calculations
         _velocity = _controller.velocity;
-		_playerAnimAndSFX.flipSprite(_velocity);
 
 	}
 
 	public void CheckSonar() {
+		Debug.Log("E Pressed");
+		if (currentInteractable != null) {
+			Debug.Log("Interactable Not Null");
+			currentInteractable.Interact();
+		}
 
-
+		if (_playerState.canSonar) {
+			_sonar.SonarUpdate(Input.GetKey(KeyCode.E));
+		}
     }
 
 	public void CheckDrill() {
 		if (_playerState.canDrill) {
-			_drill.drillUpdate(_playerAnimAndSFX._spriteRend.flipX);
+			_drill.drillUpdate(
+				Input.GetKeyDown(KeyCode.Mouse0),
+				Input.GetKey(KeyCode.Mouse0),
+				_playerAnimAndSFX._spriteRend.flipX);
 		}
 	}
 

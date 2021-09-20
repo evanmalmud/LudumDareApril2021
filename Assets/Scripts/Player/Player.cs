@@ -135,7 +135,7 @@ public class Player : MonoBehaviour {
 		}
 		canMove = false;
 		canDrill = false;
-		sonar.canSonar = false;
+		//sonar.canSonar = false;
 		drillEnabled = false;
 		drillL.SetActive(drillEnabled);
 		drillR.SetActive(drillEnabled);
@@ -162,7 +162,7 @@ public class Player : MonoBehaviour {
 		gravity = defaultGravity;
 		canMove = true;
 		canDrill = true;
-		sonar.canSonar = true;
+		//sonar.canSonar = true;
 		isDead = false;
 		isRecalled = false;
 		drillL.SetActive(drillEnabled);
@@ -380,19 +380,4 @@ public class Player : MonoBehaviour {
 		playerLight.enabled = true;
 	}
 
-	public void collectAnim() {
-		StartCoroutine("playCollectAnim");
-		if (itemAnim.Clip != m_itemCollect) {
-			itemAnim.Play(m_itemCollect);
-		}
-	}
-
-	IEnumerator playCollectAnim() {
-		itemCollect.SetActive(true);
-		if (itemAnim.Clip != m_itemCollect) {
-			itemAnim.Play(m_itemCollect);
-		}
-		yield return new WaitForSeconds(.33f);
-		itemCollect.SetActive(false);
-	}
 }

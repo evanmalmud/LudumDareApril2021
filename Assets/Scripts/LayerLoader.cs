@@ -28,13 +28,15 @@ public class LayerLoader : MonoBehaviour
 
     private void Awake()
     {
-        jsonPath = Application.dataPath + "/JsonLevels/" + JsonFileName + ".json";
-        allTileObjects = new List<GameObject>();
-        allCreatedBombsAndArtifacts = new List<GameObject>();
-        if (toJson) {
-            convertToJson();
-        } else {
-            convertFromJson();
+        if (jsonFile != null) {
+            jsonPath = Application.dataPath + "/JsonLevels/" + JsonFileName + ".json";
+            allTileObjects = new List<GameObject>();
+            allCreatedBombsAndArtifacts = new List<GameObject>();
+            if (toJson) {
+                convertToJson();
+            } else {
+                convertFromJson();
+            }
         }
     }
 

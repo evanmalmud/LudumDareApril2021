@@ -48,13 +48,14 @@ public class Drill : MonoBehaviour
         drillSfxInstance.start();
     }
 
-    public void drillUpdate(bool playerDirection) {
+
+    public void drillUpdate(bool mousePressedDown, bool mousePressedHeld, bool playerDirection) {
 		drillEnabledThisFrame = false;
-		if (Input.GetKeyDown(KeyCode.Mouse0)) {
+		if (mousePressedDown) {
 			DrillSfx();
 			drillEnabled = true;
 			drillEnabledThisFrame = true;
-		} else if (!Input.GetKey(KeyCode.Mouse0)) {
+		} else if (!mousePressedHeld) {
 			if (drillEnabled) {
 				drillSfxInstance.setPaused(true);
 				DrillEndSfx();

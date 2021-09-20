@@ -11,6 +11,10 @@ public class PlayerState : MonoBehaviour
 	public bool canSonar = false;
 	public bool canDrill = false;
 
+    public List<ArtifactScriptableObject> collectedArtifacts = new List<ArtifactScriptableObject>();
+
+    //public 
+
     public void Start()
     {
         canMove = true;
