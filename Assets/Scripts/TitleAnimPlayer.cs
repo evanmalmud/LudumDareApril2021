@@ -21,6 +21,11 @@ public class TitleAnimPlayer : MonoBehaviour
         spriteRend.color = color;
     }
 
+    private void Start()
+    {
+        playAnim();
+    }
+
     public void playAnim() {
         spriteRend.DOFade(1f, 1.5f);
         if (m_anim.Clip != m_loadTitle) {// (check we're not already in the animation first though)

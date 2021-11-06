@@ -8,12 +8,9 @@ public class Drill : MonoBehaviour
     public AnimationClip m_drillstarting = null;
     public AnimationClip m_drillloop = null;
 
-    public GameObject drillL;
-    private SpriteAnim drillLSpriteAnim;
-    private SpriteRenderer drillLSpriteRend;
-    public GameObject drillR;
-    private SpriteAnim drillRSpriteAnim;
-    private SpriteRenderer drillRSpriteRend;
+    public GameObject drill;
+    private SpriteAnim drillSpriteAnim;
+    private SpriteRenderer drillSpriteRend;
 
     public bool drillEnabled;
 	public bool drillEnabledThisFrame;
@@ -28,13 +25,10 @@ public class Drill : MonoBehaviour
 
     private void Start()
     {
-        drillLSpriteAnim = drillL.GetComponentInChildren<SpriteAnim>();
-        drillLSpriteRend = drillL.GetComponentInChildren<SpriteRenderer>();
-        drillRSpriteAnim = drillR.GetComponentInChildren<SpriteAnim>();
-        drillRSpriteRend = drillR.GetComponentInChildren<SpriteRenderer>();
+        drillSpriteAnim = drill.GetComponentInChildren<SpriteAnim>();
+        drillSpriteRend = drill.GetComponentInChildren<SpriteRenderer>();
         drillEnabled = false;
-        drillL.SetActive(drillEnabled);
-        drillR.SetActive(drillEnabled);
+        drill.SetActive(drillEnabled);
     }
 
 	public void DrillEndSfx()
@@ -42,14 +36,14 @@ public class Drill : MonoBehaviour
 		drillEndSfxInstance.start();
 	}
 
-	public void DrillSfx()
+    public void DrillSfx()
     {
         drillSfxInstance.setPaused(false);
         drillSfxInstance.start();
     }
 
 
-    public void drillUpdate(bool mousePressedDown, bool mousePressedHeld, bool playerDirection) {
+    public void drillUpdate(bool mousePressedDown, bool mousePressedHeld, bool playerDirectionLeft) {
 		drillEnabledThisFrame = false;
 		if (mousePressedDown) {
 			DrillSfx();
@@ -61,11 +55,10 @@ public class Drill : MonoBehaviour
 				DrillEndSfx();
 			}
 			drillEnabled = false;
-			drillL.SetActive(drillEnabled);
-			drillR.SetActive(drillEnabled);
+			drill.SetActive(drillEnabled);
 		}
         if (drillEnabled) {
-
+            drill.SetActive(drillEnabled);
             //rotation
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 0f;
@@ -76,26 +69,22 @@ public class Drill : MonoBehaviour
 
             float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
             
-            if (playerDirection) {
-                //Facing Left
-                drillL.SetActive(drillEnabled);
-                drillR.SetActive(!drillEnabled);
+            if (playerDirectionLeft) {
+
                 if (angle < 90 && angle >= 0) {
                     angle = 90f;
                 } else if (angle > -90 && angle <= 0) {
                     angle = -90f;
                 }
 
-                drillL.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+                drill.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
             } else {
-                drillL.SetActive(!drillEnabled);
-                drillR.SetActive(drillEnabled);
                 if (angle > 90) {
                     angle = 90f;
                 } else if (angle < -90) {
                     angle = -90f;
                 }
-                drillR.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+                drill.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
         }
 
@@ -103,18 +92,12 @@ public class Drill : MonoBehaviour
         if (drillEnabled) {
             if (drillEnabledThisFrame) {
 
-                if (drillRSpriteAnim.Clip != m_drillstarting && drillR.activeSelf) {
-                    drillRSpriteAnim.Play(m_drillstarting);
-                }
-                if (drillLSpriteAnim.Clip != m_drillstarting && drillL.activeSelf) {
-                    drillLSpriteAnim.Play(m_drillstarting);
+                if (drillSpriteAnim.Clip != m_drillstarting && drill.activeSelf) {
+                    drillSpriteAnim.Play(m_drillstarting);
                 }
             } else {
-                if (drillRSpriteAnim.Clip != m_drillloop && drillR.activeSelf) {
-                    drillRSpriteAnim.Play(m_drillloop);
-                }
-                if (drillLSpriteAnim.Clip != m_drillloop && drillL.activeSelf) {
-                    drillLSpriteAnim.Play(m_drillloop);
+                if (drillSpriteAnim.Clip != m_drillloop && drill.activeSelf) {
+                    drillSpriteAnim.Play(m_drillloop);
                 }
             }
         }

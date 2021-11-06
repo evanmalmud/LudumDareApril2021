@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour {
     private CheckpointSystem checkpoint;
     private InteractSystem interact;
     private Vector2 axis;
-
-    public MusicLoopHandler musicLoopHandler;
+    
+    public MusicManager musicManager;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -125,8 +125,8 @@ public class PlayerController : MonoBehaviour {
         cameraController.FadeIn();
         cData.isDead = false;
         cData.currentHealth = cData.maxHealth;
-        if(musicLoopHandler != null)
-            musicLoopHandler.restartMusic();
+        if(musicManager != null)
+            musicManager.restartMusic();
         character.Immobile = false;
     }
 

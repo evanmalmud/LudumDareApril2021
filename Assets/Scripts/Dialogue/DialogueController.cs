@@ -40,6 +40,9 @@ public class DialogueController : MonoBehaviour
         initialDialogueInstance.setPaused(true);
         rocketAmbienceInstance.release();
         initialDialogueInstance.release();
+        if (intro) {
+            FindObjectOfType<TitleSceneManager>().transitionToMainScene();
+        }
     }
 
     public void playIntroDialogue() {
@@ -91,13 +94,13 @@ public class DialogueController : MonoBehaviour
             }
         }
         if(intro) {
-            FindObjectOfType<GameState>().dialogueComplete();
-        } else {
+            FindObjectOfType<TitleSceneManager>().transitionToMainScene();
+        }/* else {
             FindObjectOfType<GameState>().midGameDialogueSkipp();
             skipButton.SetActive(false);
             textBox.enabled = false;
             ship.transform.position = startingtransform;
-        }
+        }*/
         rocketAmbienceInstance.setPaused(true);
         rocketAmbienceInstance.release();
         initialDialogueInstance.setPaused(true);
