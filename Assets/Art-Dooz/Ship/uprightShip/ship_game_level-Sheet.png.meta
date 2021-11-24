@@ -1,0 +1,1258 @@
+fileFormatVersion: 2
+guid: d8bd30ce7b22a2f43adec4d8f85e0a50
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3436557851543106621
+    second: ship_game_level-Sheet_0
+  - first:
+      213: -427508183680710306
+    second: ship_game_level-Sheet_1
+  - first:
+      213: -6622324668750076995
+    second: ship_game_level-Sheet_2
+  - first:
+      213: 798018662461085676
+    second: ship_game_level-Sheet_3
+  - first:
+      213: 153756668086902704
+    second: ship_game_level-Sheet_4
+  - first:
+      213: -2343977211236585479
+    second: ship_game_level-Sheet_5
+  - first:
+      213: -4220672092835162131
+    second: ship_game_level-Sheet_6
+  - first:
+      213: 7044862901386009786
+    second: ship_game_level-Sheet_7
+  - first:
+      213: 1970054301117193984
+    second: ship_game_level-Sheet_8
+  - first:
+      213: -9117606251464638958
+    second: ship_game_level-Sheet_9
+  - first:
+      213: -5881980459112038649
+    second: ship_game_level-Sheet_10
+  - first:
+      213: -2684986589018005880
+    second: ship_game_level-Sheet_11
+  - first:
+      213: 3512295143107086082
+    second: ship_game_level-Sheet_12
+  - first:
+      213: 1356397511577988640
+    second: ship_game_level-Sheet_13
+  - first:
+      213: 3819443210390719933
+    second: ship_game_level-Sheet_14
+  - first:
+      213: -2540155820142486943
+    second: ship_game_level-Sheet_15
+  - first:
+      213: 6270929938563945854
+    second: ship_game_level-Sheet_16
+  - first:
+      213: 6218112144129089729
+    second: ship_game_level-Sheet_17
+  - first:
+      213: -2861444032278246690
+    second: ship_game_level-Sheet_18
+  - first:
+      213: 871017754565791946
+    second: ship_game_level-Sheet_19
+  - first:
+      213: 5637482597830774890
+    second: ship_game_level-Sheet_20
+  - first:
+      213: -8696276985256433612
+    second: ship_game_level-Sheet_21
+  - first:
+      213: -2493556689697573950
+    second: ship_game_level-Sheet_22
+  - first:
+      213: -6525714845893326171
+    second: ship_game_level-Sheet_23
+  - first:
+      213: -6270019677572548479
+    second: ship_game_level-Sheet_24
+  - first:
+      213: 813893238990045337
+    second: ship_game_level-Sheet_25
+  - first:
+      213: -8571689209435151364
+    second: ship_game_level-Sheet_26
+  - first:
+      213: 7675167237400782683
+    second: ship_game_level-Sheet_27
+  - first:
+      213: -1531928480591389362
+    second: ship_game_level-Sheet_28
+  - first:
+      213: -4611171188028320922
+    second: ship_game_level-Sheet_29
+  - first:
+      213: 5528018036821930429
+    second: ship_game_level-Sheet_30
+  - first:
+      213: 6164572746474360181
+    second: ship_game_level-Sheet_31
+  - first:
+      213: -5042573996310163708
+    second: ship_game_level-Sheet_32
+  - first:
+      213: 3557332321388021737
+    second: ship_game_level-Sheet_33
+  - first:
+      213: -245969961163082396
+    second: ship_game_level-Sheet_34
+  - first:
+      213: -3608111815198115108
+    second: ship_game_level-Sheet_35
+  - first:
+      213: -7741444290993500494
+    second: ship_game_level-Sheet_36
+  - first:
+      213: -5456136778219860265
+    second: ship_game_level-Sheet_37
+  - first:
+      213: 2802695796015363234
+    second: ship_game_level-Sheet_38
+  - first:
+      213: 7306262976623890753
+    second: ship_game_level-Sheet_39
+  - first:
+      213: 5750587701968924444
+    second: ship_game_level-Sheet_40
+  - first:
+      213: 3664337673395749409
+    second: ship_game_level-Sheet_41
+  - first:
+      213: -4408628312973474867
+    second: ship_game_level-Sheet_42
+  - first:
+      213: -9149906761578685723
+    second: ship_game_level-Sheet_43
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d347e47882b11bf20800000000000000
+      internalID: 3436557851543106621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59832d629f211af0800000000000000
+      internalID: -427508183680710306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db368d3ecc6c814a0800000000000000
+      internalID: -6622324668750076995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce71024deb1231b00800000000000000
+      internalID: 798018662461085676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfda2fffd0422200800000000000000
+      internalID: 153756668086902704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffe1a23525887fd0800000000000000
+      internalID: -2343977211236585479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7d729f7192d65c0800000000000000
+      internalID: -4220672092835162131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcd078cb7164c160800000000000000
+      internalID: 7044862901386009786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 672
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f1256f2f9075b10800000000000000
+      internalID: 1970054301117193984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 504
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21eb193eb61c77180800000000000000
+      internalID: -9117606251464638958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 504
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f76debfe10f5ea0800000000000000
+      internalID: -5881980459112038649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 504
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ed4e64ce20dbad0800000000000000
+      internalID: -2684986589018005880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 504
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2074a3fd2dd2eb030800000000000000
+      internalID: 3512295143107086082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 504
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e64dba954e2d210800000000000000
+      internalID: 1356397511577988640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbdcd131d53610530800000000000000
+      internalID: 3819443210390719933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 336
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a144a6dbd8fbcd0800000000000000
+      internalID: -2540155820142486943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 336
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e755777ed81d60750800000000000000
+      internalID: 6270929938563945854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 336
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c06b54dc0c2b4650800000000000000
+      internalID: 6218112144129089729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 336
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edac46f20db1a48d0800000000000000
+      internalID: -2861444032278246690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 336
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0d3fd680a761c00800000000000000
+      internalID: 871017754565791946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 336
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a605627dd8c5c3e40800000000000000
+      internalID: 5637482597830774890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 336
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438a261282e905780800000000000000
+      internalID: -8696276985256433612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3f643f66b156dd0800000000000000
+      internalID: -2493556689697573950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 168
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa09012ce00075a0800000000000000
+      internalID: -6525714845893326171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 168
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188349fb25a6cf8a0800000000000000
+      internalID: -6270019677572548479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 168
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9900813b6978b4b00800000000000000
+      internalID: 813893238990045337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 168
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3a19a241e3b0980800000000000000
+      internalID: -8571689209435151364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 168
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b576df800fba38a60800000000000000
+      internalID: 7675167237400782683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 168
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ddb05d92f7dbae0800000000000000
+      internalID: -1531928480591389362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 168
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6635e0b4c34d100c0800000000000000
+      internalID: -4611171188028320922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db139b4ad1777bc40800000000000000
+      internalID: 5528018036821930429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d88a96046fc8550800000000000000
+      internalID: 6164572746474360181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f8f44caad250ab0800000000000000
+      internalID: -5042573996310163708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7495416ee2e5130800000000000000
+      internalID: 3557332321388021737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465357f9f93269cf0800000000000000
+      internalID: -245969961163082396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdaf931bb696dedc0800000000000000
+      internalID: -3608111815198115108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be4bdaee6dd09490800000000000000
+      internalID: -7741444290993500494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dec2401288e744b0800000000000000
+      internalID: -5456136778219860265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4f9f62afc25e620800000000000000
+      internalID: 2802695796015363234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 141514d877f056560800000000000000
+      internalID: 7306262976623890753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f66990c013ecf40800000000000000
+      internalID: 5750587701968924444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122c5df03b75ad230800000000000000
+      internalID: 3664337673395749409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc38c7248e761d2c0800000000000000
+      internalID: -4408628312973474867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship_game_level-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 0
+        width: 126
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea58245740050180800000000000000
+      internalID: -9149906761578685723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ship_game_level-Sheet_37: -5456136778219860265
+      ship_game_level-Sheet_36: -7741444290993500494
+      ship_game_level-Sheet_19: 871017754565791946
+      ship_game_level-Sheet_26: -8571689209435151364
+      ship_game_level-Sheet_24: -6270019677572548479
+      ship_game_level-Sheet_29: -4611171188028320922
+      ship_game_level-Sheet_34: -245969961163082396
+      ship_game_level-Sheet_17: 6218112144129089729
+      ship_game_level-Sheet_18: -2861444032278246690
+      ship_game_level-Sheet_3: 798018662461085676
+      ship_game_level-Sheet_5: -2343977211236585479
+      ship_game_level-Sheet_6: -4220672092835162131
+      ship_game_level-Sheet_30: 5528018036821930429
+      ship_game_level-Sheet_27: 7675167237400782683
+      ship_game_level-Sheet_28: -1531928480591389362
+      ship_game_level-Sheet_40: 5750587701968924444
+      ship_game_level-Sheet_38: 2802695796015363234
+      ship_game_level-Sheet_1: -427508183680710306
+      ship_game_level-Sheet_21: -8696276985256433612
+      ship_game_level-Sheet_23: -6525714845893326171
+      ship_game_level-Sheet_13: 1356397511577988640
+      ship_game_level-Sheet_14: 3819443210390719933
+      ship_game_level-Sheet_4: 153756668086902704
+      ship_game_level-Sheet_15: -2540155820142486943
+      ship_game_level-Sheet_16: 6270929938563945854
+      ship_game_level-Sheet_2: -6622324668750076995
+      ship_game_level-Sheet_8: 1970054301117193984
+      ship_game_level-Sheet_12: 3512295143107086082
+      ship_game_level-Sheet_35: -3608111815198115108
+      ship_game_level-Sheet_9: -9117606251464638958
+      ship_game_level-Sheet_10: -5881980459112038649
+      ship_game_level-Sheet_0: 3436557851543106621
+      ship_game_level-Sheet_41: 3664337673395749409
+      ship_game_level-Sheet_39: 7306262976623890753
+      ship_game_level-Sheet_31: 6164572746474360181
+      ship_game_level-Sheet_11: -2684986589018005880
+      ship_game_level-Sheet_20: 5637482597830774890
+      ship_game_level-Sheet_25: 813893238990045337
+      ship_game_level-Sheet_33: 3557332321388021737
+      ship_game_level-Sheet_22: -2493556689697573950
+      ship_game_level-Sheet_43: -9149906761578685723
+      ship_game_level-Sheet_7: 7044862901386009786
+      ship_game_level-Sheet_42: -4408628312973474867
+      ship_game_level-Sheet_32: -5042573996310163708
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
