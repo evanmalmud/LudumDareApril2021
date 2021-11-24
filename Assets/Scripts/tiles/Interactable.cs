@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class Interactable : MonoBehaviour {
 
     public SpriteRenderer spriteRend;
     
-    public Light2D light2d;
+    public UnityEngine.Rendering.Universal.Light2D light2d;
 
     public virtual void Start()
     {
@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour {
             spriteRend = GetComponent<SpriteRenderer>();
         }
         spriteRend.sortingLayerName = "BG";
-        light2d = GetComponent<Light2D>();
+        light2d = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         light2d.enabled = false;
     }
 

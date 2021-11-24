@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using PowerTools;
 using System.Collections.Generic;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 [RequireComponent(typeof(ControllerPlayer))]
 public class Player : MonoBehaviour {
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
     public float jumpVelocity;
 	public float timeToJumpApex = .4f;
 
-	public Light2D playerLight;
+	public UnityEngine.Rendering.Universal.Light2D playerLight;
 
 	ControllerPlayer controller;
 

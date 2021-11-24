@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Box2DToggle : MonoBehaviour
 {
-    public Light2D light2d;
+    public UnityEngine.Rendering.Universal.Light2D light2d;
 
     public LayerMask layermask = 0;
 

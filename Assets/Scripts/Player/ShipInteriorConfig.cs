@@ -10,6 +10,7 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
     public bool canDrill = true;
+    public bool canSonar = true;
 
     [HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -18,7 +19,9 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config
 
 	private Drill _drill;
 
-	private SpriteAnim _spriteAnim;
+    private Sonar _sonar;
+
+    private SpriteAnim _spriteAnim;
 	private RaycastHit2D _lastControllerColliderHit;
 	private Vector3 _velocity;
 
@@ -36,6 +39,7 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config
 		_spriteAnim = GetComponent<SpriteAnim>();
 		_controller = GetComponent<PrimeCharacterController>();
         _drill = GetComponent<Drill>();
+        _sonar = GetComponent<Sonar>();
         // listen to some events for illustration purposes
         _controller.onControllerCollidedEvent += onControllerCollider;
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
@@ -159,6 +163,13 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config
             Debug.Log("mousePressedHeld - " + mousePressedHeld);
             Debug.Log("playerDirectionLeft - " + playerDirectionLeft);
             _drill.drillUpdate(mousePressedDown, mousePressedHeld, playerDirectionLeft);
+        }
+
+        //Drill
+        if (canSonar) {
+            bool ePressed = Input.GetKeyDown(KeyCode.E);
+            Debug.Log("ePressed - " + ePressed);
+            _sonar.SonarUpdate(ePressed);
         }
     }
 

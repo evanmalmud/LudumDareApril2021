@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 using UnityEngine.InputSystem;
 
 public class RhythmInput : MonoBehaviour
@@ -13,7 +13,7 @@ public class RhythmInput : MonoBehaviour
 
     public GameObject spotLight;
     public bool spotlightEnabled = false;
-    Light2D spotLight2d;
+    UnityEngine.Rendering.Universal.Light2D spotLight2d;
 
     public List<string> expectedButtons = new List<string>();
 
@@ -36,7 +36,7 @@ public class RhythmInput : MonoBehaviour
         //myAction.performed += keyboardPress;
         //myAction.Enable();
 
-        spotLight2d = spotLight.GetComponent<Light2D>();
+        spotLight2d = spotLight.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
     }
 
     private void Start()
