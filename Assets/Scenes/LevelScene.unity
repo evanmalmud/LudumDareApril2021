@@ -1289,7 +1289,6 @@ GameObject:
   m_Component:
   - component: {fileID: 633129997}
   - component: {fileID: 633129996}
-  - component: {fileID: 633129998}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1333,27 +1332,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &633129998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633129995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e8b05e7e5953e43ac89121f39a1d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toJson: 0
-  singleTile: {fileID: 0}
-  doubleTile: {fileID: 0}
-  twobyOneTile: {fileID: 0}
-  JsonFileName: 
-  jsonFile: {fileID: 0}
-  finishedLoading: 0
-  allTileObjects: []
-  allCreatedBombsAndArtifacts: []
 --- !u!1 &636144430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,6 +2691,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361861491}
   m_CullTransparentMesh: 1
+--- !u!1 &1412176841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9081030512659671444, guid: cdfe52df8f36f124090e45afe3024d7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1798754231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1438860118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,6 +3935,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1798754231}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1699553382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412176841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590af66f428aa4e4eaf740208dec17d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isDead: 0
+  isRecalled: 0
+  canMove: 1
+  canSonar: 1
+  canDrill: 1
+  collectedArtifacts: []
 --- !u!1 &1773091455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4015,6 +4018,11 @@ PrefabInstance:
     - target: {fileID: 249289559, guid: cdfe52df8f36f124090e45afe3024d7d, type: 3}
       propertyPath: maxRadius
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245357423903612659, guid: cdfe52df8f36f124090e45afe3024d7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9081030512659671444, guid: cdfe52df8f36f124090e45afe3024d7d,
         type: 3}
@@ -4770,6 +4778,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 59.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072974069717534335, guid: d86619e2f2f45cd4a91c68435cac02fa,
+        type: 3}
+      propertyPath: toJson
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072974069717534335, guid: d86619e2f2f45cd4a91c68435cac02fa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6465927896071448629, guid: d86619e2f2f45cd4a91c68435cac02fa,
         type: 3}
