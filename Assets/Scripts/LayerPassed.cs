@@ -9,25 +9,26 @@ public class LayerPassed : MonoBehaviour
 
     public LayerMask collisionMask;
 
-    public BoxCollider2D collider;
+    public BoxCollider2D collider2d;
 
     private void Awake()
     {
         loader = FindObjectOfType<TilemapPrefabLoader>();
-        collider = GetComponent<BoxCollider2D>();
+        collider2d = GetComponent<BoxCollider2D>();
     }
 
     private void OnEnable()
     {
-        collider.enabled = true;
+        collider2d.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log("OnTriggerEnter2D layer - " + collision.gameObject.name);
         if (collisionMask == (collisionMask | (1 << collision.gameObject.layer))) {
-            //Debug.Log("load layer");
+           // Debug.Log("load layer");
             loader.logLayerPassed();
-            collider.enabled = false;
+            collider2d.enabled = false;
         }
     }
 }

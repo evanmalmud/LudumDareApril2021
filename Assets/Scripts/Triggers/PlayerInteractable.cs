@@ -30,4 +30,9 @@ public class PlayerInteractable : Box2DToggle {
     {
         
     }
+
+    virtual public void UnInteract()
+    {
+
+    }
 }

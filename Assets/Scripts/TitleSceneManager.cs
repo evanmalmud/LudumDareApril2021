@@ -48,15 +48,4 @@ public class TitleSceneManager : MonoBehaviour
         currentObject = go;
         currentCanvasHelper = canvasHelper;
     }
-
-    public void transitionScene(String sceneName) {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void transitionToMainScene()
-    {
-        transitionScene("ShipScene");
-    }
-
-    
 }

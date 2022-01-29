@@ -318,6 +318,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void takeDamage() {
+		Debug.Log("takeDamage called");
 		if(!isDead && !isRecalled) {
 			isDead = true;
 			canMove = false;

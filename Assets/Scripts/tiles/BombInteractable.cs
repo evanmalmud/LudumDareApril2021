@@ -108,7 +108,7 @@ public class BombInteractable : Interactable
         //Collider2D[] hitCollider = Physics2D.OverlapBoxAll(this.transform.position, new Vector2(bombExpRadius * 2, bombExpRadius * 2), collisionMask);
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(this.transform.position, bombExpRadius, collisionMask);
         foreach (Collider2D hit in hitCollider) {
-            if(hit.gameObject == this.gameObject) {
+            if (hit.gameObject == this.gameObject) {
                 //dont explode self
                 continue;
             }
@@ -127,8 +127,8 @@ public class BombInteractable : Interactable
                 artifact.destroy();
                 continue;
             }
-            Player player;
-            if (hit.TryGetComponent<Player>(out player)) {
+            ShipInteriorConfig player;
+            if (hit.TryGetComponent<ShipInteriorConfig>(out player)) {
                 player.takeDamage();
                 continue;
             }

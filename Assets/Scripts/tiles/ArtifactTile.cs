@@ -101,8 +101,8 @@ public class ArtifactTile : TilePrefab
         currentDamageUntilDestroyed -= damage;
         if (currentDamageUntilDestroyed <= 0) {
             CollectSfx(chosenArtifact.artifactType);
-            PlayerState playerState = FindObjectOfType<PlayerState>();
-            playerState.collectedArtifacts.Add(chosenArtifact);
+            ShipInteriorConfig shipInteriorConfig = FindObjectOfType<ShipInteriorConfig>();
+            shipInteriorConfig.collectedArtifacts.Add(chosenArtifact);
             CollectEffect collectEffect = FindObjectOfType<CollectEffect>();
             collectEffect.collectAnim();
             Destroy(this.gameObject);

@@ -6,9 +6,22 @@ public class ShipScreenInteract : PlayerInteractable {
 
     public ShipInteriorManager shipInteriorManager;
 
+    public bool interactActive = false;
+
     override public void Interact()
     {
-        //Zoom in camera
-        shipInteriorManager.ZoomCameraToLevelSelect();
+        if (!interactActive) {
+            //Zoom in camera
+            shipInteriorManager.ZoomCameraToLevelSelect();
+            interactActive = true;
+        } else {
+            //Load level
+            FindObjectOfType<SceneLoader>().LoadScene();
+        }
+    }
+
+    override public void UnInteract()
+    {
+        interactActive = false;
     }
 }

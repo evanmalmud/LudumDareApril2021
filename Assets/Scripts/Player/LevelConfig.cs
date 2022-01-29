@@ -18,6 +18,7 @@ public class LevelConfig : MonoBehaviour
 	private float normalizedHorizontalSpeed = 0;
 
 	private PrimeCharacterController _controller;
+	private ShipInteriorConfig _config;
 
 	public PlayerAnimAndSFX _playerAnimAndSFX;
 	private RaycastHit2D _lastControllerColliderHit;
@@ -33,6 +34,7 @@ public class LevelConfig : MonoBehaviour
 
 	void Awake()
 	{
+		_config = GetComponent<ShipInteriorConfig>();
 		_playerState = GetComponent<PlayerState>();
 		_playerAnimAndSFX = GetComponent<PlayerAnimAndSFX>();
 		_controller = GetComponent<PrimeCharacterController>();
@@ -153,13 +155,13 @@ public class LevelConfig : MonoBehaviour
 			currentInteractable.Interact();
 		}
 
-		if (_playerState.canSonar) {
+		if (_config.canSonar) {
 			_sonar.SonarUpdate(Input.GetKey(KeyCode.E));
 		}
     }
 
 	public void CheckDrill() {
-		if (_playerState.canDrill) {
+		if (_config.canDrill) {
 			_drill.drillUpdate(
 				Input.GetKeyDown(KeyCode.Mouse0),
 				Input.GetKey(KeyCode.Mouse0),

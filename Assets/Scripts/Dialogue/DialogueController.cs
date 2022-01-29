@@ -41,7 +41,7 @@ public class DialogueController : MonoBehaviour
         rocketAmbienceInstance.release();
         initialDialogueInstance.release();
         if (intro) {
-            FindObjectOfType<TitleSceneManager>().transitionToMainScene();
+            FindObjectOfType<SceneLoader>().LoadScene();
         }
     }
 
@@ -94,7 +94,7 @@ public class DialogueController : MonoBehaviour
             }
         }
         if(intro) {
-            FindObjectOfType<TitleSceneManager>().transitionToMainScene();
+            FindObjectOfType<SceneLoader>().LoadScene();
         }/* else {
             FindObjectOfType<GameState>().midGameDialogueSkipp();
             skipButton.SetActive(false);

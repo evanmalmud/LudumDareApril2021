@@ -85,7 +85,7 @@ public class TilemapPrefabLoader : MonoBehaviour
         obj.transform.position = nextPos;
         obj.SetActive(true);
         updateTransform(layerHeight);
-        Debug.Log("loadNext - " + obj.name);
+        //Debug.Log("loadNext - " + obj.name);
     }
 
     void updateTransform(float layerH) {

@@ -134,7 +134,7 @@ MonoBehaviour:
   circleCollider2D: {fileID: 2130747536891717247}
   disc: {fileID: 2130747536891717187}
   radius: 0
-  maxRadius: 10
+  maxRadius: 8
   sonarTime: 1
   startColor: {r: 0.1882353, g: 0.88235295, b: 0.7254902, a: 1}
   endColor: {r: 0.043137256, g: 0.5411765, b: 0.56078434, a: 1}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1699553381}
   m_Layer: 11
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,7 +276,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 9081030512659671444}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
     m_Bits: 256
   triggerMask:
     serializedVersion: 2
-    m_Bits: 13313
+    m_Bits: 78849
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 512
@@ -364,13 +364,20 @@ MonoBehaviour:
   groundDamping: 10
   inAirDamping: 5
   jumpHeight: 3
+  canMove: 1
   canDrill: 1
   canSonar: 1
+  isDead: 0
+  isRecalled: 0
+  collectedArtifacts: []
   player_idle: {fileID: 7400000, guid: f7cac311b37f8694c8f9486a58b5571a, type: 2}
   player_walk: {fileID: 7400000, guid: 14cb0e040382197449ec8d6e55950a2e, type: 2}
   player_land: {fileID: 7400000, guid: 3d124b3c3b673b64cba5ac04f763b52c, type: 2}
   player_fall: {fileID: 7400000, guid: 92e78fc598ee2f64e9cf2fa99dd21d85, type: 2}
   player_jump: {fileID: 7400000, guid: 14cb0e040382197449ec8d6e55950a2e, type: 2}
+  player_dead: {fileID: 7400000, guid: 8ba57c730a4229b4b8b882217d36feaa, type: 2}
+  player_scan: {fileID: 7400000, guid: 25f5c4a1dd488794999efd0f753d133e, type: 2}
+  player_tele: {fileID: 7400000, guid: 32f95190b3f8bd646a94ad5d8a0d5d7d, type: 2}
   currentInteractable: {fileID: 0}
   shipInteriorManager: {fileID: 0}
 --- !u!95 &9081030512659671468
@@ -405,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a8ca009b14008429f621808bba2086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_defaultAnim: {fileID: 0}
+  m_defaultAnim: {fileID: 7400000, guid: f7cac311b37f8694c8f9486a58b5571a, type: 2}
 --- !u!114 &9081030512659671469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Collect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966563527728129582, guid: 28cb86fd648cc1b469e9694e5e56fb00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28cb86fd648cc1b469e9694e5e56fb00, type: 3}
