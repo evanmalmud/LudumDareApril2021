@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class OreTile : TilePrefab {
 
-    public List<OreScriptableObject> possibleOres;
-
     public List<OreScriptableObject> shallowOres;
 
     public List<OreScriptableObject> mediumOres;
@@ -101,10 +99,8 @@ public class OreTile : TilePrefab {
         currentDamageUntilDestroyed -= damage;
         if (currentDamageUntilDestroyed <= 0) {
             CollectSfx(chosenOre.oreType);
-            ShipInteriorConfig shipInteriorConfig = FindObjectOfType<ShipInteriorConfig>();
-            shipInteriorConfig.collectedOres.Add(chosenOre);
-            CollectEffect collectEffect = FindObjectOfType<CollectEffect>();
-            collectEffect.collectAnim();
+            PlayerConfig playerConfig = FindObjectOfType<PlayerConfig>();
+            playerConfig.collectOre(chosenOre);
             Destroy(this.gameObject);
         }
     }

@@ -112,24 +112,34 @@ public class BombInteractable : Interactable
                 //dont explode self
                 continue;
             }
+            //Destroy other bombs
             BombTilePrefab bombTilePrefab;
             if (hit.TryGetComponent<BombTilePrefab>(out bombTilePrefab)) {
                 bombTilePrefab.destroy();
                 continue;
             }
-            TilePrefab tile;
-            if (hit.TryGetComponent<TilePrefab>(out tile)) {
-                tile.destroy();
-                continue;
-            }
+            //Destroy Artifacts
             ArtifactTile artifact;
             if (hit.TryGetComponent<ArtifactTile>(out artifact)) {
                 artifact.destroy();
                 continue;
             }
-            ShipInteriorConfig player;
-            if (hit.TryGetComponent<ShipInteriorConfig>(out player)) {
-                player.takeDamage();
+            //Destroy normal tiles
+            TilePrefab tile;
+            if (hit.TryGetComponent<TilePrefab>(out tile)) {
+                tile.destroy();
+                continue;
+            }
+            //Destroy Ores
+            OreTile ore;
+            if (hit.TryGetComponent<OreTile>(out ore)) {
+                ore.destroy();
+                continue;
+            }
+            //Hurt Player
+            PlayerConfig playerConfig;
+            if (hit.TryGetComponent<PlayerConfig>(out playerConfig)) {
+                playerConfig.takeDamage();
                 continue;
             }
         }

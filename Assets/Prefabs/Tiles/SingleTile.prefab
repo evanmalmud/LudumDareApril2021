@@ -16,8 +16,11 @@ MonoBehaviour:
     type: 3}
   artifactPrefab: {fileID: 2710934881308951692, guid: 137f90871c2b2c94d88d292f5bc9e7f0,
     type: 3}
+  orePrefab: {fileID: 2710934881308951692, guid: 7a9dbe772714df24aa7bf0f275399e9b,
+    type: 3}
   bombspawnrate: 4.5
-  artifactspawnrate: 6
+  artifactspawnrate: 0.1
+  orespawnrate: 6
   rateOf: 100
   parent: {fileID: 0}
   layerLoader: {fileID: 0}
@@ -50,6 +53,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2808323814763229181}
   m_RootOrder: 0
@@ -108,7 +112,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &7583500123220499126
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,6 +125,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1

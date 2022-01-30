@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRend: {fileID: 1903247071869502360}
   light2d: {fileID: 175242177}
---- !u!114 &1917244310794026932
+--- !u!114 &6747026505562247228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,11 +102,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2710934881308951692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04bb7c72aeebd74fb3552001d8a683a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e1efe1469df79f4aaaf78a29f8f373e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDamageUntilDestroyed: 100
-  currentDamageUntilDestroyed: 100
+  currentDamageUntilDestroyed: 0
   possibleSprites: []
   shallowSprites: []
   mediumSprites: []
@@ -125,24 +125,19 @@ MonoBehaviour:
   m_breakDeep: {fileID: 0}
   depthType: 0
   tileDestroySfx: 
-  tileType: 4
-  possibleArtifacts:
-  - {fileID: 11400000, guid: a6389fb84055c5f4da30cc30502b913c, type: 2}
-  shallowArtifacts:
-  - {fileID: 11400000, guid: fc5cf0973d23d15429138a7041dd5990, type: 2}
-  - {fileID: 11400000, guid: 13af9ac53606afd4cb2fc30b80e232ae, type: 2}
-  - {fileID: 11400000, guid: 9ba7d3861b59a704a9cb72ec2365f7ba, type: 2}
-  mediumArtifacts:
-  - {fileID: 11400000, guid: 1ba7089c51c276144a3bb45dce9201a0, type: 2}
-  - {fileID: 11400000, guid: e347a02e8194a88429f1be4d17edabe6, type: 2}
-  - {fileID: 11400000, guid: 7ce1c24018becba47abfa92bf6af5663, type: 2}
-  deepArtifacts:
-  - {fileID: 11400000, guid: a6389fb84055c5f4da30cc30502b913c, type: 2}
-  - {fileID: 11400000, guid: 7d7d391e4854f704d9c05136a4066c13, type: 2}
-  - {fileID: 11400000, guid: 04fcb866b7260a443b915ff6ada0bfe7, type: 2}
-  - {fileID: 11400000, guid: deb86d663f0dce4439711bc9e5c77057, type: 2}
-  - {fileID: 11400000, guid: 180bb2fff5f8b6c439906a51f8962c62, type: 2}
-  chosenArtifact: {fileID: 0}
+  tileType: 0
+  possibleOres: []
+  shallowOres:
+  - {fileID: 11400000, guid: 7d7c4c9ab6706a74ca9cdb989aa53bb7, type: 2}
+  - {fileID: 11400000, guid: 6eb825fe10883974eb3094085e03efa5, type: 2}
+  mediumOres:
+  - {fileID: 11400000, guid: 17f7411b075b60b42b9ec37c373e4bb7, type: 2}
+  - {fileID: 11400000, guid: 4eb0149e28b8ec2489469fe012e30894, type: 2}
+  - {fileID: 11400000, guid: e130b6ab656645444aedae52190ab4d8, type: 2}
+  deepOres:
+  - {fileID: 11400000, guid: efaf1a9a4bef44f45883491dc0ee6ce5, type: 2}
+  - {fileID: 11400000, guid: 7945a3ac328799542b475cb91e074fc2, type: 2}
+  chosenOre: {fileID: 0}
   commoncollectSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_CollectCommon
   rarecollectSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_CollectRare
   legendarycollectSfx: event:/SFX_JSO/LD48_SFX_JSO_OBJ_CollectLegendary
@@ -153,11 +148,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9095090458242537669, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: -9095090458242537669, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.95
+      objectReference: {fileID: 0}
     - target: {fileID: 2119953949506286389, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3283751135987769031, guid: d5cf8d9116a167d4688153effc385f26,
+      objectReference: {fileID: -738030465, guid: 06238aa5653d05146aff7ad20600c962,
         type: 3}
     - target: {fileID: 2119953949506286389, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}

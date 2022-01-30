@@ -9,7 +9,7 @@ public class OreScriptableObject : ScriptableObject {
 
     public OreType oreType;
 
-    public float value;
+    public int value;
 
     public List<Sprite> spriteOptions;
 

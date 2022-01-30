@@ -18,7 +18,7 @@ public class LevelConfig : MonoBehaviour
 	private float normalizedHorizontalSpeed = 0;
 
 	private PrimeCharacterController _controller;
-	private ShipInteriorConfig _config;
+	private PlayerConfig _config;
 
 	public PlayerAnimAndSFX _playerAnimAndSFX;
 	private RaycastHit2D _lastControllerColliderHit;
@@ -34,7 +34,7 @@ public class LevelConfig : MonoBehaviour
 
 	void Awake()
 	{
-		_config = GetComponent<ShipInteriorConfig>();
+		_config = GetComponent<PlayerConfig>();
 		_playerState = GetComponent<PlayerState>();
 		_playerAnimAndSFX = GetComponent<PlayerAnimAndSFX>();
 		_controller = GetComponent<PrimeCharacterController>();

@@ -24,14 +24,14 @@ public class LayerLoader : MonoBehaviour
 
     public List<GameObject> allTileObjects = new List<GameObject>();
 
-    public List<GameObject> allCreatedBombsAndArtifacts = new List<GameObject>();
+    public List<GameObject> allCreated = new List<GameObject>();
 
     private void Awake()
     {
         if (jsonFile != null) {
             jsonPath = Application.dataPath + "/JsonLevels/" + JsonFileName + ".json";
             allTileObjects = new List<GameObject>();
-            allCreatedBombsAndArtifacts = new List<GameObject>();
+            allCreated = new List<GameObject>();
             if (toJson) {
                 convertToJson();
             } else {
@@ -55,10 +55,10 @@ public class LayerLoader : MonoBehaviour
         foreach (GameObject go in allTileObjects) {
             go.SetActive(false);
         }
-        foreach (GameObject go in allCreatedBombsAndArtifacts) {
+        foreach (GameObject go in allCreated) {
             Destroy(go);
         }
-        allCreatedBombsAndArtifacts.Clear();
+        allCreated.Clear();
     }
 
     private void Update()

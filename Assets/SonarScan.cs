@@ -28,6 +28,8 @@ public class SonarScan : MonoBehaviour
     // Start is called before the first frame update
     public void StartScan(Sonar creatorObj)
     {
+        scanSfxInstance = FMODUnity.RuntimeManager.CreateInstance(scanSfx);
+        scanSfxInstance.start();
         this.creatorObj = creatorObj;
         disc.enabled = true;
         circleCollider2D.enabled = true;
@@ -38,6 +40,7 @@ public class SonarScan : MonoBehaviour
 
         DOTween.To(() => radius, x => radius = x, maxRadius, sonarTime);
         DOTween.To(() => currentColor, x => currentColor = x, endColor, sonarTime).OnComplete(setComplete);
+
     }
 
     // Update is called once per frame
@@ -78,5 +81,10 @@ public class SonarScan : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    private void OnDestroy()
+    {
+        scanSfxInstance.release();
     }
 }

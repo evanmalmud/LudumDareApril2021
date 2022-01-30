@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Sonar : MonoBehaviour
 {
-    public bool sonarEnabled = false;
+    public bool sonarActive = false;
+    public bool sonarAnimActive = false;
 
     public GameObject sonarScanObj;
+
+    public float timeForScanAnimation = 1f;
 
 
     private void Start()
@@ -18,7 +21,7 @@ public class Sonar : MonoBehaviour
     }
 
     public void SonarUpdate(bool buttonPressed) {
-        if (buttonPressed && !sonarEnabled) {
+        if (buttonPressed && !sonarActive && !sonarAnimActive) {
 
             //Create new SonarScan
             GameObject go = Instantiate(sonarScanObj);
@@ -26,12 +29,19 @@ public class Sonar : MonoBehaviour
             go.transform.parent = null;
             go.SetActive(true);
             go.GetComponent<SonarScan>().StartScan(this);
-            sonarEnabled = true;
+            sonarActive = true;
+            sonarAnimActive = true;
+            StartCoroutine(scanAnimationReturn());
         }
     }
 
+    IEnumerator scanAnimationReturn() {
+        yield return new WaitForSeconds(timeForScanAnimation);
+        sonarAnimActive = false;
+    }
+
     public void SonarComplete() {
-        sonarEnabled = false;
+        sonarActive = false;
     }
 
 }

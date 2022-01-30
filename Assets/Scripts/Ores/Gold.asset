@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   depthType: 0
   oreType: 0
-  value: 0
+  value: 75
   spriteOptions:
   - {fileID: -2047692065, guid: 06238aa5653d05146aff7ad20600c962, type: 3}
   - {fileID: -1465691148, guid: 06238aa5653d05146aff7ad20600c962, type: 3}

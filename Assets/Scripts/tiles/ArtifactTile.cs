@@ -5,9 +5,6 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class ArtifactTile : TilePrefab
 {
-
-    public List<ArtifactScriptableObject> possibleArtifacts;
-
     public List<ArtifactScriptableObject> shallowArtifacts;
 
     public List<ArtifactScriptableObject> mediumArtifacts;
@@ -101,10 +98,8 @@ public class ArtifactTile : TilePrefab
         currentDamageUntilDestroyed -= damage;
         if (currentDamageUntilDestroyed <= 0) {
             CollectSfx(chosenArtifact.artifactType);
-            ShipInteriorConfig shipInteriorConfig = FindObjectOfType<ShipInteriorConfig>();
-            shipInteriorConfig.collectedArtifacts.Add(chosenArtifact);
-            CollectEffect collectEffect = FindObjectOfType<CollectEffect>();
-            collectEffect.collectAnim();
+            PlayerConfig playerConfig = FindObjectOfType<PlayerConfig>();
+            playerConfig.collectArtifact(chosenArtifact);
             Destroy(this.gameObject);
         }
     }

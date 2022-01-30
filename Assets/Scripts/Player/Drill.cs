@@ -25,6 +25,8 @@ public class Drill : MonoBehaviour
 
     private void Start()
     {
+        drillSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillSfx);
+        drillEndSfxInstance = FMODUnity.RuntimeManager.CreateInstance(drillEndSfx);
         drillSpriteAnim = drill.GetComponentInChildren<SpriteAnim>();
         drillSpriteRend = drill.GetComponentInChildren<SpriteRenderer>();
         drillEnabled = false;
@@ -56,7 +58,12 @@ public class Drill : MonoBehaviour
 			}
 			drillEnabled = false;
 			drill.SetActive(drillEnabled);
-		}
+		} else if (mousePressedHeld && !drillEnabled) {
+            //Happens when drill is disabled due to scan or tele
+            DrillSfx();
+            drillEnabled = true;
+            drillEnabledThisFrame = true;
+        }
         if (drillEnabled) {
             drill.SetActive(drillEnabled);
             //rotation
@@ -101,5 +108,11 @@ public class Drill : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        drillSfxInstance.release();
+        drillEndSfxInstance.release();
     }
 }

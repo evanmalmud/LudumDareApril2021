@@ -59,8 +59,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 298292013
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &402729050443798926
 MonoBehaviour:
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f5b6c9aa34bc0489b791f1a182f7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: ShipScene
+  initialDelay: 0
+  sceneToLoad: LevelScene
   animator: {fileID: 402729050443798924}
-  transitionTime: 1
+  transitionTime: 2

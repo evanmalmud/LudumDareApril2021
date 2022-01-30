@@ -142,7 +142,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 0
-  scanSfx: 
+  scanSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_PULSE
 --- !u!1 &9081030512659671444
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,11 +156,11 @@ GameObject:
   - component: {fileID: 9081030512659671464}
   - component: {fileID: 9081030512659671447}
   - component: {fileID: 9081030512659671446}
-  - component: {fileID: 9081030512659671445}
   - component: {fileID: 9081030512659671468}
   - component: {fileID: 9081030512659671467}
   - component: {fileID: 9081030512659671469}
   - component: {fileID: 1699553381}
+  - component: {fileID: 5381274963646900319}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -347,39 +347,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   totalHorizontalRays: 8
   totalVerticalRays: 4
---- !u!114 &9081030512659671445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081030512659671444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16be94631a0aa024eb1ae30c3cc87c1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: -40
-  runSpeed: 6.5
-  groundDamping: 10
-  inAirDamping: 5
-  jumpHeight: 3
-  canMove: 1
-  canDrill: 1
-  canSonar: 1
-  isDead: 0
-  isRecalled: 0
-  collectedArtifacts: []
-  player_idle: {fileID: 7400000, guid: f7cac311b37f8694c8f9486a58b5571a, type: 2}
-  player_walk: {fileID: 7400000, guid: 14cb0e040382197449ec8d6e55950a2e, type: 2}
-  player_land: {fileID: 7400000, guid: 3d124b3c3b673b64cba5ac04f763b52c, type: 2}
-  player_fall: {fileID: 7400000, guid: 92e78fc598ee2f64e9cf2fa99dd21d85, type: 2}
-  player_jump: {fileID: 7400000, guid: 14cb0e040382197449ec8d6e55950a2e, type: 2}
-  player_dead: {fileID: 7400000, guid: 8ba57c730a4229b4b8b882217d36feaa, type: 2}
-  player_scan: {fileID: 7400000, guid: 25f5c4a1dd488794999efd0f753d133e, type: 2}
-  player_tele: {fileID: 7400000, guid: 32f95190b3f8bd646a94ad5d8a0d5d7d, type: 2}
-  currentInteractable: {fileID: 0}
-  shipInteriorManager: {fileID: 0}
 --- !u!95 &9081030512659671468
 Animator:
   serializedVersion: 4
@@ -431,7 +398,7 @@ MonoBehaviour:
   drillEnabled: 0
   drillEnabledThisFrame: 0
   drillSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER
-  drillEndSfx: 
+  drillEndSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER_STOP
 --- !u!114 &1699553381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,8 +411,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637f298164acc394b93d952b6afbae93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonarEnabled: 0
+  sonarActive: 0
+  sonarAnimActive: 0
   sonarScanObj: {fileID: 2130747536891717241}
+  timeForScanAnimation: 0.67
+--- !u!114 &5381274963646900319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081030512659671444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4649082d3ef534dbd9e8482bf2ef26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -25
+  runSpeed: 8
+  groundDamping: 20
+  inAirDamping: 5
+  jumpHeight: 3
+  canMove: 1
+  canDrill: 1
+  canSonar: 1
+  isDead: 0
+  isRecalled: 0
+  isShieldActive: 0
+  moneyScore: 0
+  _sceneLoader: {fileID: 0}
+  collectedArtifacts: []
+  collectedOres: []
+  collectEffect: {fileID: 8158378520051240286}
+  player_idle: {fileID: 7400000, guid: f7cac311b37f8694c8f9486a58b5571a, type: 2}
+  player_walk: {fileID: 7400000, guid: 14cb0e040382197449ec8d6e55950a2e, type: 2}
+  player_land: {fileID: 7400000, guid: 3d124b3c3b673b64cba5ac04f763b52c, type: 2}
+  player_fall: {fileID: 7400000, guid: 92e78fc598ee2f64e9cf2fa99dd21d85, type: 2}
+  player_jump: {fileID: 7400000, guid: 92e78fc598ee2f64e9cf2fa99dd21d85, type: 2}
+  player_dead: {fileID: 7400000, guid: 8ba57c730a4229b4b8b882217d36feaa, type: 2}
+  player_scan: {fileID: 7400000, guid: 25f5c4a1dd488794999efd0f753d133e, type: 2}
+  player_tele: {fileID: 7400000, guid: 32f95190b3f8bd646a94ad5d8a0d5d7d, type: 2}
+  currentInteractable: {fileID: 0}
+  shipInteriorManager: {fileID: 0}
+  footstepL: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Footstep_L
+  footstepR: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Footstep_R
+  teleportSfx: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Teleport
+  deathSfx: event:/SFX_ZL/LD48_SFX_ZL_PYLR_Death
 --- !u!1001 &9081030511637475306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,6 +634,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9081030513052023005}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8158378520051240286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1098367219146306947, guid: 28cb86fd648cc1b469e9694e5e56fb00,
+    type: 3}
+  m_PrefabInstance: {fileID: 9081030513052023005}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f216e1d5d45e34a448feea4fe0380c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9081030513120721943
 PrefabInstance:
   m_ObjectHideFlags: 0

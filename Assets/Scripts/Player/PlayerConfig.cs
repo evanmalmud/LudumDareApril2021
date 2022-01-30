@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipInteriorConfig : MonoBehaviour {// movement config\
+public class PlayerConfig : MonoBehaviour {// movement config\
 
     public float gravity = -25f;
 	public float runSpeed = 8f;
@@ -16,13 +16,14 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
     public bool isDead = false;
     public bool isRecalled = false;
 
+    public bool isShieldActive = false;
+
+    public int moneyScore = 0;
+
     public SceneLoader _sceneLoader;
-
-
     public List<ArtifactScriptableObject> collectedArtifacts = new List<ArtifactScriptableObject>();
-
     public List<OreScriptableObject> collectedOres = new List<OreScriptableObject>();
-
+    public CollectEffect collectEffect;
 
     private SpriteAnim _spriteAnim;
 
@@ -52,7 +53,21 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
 	public PlayerInteractable currentInteractable;
 	public ShipInteriorManager shipInteriorManager;
 
-	void Awake()
+
+    [FMODUnity.EventRef]
+    public string footstepL = "";
+    [FMODUnity.EventRef]
+    public string footstepR = "";
+    FMOD.Studio.EventInstance footstepLInstance;
+    FMOD.Studio.EventInstance footstepRInstance;
+    [FMODUnity.EventRef]
+    public string teleportSfx = "";
+    public FMOD.Studio.EventInstance teleportSfxInstance;
+    [FMODUnity.EventRef]
+    public string deathSfx = "";
+    public FMOD.Studio.EventInstance deathSfxInstance;
+
+    void Awake()
 	{
         _spriteAnim = GetComponent<SpriteAnim>();
         _controller = GetComponent<PrimeCharacterController>();
@@ -65,10 +80,26 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
 
     }
 
+    private void Start()
+    {
+        if (!footstepL.Equals(null) && !footstepL.Equals("")) {
+            footstepLInstance = FMODUnity.RuntimeManager.CreateInstance(footstepL);
+        }
+        if (!footstepR.Equals(null) && !footstepR.Equals("")) {
+            footstepRInstance = FMODUnity.RuntimeManager.CreateInstance(footstepR);
+        }
+        if (!deathSfx.Equals(null) && !deathSfx.Equals("")) {
+            deathSfxInstance = FMODUnity.RuntimeManager.CreateInstance(deathSfx);
+        }
+        if (!teleportSfx.Equals(null) && !teleportSfx.Equals("")) {
+            teleportSfxInstance = FMODUnity.RuntimeManager.CreateInstance(teleportSfx);
+        }
+    }
 
-	#region Event Listeners
 
-	void onControllerCollider(RaycastHit2D hit)
+    #region Event Listeners
+
+    void onControllerCollider(RaycastHit2D hit)
 	{
 		// bail out on plain old ground hits cause they arent very interesting
 		if (hit.normal.y == 1f)
@@ -96,8 +127,8 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
     // the Update loop contains a very simple example of moving the character around and controlling the animation
     void Update()
     {
-
-        if (canMove) {
+        //Dont want to move when sonarAnimActive
+        if (canMove && !_sonar.sonarAnimActive) {
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 //Debug.Log("Escape Pressed");
                 shipInteriorManager.ZoomCameraToPlayer();
@@ -134,7 +165,7 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
 
 
             // we can only jump whilst grounded
-            if (_controller.isGrounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))) {
+            if (_controller.isGrounded && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))) {
                 _velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             }
 
@@ -168,8 +199,8 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
             _velocity = _controller.velocity;
         }
 
-        //Drill
-        if (canDrill) {
+        //Drill (Dont want to drill when sonar active)
+        if (canDrill && !_sonar.sonarAnimActive) {
             bool mousePressedDown = Input.GetKeyDown(KeyCode.Mouse0);
             bool mousePressedHeld = Input.GetKey(KeyCode.Mouse0);
             bool playerDirectionLeft = transform.localScale.x < 0;
@@ -177,6 +208,8 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
             //Debug.Log("mousePressedHeld - " + mousePressedHeld);
             //Debug.Log("playerDirectionLeft - " + playerDirectionLeft);
             _drill.drillUpdate(mousePressedDown, mousePressedHeld, playerDirectionLeft);
+        } else {
+            _drill.drillUpdate(false, false, false);
         }
 
         //Sonar
@@ -222,6 +255,7 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
             canMove = false;
             canDrill = false;
             canSonar = false;
+            DeathSfx();
 
             //Trigger scene reload
             _sceneLoader.LoadScene();
@@ -235,6 +269,7 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
             canMove = false;
             canDrill = false;
             canSonar = false;
+            TeleportSfx();
         }
     }
 
@@ -244,6 +279,8 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
             playAnim(player_dead);
         } else if (isRecalled) {
             playAnim(player_tele);
+        } else if (_sonar.sonarAnimActive) {
+            playAnim(player_scan);
         } else {
             if (_controller.isGrounded) {
                 if (normalizedHorizontalSpeed == 0 ) {
@@ -263,6 +300,51 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
         if (_spriteAnim.Clip != anim) {// (check we're not already in the animation first though)
             _spriteAnim.Play(anim);
         }
+    }
+
+
+    public void collectOre(OreScriptableObject ore) {
+        collectedOres.Add(ore);
+        moneyScore += ore.value;
+        triggerCollectEffect();
+    }
+
+    public void collectArtifact(ArtifactScriptableObject artifact)
+    {
+        collectedArtifacts.Add(artifact);
+        triggerCollectEffect();
+    }
+
+    public void triggerCollectEffect() {
+        collectEffect.collectAnim();
+    }
+
+    public void footStepL()
+    {
+        footstepLInstance.start();
+    }
+
+    public void footStepR()
+    {
+        footstepRInstance.start();
+    }
+
+    public void DeathSfx()
+    {
+        deathSfxInstance.start();
+    }
+
+    public void TeleportSfx()
+    {
+        teleportSfxInstance.start();
+    }
+
+    public void OnDestroy()
+    {
+        footstepLInstance.release();
+        footstepRInstance.release();
+        deathSfxInstance.release();
+        teleportSfxInstance.release();
     }
 
 }
