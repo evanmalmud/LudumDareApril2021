@@ -21,6 +21,8 @@ public class ShipInteriorConfig : MonoBehaviour {// movement config\
 
     public List<ArtifactScriptableObject> collectedArtifacts = new List<ArtifactScriptableObject>();
 
+    public List<OreScriptableObject> collectedOres = new List<OreScriptableObject>();
+
 
     private SpriteAnim _spriteAnim;
 
