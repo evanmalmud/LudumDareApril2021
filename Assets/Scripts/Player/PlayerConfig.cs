@@ -5,25 +5,16 @@ using UnityEngine;
 
 public class PlayerConfig : MonoBehaviour {// movement config\
 
-    public float gravity = -25f;
-	public float runSpeed = 8f;
-	public float groundDamping = 20f; // how fast do we change direction? higher means faster
-	public float inAirDamping = 5f;
-	public float jumpHeight = 3f;
-    public bool canMove = true;
-    public bool canDrill = true;
-    public bool canSonar = true;
-    public bool isDead = false;
-    public bool isRecalled = false;
+    public PlayerState playerState;
 
-    public bool isShieldActive = false;
-
-    public int moneyScore = 0;
+    public PlayerState defaultState;
 
     public SceneLoader _sceneLoader;
     public List<ArtifactScriptableObject> collectedArtifacts = new List<ArtifactScriptableObject>();
     public List<OreScriptableObject> collectedOres = new List<OreScriptableObject>();
     public CollectEffect collectEffect;
+
+    public int maxDepth = 300;
 
     private SpriteAnim _spriteAnim;
 
@@ -67,8 +58,12 @@ public class PlayerConfig : MonoBehaviour {// movement config\
     public string deathSfx = "";
     public FMOD.Studio.EventInstance deathSfxInstance;
 
+
+    public PauseController pauseController;
+
     void Awake()
 	{
+        pauseController = FindObjectOfType<PauseController>();
         _spriteAnim = GetComponent<SpriteAnim>();
         _controller = GetComponent<PrimeCharacterController>();
         _drill = GetComponent<Drill>();
@@ -93,6 +88,20 @@ public class PlayerConfig : MonoBehaviour {// movement config\
         }
         if (!teleportSfx.Equals(null) && !teleportSfx.Equals("")) {
             teleportSfxInstance = FMODUnity.RuntimeManager.CreateInstance(teleportSfx);
+        }
+    }
+
+    public void PausedState(bool enabled) {
+        if (enabled) {
+            //Enabling Pause
+            playerState.canMove = false;
+            playerState.canDrill = false;
+            playerState.canSonar = false;
+        } else {
+            //Disabling pause
+            playerState.canMove = defaultState.canMove;
+            playerState.canDrill = defaultState.canDrill;
+            playerState.canSonar = defaultState.canSonar;
         }
     }
 
@@ -127,8 +136,17 @@ public class PlayerConfig : MonoBehaviour {// movement config\
     // the Update loop contains a very simple example of moving the character around and controlling the animation
     void Update()
     {
-        //Dont want to move when sonarAnimActive
-        if (canMove && !_sonar.sonarAnimActive) {
+        
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if(currentInteractable == null || 
+                !currentInteractable.interactActive) {
+                pauseController.PauseInteractionToggle();
+            }
+        }
+
+
+            //Dont want to move when sonarAnimActive
+        if (playerState.canMove && !_sonar.sonarAnimActive) {
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 //Debug.Log("Escape Pressed");
                 shipInteriorManager.ZoomCameraToPlayer();
@@ -166,16 +184,16 @@ public class PlayerConfig : MonoBehaviour {// movement config\
 
             // we can only jump whilst grounded
             if (_controller.isGrounded && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))) {
-                _velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
+                _velocity.y = Mathf.Sqrt(2f * playerState.jumpHeight * -playerState.gravity);
             }
 
 
             // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-            var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-            _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
+            var smoothedMovementFactor = _controller.isGrounded ? playerState.groundDamping : playerState.inAirDamping; // how fast do we change direction?
+            _velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * playerState.runSpeed, Time.deltaTime * smoothedMovementFactor);
 
             // apply gravity before moving
-            _velocity.y += gravity * Time.deltaTime;
+            _velocity.y += playerState.gravity * Time.deltaTime;
 
             // if holding down bump up our movement amount and turn off one way platform detection for a frame.
             // this lets us jump down through one way platforms
@@ -193,14 +211,14 @@ public class PlayerConfig : MonoBehaviour {// movement config\
         } else {
             //Still want to fall if dead or recalled
             // apply gravity before moving
-            _velocity.y += gravity * Time.deltaTime;
+            _velocity.y += playerState.gravity * Time.deltaTime;
             _controller.move(_velocity * Time.deltaTime);
             // grab our current _velocity to use as a base for all calculations
             _velocity = _controller.velocity;
         }
 
         //Drill (Dont want to drill when sonar active)
-        if (canDrill && !_sonar.sonarAnimActive) {
+        if (playerState.canDrill && !_sonar.sonarAnimActive) {
             bool mousePressedDown = Input.GetKeyDown(KeyCode.Mouse0);
             bool mousePressedHeld = Input.GetKey(KeyCode.Mouse0);
             bool playerDirectionLeft = transform.localScale.x < 0;
@@ -213,7 +231,7 @@ public class PlayerConfig : MonoBehaviour {// movement config\
         }
 
         //Sonar
-        if (canSonar) {
+        if (playerState.canSonar) {
             bool ePressed = Input.GetKeyDown(KeyCode.E);
             _sonar.SonarUpdate(ePressed);
             //_playerState.playAnim(_playerState.player_scan);
@@ -236,6 +254,7 @@ public class PlayerConfig : MonoBehaviour {// movement config\
 
 	public void removeCurrentInteractable(PlayerInteractable interactable)
 	{
+        interactable.UnInteract();
 		interactable.DisableLight();
 		if(currentInteractable == interactable) {
 			currentInteractable = null;
@@ -250,11 +269,11 @@ public class PlayerConfig : MonoBehaviour {// movement config\
 
     public void takeDamage()
     {
-        if (!isDead && !isRecalled) {
-            isDead = true;
-            canMove = false;
-            canDrill = false;
-            canSonar = false;
+        if (!playerState.isDead && !playerState.isRecalled) {
+            playerState.isDead = true;
+            playerState.canMove = false;
+            playerState.canDrill = false;
+            playerState.canSonar = false;
             DeathSfx();
 
             //Trigger scene reload
@@ -264,26 +283,26 @@ public class PlayerConfig : MonoBehaviour {// movement config\
 
     public void Recall()
     {
-        if (!isDead && !isRecalled) {
-            isRecalled = true;
-            canMove = false;
-            canDrill = false;
-            canSonar = false;
+        if (!playerState.isDead && !playerState.isRecalled) {
+            playerState.isRecalled = true;
+            playerState.canMove = false;
+            playerState.canDrill = false;
+            playerState.canSonar = false;
             TeleportSfx();
         }
     }
 
     public void UpdateAnimation()
     {
-        if (isDead) {
+        if (playerState.isDead) {
             playAnim(player_dead);
-        } else if (isRecalled) {
+        } else if (playerState.isRecalled) {
             playAnim(player_tele);
         } else if (_sonar.sonarAnimActive) {
             playAnim(player_scan);
         } else {
             if (_controller.isGrounded) {
-                if (normalizedHorizontalSpeed == 0 ) {
+                if (normalizedHorizontalSpeed == 0 && Mathf.Abs(_velocity.x) < .02f) {
                     playAnim(player_idle);
                 } else {
                     playAnim(player_walk);
@@ -305,7 +324,7 @@ public class PlayerConfig : MonoBehaviour {// movement config\
 
     public void collectOre(OreScriptableObject ore) {
         collectedOres.Add(ore);
-        moneyScore += ore.value;
+        playerState.moneyScore += ore.value;
         triggerCollectEffect();
     }
 
@@ -345,6 +364,11 @@ public class PlayerConfig : MonoBehaviour {// movement config\
         footstepRInstance.release();
         deathSfxInstance.release();
         teleportSfxInstance.release();
+    }
+
+    public float depthAsPercent()
+    {
+        return Mathf.Abs(this.transform.position.y) / maxDepth;
     }
 
 }

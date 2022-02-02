@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInteractable : Box2DToggle {
 
+    public bool interactActive = false;
+
     // Update is called once per frame
     public new void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,11 +30,27 @@ public class PlayerInteractable : Box2DToggle {
 
     virtual public void Interact()
     {
-        
+        if(!interactActive) {
+            interactActive = true;
+            InteractWith();
+        }
+    }
+
+    virtual public void InteractWith()
+    {
+
     }
 
     virtual public void UnInteract()
     {
+        if (interactActive) {
+            interactActive = false;
+            UnInteractWith();
+        }
+    }
 
+    virtual public void UnInteractWith()
+    {
+        
     }
 }

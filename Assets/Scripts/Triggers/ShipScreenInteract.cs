@@ -6,8 +6,6 @@ public class ShipScreenInteract : PlayerInteractable {
 
     public ShipInteriorManager shipInteriorManager;
 
-    public bool interactActive = false;
-
     override public void Interact()
     {
         if (!interactActive) {
@@ -20,8 +18,4 @@ public class ShipScreenInteract : PlayerInteractable {
         }
     }
 
-    override public void UnInteract()
-    {
-        interactActive = false;
-    }
 }

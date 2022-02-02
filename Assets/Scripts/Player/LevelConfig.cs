@@ -155,13 +155,13 @@ public class LevelConfig : MonoBehaviour
 			currentInteractable.Interact();
 		}
 
-		if (_config.canSonar) {
+		if (_config.playerState.canSonar) {
 			_sonar.SonarUpdate(Input.GetKey(KeyCode.E));
 		}
     }
 
 	public void CheckDrill() {
-		if (_config.canDrill) {
+		if (_config.playerState.canDrill) {
 			_drill.drillUpdate(
 				Input.GetKeyDown(KeyCode.Mouse0),
 				Input.GetKey(KeyCode.Mouse0),

@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 875881952}
   - component: {fileID: 875881953}
   - component: {fileID: 875881955}
+  - component: {fileID: 875881956}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -634,6 +635,29 @@ MonoBehaviour:
   shakeAmount: 0.25
   decreaseFactor: 4
   testScreenShake: 0
+--- !u!114 &875881956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875881948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_AssetsPPU: 40
+  m_RefResolutionX: 960
+  m_RefResolutionY: 540
+  m_CropFrame: 4
+  m_GridSnapping: 2
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &1259270335
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,9 +668,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1259270339}
   - component: {fileID: 1259270338}
-  - component: {fileID: 1259270336}
-  - component: {fileID: 1259270340}
   - component: {fileID: 1259270341}
+  - component: {fileID: 1259270342}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -654,18 +677,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1259270336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259270335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5ea0e8fb7bce2a428508b6fb1c29c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1259270338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,21 +704,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1259270340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259270335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e2db1a89f9aeb343b83efd6a3b4531d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fmodEvent: event:/AKT_SE_LOOP MUSIC
-  levelTimer: {fileID: 0}
-  playerController: {fileID: 0}
 --- !u!114 &1259270341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,6 +722,24 @@ MonoBehaviour:
   mainCameraFollow: {fileID: 0}
   currentObject: {fileID: 0}
   currentCanvasHelper: {fileID: 0}
+--- !u!114 &1259270342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259270335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa93b40a0f85ee5479a8c8c92d7e1e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicLoop: event:/AKT_SE_LOOP MUSIC
+  ambienceLoop: event:/SFX_DD/LD48_SFX_DD_AMB_MED
+  loopPlaying: 0
+  helmetLoop: event:/DX_JSO/Helmet Blurbs/LD48_DX_JSO_HelmetBlurbSystem
+  leveltimer: {fileID: 0}
+  playerConfig: {fileID: 0}
 --- !u!1 &1426577147
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +975,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 875881950}
+    - target: {fileID: 402729050478403118, guid: b7340cd2f060417418e3a27d329c8a5f,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 402729051434266792, guid: b7340cd2f060417418e3a27d329c8a5f,
         type: 3}
       propertyPath: m_Name
@@ -1020,6 +1039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402729051434266794, guid: b7340cd2f060417418e3a27d329c8a5f,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: ShipScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7340cd2f060417418e3a27d329c8a5f, type: 3}

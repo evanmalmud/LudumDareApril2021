@@ -224,7 +224,7 @@ public class GameState : MonoBehaviour
         logoCanvas.SetActive(isEnabled);
         titleAnimPlayer.playAnim();
         currentState = GAMESTATE.LOADING;
-        musicLoop.startMusic();
+        //musicLoop.startMusic();
         //cameraFollow.target = mainMenuCanvas.transform;
 
     }
@@ -317,7 +317,7 @@ public class GameState : MonoBehaviour
         player.transform.position = new Vector3(0f, 0f, 0f);
         currentState = GAMESTATE.MIDGAMELOAD;
 
-        musicLoop.startMusic();
+        //musicLoop.startMusic();
         midGameDialogueCont.playIntroDialogue();
     }
 

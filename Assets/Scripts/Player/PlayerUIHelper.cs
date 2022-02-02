@@ -24,7 +24,7 @@ public class PlayerUIHelper : MonoBehaviour
 
 
     public void updateScoreText() {
-        string scoreText = "$" + playerConfig.moneyScore;
+        string scoreText = "$" + playerConfig.playerState.moneyScore;
         scoreTextGO.text = scoreText;
     }
 }
