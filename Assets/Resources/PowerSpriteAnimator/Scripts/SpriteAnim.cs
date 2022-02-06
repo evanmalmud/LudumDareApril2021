@@ -86,8 +86,8 @@ public class SpriteAnim : SpriteAnimEventHandler
 	/// Plays the specified clip
 	public void Play( AnimationClip anim, float speed = 1 ) 
 	{
-		if ( anim == null )
-			return;
+			if (anim == null)
+				return;
 
 		if ( m_animator.enabled == false )
 			m_animator.enabled = true;

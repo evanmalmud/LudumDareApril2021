@@ -60,6 +60,14 @@ public class TilePrefab : MonoBehaviour
 
     public virtual void OnEnable()
     {
+
+        if (shatterAnim != null) {
+            shatterAnim.SetActive(false);
+        }
+        if (shatterAnim2 != null) {
+            shatterAnim2.SetActive(false);
+        }
+
         boxCollider.enabled = true;
         currentDamageUntilDestroyed = defaultDamageUntilDestroyed;
 
@@ -88,7 +96,8 @@ public class TilePrefab : MonoBehaviour
     }
 
     public virtual void takeDamageVirtual(float damage) {
-        if (shatterAnim != null) {
+        if (shatterAnim != null && spriteAnim != null) {
+            shatterAnim.SetActive(true);
             if (depthType == GameState.DepthType.DEEP) {
                 if (spriteAnim.Clip != m_shatterDeep) {
                     spriteAnim.Play(m_shatterDeep);
@@ -103,7 +112,8 @@ public class TilePrefab : MonoBehaviour
                 }
             }
         }
-        if (shatterAnim2 != null) {
+        if (shatterAnim2 != null && spriteAnim != null) {
+            shatterAnim2.SetActive(true);
             if (depthType == GameState.DepthType.DEEP) {
                 if (spriteAnim2.Clip != m_shatterDeep) {
                     spriteAnim2.Play(m_shatterDeep);
@@ -142,7 +152,8 @@ public class TilePrefab : MonoBehaviour
             tileDestroySfxInstance.start();
         }
         boxCollider.enabled = false;
-        if (shatterAnim != null) {
+        if (shatterAnim != null && spriteAnim != null) {
+            shatterAnim.SetActive(true);
             GetComponent<SpriteRenderer>().sprite = null;
             if (depthType == GameState.DepthType.DEEP) {
                 if (spriteAnim.Clip != m_breakDeep) {
@@ -158,7 +169,8 @@ public class TilePrefab : MonoBehaviour
                 }
             }
         }
-        if (shatterAnim2 != null) {
+        if (shatterAnim2 != null && spriteAnim != null) {
+            shatterAnim2.SetActive(true);
             GetComponent<SpriteRenderer>().sprite = null;
             if (depthType == GameState.DepthType.DEEP) {
                 if (spriteAnim2.Clip != m_breakDeep) {

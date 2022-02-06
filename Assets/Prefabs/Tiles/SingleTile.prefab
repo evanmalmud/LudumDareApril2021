@@ -1,29 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &3627869865964280645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5225919853743959244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e65c51944b5bf4394d028e84deb745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 8903548642766281942, guid: d33a9bcd1d69ad741809938509028d0f,
-    type: 3}
-  artifactPrefab: {fileID: 2710934881308951692, guid: 137f90871c2b2c94d88d292f5bc9e7f0,
-    type: 3}
-  orePrefab: {fileID: 2710934881308951692, guid: 7a9dbe772714df24aa7bf0f275399e9b,
-    type: 3}
-  bombspawnrate: 4.5
-  artifactspawnrate: 0.1
-  orespawnrate: 6
-  rateOf: 100
-  parent: {fileID: 0}
-  layerLoader: {fileID: 0}
 --- !u!1 &5562503969820641059
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5415992131735241589
 Transform:
   m_ObjectHideFlags: 0
@@ -143,6 +119,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_defaultAnim: {fileID: 0}
+--- !u!114 &3627869865964280645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225919853743959244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e65c51944b5bf4394d028e84deb745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 8903548642766281942, guid: d33a9bcd1d69ad741809938509028d0f,
+    type: 3}
+  artifactPrefab: {fileID: 2710934881308951692, guid: 137f90871c2b2c94d88d292f5bc9e7f0,
+    type: 3}
+  orePrefab: {fileID: 2710934881308951692, guid: 7a9dbe772714df24aa7bf0f275399e9b,
+    type: 3}
+  bombspawnrate: 4.5
+  artifactspawnrate: 0.1
+  orespawnrate: 6
+  rateOf: 100
+  parent: {fileID: 0}
+  layerLoader: {fileID: 0}
 --- !u!1001 &7645767740382550253
 PrefabInstance:
   m_ObjectHideFlags: 0
