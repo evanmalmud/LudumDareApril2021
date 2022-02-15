@@ -20,6 +20,8 @@ public class LayerLoader : MonoBehaviour
     string jsonPath;
     public TextAsset jsonFile;
 
+    public int blocksHigh = 8;
+
     public bool finishedLoading = false;
 
     public List<GameObject> allTileObjects = new List<GameObject>();
@@ -63,7 +65,7 @@ public class LayerLoader : MonoBehaviour
 
     private void Update()
     {
-        if(!toJson && !finishedLoading) {
+        if(jsonFile != null && !toJson && !finishedLoading) {
             int maxVal = currentIndex + tilePerFrame;
             if(maxVal > dataReco.positions.Count) {
                 maxVal = dataReco.positions.Count;
@@ -83,6 +85,8 @@ public class LayerLoader : MonoBehaviour
                 allTileObjects.Add(obj);
             }
             currentIndex += tilePerFrame;
+        } else if(jsonFile == null) {
+            finishedLoading = true;
         }
     }
 

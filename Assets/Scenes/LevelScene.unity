@@ -250,6 +250,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5166712192542795669, guid: faec7a7cd2fed67418f8de6a4687a760,
+        type: 3}
+      propertyPath: tilemaps.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166712192542795669, guid: faec7a7cd2fed67418f8de6a4687a760,
+        type: 3}
+      propertyPath: tilemaps.Array.data[7]
+      value: 
+      objectReference: {fileID: 4040168678496984818, guid: bbe929f33ba587e48be821fa12796e5a,
+        type: 3}
     - target: {fileID: 5166712192542795670, guid: faec7a7cd2fed67418f8de6a4687a760,
         type: 3}
       propertyPath: m_RootOrder
@@ -1597,14 +1608,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: -0.09259259
+    y: 0
     width: 1
-    height: 1.1851852
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 6.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2657,6 +2668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065333288075870620, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ae9c915e6efea4fb78f6ad6ad02d70, type: 3}
@@ -4135,7 +4151,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 4d502fbe5dfb9bc7ed2e9c6e000000003d2f968f2d93c711

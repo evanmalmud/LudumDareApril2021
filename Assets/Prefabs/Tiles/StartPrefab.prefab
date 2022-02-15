@@ -2522,9 +2522,10 @@ MonoBehaviour:
     type: 3}
   JsonFileName: StartPrefab
   jsonFile: {fileID: 4900000, guid: ee93b1a6b88f3244aaac56bbda2764ac, type: 3}
+  blocksHigh: 6
   finishedLoading: 0
   allTileObjects: []
-  allCreatedBombsAndArtifacts: []
+  allCreated: []
 --- !u!1 &4044831259985968403
 GameObject:
   m_ObjectHideFlags: 0
@@ -7942,7 +7943,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 2048
-  collider: {fileID: 0}
+  collider2d: {fileID: 0}
 --- !u!1 &4671404439343502216
 GameObject:
   m_ObjectHideFlags: 0

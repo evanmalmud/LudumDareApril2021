@@ -5,18 +5,16 @@ using UnityEngine;
 public class TilemapPrefabLoader : MonoBehaviour
 {
     public GameObject toplevelTilemap;
-    public int toplevelTilemaplayerHeight = -6;
 
     public List<GameObject> tilemaps;
-
-    public int layerHeight = -6;
 
     public float nextY = 0f;
     public Vector3 nextPos;
 
     public GameObject startLayer;
-    public List<GameObject> pooledLayers = new List<GameObject>();
-    public List<GameObject> inUseLayers = new List<GameObject>();
+
+    public List<LayerLoader> pooledLayerLoader = new List<LayerLoader>();
+    public List<LayerLoader> inUseLayers = new List<LayerLoader>();
 
     public int amountToLoadAtStart;
 
@@ -26,11 +24,11 @@ public class TilemapPrefabLoader : MonoBehaviour
     {
         foreach (GameObject go in tilemaps) {
             GameObject obj = Instantiate(go);
-            pooledLayers.Add(obj);
+            pooledLayerLoader.Add(obj.GetComponent<LayerLoader>());
         }
         foreach (GameObject go in tilemaps) {
             GameObject obj = Instantiate(go);
-            pooledLayers.Add(obj);
+            pooledLayerLoader.Add(obj.GetComponent<LayerLoader>());
         }
         ResetLevel();
     }
@@ -44,21 +42,21 @@ public class TilemapPrefabLoader : MonoBehaviour
         }
         startLayer.SetActive(false);
         startLayer.transform.position = nextPos;
-        updateTransform(toplevelTilemaplayerHeight);
+        updateTransform(startLayer.GetComponent<LayerLoader>().blocksHigh);
         startLayer.SetActive(true);
 
         //Move inUse to Pooled
-        foreach(GameObject go in inUseLayers) {
-            go.SetActive(false);
-            pooledLayers.Add(go);
+        foreach(LayerLoader go in inUseLayers) {
+            go.gameObject.SetActive(false);
+            pooledLayerLoader.Add(go);
         }
         inUseLayers.Clear();
 
         for (int i = 0; i <= amountToLoadAtStart; i++) {
-            GameObject obj = pickRandomPooledTile();
-            obj.transform.position = nextPos;
-            obj.SetActive(true);
-            updateTransform(layerHeight);
+            LayerLoader obj = pickRandomPooledTile();
+            obj.gameObject.transform.position = nextPos;
+            obj.gameObject.SetActive(true);
+            updateTransform(obj.blocksHigh);
         }
     }
    
@@ -68,10 +66,10 @@ public class TilemapPrefabLoader : MonoBehaviour
             if(startLayer.activeSelf == true) {
                 startLayer.SetActive(false);
             } else if (inUseLayers.Count >= 1) {
-                GameObject obj = inUseLayers[0];
+                LayerLoader obj = inUseLayers[0];
                 inUseLayers.Remove(obj);
-                obj.SetActive(false);
-                pooledLayers.Add(obj);
+                obj.gameObject.SetActive(false);
+                pooledLayerLoader.Add(obj);
             }
         } else {
             layersUntilDelete--;
@@ -81,21 +79,21 @@ public class TilemapPrefabLoader : MonoBehaviour
 
     public void loadNext()
     {
-        GameObject obj = pickRandomPooledTile();
-        obj.transform.position = nextPos;
-        obj.SetActive(true);
-        updateTransform(layerHeight);
+        LayerLoader obj = pickRandomPooledTile();
+        obj.gameObject.transform.position = nextPos;
+        obj.gameObject.SetActive(true);
+        updateTransform(obj.blocksHigh);
         //Debug.Log("loadNext - " + obj.name);
     }
 
     void updateTransform(float layerH) {
-        nextY += layerH;
+        nextY -= layerH;
         nextPos.y = nextY;
     }
 
-    public GameObject pickRandomPooledTile() {
-        GameObject result = pooledLayers[Random.Range(0, pooledLayers.Count)];
-        pooledLayers.Remove(result);
+    public LayerLoader pickRandomPooledTile() {
+        LayerLoader result = pooledLayerLoader[Random.Range(0, pooledLayerLoader.Count)];
+        pooledLayerLoader.Remove(result);
         inUseLayers.Add(result);
         return result;
     }
