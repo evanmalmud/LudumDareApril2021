@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{62d670e8-d851-448c-ae6d-dac7c33c24f3}">
 		<property name="name">
 			<value>LD48_DX_JSO_LevelIntro_203</value>
@@ -65,8 +65,8 @@
 	<object class="MarkerTrack" id="{a19fda0c-bb72-4277-8883-f9dd6d59ec82}" />
 	<object class="GroupTrack" id="{668aa1ed-a6e9-439c-9e09-64423aa75c60}">
 		<relationship name="modules">
-			<destination>{6900b452-92f2-49c5-a363-d0fe3e3ad931}</destination>
 			<destination>{5356d67a-ab76-4ef8-ac55-e57be38e2cda}</destination>
+			<destination>{6900b452-92f2-49c5-a363-d0fe3e3ad931}</destination>
 			<destination>{094d477d-33e3-46c1-bf4a-4537b2c4a1fb}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
@@ -75,8 +75,8 @@
 	</object>
 	<object class="GroupTrack" id="{cd277b96-107c-439a-98b9-4f1a184b93ba}">
 		<relationship name="modules">
-			<destination>{ef7b4ead-d0e7-4725-abe9-9b390cdb2da9}</destination>
 			<destination>{a1a3a1c1-a39c-4b2b-b3f9-82ca125508b2}</destination>
+			<destination>{ef7b4ead-d0e7-4725-abe9-9b390cdb2da9}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{c185f218-8230-40d7-bb36-3516e0576945}</destination>
@@ -84,11 +84,11 @@
 	</object>
 	<object class="Timeline" id="{dbd76642-bb64-4da5-8f1e-27652ef11101}">
 		<relationship name="modules">
+			<destination>{a1a3a1c1-a39c-4b2b-b3f9-82ca125508b2}</destination>
 			<destination>{6900b452-92f2-49c5-a363-d0fe3e3ad931}</destination>
 			<destination>{5356d67a-ab76-4ef8-ac55-e57be38e2cda}</destination>
 			<destination>{094d477d-33e3-46c1-bf4a-4537b2c4a1fb}</destination>
 			<destination>{ef7b4ead-d0e7-4725-abe9-9b390cdb2da9}</destination>
-			<destination>{a1a3a1c1-a39c-4b2b-b3f9-82ca125508b2}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{477412a3-4390-404b-bca6-40ecfb70f3a8}">
@@ -108,14 +108,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{cb5a7c16-09db-44a6-9de8-55f162905c21}" />
-	<object class="SingleSound" id="{6900b452-92f2-49c5-a363-d0fe3e3ad931}">
-		<property name="length">
-			<value>0.70466666666666666</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{27e6fe48-c9db-463a-abb7-c654f409cdb4}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{5356d67a-ab76-4ef8-ac55-e57be38e2cda}">
 		<property name="start">
 			<value>1.6500000000000001</value>
@@ -125,6 +117,14 @@
 		</property>
 		<relationship name="audioFile">
 			<destination>{febadf88-50e7-4e97-be83-a083686ffa67}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{6900b452-92f2-49c5-a363-d0fe3e3ad931}">
+		<property name="length">
+			<value>0.70466666666666666</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{27e6fe48-c9db-463a-abb7-c654f409cdb4}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{094d477d-33e3-46c1-bf4a-4537b2c4a1fb}">
@@ -152,20 +152,20 @@
 			<destination>{477412a3-4390-404b-bca6-40ecfb70f3a8}</destination>
 		</relationship>
 	</object>
-	<object class="EventSound" id="{ef7b4ead-d0e7-4725-abe9-9b390cdb2da9}">
-		<property name="start">
-			<value>0.70466666666666666</value>
-		</property>
-		<relationship name="event">
-			<destination>{74423984-90b0-46b6-99dc-ba33e85f801b}</destination>
-		</relationship>
-	</object>
 	<object class="EventSound" id="{a1a3a1c1-a39c-4b2b-b3f9-82ca125508b2}">
 		<property name="start">
 			<value>5.1000000000000005</value>
 		</property>
 		<relationship name="event">
 			<destination>{da26b264-ff9c-4470-a806-6f5f568218c9}</destination>
+		</relationship>
+	</object>
+	<object class="EventSound" id="{ef7b4ead-d0e7-4725-abe9-9b390cdb2da9}">
+		<property name="start">
+			<value>0.70466666666666666</value>
+		</property>
+		<relationship name="event">
+			<destination>{74423984-90b0-46b6-99dc-ba33e85f801b}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c185f218-8230-40d7-bb36-3516e0576945}">

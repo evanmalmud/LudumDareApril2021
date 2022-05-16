@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{1d5fecd9-399c-49f7-80f2-795754035ddf}">
 		<property name="name">
 			<value>LD48_SFX_DD_OBJ_PULSE</value>

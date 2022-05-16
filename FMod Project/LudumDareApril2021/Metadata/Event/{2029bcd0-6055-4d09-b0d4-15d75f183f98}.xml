@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2029bcd0-6055-4d09-b0d4-15d75f183f98}">
 		<property name="name">
 			<value>LD48_DX_JSO_SidechainGlitchFixed</value>
@@ -120,9 +120,9 @@
 			<destination>{ba78b2a2-6242-45ad-83b0-f5d75a7b1362}</destination>
 		</relationship>
 		<relationship name="playPercentages">
+			<destination>{bb0cab3e-2533-4d9e-916d-b9b351aa685e}</destination>
 			<destination>{eadcbbf2-31be-4843-abb4-91b1a5782053}</destination>
 			<destination>{940620b8-4cb7-4e93-aae8-0bd4cdabead9}</destination>
-			<destination>{bb0cab3e-2533-4d9e-916d-b9b351aa685e}</destination>
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{2b8ab458-698d-443f-91cf-27d5f97b361d}">
@@ -187,6 +187,14 @@
 			<destination>{ca9a7d1f-8e2b-4546-aceb-b1a840074de3}</destination>
 		</relationship>
 	</object>
+	<object class="PlayPercentage" id="{bb0cab3e-2533-4d9e-916d-b9b351aa685e}">
+		<property name="percentage">
+			<value>10</value>
+		</property>
+		<relationship name="sound">
+			<destination>{ba78b2a2-6242-45ad-83b0-f5d75a7b1362}</destination>
+		</relationship>
+	</object>
 	<object class="PlayPercentage" id="{eadcbbf2-31be-4843-abb4-91b1a5782053}">
 		<property name="percentage">
 			<value>25</value>
@@ -201,14 +209,6 @@
 		</property>
 		<relationship name="sound">
 			<destination>{78522d51-d2c3-4efc-b39e-119bb41c9257}</destination>
-		</relationship>
-	</object>
-	<object class="PlayPercentage" id="{bb0cab3e-2533-4d9e-916d-b9b351aa685e}">
-		<property name="percentage">
-			<value>10</value>
-		</property>
-		<relationship name="sound">
-			<destination>{ba78b2a2-6242-45ad-83b0-f5d75a7b1362}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{e975d516-8ade-409a-9439-5bac96347953}">

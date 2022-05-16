@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{eb590dc4-6e4c-4cd3-a9a3-e50f59e757a5}">
 		<property name="name">
 			<value>LD48_SFX_ZL_PYLR_Death</value>

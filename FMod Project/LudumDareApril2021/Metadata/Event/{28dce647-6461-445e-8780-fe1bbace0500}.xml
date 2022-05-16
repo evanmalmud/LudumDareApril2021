@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{28dce647-6461-445e-8780-fe1bbace0500}">
 		<property name="name">
 			<value>LD48_DX_JSO_HelmetBlurb_306</value>

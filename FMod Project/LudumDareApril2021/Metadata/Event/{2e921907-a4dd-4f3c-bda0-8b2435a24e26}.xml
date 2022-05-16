@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2e921907-a4dd-4f3c-bda0-8b2435a24e26}">
 		<property name="name">
 			<value>LD48_SFX_JSO_OBJ_Warning_O2at10</value>

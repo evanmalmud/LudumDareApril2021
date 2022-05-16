@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{ced022e6-e155-4aa9-a063-480deaf2f877}">
 		<property name="name">
 			<value>LD48_DX_JSO_LevelIntro_200pt1</value>
