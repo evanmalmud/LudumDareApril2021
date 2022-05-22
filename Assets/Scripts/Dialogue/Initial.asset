@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e6221f70904b74c8f57eff16ae684a, type: 3}
   m_Name: Initial
   m_EditorClassIdentifier: 
-  sfxName: event:/DX_JSO/Game Intro/LD48_DX_JSO_GameIntro
+  sfxName:
+    Guid:
+      Data1: 324222920
+      Data2: 1262764240
+      Data3: 1365037718
+      Data4: 1681826015
+    Path: event:/DX_JSO/Game Intro/LD48_DX_JSO_GameIntro
   dialogueSentences:
   - Welcome to another great day of digging for Dig Deep, Inc!
   - Remember to dig deep for Dig Deep.

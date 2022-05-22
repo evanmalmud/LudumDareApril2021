@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e6221f70904b74c8f57eff16ae684a, type: 3}
   m_Name: midlevel
   m_EditorClassIdentifier: 
-  sfxName: event:/DX_JSO/Level Intros/LD48_DX_JSO_LevelIntro
+  sfxName:
+    Guid:
+      Data1: 456818455
+      Data2: 1263705205
+      Data3: 4359558
+      Data4: 1687244451
+    Path: event:/DX_JSO/Level Intros/LD48_DX_JSO_LevelIntro
   dialogueSentences:
   - Heading to Next Asteroid
   sentenceWaitTimes:

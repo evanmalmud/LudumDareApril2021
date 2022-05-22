@@ -1,3 +1,4 @@
+using FMODUnity;
 using PowerTools;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,32 +18,26 @@ public class PlayerAnimAndSFX : MonoBehaviour
     public AnimationClip player_teleport;
     public AnimationClip player_scan;
 
-	[FMODUnity.EventRef]
-	public string footstepL = "";
-	[FMODUnity.EventRef]
-	public string footstepR = "";
+	public EventReference footstepL;
 	FMOD.Studio.EventInstance footstepLInstance;
+
+	public EventReference footstepR;
 	FMOD.Studio.EventInstance footstepRInstance;
 
-	[FMODUnity.EventRef]
-	public string deathSfx = "";
-	public FMOD.Studio.EventInstance deathSfxInstance;
+	public EventReference deathSfx;
+	FMOD.Studio.EventInstance deathSfxInstance;
 
-	[FMODUnity.EventRef]
-	public string scanSfx = "";
-	public FMOD.Studio.EventInstance scanSfxInstance;
+	public EventReference scanSfx;
+	FMOD.Studio.EventInstance scanSfxInstance;
 
-	[FMODUnity.EventRef]
-	public string drillSfx = "";
-	public FMOD.Studio.EventInstance drillSfxInstance;
+	public EventReference drillSfx;
+	FMOD.Studio.EventInstance drillSfxInstance;
 
-	[FMODUnity.EventRef]
-	public string drillEndSfx = "";
-	public FMOD.Studio.EventInstance drillEndSfxInstance;
+	public EventReference drillEndSfx;
+	FMOD.Studio.EventInstance drillEndSfxInstance;
 
-	[FMODUnity.EventRef]
-	public string teleportSfx = "";
-	public FMOD.Studio.EventInstance teleportSfxInstance;
+	public EventReference teleportSfx;
+	FMOD.Studio.EventInstance teleportSfxInstance;
 
 	public void Start()
     {

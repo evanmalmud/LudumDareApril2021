@@ -1,3 +1,4 @@
+using FMODUnity;
 using PowerTools;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,20 +45,17 @@ public class PlayerConfig : MonoBehaviour {// movement config\
 	public PlayerInteractable currentInteractable;
 	public ShipInteriorManager shipInteriorManager;
 
-
-    [FMODUnity.EventRef]
-    public string footstepL = "";
-    [FMODUnity.EventRef]
-    public string footstepR = "";
+    public EventReference footstepL;
     FMOD.Studio.EventInstance footstepLInstance;
-    FMOD.Studio.EventInstance footstepRInstance;
-    [FMODUnity.EventRef]
-    public string teleportSfx = "";
-    public FMOD.Studio.EventInstance teleportSfxInstance;
-    [FMODUnity.EventRef]
-    public string deathSfx = "";
-    public FMOD.Studio.EventInstance deathSfxInstance;
 
+    public EventReference footstepR;
+    FMOD.Studio.EventInstance footstepRInstance;
+
+    public EventReference teleportSfx;
+    FMOD.Studio.EventInstance teleportSfxInstance;
+
+    public EventReference deathSfx;
+    FMOD.Studio.EventInstance deathSfxInstance;
 
     public PauseController pauseController;
 

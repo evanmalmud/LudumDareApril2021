@@ -235,8 +235,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eaf0c4e9a3ad1e4592943900f185ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inSFX: 
-  outSFX: 
+  inSFX:
+    Guid:
+      Data1: 1381791432
+      Data2: 1145812841
+      Data3: -2047551074
+      Data4: -2108912907
+    Path: event:/SFX_DD/LD48_SFX_DD_UI_POSITIVE
+  outSFX:
+    Guid:
+      Data1: -2070301877
+      Data2: 1175078044
+      Data3: 1323527566
+      Data4: -1697992550
+    Path: event:/SFX_DD/LD48_SFX_DD_UI_NEGATIVE
   canvas: {fileID: 42156435}
 --- !u!1 &156895639
 GameObject:
@@ -642,7 +654,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875881948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
@@ -650,7 +662,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_AssetsPPU: 40
   m_RefResolutionX: 960
-  m_RefResolutionY: 540
+  m_RefResolutionY: 640
   m_CropFrame: 4
   m_GridSnapping: 2
   m_UpscaleRT: 0
@@ -734,10 +746,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa93b40a0f85ee5479a8c8c92d7e1e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicLoop: event:/AKT_SE_LOOP MUSIC
-  ambienceLoop: event:/SFX_DD/LD48_SFX_DD_AMB_MED
+  musicLoop:
+    Guid:
+      Data1: 1352814909
+      Data2: 1131789691
+      Data3: 549053342
+      Data4: -1192196542
+    Path: event:/AKT_SE_LOOP MUSIC
+  ambienceLoop:
+    Guid:
+      Data1: 680636750
+      Data2: 1110206807
+      Data3: 2018707638
+      Data4: 224823768
+    Path: event:/SFX_DD/LD48_SFX_DD_AMB_MED
+  helmetLoop:
+    Guid:
+      Data1: 253647830
+      Data2: 1273927102
+      Data3: -475433299
+      Data4: -728875806
+    Path: event:/DX_JSO/Helmet Blurbs/LD48_DX_JSO_HelmetBlurbSystem
   loopPlaying: 0
-  helmetLoop: event:/DX_JSO/Helmet Blurbs/LD48_DX_JSO_HelmetBlurbSystem
   leveltimer: {fileID: 0}
   playerConfig: {fileID: 0}
 --- !u!1 &1426577147
@@ -824,6 +854,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 875881950}
+    - target: {fileID: 5815457715194933092, guid: b0283f3f270bbb44f8dd0f4d5e2f625c,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5815457715194933094, guid: b0283f3f270bbb44f8dd0f4d5e2f625c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -960,8 +995,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eaf0c4e9a3ad1e4592943900f185ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inSFX: 
-  outSFX: 
+  inSFX:
+    Guid:
+      Data1: 1381791432
+      Data2: 1145812841
+      Data3: -2047551074
+      Data4: -2108912907
+    Path: event:/SFX_DD/LD48_SFX_DD_UI_POSITIVE
+  outSFX:
+    Guid:
+      Data1: -2070301877
+      Data2: 1175078044
+      Data3: 1323527566
+      Data4: -1697992550
+    Path: event:/SFX_DD/LD48_SFX_DD_UI_NEGATIVE
   canvas: {fileID: 1688883274}
 --- !u!1001 &402729051466011444
 PrefabInstance:

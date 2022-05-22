@@ -119,30 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_defaultAnim: {fileID: 7400000, guid: c03c0bbe40652be4ba766d52c19ff6da, type: 2}
---- !u!114 &249289559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130747536891717241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e99fe140204084c469110e2b678857c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  circleCollider2D: {fileID: 2130747536891717247}
-  disc: {fileID: 2130747536891717187}
-  radius: 0
-  maxRadius: 8
-  sonarTime: 1
-  startColor: {r: 0.1882353, g: 0.88235295, b: 0.7254902, a: 1}
-  endColor: {r: 0.043137256, g: 0.5411765, b: 0.56078434, a: 1}
-  currentColor: {r: 0, g: 0, b: 0, a: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  scanSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_PULSE
 --- !u!1 &5917311551458223886
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +243,7 @@ GameObject:
   - component: {fileID: 9081030512659671469}
   - component: {fileID: 1699553381}
   - component: {fileID: 5381274963646900319}
+  - component: {fileID: 1699553382}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -495,8 +472,20 @@ MonoBehaviour:
   drill: {fileID: 3184143648393883356}
   drillEnabled: 0
   drillEnabledThisFrame: 0
-  drillSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER
-  drillEndSfx: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER_STOP
+  drillSfx:
+    Guid:
+      Data1: -437103037
+      Data2: 1304844863
+      Data3: 788492734
+      Data4: 704544231
+    Path: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER
+  drillEndSfx:
+    Guid:
+      Data1: 1571209889
+      Data2: 1100111666
+      Data3: 1351376563
+      Data4: 1386429236
+    Path: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER_STOP
 --- !u!114 &1699553381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,7 +501,7 @@ MonoBehaviour:
   sonarActive: 0
   sonarAnimActive: 0
   sonarScanObj: {fileID: 2130747536891717241}
-  timeForScanAnimation: 0.67
+  timeForScanAnimation: 0.55
 --- !u!114 &5381274963646900319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4649082d3ef534dbd9e8482bf2ef26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerState: {fileID: 0}
+  playerState: {fileID: 1699553382}
   defaultState: {fileID: 0}
   _sceneLoader: {fileID: 0}
   collectedArtifacts: []
@@ -542,11 +531,59 @@ MonoBehaviour:
   player_tele: {fileID: 7400000, guid: 32f95190b3f8bd646a94ad5d8a0d5d7d, type: 2}
   currentInteractable: {fileID: 0}
   shipInteriorManager: {fileID: 0}
-  footstepL: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Footstep_L
-  footstepR: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Footstep_R
-  teleportSfx: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Teleport
-  deathSfx: event:/SFX_ZL/LD48_SFX_ZL_PYLR_Death
+  footstepL:
+    Guid:
+      Data1: 1680512471
+      Data2: 1169644017
+      Data3: -44124233
+      Data4: 1250779320
+    Path: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Footstep_L
+  footstepR:
+    Guid:
+      Data1: -2004655489
+      Data2: 1300089904
+      Data3: -446384970
+      Data4: -728381690
+    Path: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Footstep_R
+  teleportSfx:
+    Guid:
+      Data1: 711847072
+      Data2: 1082907064
+      Data3: 1127289533
+      Data4: 1345341426
+    Path: event:/SFX_ZL/LD48_SFX_ZL_PLYR_Teleport
+  deathSfx:
+    Guid:
+      Data1: -346485308
+      Data2: 1288924748
+      Data3: 266707881
+      Data4: -1520965799
+    Path: event:/SFX_ZL/LD48_SFX_ZL_PYLR_Death
   pauseController: {fileID: 0}
+--- !u!114 &1699553382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081030512659671444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590af66f428aa4e4eaf740208dec17d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -25
+  runSpeed: 8
+  groundDamping: 20
+  inAirDamping: 5
+  jumpHeight: 3
+  canMove: 1
+  canDrill: 1
+  canSonar: 1
+  isDead: 0
+  isRecalled: 0
+  isShieldActive: 0
+  moneyScore: 0
 --- !u!1001 &9081030511637475306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -837,18 +874,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9081030513120721943}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2130747536891717241 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7176383455607069294, guid: 549f9e6e38bffa94c8355ecafe911fd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 9081030513120721943}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &2130747536891717247 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 7176383455607069288, guid: 549f9e6e38bffa94c8355ecafe911fd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 9081030513120721943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2130747536891717187 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7176383455607069268, guid: 549f9e6e38bffa94c8355ecafe911fd7,
@@ -861,3 +886,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd51d29965c9d04599a2fdc8a833c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2130747536891717241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7176383455607069294, guid: 549f9e6e38bffa94c8355ecafe911fd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 9081030513120721943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &249289559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130747536891717241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99fe140204084c469110e2b678857c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleCollider2D: {fileID: 2130747536891717247}
+  disc: {fileID: 2130747536891717187}
+  radius: 0
+  maxRadius: 8
+  sonarTime: 1
+  startColor: {r: 0.1882353, g: 0.88235295, b: 0.7254902, a: 1}
+  endColor: {r: 0.043137256, g: 0.5411765, b: 0.56078434, a: 1}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  scanSfx:
+    Guid:
+      Data1: 492825817
+      Data2: 1240938908
+      Data3: 1467609728
+      Data4: -547552428
+    Path: event:/SFX_DD/LD48_SFX_DD_OBJ_PULSE
+--- !u!58 &2130747536891717247 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7176383455607069288, guid: 549f9e6e38bffa94c8355ecafe911fd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 9081030513120721943}
+  m_PrefabAsset: {fileID: 0}

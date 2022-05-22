@@ -1,3 +1,4 @@
+using FMODUnity;
 using PowerTools;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,13 +16,11 @@ public class Drill : MonoBehaviour
     public bool drillEnabled;
 	public bool drillEnabledThisFrame;
 
-	[FMODUnity.EventRef]
-    public string drillSfx = "";
-    public FMOD.Studio.EventInstance drillSfxInstance;
+    public EventReference drillSfx;
+    FMOD.Studio.EventInstance drillSfxInstance;
 
-    [FMODUnity.EventRef]
-    public string drillEndSfx = "";
-    public FMOD.Studio.EventInstance drillEndSfxInstance;
+    public EventReference drillEndSfx;
+    FMOD.Studio.EventInstance drillEndSfxInstance;
 
     private void Start()
     {

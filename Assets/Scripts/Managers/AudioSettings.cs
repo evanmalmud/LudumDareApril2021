@@ -1,16 +1,16 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AudioSettings : MonoBehaviour {
-    [FMODUnity.EventRef]
-    public string testSFX = "";
-    public FMOD.Studio.EventInstance sfxtestSfxInstance;
 
-    [FMODUnity.EventRef]
-    public string testdialogue = "";
-    public FMOD.Studio.EventInstance dialoguetestSfxInstance;
+    public EventReference testSFX;
+    FMOD.Studio.EventInstance sfxtestSfxInstance;
+
+    public EventReference testdialogue;
+    FMOD.Studio.EventInstance dialoguetestSfxInstance;
 
     FMOD.Studio.Bus Music;
     FMOD.Studio.Bus SFX;
