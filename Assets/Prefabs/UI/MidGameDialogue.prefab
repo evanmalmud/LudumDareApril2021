@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.32, y: -0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5637682510531761163}
   m_RootOrder: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1104195507
-  m_SortingLayer: -3
+  m_SortingLayer: -1
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 179618dbdef50c34eb69b00f69ade8dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,6 +112,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5637682511712974416}
   m_RootOrder: 0
@@ -246,6 +248,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.19992508}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5637682511066714074}
   m_RootOrder: 0
@@ -380,6 +383,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.93, y: 17.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5637682510081404356}
   - {fileID: 5637682510598351906}
@@ -403,7 +407,13 @@ MonoBehaviour:
   initialDialogue: {fileID: 11400000, guid: ede24bffc7fbcc04fbfba110e1bdd727, type: 2}
   textBox: {fileID: 5637682510366883386}
   skipButton: {fileID: 5637682511712974419}
-  rocketAmbience: event:/SFX_DD/LD48_SFX_DD_OBJ_ROCKET
+  rocketAmbience:
+    Guid:
+      Data1: 2086345208
+      Data2: 1189024323
+      Data3: -1026558028
+      Data4: 1398954001
+    Path: event:/SFX_DD/LD48_SFX_DD_OBJ_ROCKET
   ship: {fileID: 5637682510598351934}
   startingtransform: {x: 0, y: 0, z: 0}
 --- !u!1 &5637682510598351934
@@ -435,6 +445,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.26, y: 1.62, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5637682510531761163}
   m_RootOrder: 1
@@ -478,7 +489,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1104195507
-  m_SortingLayer: -3
+  m_SortingLayer: -1
   m_SortingOrder: 164
   m_Sprite: {fileID: 8406764177390239626, guid: 8ca88a7177b7da64c89790a9e8711076,
     type: 3}
@@ -494,7 +505,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &5637682510598351932
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -507,6 +518,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -553,6 +565,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
   m_LocalScale: {x: 0.025071952, y: 0.025071952, z: 0.025071952}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5637682510366883380}
   - {fileID: 5637682511712974416}
@@ -654,6 +667,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -3589.6685}
   m_LocalScale: {x: 1, y: 1, z: 0.99992204}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5637682510204537991}
   m_Father: {fileID: 5637682511066714074}

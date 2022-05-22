@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8499b34b-449c-460a-8e6d-e34e9ab0ca9a}">
 		<property name="name">
 			<value>LD48_SFX_DD_UI_NEGATIVE</value>

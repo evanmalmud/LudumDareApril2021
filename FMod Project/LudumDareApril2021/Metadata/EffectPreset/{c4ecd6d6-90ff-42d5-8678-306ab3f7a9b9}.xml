@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="EffectPreset" id="{c4ecd6d6-90ff-42d5-8678-306ab3f7a9b9}">
 		<property name="name">
 			<value>Highpass Simple</value>

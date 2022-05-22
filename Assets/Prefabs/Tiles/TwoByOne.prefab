@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2808323814763229181}
   m_RootOrder: 1
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &6955311657373971644
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -100,6 +101,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -146,6 +148,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2808323814763229181}
   m_RootOrder: 0
@@ -204,7 +207,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &5786701767960083246
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -217,6 +220,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -333,6 +337,11 @@ PrefabInstance:
       objectReference: {fileID: 7400000, guid: 265fc7a4e118c1a4e9594c1d1e697a2e, type: 2}
     - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}
+      propertyPath: tileDestroySfx.Path
+      value: event:/SFX_DD/LD48_SFX_DD_OBJ_DEBRIS
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
       propertyPath: damageUntilDestroyed
       value: 150
       objectReference: {fileID: 0}
@@ -398,6 +407,26 @@ PrefabInstance:
         type: 3}
       propertyPath: shallowSprites.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Guid.Data1
+      value: 168243237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Guid.Data2
+      value: 1295132255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Guid.Data3
+      value: -873952835
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Guid.Data4
+      value: -1689522177
       objectReference: {fileID: 0}
     - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}

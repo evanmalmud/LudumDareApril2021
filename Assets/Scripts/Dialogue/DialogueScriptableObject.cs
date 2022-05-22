@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dialogue", menuName = "ScriptableObjects/DialogueScriptableObject", order = 2)]
 public class DialogueScriptableObject : ScriptableObject
 {
-    [FMODUnity.EventRef]
-    public string sfxName;
+
+    public EventReference sfxName;
+    //FMOD.Studio.EventInstance footstepLInstance;
 
     public List<string> dialogueSentences;
     public List<float> sentenceWaitTimes;

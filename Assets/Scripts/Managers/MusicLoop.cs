@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,18 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class MusicLoop : MonoBehaviour
 {
+    public EventReference musicLoop;
+    FMOD.Studio.EventInstance musicLoopinstance;
 
-    [FMODUnity.EventRef]
-    public string musicLoop;
-    private FMOD.Studio.EventInstance musicLoopinstance;
-    [FMODUnity.EventRef]
-    public string ambienceLoop;
-    private FMOD.Studio.EventInstance ambienceLoopinstance;
+    public EventReference ambienceLoop;
+    FMOD.Studio.EventInstance ambienceLoopinstance;
+
+    public EventReference helmetLoop;
+    FMOD.Studio.EventInstance helmetLoopinstance;
+
     public bool loopPlaying = false;
-
-    [FMODUnity.EventRef]
-    public string helmetLoop;
-    private FMOD.Studio.EventInstance helmetLoopinstance;
 
     public LevelTimer leveltimer;
     public PlayerConfig playerConfig;
@@ -28,7 +27,7 @@ public class MusicLoop : MonoBehaviour
     }
     public void Start()
     {
-        if (musicLoop != null && !musicLoop.Equals("") && !musicLoopinstance.isValid()) {
+        if (!musicLoop.IsNull && !musicLoop.Equals("") && !musicLoopinstance.isValid()) {
             musicLoopinstance = FMODUnity.RuntimeManager.CreateInstance(musicLoop);
             loopPlaying = true;
             musicLoopinstance.start();
@@ -36,11 +35,11 @@ public class MusicLoop : MonoBehaviour
             loopPlaying = true;
             musicLoopinstance.start();
         }
-        if (ambienceLoop != null && !ambienceLoop.Equals("")) {
+        if (!ambienceLoop.IsNull && !ambienceLoop.Equals("")) {
             ambienceLoopinstance = FMODUnity.RuntimeManager.CreateInstance(ambienceLoop);
             //ambienceLoopinstance.start();
         }
-        if (helmetLoop != null && !helmetLoop.Equals("")) {
+        if (!helmetLoop.IsNull && !helmetLoop.Equals("")) {
             helmetLoopinstance = FMODUnity.RuntimeManager.CreateInstance(helmetLoop);
             //helmetLoopinstance.start();
         }

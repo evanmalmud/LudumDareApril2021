@@ -1,8 +1,8 @@
+using FMODUnity;
 using PowerTools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static GameState;
 
 public class TilePrefab : MonoBehaviour
 {
@@ -36,8 +36,7 @@ public class TilePrefab : MonoBehaviour
 
     public GameState.DepthType depthType;
 
-    [FMODUnity.EventRef]
-    public string tileDestroySfx = "";
+    public EventReference tileDestroySfx;
     FMOD.Studio.EventInstance tileDestroySfxInstance;
 
     BoxCollider2D boxCollider;

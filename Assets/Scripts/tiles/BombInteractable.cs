@@ -1,4 +1,5 @@
 using DG.Tweening;
+using FMODUnity;
 using PowerTools;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,12 +20,10 @@ public class BombInteractable : Interactable
     private IEnumerator coroutine;
     public SpriteAnim m_anim = null;
 
-    [FMODUnity.EventRef]
-    public string bombBlinkingSfx = "";
+    public EventReference bombBlinkingSfx;
     FMOD.Studio.EventInstance bombBlinkingInstance;
 
-    [FMODUnity.EventRef]
-    public string bombExplosionSfx = "";
+    public EventReference bombExplosionSfx;
     FMOD.Studio.EventInstance bombExplosionSfxInstance;
 
     public ScreenShake cameraShake;

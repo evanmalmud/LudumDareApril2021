@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{00ef4ab4-fe57-45e5-bedd-c92063c54256}">
 		<property name="name">
 			<value>LD48_DX_JSO_HelmetNotif_Tminus60</value>
@@ -88,8 +88,8 @@
 	</object>
 	<object class="GroupTrack" id="{a57c22f5-e3dd-4cef-b031-65a5f1005e8f}">
 		<relationship name="modules">
-			<destination>{0d2b506e-0cbc-45ca-afd7-4ac3c54af30f}</destination>
 			<destination>{88013b9f-5dec-4896-8aea-dd0e26b9fab0}</destination>
+			<destination>{0d2b506e-0cbc-45ca-afd7-4ac3c54af30f}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{b62545ef-f104-4bde-b8ca-65ac4f407db6}</destination>
@@ -97,8 +97,8 @@
 	</object>
 	<object class="Timeline" id="{133e5901-03b6-4c90-9045-cab8f2e3b804}">
 		<relationship name="modules">
-			<destination>{e384d1f0-748e-4d05-aefb-bc016d59a63a}</destination>
 			<destination>{a76c26f6-3e67-4734-9d68-561ad3230fbf}</destination>
+			<destination>{e384d1f0-748e-4d05-aefb-bc016d59a63a}</destination>
 			<destination>{0d2b506e-0cbc-45ca-afd7-4ac3c54af30f}</destination>
 			<destination>{88013b9f-5dec-4896-8aea-dd0e26b9fab0}</destination>
 		</relationship>
@@ -173,14 +173,6 @@
 			<destination>{5913e1d6-2cc0-4dc0-aed9-6204fd16d6cd}</destination>
 		</relationship>
 	</object>
-	<object class="CommandSound" id="{0d2b506e-0cbc-45ca-afd7-4ac3c54af30f}">
-		<property name="length">
-			<value>0.20000000000000001</value>
-		</property>
-		<relationship name="commandTarget">
-			<destination>{2029bcd0-6055-4d09-b0d4-15d75f183f98}</destination>
-		</relationship>
-	</object>
 	<object class="CommandSound" id="{88013b9f-5dec-4896-8aea-dd0e26b9fab0}">
 		<property name="start">
 			<value>3.5500000000000003</value>
@@ -190,6 +182,14 @@
 		</property>
 		<property name="commandType">
 			<value>2</value>
+		</property>
+		<relationship name="commandTarget">
+			<destination>{2029bcd0-6055-4d09-b0d4-15d75f183f98}</destination>
+		</relationship>
+	</object>
+	<object class="CommandSound" id="{0d2b506e-0cbc-45ca-afd7-4ac3c54af30f}">
+		<property name="length">
+			<value>0.20000000000000001</value>
 		</property>
 		<relationship name="commandTarget">
 			<destination>{2029bcd0-6055-4d09-b0d4-15d75f183f98}</destination>

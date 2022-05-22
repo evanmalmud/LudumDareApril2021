@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,19 +14,14 @@ public class ArtifactTile : TilePrefab
 
     public ArtifactScriptableObject chosenArtifact;
 
-
-    [FMODUnity.EventRef]
-    public string commoncollectSfx = "";
+    public EventReference commoncollectSfx;
     FMOD.Studio.EventInstance commoncollectSfxInstance;
 
-    [FMODUnity.EventRef]
-    public string rarecollectSfx = "";
+    public EventReference rarecollectSfx;
     FMOD.Studio.EventInstance rarecollectSfxInstance;
 
-    [FMODUnity.EventRef]
-    public string legendarycollectSfx = "";
+    public EventReference legendarycollectSfx;
     FMOD.Studio.EventInstance legendarycollectSfxInstance;
-
 
     public override void OnEnable()
     {

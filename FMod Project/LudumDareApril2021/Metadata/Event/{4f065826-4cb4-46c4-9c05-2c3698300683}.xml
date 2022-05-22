@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{4f065826-4cb4-46c4-9c05-2c3698300683}">
 		<property name="name">
 			<value>LD48_DX_JSO_LevelIntro_207</value>
@@ -65,8 +65,8 @@
 	<object class="MarkerTrack" id="{42ec8819-0557-40ca-9710-64645297c272}" />
 	<object class="GroupTrack" id="{700b8b14-7fb9-41d0-ae5d-17eff275857f}">
 		<relationship name="modules">
-			<destination>{29af2046-8b7b-49f8-ab80-359a95b34f98}</destination>
 			<destination>{a6530a29-b616-45e5-be20-618cff0cbeda}</destination>
+			<destination>{29af2046-8b7b-49f8-ab80-359a95b34f98}</destination>
 			<destination>{b8ac00ff-4d70-447c-9f37-778b6f86fc90}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
@@ -75,8 +75,8 @@
 	</object>
 	<object class="GroupTrack" id="{5738e0b6-cd68-41b7-8f89-8645223bf8f6}">
 		<relationship name="modules">
-			<destination>{95a92f6e-9b36-4d68-b47f-dcfdaeb34441}</destination>
 			<destination>{0c0c6947-480d-47f5-a985-4dd75bebc714}</destination>
+			<destination>{95a92f6e-9b36-4d68-b47f-dcfdaeb34441}</destination>
 			<destination>{78948b8f-b2cc-47cf-bc08-68df3fb91502}</destination>
 			<destination>{cf59c670-b929-4211-beaf-7ff24c0045ca}</destination>
 		</relationship>
@@ -112,6 +112,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{246956c4-7c83-4079-b7fb-879ccafbfd5e}" />
+	<object class="SingleSound" id="{a6530a29-b616-45e5-be20-618cff0cbeda}">
+		<property name="length">
+			<value>1.6000000000000001</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{6d361340-651d-4449-a335-f6c3dff8dfb2}</destination>
+		</relationship>
+	</object>
 	<object class="SingleSound" id="{29af2046-8b7b-49f8-ab80-359a95b34f98}">
 		<property name="start">
 			<value>1.8</value>
@@ -125,14 +133,6 @@
 		<relationship name="fadeOutCurve">
 			<destination>{b45705fb-aaba-44e8-95ce-d2aba5fb74e2}</destination>
 		</relationship>
-		<relationship name="audioFile">
-			<destination>{6d361340-651d-4449-a335-f6c3dff8dfb2}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{a6530a29-b616-45e5-be20-618cff0cbeda}">
-		<property name="length">
-			<value>1.6000000000000001</value>
-		</property>
 		<relationship name="audioFile">
 			<destination>{6d361340-651d-4449-a335-f6c3dff8dfb2}</destination>
 		</relationship>
@@ -168,20 +168,6 @@
 			<destination>{08492847-7c96-4386-8caa-0fecaf830dd7}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{95a92f6e-9b36-4d68-b47f-dcfdaeb34441}">
-		<property name="start">
-			<value>1.6100000000000001</value>
-		</property>
-		<property name="length">
-			<value>0.26147638971906773</value>
-		</property>
-		<property name="timelockedOffset">
-			<value>1.6385236102809324</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{6d361340-651d-4449-a335-f6c3dff8dfb2}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{0c0c6947-480d-47f5-a985-4dd75bebc714}">
 		<property name="start">
 			<value>2.1499999999999999</value>
@@ -198,6 +184,20 @@
 		<relationship name="fadeOutCurve">
 			<destination>{ffe05b14-9d6e-4092-a882-6cca826a5f58}</destination>
 		</relationship>
+		<relationship name="audioFile">
+			<destination>{6d361340-651d-4449-a335-f6c3dff8dfb2}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{95a92f6e-9b36-4d68-b47f-dcfdaeb34441}">
+		<property name="start">
+			<value>1.6100000000000001</value>
+		</property>
+		<property name="length">
+			<value>0.26147638971906773</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>1.6385236102809324</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{6d361340-651d-4449-a335-f6c3dff8dfb2}</destination>
 		</relationship>

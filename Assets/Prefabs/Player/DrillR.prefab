@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.063, y: 0.293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5923945330226217271}
   m_RootOrder: 1
@@ -277,6 +278,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.275, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5923945330829219283}
   - {fileID: 5923945329845743143}
@@ -297,12 +299,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_drillstarting: {fileID: 0}
   m_drillloop: {fileID: 0}
-  drillL: {fileID: 0}
-  drillR: {fileID: 0}
+  drill: {fileID: 0}
   drillEnabled: 0
   drillEnabledThisFrame: 0
-  drillSfx: 
-  drillEndSfx: 
+  drillSfx:
+    Guid:
+      Data1: -437103037
+      Data2: 1304844863
+      Data3: 788492734
+      Data4: 704544231
+    Path: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER
+  drillEndSfx:
+    Guid:
+      Data1: 1571209889
+      Data2: 1100111666
+      Data3: 1351376563
+      Data4: 1386429236
+    Path: event:/SFX_DD/LD48_SFX_DD_OBJ_LASER_STOP
 --- !u!1 &5923945330829219282
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +348,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.425, y: 0.439, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5923945330226217271}
   m_RootOrder: 0
@@ -456,7 +470,7 @@ MonoBehaviour:
   damagePerTick: 25
 --- !u!95 &5923945330829219289
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -469,6 +483,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1

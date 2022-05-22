@@ -1,4 +1,5 @@
 using DG.Tweening;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,9 +22,8 @@ public class SonarScan : MonoBehaviour
 
     Sonar creatorObj;
 
-    [FMODUnity.EventRef]
-    public string scanSfx = "";
-    public FMOD.Studio.EventInstance scanSfxInstance;
+    public EventReference scanSfx;
+    FMOD.Studio.EventInstance scanSfxInstance;
 
     // Start is called before the first frame update
     public void StartScan(Sonar creatorObj)

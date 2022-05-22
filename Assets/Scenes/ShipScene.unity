@@ -2455,15 +2455,15 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.061458338
-    y: -0.2851852
+    x: 0
+    y: 0
     width: 1
-    height: 1.1851852
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4718,6 +4718,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 7671585837521019568, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.19750977
+      objectReference: {fileID: 0}
     - target: {fileID: 8617999124522166608, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4726,6 +4731,11 @@ PrefabInstance:
     - target: {fileID: 8752278204205237218, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065333288075870620, guid: a1ae9c915e6efea4fb78f6ad6ad02d70,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6699,7 +6709,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 4d502fbe5dfb9bc7ed2e9c6e000000003d2f968f2d93c711
+  m_ApplyToSortingLayers: 4d502fbe5dfb9bc7000000003d2f968f2d93c711
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -7710,6 +7720,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868923172924645165, guid: ca9e8878e66973243af82e603f576ec9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -172.80005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868923172924645165, guid: ca9e8878e66973243af82e603f576ec9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -33.200073
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca9e8878e66973243af82e603f576ec9, type: 3}

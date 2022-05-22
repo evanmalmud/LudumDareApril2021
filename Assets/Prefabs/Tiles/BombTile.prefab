@@ -138,8 +138,20 @@ MonoBehaviour:
   m_blinking: {fileID: 7400000, guid: 90a5b55eecbaef14eae2e02f82325d3b, type: 2}
   m_explosion: {fileID: 7400000, guid: 2cdcc549553ca6d438a86dc890d1b26e, type: 2}
   m_anim: {fileID: 8563901398599103563}
-  bombBlinkingSfx: event:/SFX_JSO/BombCount Test
-  bombExplosionSfx: event:/SFX_JSO/BombExp Test
+  bombBlinkingSfx:
+    Guid:
+      Data1: -1557406646
+      Data2: 1271403506
+      Data3: 558137776
+      Data4: 2133011858
+    Path: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Bomb_countdown
+  bombExplosionSfx:
+    Guid:
+      Data1: 282039415
+      Data2: 1136722895
+      Data3: 526154681
+      Data4: 1484621643
+    Path: event:/SFX_JSO/LD48_SFX_JSO_OBJ_Bomb_Med_explo
   cameraShake: {fileID: 0}
   bombTriggered: 0
   bombTriggerStarted: 0
@@ -180,7 +192,13 @@ MonoBehaviour:
   m_shatterDeep: {fileID: 0}
   m_breakDeep: {fileID: 0}
   depthType: 0
-  tileDestroySfx: 
+  tileDestroySfx:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   tileType: 3
 --- !u!61 &8145081970088889520
 BoxCollider2D:

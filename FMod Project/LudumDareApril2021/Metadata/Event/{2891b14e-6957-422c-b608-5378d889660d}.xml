@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2891b14e-6957-422c-b608-5378d889660d}">
 		<property name="name">
 			<value>LD48_SFX_DD_AMB_MED</value>
@@ -193,9 +193,17 @@
 			<destination>{49be300e-bbba-4e4d-8fd0-583bde13a7a2}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{d7f2afd2-26ca-46c1-a81f-52e36b4171b9}</destination>
 			<destination>{4de704a0-5cbc-479d-bc6a-108ba987ba8e}</destination>
+			<destination>{d7f2afd2-26ca-46c1-a81f-52e36b4171b9}</destination>
 		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{4de704a0-5cbc-479d-bc6a-108ba987ba8e}">
+		<property name="position">
+			<value>0.75</value>
+		</property>
+		<property name="value">
+			<value>650</value>
+		</property>
 	</object>
 	<object class="AutomationPoint" id="{d7f2afd2-26ca-46c1-a81f-52e36b4171b9}">
 		<property name="position">
@@ -206,14 +214,6 @@
 		</property>
 		<property name="curveShape">
 			<value>-1</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{4de704a0-5cbc-479d-bc6a-108ba987ba8e}">
-		<property name="position">
-			<value>0.75</value>
-		</property>
-		<property name="value">
-			<value>650</value>
 		</property>
 	</object>
 </objects>

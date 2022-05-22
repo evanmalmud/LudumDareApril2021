@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2d4b2661-59fa-4b36-8361-7919a3f493b6}">
 		<property name="name">
 			<value>LD48_SFX_DD_UI_TIMESHEET_IN</value>

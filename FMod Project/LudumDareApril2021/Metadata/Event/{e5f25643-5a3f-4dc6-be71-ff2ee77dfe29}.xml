@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e5f25643-5a3f-4dc6-be71-ff2ee77dfe29}">
 		<property name="name">
 			<value>LD48_SFX_DD_OBJ_LASER</value>

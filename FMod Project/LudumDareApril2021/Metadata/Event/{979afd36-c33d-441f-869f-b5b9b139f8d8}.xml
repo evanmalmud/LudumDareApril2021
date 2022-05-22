@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{979afd36-c33d-441f-869f-b5b9b139f8d8}">
 		<property name="name">
 			<value>BombCount Test</value>

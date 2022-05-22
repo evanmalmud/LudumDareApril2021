@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{642a95d7-59f1-45b7-b7b7-5efdb8608d4a}">
 		<property name="name">
 			<value>LD48_SFX_ZL_PLYR_Footstep_L</value>
@@ -148,8 +148,8 @@
 			<value>0.20900226757369614</value>
 		</property>
 		<relationship name="modulators">
-			<destination>{aca07c72-2522-4786-a5ce-f1223005795a}</destination>
 			<destination>{a2c79db0-0477-41f5-b249-91f5e8b9eeb6}</destination>
+			<destination>{aca07c72-2522-4786-a5ce-f1223005795a}</destination>
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{8b91397a-35fe-43d4-8922-1de66065b568}</destination>
@@ -216,8 +216,8 @@
 			<value>0.5</value>
 		</property>
 		<relationship name="modulators">
-			<destination>{521cd5c2-05ce-4f3f-b679-f587e5be5430}</destination>
 			<destination>{0a03554e-2bc6-4242-b771-342363cd805d}</destination>
+			<destination>{521cd5c2-05ce-4f3f-b679-f587e5be5430}</destination>
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{b5c735df-18ad-42ee-ad84-a897f362ff19}</destination>
@@ -255,20 +255,20 @@
 	</object>
 	<object class="MixerBusPanner" id="{63b6dc73-a273-492d-8bdf-56ba9ee61382}" />
 	<object class="MixerBusFader" id="{8082733d-1261-421f-a88c-870a02441ea0}" />
-	<object class="RandomizerModulator" id="{aca07c72-2522-4786-a5ce-f1223005795a}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>pitch</value>
-		</property>
-		<property name="amount">
-			<value>4.5</value>
-		</property>
-	</object>
 	<object class="RandomizerModulator" id="{a2c79db0-0477-41f5-b249-91f5e8b9eeb6}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
 		<property name="amount">
 			<value>1</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{aca07c72-2522-4786-a5ce-f1223005795a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>4.5</value>
 		</property>
 	</object>
 	<object class="Automator" id="{7906e4d7-179c-4993-9896-73d29814cfa2}">
@@ -315,20 +315,20 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{72b532e4-2d00-4365-bc1e-5845faa545bc}" />
-	<object class="RandomizerModulator" id="{521cd5c2-05ce-4f3f-b679-f587e5be5430}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>pitch</value>
-		</property>
-		<property name="amount">
-			<value>6</value>
-		</property>
-	</object>
 	<object class="RandomizerModulator" id="{0a03554e-2bc6-4242-b771-342363cd805d}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
 		<property name="amount">
 			<value>1</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{521cd5c2-05ce-4f3f-b679-f587e5be5430}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>6</value>
 		</property>
 	</object>
 	<object class="Automator" id="{d62da38a-6fe3-4bc4-a303-1b81a9136088}">
@@ -372,8 +372,8 @@
 			<destination>{49be300e-bbba-4e4d-8fd0-583bde13a7a2}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{0e54dda4-6f95-415c-93f7-a72c98efa63b}</destination>
 			<destination>{f142f5ba-5ecd-4435-b6ce-abf3dcbfce91}</destination>
+			<destination>{0e54dda4-6f95-415c-93f7-a72c98efa63b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{a5448ed7-9a13-4094-8f29-abb319d13a84}" />
@@ -426,14 +426,6 @@
 			<value>0.26281929</value>
 		</property>
 	</object>
-	<object class="AutomationPoint" id="{0e54dda4-6f95-415c-93f7-a72c98efa63b}">
-		<property name="position">
-			<value>0.57000000000000006</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-	</object>
 	<object class="AutomationPoint" id="{f142f5ba-5ecd-4435-b6ce-abf3dcbfce91}">
 		<property name="position">
 			<value>0.45000000000000001</value>
@@ -443,6 +435,14 @@
 		</property>
 		<property name="curveShape">
 			<value>-0.831631362</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{0e54dda4-6f95-415c-93f7-a72c98efa63b}">
+		<property name="position">
+			<value>0.57000000000000006</value>
+		</property>
+		<property name="value">
+			<value>1</value>
 		</property>
 	</object>
 </objects>

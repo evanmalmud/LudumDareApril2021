@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,9 @@ using UnityEngine;
 public class CanvasHelper : MonoBehaviour
 {
 
-    [FMODUnity.EventRef]
-    public string inSFX = "";
-    [FMODUnity.EventRef]
-    public string outSFX = "";
+    public EventReference inSFX;
+
+    public EventReference outSFX;
 
     public GameObject canvas;
 

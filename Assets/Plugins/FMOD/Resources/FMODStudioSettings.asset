@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 52eb9df5db46521439908db3a29a1bbb
   parentIdentifier: default
-  displaySortOrder: 0
   active: 0
   Properties:
     LiveUpdate:
@@ -63,6 +62,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &-815819841467318576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,15 +78,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: playInEditor
   parentIdentifier: 
-  displaySortOrder: 0
   active: 1
   Properties:
     LiveUpdate:
       Value: 1
       HasValue: 1
     LiveUpdatePort:
-      Value: 0
-      HasValue: 0
+      Value: 9266
+      HasValue: 1
     Overlay:
       Value: 1
       HasValue: 1
@@ -126,6 +126,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,11 +141,13 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
+  HasSourceProject: 1
   HasPlatforms: 1
   sourceProjectPath: FMod Project/LudumDareApril2021/LudumDareApril2021.fspro
   sourceBankPath: FMod Project/LudumDareApril2021/Build
   SourceBankPathUnformatted: 
+  BankRefreshCooldown: 5
+  ShowBankRefreshWindow: 1
   AutomaticEventLoading: 0
   BankLoadType: 0
   AutomaticSampleLoading: 1
@@ -151,6 +155,7 @@ MonoBehaviour:
   ImportType: 0
   TargetAssetPath: FMODBanks
   TargetBankFolder: 
+  EventLinkage: 0
   LoggingLevel: 262144
   SpeakerModeSettings: []
   SampleRateSettings: []
@@ -174,6 +179,24 @@ MonoBehaviour:
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0
+  EnableErrorCallback: 0
+  SharedLibraryUpdateStage: 0
+  SharedLibraryTimeSinceStart: 0
+  CurrentVersion: 131588
+  HideSetupWizard: 1
+  LastEventReferenceScanVersion: 131588
+  Platforms:
+  - {fileID: -8086350133043019727}
+  - {fileID: -815819841467318576}
+  - {fileID: 297964709741599367}
+  - {fileID: 955924189265613825}
+  - {fileID: 1517031992352379947}
+  - {fileID: 4229798790690552008}
+  - {fileID: 4600121496567546229}
+  - {fileID: 5794736603643407699}
+  - {fileID: 7684582521525961495}
+  - {fileID: 8094775465780986158}
+  - {fileID: 8868491333191970615}
   MigratedPlatforms: 120000000b00000009000000150000000a000000060000000c0000000500000008000000020000000100000000000000
 --- !u!114 &297964709741599367
 MonoBehaviour:
@@ -189,7 +212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 46fbfdf3fc43db0458918377fd40293e
   parentIdentifier: default
-  displaySortOrder: 0
   active: 0
   Properties:
     LiveUpdate:
@@ -238,6 +260,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &955924189265613825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +276,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: fd7c55dab0fce234b8c25f6ffca523c1
   parentIdentifier: default
-  displaySortOrder: 0
   active: 0
   Properties:
     LiveUpdate:
@@ -301,6 +324,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &1517031992352379947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +340,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: e7a046c753c3c3d4aacc91f6597f310d
   parentIdentifier: default
-  displaySortOrder: 0
   active: 0
   Properties:
     LiveUpdate:
@@ -364,6 +388,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &4229798790690552008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +404,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 0f8eb3f400726694eb47beb1a9f94ce8
   parentIdentifier: default
-  displaySortOrder: 0
   active: 0
   Properties:
     LiveUpdate:
@@ -427,6 +452,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &4600121496567546229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +468,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: b7716510a1f36934c87976f3a81dbf3d
   parentIdentifier: default
-  displaySortOrder: 0
   active: 0
   Properties:
     LiveUpdate:
@@ -490,6 +516,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &5794736603643407699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +532,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: default
   parentIdentifier: 
-  displaySortOrder: 0
   active: 1
   Properties:
     LiveUpdate:
@@ -523,7 +550,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 1
     BuildDirectory:
-      Value: Desktop
+      Value: WebGL
       HasValue: 1
     SpeakerMode:
       Value: 3
@@ -553,6 +580,17 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers:
+  - 52eb9df5db46521439908db3a29a1bbb
+  - 46fbfdf3fc43db0458918377fd40293e
+  - fd7c55dab0fce234b8c25f6ffca523c1
+  - e7a046c753c3c3d4aacc91f6597f310d
+  - 0f8eb3f400726694eb47beb1a9f94ce8
+  - b7716510a1f36934c87976f3a81dbf3d
+  - 2c5177b11d81d824dbb064f9ac8527da
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - 2fea114e74ecf3c4f920e1d5cc1c4c40
 --- !u!114 &7684582521525961495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,7 +605,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 2c5177b11d81d824dbb064f9ac8527da
   parentIdentifier: default
-  displaySortOrder: 0
   active: 1
   Properties:
     LiveUpdate:
@@ -612,10 +649,12 @@ MonoBehaviour:
     CallbackHandler:
       Value: {fileID: 0}
       HasValue: 0
-  outputType: 
+  outputType: AUTODETECT
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &8094775465780986158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +669,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: c88d16e5272a4e241b0ef0ac2e53b73d
   parentIdentifier: default
-  displaySortOrder: 0
   active: 0
   Properties:
     LiveUpdate:
@@ -679,6 +717,8 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []
 --- !u!114 &8868491333191970615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +733,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 2fea114e74ecf3c4f920e1d5cc1c4c40
   parentIdentifier: default
-  displaySortOrder: 0
   active: 1
   Properties:
     LiveUpdate:
@@ -742,3 +781,5 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
+  displaySortOrder: 0
+  childIdentifiers: []

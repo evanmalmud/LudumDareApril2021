@@ -119,30 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_defaultAnim: {fileID: 0}
---- !u!114 &3627869865964280645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5225919853743959244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e65c51944b5bf4394d028e84deb745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 8903548642766281942, guid: d33a9bcd1d69ad741809938509028d0f,
-    type: 3}
-  artifactPrefab: {fileID: 2710934881308951692, guid: 137f90871c2b2c94d88d292f5bc9e7f0,
-    type: 3}
-  orePrefab: {fileID: 2710934881308951692, guid: 7a9dbe772714df24aa7bf0f275399e9b,
-    type: 3}
-  bombspawnrate: 4.5
-  artifactspawnrate: 0.1
-  orespawnrate: 6
-  rateOf: 100
-  parent: {fileID: 0}
-  layerLoader: {fileID: 0}
 --- !u!1001 &7645767740382550253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,6 +176,11 @@ PrefabInstance:
       propertyPath: m_shatterShallow
       value: 
       objectReference: {fileID: 7400000, guid: 265fc7a4e118c1a4e9594c1d1e697a2e, type: 2}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Path
+      value: event:/SFX_DD/LD48_SFX_DD_OBJ_DEBRIS
+      objectReference: {fileID: 0}
     - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}
       propertyPath: damageUntilDestroyed
@@ -267,6 +248,26 @@ PrefabInstance:
         type: 3}
       propertyPath: shallowSprites.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Guid.Data1
+      value: 168243237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Guid.Data2
+      value: 1295132255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Guid.Data3
+      value: -873952835
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+        type: 3}
+      propertyPath: tileDestroySfx.Guid.Data4
+      value: -1689522177
       objectReference: {fileID: 0}
     - target: {fileID: 2045394223373435890, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
         type: 3}
@@ -510,15 +511,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f5b70b10fb3e5849a926e2d05d94f3c, type: 3}
---- !u!1 &5225919853743959244 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2494162048006845473, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
-    type: 3}
-  m_PrefabInstance: {fileID: 7645767740382550253}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2808323814763229181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5540011250699728656, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
     type: 3}
   m_PrefabInstance: {fileID: 7645767740382550253}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5225919853743959244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2494162048006845473, guid: 1f5b70b10fb3e5849a926e2d05d94f3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7645767740382550253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3627869865964280645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225919853743959244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e65c51944b5bf4394d028e84deb745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 8903548642766281942, guid: d33a9bcd1d69ad741809938509028d0f,
+    type: 3}
+  artifactPrefab: {fileID: 2710934881308951692, guid: 137f90871c2b2c94d88d292f5bc9e7f0,
+    type: 3}
+  orePrefab: {fileID: 2710934881308951692, guid: 7a9dbe772714df24aa7bf0f275399e9b,
+    type: 3}
+  bombspawnrate: 4.5
+  artifactspawnrate: 0.1
+  orespawnrate: 6
+  rateOf: 100
+  parent: {fileID: 0}
+  layerLoader: {fileID: 0}

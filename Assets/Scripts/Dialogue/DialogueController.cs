@@ -1,4 +1,5 @@
 using DG.Tweening;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,13 +13,12 @@ public class DialogueController : MonoBehaviour
 
     public GameObject skipButton;
 
-    [FMODUnity.EventRef]
-    public string rocketAmbience;
+    public EventReference rocketAmbience;
+    FMOD.Studio.EventInstance rocketAmbienceInstance;
 
     public GameObject ship;
 
     FMOD.Studio.EventInstance initialDialogueInstance;
-    FMOD.Studio.EventInstance rocketAmbienceInstance;
 
     public Vector3 startingtransform;
     public void Start()
