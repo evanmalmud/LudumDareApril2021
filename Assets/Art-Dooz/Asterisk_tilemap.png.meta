@@ -2911,7 +2911,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2932,7 +2932,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2940,6 +2940,48 @@ TextureImporter:
       bones: []
       spriteID: 3e2be365677de914495a1c2239124544
       internalID: -233755002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_92
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d732dabb2d2ede4a85835513dea67dd
+      internalID: -453372346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asterisk_tilemap_93
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ecb6b31db140940968ef7c5d491889
+      internalID: -859597570
       vertices: []
       indices: 
       edges: []
@@ -2957,7 +2999,7 @@ TextureImporter:
     nameFileIdTable:
       Asterisk_tilemap_90: 309476714081101922
       Asterisk_tilemap_116: 4490241007256786546
-      Asterisk_tilemap_75: 1664475085
+      Asterisk_tilemap_100: 580115524200767989
       Asterisk_tilemap_65: -496375511
       Asterisk_tilemap_115: -6151285320302081173
       Asterisk_tilemap_11: -7290687838845406404
@@ -2974,6 +3016,7 @@ TextureImporter:
       Asterisk_tilemap_59: -813283786
       Asterisk_tilemap_67: -5054893959879475979
       Asterisk_tilemap_51: 8340804191880840262
+      Asterisk_tilemap_93: -859597570
       Asterisk_tilemap_17: -7421853076493470520
       Asterisk_tilemap_119: -4879876503865486110
       Asterisk_tilemap_40: -2279372374119457947
@@ -3005,6 +3048,7 @@ TextureImporter:
       Asterisk_tilemap_21: 1494180435441356166
       Asterisk_tilemap_28: 8015287775373382222
       Asterisk_tilemap_52: -4901541312404749572
+      Asterisk_tilemap_92: -453372346
       Asterisk_tilemap_24: -6466765067950045166
       Asterisk_tilemap_84: 1546240040
       Asterisk_tilemap_73: -7660306099807176658
@@ -3019,9 +3063,9 @@ TextureImporter:
       Asterisk_tilemap_25: 6256102711017435012
       Asterisk_tilemap_41: -4856620572367318932
       Asterisk_tilemap_36: -6912603725784986464
+      Asterisk_tilemap_38: -6671958369633002001
       Asterisk_tilemap_45: -159623652
       Asterisk_tilemap_74: -704736504
-      Asterisk_tilemap_38: -6671958369633002001
       Asterisk_tilemap_76: -2082351664
       Asterisk_tilemap_83: -2449717524134899765
       Asterisk_tilemap_61: 2991098113095749522
@@ -3068,9 +3112,9 @@ TextureImporter:
       Asterisk_tilemap_63: -1815713338246100010
       Asterisk_tilemap_55: -7117876232906885091
       Asterisk_tilemap_5: 8660381697632931698
-      Asterisk_tilemap_80: 624257565
       Asterisk_tilemap_0: -738403127392823138
-      Asterisk_tilemap_100: 580115524200767989
+      Asterisk_tilemap_75: 1664475085
+      Asterisk_tilemap_80: 624257565
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
