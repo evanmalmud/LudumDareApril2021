@@ -11,38 +11,31 @@ public class DrillTrigger : MonoBehaviour
 
     public float damagePerTick = 20f;
 
-    void Start()
-    {
-
-    }
-
-    private void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("OnCollisionEnter2D collision");
-        if (collisionMask == (collisionMask | (1 << collision.gameObject.layer))) {
-            //Delete Tile
-            //Debug.Log("OnCollisionEnter2D delete " + collision.gameObject.name);
-            var prefab = collision.GetComponent<TilePrefab>();
-            if (prefab != null) {
-                prefab.takeDamage(damagePerTick);
-            }
-        }
+        DoDamage(collision);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //Debug.Log("OnCollisionEnter2D collision");
-        if (collisionMask == (collisionMask | (1 << collision.gameObject.layer))) {
-            //Delete Tile
-            //Debug.Log("OnCollisionEnter2D delete " + collision.gameObject.name);
+        DoDamage(collision);
+    }
+
+    private void DoDamage(Collider2D collision)
+    {
+        if (collisionMask == (collisionMask | (1 << collision.gameObject.layer)))
+        {
             var prefab = collision.GetComponent<TilePrefab>();
-            if (prefab != null) {
+            if (prefab != null)
+            {
                 prefab.takeDamage(damagePerTick);
+            }
+
+            var enemy = collision.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damagePerTick);
             }
         }
     }
