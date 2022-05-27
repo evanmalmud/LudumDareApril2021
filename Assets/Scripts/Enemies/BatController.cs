@@ -11,6 +11,7 @@ public class BatController : MonoBehaviour, EnemyController
     public SpriteAnim spriteAnim;
     public SpriteRenderer spriteRend;
     public Rigidbody2D rb;
+    public Collider2D collider2d;
 
     public AnimationClip m_death;
     public AnimationClip m_dive;
@@ -50,6 +51,9 @@ public class BatController : MonoBehaviour, EnemyController
     public Vector2 timeBetweenAttacks;
 
     public bool spriteXFlip = false;
+    public float spriteFlipLeeway = .5f;
+
+    public LayerMask collisionMask;
 
 
     // Start is called before the first frame update
@@ -58,6 +62,7 @@ public class BatController : MonoBehaviour, EnemyController
         spriteAnim = GetComponent<SpriteAnim>();
         spriteRend = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        collider2d = GetComponent<CircleCollider2D>();
 
         spriteXFlip = UnityEngine.Random.value > 0.5f;
         spriteRend.flipX = spriteXFlip;
@@ -83,14 +88,19 @@ public class BatController : MonoBehaviour, EnemyController
 
         if(target != null)
         {
-            if(target.transform.position.x >= transform.position.x)
+            // Only flip if greater than leeway distance away from target
+            if(Math.Abs(target.transform.position.x - transform.position.x) > spriteFlipLeeway)
             {
-                spriteXFlip = true;
-            } else
-            {
-                spriteXFlip = false;
+                if (target.transform.position.x >= transform.position.x)
+                {
+                    spriteXFlip = true;
+                }
+                else
+                {
+                    spriteXFlip = false;
+                }
+                spriteRend.flipX = spriteXFlip;
             }
-            spriteRend.flipX = spriteXFlip;
         }
     }
 
@@ -142,7 +152,7 @@ public class BatController : MonoBehaviour, EnemyController
             case BAT_STATE.ATTACK_HOVER:
                 followplayer = true;
                 float count = UnityEngine.Random.Range(timeBetweenAttacks.x, timeBetweenAttacks.y);
-                Debug.Log("Hover check - " + transform.position.y + " " +  target.transform.position.y);
+                //Debug.Log("Hover check - " + transform.position.y + " " +  target.transform.position.y);
                 StartCoroutine(PlayLoopAnimationThen(m_hover, count,
                   () => {
                       if (transform.position.y - target.transform.position.y >= heightToDoanotherAttack)
@@ -161,7 +171,11 @@ public class BatController : MonoBehaviour, EnemyController
                 break;
 
             case BAT_STATE.DEATH:
-                StartCoroutine(PlayAnimationThen(m_takeOff, null));
+                collider2d.enabled = false;
+                StartCoroutine(PlayAnimationThen(m_death, () =>
+                {
+                    this.gameObject.SetActive(false);
+                }));
                 break;
             default:
                 break;
@@ -205,9 +219,9 @@ public class BatController : MonoBehaviour, EnemyController
         this.state = state;
     }
 
-    public void ActivateEnemy(GameObject target)
+    public void ActivateEnemy(Transform target)
     {
-        setTarget(target.transform);
+        setTarget(target);
         setState(BAT_STATE.IDLE_TO_ATTACK);
     }
 
@@ -216,5 +230,18 @@ public class BatController : MonoBehaviour, EnemyController
         StopAllCoroutines();
         transform.DOKill();
         setState(BAT_STATE.DEATH);
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Debug.Log("collision BAT " + collision.gameObject);
+        if (collisionMask == (collisionMask | (1 << collision.gameObject.layer)))
+        {
+            var player = collision.gameObject.GetComponent<PlayerConfig>();
+            if (player != null)
+            {
+                player.takeDamage();
+            }
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface EnemyController
 {
-    public abstract void ActivateEnemy(GameObject target);
+    public abstract void ActivateEnemy(Transform target);
 
     public abstract void TakeDamage(float amount);
 }

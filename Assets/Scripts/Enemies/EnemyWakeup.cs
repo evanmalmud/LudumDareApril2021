@@ -12,12 +12,14 @@ public class EnemyWakeup : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            foreach(GameObject go in enemies)
+
+            EnemyTargetTracker enemyTargetTracker = collision.gameObject.GetComponent<EnemyTargetTracker>();
+            foreach (GameObject go in enemies)
             {
                 EnemyController enemyController = go.GetComponent<EnemyController>();
                 if(enemyController != null)
                 {
-                    enemyController.ActivateEnemy(collision.gameObject);
+                    enemyController.ActivateEnemy(enemyTargetTracker.getTarget());
                 }
             }
 

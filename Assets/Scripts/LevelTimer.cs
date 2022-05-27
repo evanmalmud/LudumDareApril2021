@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,15 +21,13 @@ public class LevelTimer : MonoBehaviour
     public int timeWarning2;
     public int timeWarning3;
 
-    [FMODUnity.EventRef]
-    public string timeWarning1Sfx = "";
-    [FMODUnity.EventRef]
-    public string timeWarning2Sfx = "";
-    [FMODUnity.EventRef]
-    public string timeWarning3Sfx = "";
-
+    public EventReference timeWarning1Sfx;
     FMOD.Studio.EventInstance timeWarning1SfxInstance;
+
+    public EventReference timeWarning2Sfx;
     FMOD.Studio.EventInstance timeWarning2SfxInstance;
+
+    public EventReference timeWarning3Sfx;
     FMOD.Studio.EventInstance timeWarning3SfxInstance;
 
 
