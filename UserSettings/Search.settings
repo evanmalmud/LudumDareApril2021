@@ -2,7 +2,6 @@ trackSelection = true
 fetchPreview = true
 wantsMore = false
 keepOpen = false
-itemIconSize = 1
 queryFolder = "Assets"
 onBoardingDoNotAskAgain = true
 showPackageIndexes = false
@@ -17,6 +16,9 @@ scopes = {
 	"m_SideBarSplitter.785D90A9" = "180"
 	"m_DetailsPanelSplitter.785D90A9" = "700"
 	"currentGroup.785D90A9" = "scene"
+	"last_search.7BEC51F9" = ".prefab"
+	"OpenInspectorPreview.7BEC51F9" = "0"
+	"currentGroup.7BEC51F9" = "_group_provider_Files"
 }
 providers = {
 	asset = {
@@ -54,12 +56,32 @@ providers = {
 		priority = 100
 		defaultAction = null
 	}
+	adb = {
+		active = false
+		priority = 2500
+		defaultAction = null
+	}
+	performance = {
+		active = false
+		priority = 100
+		defaultAction = null
+	}
 }
 recentSearches = [
+	".prefab"
 	"game manager"
 	"jump"
 	"music loop handler"
 	"Loop Music"
 	"Fmod"
 ]
+searchItemFavorites = [
+]
 savedSearchesSortOrder = 0
+showSavedSearchPanel = false
+expandedQueries = [
+]
+queryBuilder = false
+ignoredProperties = "id;name;classname;imagecontentshash"
+helperWidgetCurrentArea = "all"
+disabledIndexers = ""
